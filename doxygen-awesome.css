@@ -478,7 +478,7 @@ iframe#MSearchResults {
 
     #doc-content {
         margin-left: 0 !important;
-        overflow: visible;
+        height: auto !important;
     }
 }
 
