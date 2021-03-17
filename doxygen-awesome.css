@@ -264,7 +264,16 @@ a {
 
 .sm-dox ul a {
     color: var(--page-foreground-color);
+    background: var(--page-background-color);
     font-size: var(--navigation-font-size);
+}
+
+.sm-dox>li>ul:after {
+    border-bottom-color: var(--page-background-color) !important;
+}
+
+.sm-dox>li>ul:before {
+    border-bottom-color: var(--separator-color) !important;
 }
 
 .sm-dox ul a:hover {
