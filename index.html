@@ -29,7 +29,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.drawio.svg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Doxygen Awesome CSS
-   &#160;<span id="projectnumber">v0.0.1</span>
+   &#160;<span id="projectnumber">v0.0.2</span>
    </div>
    <div id="projectbrief">Modern Doxygen theme</div>
   </td>
@@ -90,25 +90,29 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="title">Doxygen Awesome CSS </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md_README"></a> <img src="screenshot.png" alt="" class="inline" title="screenshot"/></p>
+<div class="textblock"><p><a class="anchor" id="md_README"></a> <img src="https://img.shields.io/github/v/release/jothepro/doxygen-awesome-css" alt="GitHub release (latest by date)" class="inline"/></p>
+<p><img src="screenshot.png" alt="" class="inline" title="screenshot"/></p>
 <p><b>Doxygen Awesome CSS</b> is a custom CSS for doxygen html-documentation with lots of customization parameters.</p>
 <h1><a class="anchor" id="autotoc_md6"></a>
 Motivation</h1>
 <p>I really like how the doxygen html-documentation is structured! But IMHO it looks a bit outdated.</p>
-<p>This theme is an attemt to update the visuals of doxygen without changing it's overall layout.</p>
+<p>This theme is an attemt to update the visuals of doxygen without changing it's overall layout too much.</p>
 <h1><a class="anchor" id="autotoc_md7"></a>
 Features</h1>
 <ul>
-<li>Clean, modern design.</li>
-<li>Heavily customizable by changing just CSS-variables.</li>
-<li>No changes to the HTML structure of Doxygen required.</li>
-<li>improved mobile usability.</li>
+<li>🌈 Clean, modern design.</li>
+<li>🚀 Heavily customizable by changing just CSS-variables.</li>
+<li>🧩 No changes to the HTML structure of Doxygen required.</li>
+<li>📱 improved mobile usability.</li>
+<li>🌘 dark mode support!</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md8"></a>
-Usage</h1>
-<p>Add this repository as submodule. This way you can easily update the theme.</p>
-<div class="fragment"><div class="line">git add submodule https://github.com/jothepro/doxygen-awesome-css.git</div>
-</div><!-- fragment --><p>Then make the option <code>HTML_EXTRA_STYLESHEET</code> in your Doxyfile point to the <code>doxygen-awesome.css</code> file in this repository.</p>
+Installation</h1>
+<p>Copy the <code>css</code> files from this repository into your project or add this repository as submodule and check out the latest release:</p>
+<div class="fragment"><div class="line">git submodule add https://github.com/jothepro/doxygen-awesome-css.git</div>
+<div class="line">cd doxygen-awesome-css</div>
+<div class="line">git checkout &lt;release-version&gt; # e.g. v0.0.1</div>
+</div><!-- fragment --><p>Then make the option <code>HTML_EXTRA_STYLESHEET</code> in your Doxyfile point to the <code>css</code> files:</p>
 <div class="fragment"><div class="line"># Doxyfile</div>
 <div class="line"># ...</div>
 <div class="line">HTML_EXTRA_STYLESHEET  = doxygen-awesome-theme/doxygen-awesome.css</div>
@@ -154,7 +158,7 @@ Configuration</h1>
 </table>
 <h1><a class="anchor" id="autotoc_md12"></a>
 Credits</h1>
-<p>This theme is heavily inspired by the awesome design of the <a href="https://vuepress.vuejs.org/">vuepress</a> static site generator default theme! </p>
+<p>This theme is heavily inspired by the beautiful <a href="https://vuepress.vuejs.org/">vuepress</a> static site generator default theme! </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->

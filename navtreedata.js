@@ -27,7 +27,7 @@ var NAVTREE =
   [ "Doxygen Awesome CSS", "index.html", [
     [ "Motivation", "index.html#autotoc_md6", null ],
     [ "Features", "index.html#autotoc_md7", null ],
-    [ "Usage", "index.html#autotoc_md8", null ],
+    [ "Installation", "index.html#autotoc_md8", null ],
     [ "Variants", "index.html#autotoc_md9", null ],
     [ "Example", "index.html#autotoc_md10", null ],
     [ "Configuration", "index.html#autotoc_md11", null ],

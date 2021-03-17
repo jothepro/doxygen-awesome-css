@@ -202,6 +202,13 @@ a {
     border-bottom: none;
 }
 
+@media screen and (max-width: 767px) {
+    #titlearea {
+        padding-bottom: var(--spacing-small);
+    }
+    
+}
+
 #titlearea table tbody tr {
     height: auto !important;
 }
@@ -304,9 +311,6 @@ a {
 }
 
 @media screen and (max-width: 767px) {
-    .sm-dox a, .sm-dox a:hover, .sm-dox a:active, .sm-dox a:focus{
-        line-height: 2em;
-    }
 
     .sm-dox a span.sub-arrow {
         right: 4px;
@@ -334,6 +338,12 @@ a {
 
 #main-menu > li:last-child {
     margin-right: 0;
+}
+
+@media screen and (max-width: 767px) {
+    #main-menu > li:last-child {
+        height: 50px;
+    }
 }
 
 #MSearchField {
@@ -459,6 +469,17 @@ iframe#MSearchResults {
 #side-nav {
     padding: 0 6px 0 0;
     background: var(--side-nav-background);
+}
+
+@media screen and (max-width: 767px) {
+    #side-nav {
+        display: none;
+    }
+
+    #doc-content {
+        margin-left: 0 !important;
+        overflow: visible;
+    }
 }
 
 #nav-tree {
