@@ -1,5 +1,7 @@
 #  Doxygen Awesome CSS
 
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/jothepro/doxygen-awesome-css)
+
 ![screenshot](img/screenshot.png)
 
 **Doxygen Awesome CSS** is a custom CSS for doxygen html-documentation with lots of customization parameters.
@@ -17,15 +19,17 @@ This theme is an attemt to update the visuals of doxygen without changing it's o
 - No changes to the HTML structure of Doxygen required.
 - improved mobile usability.
 
-## Usage
+## Installation
 
-Add this repository as submodule. This way you can easily update the theme.
+Copy the `css` files from this repository into your project or add this repository as submodule and check out the latest release:
 
 ```bash
 git submodule add https://github.com/jothepro/doxygen-awesome-css.git
+cd doxygen-awesome-css
+git checkout <release-version> # e.g. v0.0.1
 ```
 
-Then make the option `HTML_EXTRA_STYLESHEET` in your Doxyfile point to the `doxygen-awesome.css` file in this repository.
+Then make the option `HTML_EXTRA_STYLESHEET` in your Doxyfile point to the `css` files:
 
 ```
 # Doxyfile
