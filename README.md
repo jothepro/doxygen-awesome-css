@@ -41,14 +41,14 @@ There is two variants of the theme.
 
 ![theme variations](img/theme-variations.drawio.svg)
 
-1. Base theme:
+1. **Base theme**:
 ```
 # Doxyfile
 GENERATE_TREEVIEW      = YES # optional. Also works without treeview
 HTML_EXTRA_STYLESHEET  = doxygen-awesome-theme/doxygen-awesome.css
 ```
 
-2. Sidebar-only theme (experimental):
+2. **Sidebar-only theme** (experimental):
 ```
 # Doxyfile
 GENERATE_TREEVIEW      = YES # required!
@@ -80,9 +80,9 @@ If you miss a configuration option or find a bug, please consider [opening an is
 | **Color Scheme** | | |
 | `--primary-color` | Primary theme color | <span style="background:#1982d2;color:white">#1982d2</span> |
 | `--primary-dark-color` | Dark primary color for accents | <span style="background:#00559f;color:white">#00559f</span> |
-| `--primary-light-color` | Light primary color| <span style="background:#7aabd6">#7aabd6</span> |
-| `--primary-lighter-color` | Extra light primary color. Used for `memitem` focus shadow | <span style="background:#cae1f1">#cae1f1</span> |
-|  `--primary-lightest-color` | Super light primary color. Used for `memitem` focus shadow | <span style="background:#e9f1f8">#e9f1f8</span> |
+| `--primary-light-color` | Light primary color| <span style="background:#7aabd6;color:black">#7aabd6</span> |
+| `--primary-lighter-color` | Extra light primary color. Used for `memitem` focus shadow | <span style="background:#cae1f1;color:black">#cae1f1</span> |
+|  `--primary-lightest-color` | Super light primary color. Used for `memitem` focus shadow | <span style="background:#e9f1f8;color:black">#e9f1f8</span> |
 
 
 ## Credits

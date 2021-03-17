@@ -114,8 +114,44 @@
 
 }
 
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #00559f;
+        --primary-dark-color: #1982d2;
+        --primary-light-color: #4779ac;
+        --primary-lighter-color: #191e21;
+        --primary-lightest-color: #191a1c;
+
+        --page-background-color: #1C1D1F;
+        --page-foreground-color: #d2dbde;
+        --separator-color: #000000;
+        --side-nav-background: #252628;
+
+        --code-background: #2a2c2f;
+
+        --tablehead-background: #2a2c2f;
+
+        --blockquote-background: #1f2022;
+        --blockquote-foreground: #77848a;
+
+        --warning-color: #b61825;
+        --warning-color-dark: #510a02;
+        --warning-color-darker: #f5b1aa;
+        --note-color: rgb(255, 183, 0);
+        --note-color-dark: #9f7300;
+        --note-color-darker: #fff6df;
+        --deprecated-color: rgb(88, 90, 96);
+        --deprecated-color-dark: #262e37;
+        --deprecated-color-darker: #a0a5b0;
+        --bug-color: rgb(248, 113, 0);
+        --bug-color-dark: #812a00;
+        --bug-color-darker: #ffd3be;
+    }
+}
+
 body {
     color: var(--page-foreground-color);
+    background-color: var(--page-background-color);
     font-size: var(--page-font-size);
 }
 
@@ -296,6 +332,10 @@ a {
     height: calc(var(--searchbar-height) - 2px);
     background: var(--searchbar-background);
     width: calc(var(--searchbar-width) - 60px);
+}
+
+.MSearchBoxActive #MSearchField {
+    color: var(--searchbar-foreground);
 }
 
 #MSearchSelect {
@@ -504,6 +544,14 @@ div.header .summary {
     padding: 0 var(--spacing-medium);
 }
 
+td.memSeparator {
+    border-color: var(--separator-color);
+}
+
+.mdescLeft, .mdescRight, .memItemLeft, .memItemRight, .memTemplItemLeft, .memTemplItemRight, .memTemplParams {
+    background: var(--code-background);
+}
+
 span.mlabel {
     background: var(--primary-color);
     border: none;
@@ -535,6 +583,9 @@ blockquote {
 
 blockquote p {
     margin: var(--spacing-small) 0 var(--spacing-medium) 0;
+}
+.paramname {
+    color: var(--primary-dark-color);
 }
 
 .glow {
@@ -681,6 +732,7 @@ div.memdoc, div.memproto, h2.memtitle {
 
 div.memdoc {
     padding: 0 var(--spacing-medium);
+    background: var(--page-background-color);
 }
 
 h2.memtitle, div.memitem {
@@ -735,6 +787,7 @@ div.memtitle {
 
 div.memproto table.memname {
     font-family: monospace, fixed;
+    color: var(--page-foreground-color);
 }
 
 @media screen and (max-width: 767px) {
@@ -759,15 +812,24 @@ dl.reflist {
 }
 
 
-dl.reflist dt {
-    background: var(--code-background);
-}
-
 dl.reflist dt, dl.reflist dd {
     box-shadow: none;
+    text-shadow: none;
     background-image: none;
     border: none;
     padding: 12px;
+}
+
+
+dl.reflist dt {
+    background: var(--code-background);
+    border-bottom: 1px solid var(--separator-color);
+    color: var(--page-foreground-color)
+}
+
+
+dl.reflist dd {
+    background: none;
 }
 
 /*
@@ -775,8 +837,6 @@ table
  */
 
 table.markdownTable {
-    border-radius: var(--border-radius-small);
-    overflow: hidden;
     width: 100%;
 }
 
@@ -883,6 +943,11 @@ address.footer {
     position: relative;
 }
 
+.navpath li.navelem a {
+    text-shadow: none;
+    color: var(--primary-dark-color)
+}
+
 #nav-path li.navelem:after {
     content: '>';
     font-size: 62px;
@@ -894,6 +959,6 @@ address.footer {
     right: -10px;
     bottom: 0;
     transform: scaleX(.4);
-    text-shadow: 4px 0 0 var(--separator-color), 12px 0 5px #e7e7e7;
-    color: white;
+    text-shadow: 4px 0 0 var(--separator-color), 12px 0 5px rgba(0,0,0,0.15);
+    color: var(--page-background-color);
 }
