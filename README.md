@@ -8,7 +8,7 @@
 
 I really like how the doxygen html-documentation is structured! But IMHO it looks a bit outdated.
 
-This theme is an attemt to update the visuals of doxygen without changing it's overall layout.
+This theme is an attemt to update the visuals of doxygen without changing it's overall layout too much.
 
 ## Features
 
@@ -22,7 +22,7 @@ This theme is an attemt to update the visuals of doxygen without changing it's o
 Add this repository as submodule. This way you can easily update the theme.
 
 ```bash
-git add submodule https://github.com/jothepro/doxygen-awesome-css.git
+git submodule add https://github.com/jothepro/doxygen-awesome-css.git
 ```
 
 Then make the option `HTML_EXTRA_STYLESHEET` in your Doxyfile point to the `doxygen-awesome.css` file in this repository.
