@@ -91,4 +91,4 @@ If you miss a configuration option or find a bug, please consider [opening an is
 
 ## Credits
 
-This theme is heavily inspired by the awesome design of the [vuepress](https://vuepress.vuejs.org/) static site generator default theme!
+This theme is heavily inspired by the beautiful [vuepress](https://vuepress.vuejs.org/) static site generator default theme!
