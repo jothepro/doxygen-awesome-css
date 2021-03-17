@@ -14,11 +14,12 @@ This theme is an attemt to update the visuals of doxygen without changing it's o
 
 ## Features
 
-- Clean, modern design.
-- Heavily customizable by changing just CSS-variables.
-- No changes to the HTML structure of Doxygen required.
-- improved mobile usability.
-
+- 🌈 Clean, modern design.
+- 🚀 Heavily customizable by changing just CSS-variables.
+- 🧩 No changes to the HTML structure of Doxygen required.
+- 📱 improved mobile usability.
+- 🌘 dark mode support!
+ 
 ## Installation
 
 Copy the `css` files from this repository into your project or add this repository as submodule and check out the latest release:
