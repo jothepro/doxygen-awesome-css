@@ -1,24 +1,49 @@
 :root {
-    --primary-bg-color: #1982d2;
+    /* primary theme color. This will affect the entire websites color scheme: links, arrows, labels, ... */
+    --primary-color: #1982d2;
     --primary-dark-color: #00559f;
     --primary-light-color: #7aabd6;
     --primary-lighter-color: #cae1f1;
     --primary-lightest-color: #e9f1f8;
-    --primary-bg-fg-color: white;
+
+    /* page base colors */
+    --page-background-color: white;
+    --page-foreground-color: #2c3e50;
+
+    /* color for all separators on the website: hr, borders, ... */
+    --separator-color: #dedede;
+
+    /* border radius for all rounded components. Will affect many components, like dropdowns, memitems, codeblocks, ... */
     --border-radius-large: 8px;
     --border-radius-small: 4px;
     --border-radius-medium: 6px;
-    --separator-color: #dedede;
-    --page-bg-color: white;
-    --page-fg-color: #2c3e50;
-    --page-fg-color-lighter: #545454;
-    --page-font-size: 15.6px;
-    --navigation-font-size: 14.4px;
 
-    --page-line-height: 22px;
+    /* default spacings. Most compontest reference these values for spacing, to provide uniform spacing on the page */
     --spacing-small: 5px;
     --spacing-medium: 10px;
     --spacing-large: 16px;
+
+    /* default box shadow used for raising an element above the normal content. Used in dropdowns, Searchresult, ... */
+    --box-shadow: 0 2px 10px 0 rgba(0,0,0,.1);
+
+    /* font-families. will affect all text on the website
+     * font-family: the normal font for text, headlines, menus
+     * font-family-monospace: used for preformatted text in memtitle, code, fragments
+     */
+    --font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+    --font-family-monospace: source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace;
+
+    /* font sizes */
+    --page-font-size: 15.6px;
+    --navigation-font-size: 14.4px;
+    --code-font-size: 14.4px; /* affects code, fragment */
+    --title-font-size: 22px;
+
+    /* content text properties. These only affect the page content, not the navigation or any other ui elements */
+    --content-line-height: 27px;
+    --content-maxwidth: 900px;
+
+    /* colors for various content boxes: @warning, @note, @deprecated @bug */
     --warning-color: #fca49b;
     --warning-color-dark: #b61825;
     --warning-color-darker: #75070f;
@@ -32,31 +57,46 @@
     --bug-color-dark: #a53a00;
     --bug-color-darker: #5b1d00;
 
-    --box-shadow: 0 2px 10px 0 rgba(0,0,0,.1);
+    /* blockquote colors */
+    --blockquote-background: #f5f5f5;
+    --blockquote-foreground: #727272;
+
+    /* table colors */
+    --tablehead-background: #f1f1f1;
+    --tablehead-foreground: var(--page-foreground-color);
+
+    /* menu-display: block | none
+     * Visibility of the top navigation on screens >= 768px. On smaller screen the menu is always visible.
+     * `GENERATE_TREEVIEW` MUST be enabled!
+     */
+    --menu-display: block;
+
+    --menu-focus-foreground: var(--page-background-color);
+    --menu-focus-background: var(--primary-color);
 
 
+    --header-background: var(--page-background-color);
+    --header-foreground: var(--page-foreground-color);
 
-    --menu-focus-foreground: var(--page-bg-color);
-    --menu-focus-background: var(--primary-dark-color);
+    /* searchbar colors */
+    --searchbar-background: var(--page-background-color);
+    --searchbar-foreground: var(--page-foreground-color);
 
-    --title-font-size: 18px;
-    --header-background: var(--primary-bg-color);
-    --header-foreground: var(--page-bg-color);
-
-    --searchbar-background: var(--page-bg-color);
-    --searchbar-foreground: var(--page-fg-color);
-    --searchbar-height: 36px;
+    /* searchbar size
+     * (`searchbar-width` is only applied on screens >= 768px.
+     * on smaller screens the searchbar will always fill the entire screen width) */
+    --searchbar-height: 33px;
     --searchbar-width: 210px;
 
-    --content-maxwidth: 800px;
-
-    --code-font-size: 14.4px;
+    /* code block colors */
     --code-background: #f5f5f5;
-    --code-foreground: var(--page-fg-color);
+    --code-foreground: var(--page-foreground-color);
 
+    /* fragment colors */
     --fragment-background: #282c34;
     --fragment-foreground: #fff;
     --fragment-keyword: #cc99cd;
+    --fragment-keywordtype: #ab99cd;
     --fragment-token: #7ec699;
     --fragment-comment: #999;
     --fragment-link: #98c0e3;
@@ -64,22 +104,28 @@
     --fragment-linenumber-color: #ccc;
     --fragment-linenumber-background: #35393c;
 
+    /* sidebar navigation (treeview) colors */
+    --side-nav-background: var(--page-background-color);
+    --side-nav-foreground: var(--page-foreground-color);
+    --side-nav-arrow-color: var(--page-background-color);
+
+    /* height of an item in any tree / collapsable table */
     --tree-item-height: 30px;
-    --side-nav-background: var(--page-bg-color);
-    --side-nav-foreground: var(--page-fg-color);
-    --font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
-    --font-family-monospace: source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace;;
 
 }
 
 body {
-    color: var(--page-fg-color);
+    color: var(--page-foreground-color);
     font-size: var(--page-font-size);
-    line-height: var(--page-line-height);
 }
 
 body, table, div, p, dl, #nav-tree .label, .title, .sm-dox a, .sm-dox a:hover, #projectname, .SelectItem, #MSearchField, .navpath li.navelem a, .navpath li.navelem a:hover {
     font-family: var(--font-family);
+}
+
+h1, h2, h3, h4, h5 {
+    margin-top: .9em;
+    font-weight: 600;
 }
 
 p, div, table, dl {
@@ -114,7 +160,7 @@ a {
 
 #titlearea {
     width: auto;
-    padding: var(--spacing-medium);
+    padding: var(--spacing-medium) var(--spacing-large);
     background: none;
     color: var(--header-foreground);
     border-bottom: none;
@@ -127,6 +173,16 @@ a {
 #projectname {
     font-size: var(--title-font-size);
     font-weight: 600;
+}
+
+#projectnumber {
+    font-family: inherit;
+    font-size: 60%;
+}
+
+#projectbrief {
+    font-family: inherit;
+    font-size: 80%;
 }
 
 #projectlogo {
@@ -143,12 +199,18 @@ a {
     padding: 0;
 }
 
+@media screen and (min-width: 768px) {
+    .sm-dox li {
+        display: var(--menu-display);
+    }
+}
+
 .sm-dox ul {
-    background: var(--page-bg-color);
+    background: var(--page-background-color);
     box-shadow: var(--box-shadow);
     border: 1px solid var(--separator-color);
     border-radius: var(--border-radius-medium) !important;
-    padding: var(--spacing-small) 0;
+    padding: var(--spacing-small);
     animation: ease-out 150ms slideInMenu;
 }
 
@@ -165,8 +227,7 @@ a {
 }
 
 .sm-dox ul a {
-    color: var(--page-fg-color);
-    margin: 0 var(--spacing-small);
+    color: var(--page-foreground-color);
     font-size: var(--navigation-font-size);
 }
 
@@ -195,6 +256,19 @@ a {
     color: var(--menu-focus-foreground);
     border-radius: var(--border-radius-small) !important;
     font-size: var(--navigation-font-size);
+}
+
+@media screen and (max-width: 767px) {
+    .sm-dox a, .sm-dox a:hover, .sm-dox a:active, .sm-dox a:focus{
+        line-height: 2em;
+    }
+
+    .sm-dox a span.sub-arrow {
+        right: 4px;
+        width: 20px;
+        height: 20px;
+        top: 18px;
+    }
 }
 
 
@@ -261,11 +335,11 @@ a {
     transform: translate(0, 20px);
     box-shadow: var(--box-shadow);
     animation: ease-out 280ms slideInSearchResults;
-    background: var(--page-bg-color);
+    background: var(--page-background-color);
 }
 
 iframe#MSearchResults {
-    background: var(--page-bg-color);
+    background: var(--page-background-color);
     margin: 4px;
 }
 
@@ -273,12 +347,12 @@ iframe#MSearchResults {
     border: 1px solid var(--separator-color);
     border-radius: var(--border-radius-medium);
     box-shadow: var(--box-shadow);
-    background: var(--page-bg-color);
+    background: var(--page-background-color);
 }
 
 #MSearchSelectWindow a.SelectItem {
     font-size: var(--navigation-font-size);
-    line-height: var(--page-line-height);
+    line-height: var(--content-line-height);
     margin: 0 var(--spacing-small);
     border-radius: var(--border-radius-small);
 }
@@ -339,6 +413,7 @@ iframe#MSearchResults {
 
 #nav-tree {
     background: transparent;
+    padding: var(--spacing-medium) 0;
 }
 
 #nav-tree .label {
@@ -370,7 +445,14 @@ iframe#MSearchResults {
     font-family: serif;
     height: auto;
     text-align: right;
-    color: var(--primary-light-color);
+}
+
+#nav-tree .arrow {
+    opacity: 0;
+}
+
+#nav-tree div.item:hover .arrow {
+    opacity: 1;
 }
 
 #nav-tree .selected a {
@@ -389,7 +471,7 @@ iframe#MSearchResults {
 
 div.header {
     border-bottom: 1px solid var(--separator-color);
-    background-color: var(--page-bg-color);
+    background-color: var(--page-background-color);
     background-image: none;
 }
 
@@ -411,7 +493,7 @@ div.headertitle {
 
 div.header .title {
     font-weight: 600;
-    font-size: 180%;
+    font-size: 210%;
     padding: var(--spacing-medium);
 }
 
@@ -422,13 +504,41 @@ div.header .summary {
     padding: 0 var(--spacing-medium);
 }
 
+span.mlabel {
+    background: var(--primary-color);
+    border: none;
+    padding: 4px 9px;
+    border-radius: 12px;
+    margin-right: 10px;
+}
+
 div.contents {
     padding: 0 var(--spacing-medium);
 }
 
+div.contents p, div.contents li {
+    line-height: var(--content-line-height);
+}
+
 h2.groupheader {
     border-bottom: 1px solid var(--separator-color);
-    color: var(--page-fg-color);
+    color: var(--page-foreground-color);
+}
+
+blockquote {
+    padding: var(--spacing-small) var(--spacing-medium);
+    background: var(--blockquote-background);
+    color: var(--blockquote-foreground);
+    border-left: 2px solid var(--blockquote-foreground);
+    margin: 0;
+}
+
+blockquote p {
+    margin: var(--spacing-small) 0 var(--spacing-medium) 0;
+}
+
+.glow {
+    text-shadow: 0 0 15px var(--primary-light-color) !important;
 }
 
 /*
@@ -442,9 +552,10 @@ code, div.fragment {
 }
 
 code {
+    display: inline;
     background: var(--code-background);
     color: var(--code-foreground);
-    padding: 6px 10px;
+    padding: 2px 6px;
 }
 
 div.fragment {
@@ -462,6 +573,10 @@ code, code a, div.fragment, div.fragment .line, div.fragment span {
 
 div.fragment span.keyword {
     color: var(--fragment-keyword);
+}
+
+div.fragment span.keywordtype {
+    color: var(--fragment-keywordtype);
 }
 
 div.fragment span.stringliteral {
@@ -504,7 +619,7 @@ dl warning, attention, note, deprecated, bug, ...
 dl.warning, dl.attention, dl.note, dl.deprecated, dl.bug {
     padding: 12px;
     margin: var(--spacing-medium) 0;
-    color: var(--page-bg-color);
+    color: var(--page-background-color);
 
     margin-left: 0;
     border-radius: var(--border-radius-small);
@@ -585,7 +700,7 @@ h2.memtitle {
     border-top-right-radius: var(--border-radius-medium);
 }
 
-a:target + h2.memtitle, a:target ~ div.memitem {
+a:target + h2.memtitle, a:target + h2.memtitle + div.memitem {
     border-color: var(--primary-light-color);
 }
 
@@ -593,7 +708,7 @@ a:target + h2.memtitle {
     box-shadow: -3px -3px 3px 0 var(--primary-lightest-color), 3px -3px 3px 0 var(--primary-lightest-color);
 }
 
-a:target ~ div.memitem {
+a:target + h2.memtitle + div.memitem {
     box-shadow: 0 0px 10px 0 var(--primary-lighter-color);
 }
 
@@ -622,6 +737,16 @@ div.memproto table.memname {
     font-family: monospace, fixed;
 }
 
+@media screen and (max-width: 767px) {
+    .memname td {
+        display: block;
+    }
+
+    table.mlabels .mlabels-left, table.mlabels .mlabels-right {
+        display: block;
+    }
+}
+
 /*
 reflist
  */
@@ -646,6 +771,27 @@ dl.reflist dt, dl.reflist dd {
 }
 
 /*
+table
+ */
+
+table.markdownTable {
+    border-radius: var(--border-radius-small);
+    overflow: hidden;
+    width: 100%;
+}
+
+th.markdownTableHeadLeft, th.markdownTableHeadRight, th.markdownTableHeadCenter, th.markdownTableHeadNone {
+    background: var(--tablehead-background);
+    color: var(--tablehead-foreground);
+    font-weight: 600;
+}
+
+table.markdownTable td, table.markdownTable th {
+    border: 1px solid var(--separator-color);
+    padding: var(--spacing-small) var(--spacing-medium) ;
+}
+
+/*
 hr
  */
 
@@ -658,6 +804,10 @@ hr {
 .contents hr {
     box-shadow: var(--content-maxwidth) 0 0 0 var(--separator-color), calc(0px - var(--content-maxwidth)) 0 0 0 var(--separator-color);
 
+}
+
+.contents img {
+    max-width: 100%;
 }
 
 /*
@@ -713,7 +863,7 @@ table.directory {
 
 #nav-path ul {
     background-image: none;
-    background: var(--page-bg-color);
+    background: var(--page-background-color);
     border: none;
     border-top: 1px solid var(--separator-color);
     border-bottom: 1px solid var(--separator-color);

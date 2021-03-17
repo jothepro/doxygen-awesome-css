@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Doxygen Awesome CSS: doxygen-awesome-css</title>
+<title>Doxygen Awesome CSS: Doxygen Awesome CSS</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -18,6 +18,7 @@
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -25,10 +26,12 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.drawio.svg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Doxygen Awesome CSS
    &#160;<span id="projectnumber">v0.1.0</span>
    </div>
+   <div id="projectbrief">Modern Doxygen theme</div>
   </td>
  </tr>
  </tbody>
@@ -84,26 +87,74 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">doxygen-awesome-css </div>  </div>
+<div class="title">Doxygen Awesome CSS </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md_README"></a> Custom CSS for doxygen html-documentation with lot's of customization parameters.</p>
-<h1><a class="anchor" id="autotoc_md3"></a>
+<div class="textblock"><p><a class="anchor" id="md_README"></a> <img src="img/screenshot.png" alt="screenshot" class="inline"/></p>
+<p><b>Doxygen Awesome CSS</b> is a custom CSS for doxygen html-documentation with lots of customization parameters.</p>
+<h1><a class="anchor" id="autotoc_md6"></a>
 Motivation</h1>
-<p>I really like how the doxygen html-documentation is structured. But IMHO it looks a bit outdated.</p>
-<h1><a class="anchor" id="autotoc_md4"></a>
+<p>I really like how the doxygen html-documentation is structured! But IMHO it looks a bit outdated.</p>
+<p>This theme is an attemt to update the visuals of doxygen without changing it's overall layout.</p>
+<h1><a class="anchor" id="autotoc_md7"></a>
+Features</h1>
+<ul>
+<li>Clean, modern design.</li>
+<li>Heavily customizable by changing just CSS-variables.</li>
+<li>No changes to the HTML structure of Doxygen required.</li>
+<li>improved mobile usability.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md8"></a>
 Usage</h1>
-<p>Make the option <code>HTML_EXTRA_STYLESHEET</code> in your Doxyfile point to the <code>doxygen-awesome.css</code> file in this repository.</p>
-<p>It is recommended to add this repository as submodule. This way you can easily update the theme.</p>
+<p>Add this repository as submodule. This way you can easily update the theme.</p>
 <div class="fragment"><div class="line">git add submodule https://github.com/jothepro/doxygen-awesome-css.git</div>
-</div><!-- fragment --><div class="fragment"><div class="line"># Doxyfile</div>
+</div><!-- fragment --><p>Then make the option <code>HTML_EXTRA_STYLESHEET</code> in your Doxyfile point to the <code>doxygen-awesome.css</code> file in this repository.</p>
+<div class="fragment"><div class="line"># Doxyfile</div>
 <div class="line"># ...</div>
 <div class="line">HTML_EXTRA_STYLESHEET  = doxygen-awesome-theme/doxygen-awesome.css</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md5"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md9"></a>
+Variants</h1>
+<p>There is two variants of the theme.</p>
+<p><img src="img/theme-variations.drawio.svg" alt="theme variations" style="pointer-events: none;" class="inline"/></p>
+<ol type="1">
+<li>Base theme: <div class="fragment"><div class="line"># Doxyfile</div>
+<div class="line">GENERATE_TREEVIEW      = YES # optional. Also works without treeview</div>
+<div class="line">HTML_EXTRA_STYLESHEET  = doxygen-awesome-theme/doxygen-awesome.css</div>
+</div><!-- fragment --></li>
+<li>Sidebar-only theme (experimental): <div class="fragment"><div class="line"># Doxyfile</div>
+<div class="line">GENERATE_TREEVIEW      = YES # required!</div>
+<div class="line">HTML_EXTRA_STYLESHEET  = doxygen-awesome-theme/doxygen-awesome.css doxygen-awesome-sidenav.css</div>
+</div><!-- fragment --></li>
+</ol>
+<h1><a class="anchor" id="autotoc_md10"></a>
 Example</h1>
-<h1><a class="anchor" id="autotoc_md6"></a>
+<ul>
+<li>Documentation of this repository: <a href="https://jothepro.github.io/doxygen-awesome-css/">jothepro.github.io/doxygen-awesome-css</a> (uses the sidebar-only theme)</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md11"></a>
 Configuration</h1>
-<p>The theme is highly customizable because lot of things are parameterized with CSS variables. </p>
+<p>The theme is highly customizable because lot of things are parameterized with CSS variables. The following list of parameters is not complete! You can easily modify all variables in with the developer tools of your browser to find out what they do.</p>
+<p>To customize the existing theme, add your own <code>custom.css</code> and overwrite the variables there: </p><div class="fragment"><div class="line">HTML_EXTRA_STYLESHEET  = doxygen-awesome-theme/doxygen-awesome.css custom.css</div>
+</div><!-- fragment --><p>If you miss a configuration option or find a bug, please consider <a href="https://github.com/jothepro/doxygen-awesome-css/issues">opening an issue</a>!</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Parameter   </th><th class="markdownTableHeadNone">Description   </th><th class="markdownTableHeadNone">Default    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>Color Scheme</b>   </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>--primary-color</code>   </td><td class="markdownTableBodyNone">Primary theme color   </td><td class="markdownTableBodyNone"><span style="background:#1982d2;color:white">#1982d2</span>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>--primary-dark-color</code>   </td><td class="markdownTableBodyNone">Dark primary color for accents   </td><td class="markdownTableBodyNone"><span style="background:#00559f;color:white">#00559f</span>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>--primary-light-color</code>   </td><td class="markdownTableBodyNone">Light primary color   </td><td class="markdownTableBodyNone"><span style="background:#7aabd6">#7aabd6</span>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>--primary-lighter-color</code>   </td><td class="markdownTableBodyNone">Extra light primary color. Used for <code>memitem</code> focus shadow   </td><td class="markdownTableBodyNone"><span style="background:#cae1f1">#cae1f1</span>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>--primary-lightest-color</code>   </td><td class="markdownTableBodyNone">Super light primary color. Used for <code>memitem</code> focus shadow   </td><td class="markdownTableBodyNone"><span style="background:#e9f1f8">#e9f1f8</span>   </td></tr>
+</table>
+<h1><a class="anchor" id="autotoc_md12"></a>
+Credits</h1>
+<p>This theme is heavily inspired by the awesome design of the <a href="https://vuepress.vuejs.org/">vuepress</a> static site generator default theme! </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
