@@ -404,6 +404,7 @@ iframe#MSearchResults {
     line-height: var(--content-line-height);
     margin: 0 var(--spacing-small);
     border-radius: var(--border-radius-small);
+    color: var(--page-foreground-color);
 }
 
 #MSearchSelectWindow a.SelectItem:hover {
@@ -599,6 +600,10 @@ blockquote p {
 
 .glow {
     text-shadow: 0 0 15px var(--primary-light-color) !important;
+}
+
+.alphachar a {
+    color: var(--page-foreground-color);
 }
 
 /*
