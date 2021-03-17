@@ -4,50 +4,75 @@
 namespace MyLibrary {
 
 /**
- * class documentation
+ * Example class to demonstrate the features of the custom CSS.
+ *
+ * @author jothepro
+ *
  */
 class Example {
 public:
     /**
      * doxygen test documentation
      *
-     * # headline
+     * @param test this is the only parameter of this test function. It does nothing!
      *
-     * some test `with code`.
+     * # Supported elements
      *
-     * ```javascript
-     * function() {
-     *   return "test";
-     * }
+     * These elements have been tested with the custom CSS.
+     *
+     * ## Lists
+     *
+     * - element 1
+     * - element 2
+     *
+     * 1. element 1
+     * 2. element 2
+     *
+     * ## Quotes
+     *
+     * > This is an **awesome** design...
+     * >
+     * > ...do you agree?
+     * *- jothepro*
+     *
+     * ## Code block
+     *
+     * ```
+     * code within md fences (```)
      * ```
      *
-     * ## second headline
-     *
-     * - this is
-     * - a list
-     * - of things
-     *
-     * @warning this is only for demonstration purposes
-     *
-     * @note this is a note
-     *
-     * @author jothepro
-     *
-     * @bug this sometimes not works
-     *
-     * @cite said jesus
-     *
-     * @deprecated dis not supported
-     *
-     * @param test this is a test param
-     *
      * @code{.cpp}
-     * // comment
+     * // code within @code block
      * auto example = std::make_shared<Example>(5);
      * example->test("test");
      * @endcode
+     *
+     * Inline `code` elements in a text. Lorem Ipsum set dolor. This also works within multiline text and does not break the `layout`.
+     *
+     *
+     * ## special hints
+     *
+     * @warning this is a warning only for demonstration purposes
+     *
+     * @note this is a note to show that notes work. They can also include `code`:
+     * @code{.c}
+     * void this_looks_awesome();
+     * @endcode
+     *
+     * @bug this css has no bugs, it is perfect... NOT!
+     *
+     * @deprecated None of this will be deprecated, because it's beautiful!
+     *
+     *
+     *
      */
     std::string test(const std::string& test);
+
+    virtual int virtualfunc() = 0;
+
+    static bool staticfunc();
+
+
 };
 
 }
