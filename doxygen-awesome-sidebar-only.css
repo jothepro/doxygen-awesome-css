@@ -51,7 +51,7 @@
 
     #doc-content {
         height: 100vh !important;
-        padding-bottom: 50px;
+        padding-bottom: calc(3 * var(--spacing-large));
         padding-top: calc(var(--top-height) - 80px);
         box-sizing: border-box;
     }
