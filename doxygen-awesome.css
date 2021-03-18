@@ -1007,14 +1007,14 @@ li.navelem {
 }
 
 #nav-path li.navelem:after {
-    content: '►';
+    content: '▶';
     font-size: 80px;
-    line-height: 16px;
+    line-height: 18px;
     font-family: var(--font-family-monospace);
     font-weight: 800;
     position: absolute;
     top: 0;
-    right: -18px;
+    right: -20px;
     bottom: 0;
     transform: scaleX(.25);
     text-shadow: 4px 0 0 var(--separator-color), 12px 0 5px rgba(0,0,0,0.15);
