@@ -1013,19 +1013,19 @@ li.navelem:first-child {
 }
 
 #nav-path li.navelem:after {
-    content: '▶';
+    content: '◆';
     display: inline-block;
-    font-size: 80px;
-    margin-top: -15px;
-    font-family: var(--font-family-monospace);
+    font-size: 40px;
+    margin-top: -4px;
+    margin-left: -4px;
     font-weight: 800;
-    transform: scaleX(.25);
-    text-shadow: 4px 0 0 var(--separator-color), 12px 0 5px rgba(0,0,0,0.15);
+    transform: scaleX(.4);
+    text-shadow: 2px 0 0 var(--separator-color), 6px 0 5px rgba(0,0,0,0.15);
     color: var(--page-background-color);
 }
 
 @media (prefers-color-scheme: dark) {
     #nav-path li.navelem:after {
-        text-shadow: 4px 0 0 var(--separator-color), 12px 0 5px rgba(0,0,0,0.4);
+        text-shadow: 2px 0 0 var(--separator-color), 6px 0 5px rgba(0,0,0,0.4);
     }
 }
