@@ -122,6 +122,8 @@
         --primary-lighter-color: #191e21;
         --primary-lightest-color: #191a1c;
 
+        --box-shadow: 0 2px 10px 0 rgba(0,0,0,.35);
+
         --page-background-color: #1C1D1F;
         --page-foreground-color: #d2dbde;
         --separator-color: #000000;
@@ -155,7 +157,7 @@ body {
     font-size: var(--page-font-size);
 }
 
-body, table, div, p, dl, #nav-tree .label, .title, .sm-dox a, .sm-dox a:hover, #projectname, .SelectItem, #MSearchField, .navpath li.navelem a, .navpath li.navelem a:hover {
+body, table, div, p, dl, #nav-tree .label, .title, .sm-dox a, .sm-dox a:hover, .sm-dox a:focus, #projectname, .SelectItem, #MSearchField, .navpath li.navelem a, .navpath li.navelem a:hover {
     font-family: var(--font-family);
 }
 
@@ -242,10 +244,35 @@ a {
     padding: 0;
 }
 
+@media screen and (max-width: 767px) {
+    .sm-dox a span.sub-arrow {
+        background: var(--code-background);
+    }
+}
+
+
 @media screen and (min-width: 768px) {
     .sm-dox li {
         display: var(--menu-display);
     }
+
+    .sm-dox a span.sub-arrow {
+        border-color: var(--header-foreground) transparent transparent transparent;
+    }
+
+    .sm-dox a:hover span.sub-arrow {
+        border-color: var(--menu-focus-foreground) transparent transparent transparent;
+    }
+
+    .sm-dox ul a span.sub-arrow {
+        border-color: transparent transparent transparent var(--header-foreground);
+    }
+
+    .sm-dox ul a:hover span.sub-arrow {
+        border-color: transparent transparent transparent var(--menu-focus-foreground);
+    }
+
+
 }
 
 .sm-dox ul {
@@ -283,11 +310,11 @@ a {
     border-bottom-color: var(--separator-color) !important;
 }
 
-.sm-dox ul a:hover {
+.sm-dox ul a:hover, .sm-dox ul a:active, .sm-dox ul a:focus {
     font-size: var(--navigation-font-size);
     color: var(--menu-focus-foreground);
     text-shadow: none;
-    background: var(--menu-focus-background);
+    background-color: var(--menu-focus-background);
     border-radius: var(--border-radius-small) !important;
 }
 
@@ -308,16 +335,6 @@ a {
     color: var(--menu-focus-foreground);
     border-radius: var(--border-radius-small) !important;
     font-size: var(--navigation-font-size);
-}
-
-@media screen and (max-width: 767px) {
-
-    .sm-dox a span.sub-arrow {
-        right: 4px;
-        width: 20px;
-        height: 20px;
-        top: 18px;
-    }
 }
 
 
@@ -479,6 +496,7 @@ iframe#MSearchResults {
     #doc-content {
         margin-left: 0 !important;
         height: auto !important;
+        padding-bottom: calc(2 * var(--spacing-large));
     }
 }
 
@@ -551,6 +569,7 @@ div.contents, div.header .title, div.header .summary {
 }
 
 div.contents, div.header .title  {
+    line-height: initial;
     margin: calc(var(--spacing-medium) + .2em) auto var(--spacing-medium) auto;
 }
 
@@ -983,15 +1002,19 @@ address.footer {
     color: var(--primary-dark-color)
 }
 
+li.navelem {
+    padding: 0 var(--spacing-large);
+}
+
 #nav-path li.navelem:after {
-    content: '>';
+    content: '►';
     font-size: 62px;
     line-height: 33px;
     font-family: "courier new";
     font-weight: 800;
     position: absolute;
     top: 0;
-    right: -10px;
+    right: -15px;
     bottom: 0;
     transform: scaleX(.4);
     text-shadow: 4px 0 0 var(--separator-color), 12px 0 5px rgba(0,0,0,0.15);
