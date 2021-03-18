@@ -1005,24 +1005,37 @@ address.footer {
 }
 
 li.navelem {
-    padding: 0 0 0 var(--spacing-small);
+    padding: 0;
+    margin-left: -8px;
 }
 
 li.navelem:first-child {
-    padding: 0 0 0 var(--spacing-large);
+    margin-left: var(--spacing-large);
+}
+
+li.navelem:first-child:before {
+    display: none;
 }
 
 #nav-path li.navelem:after {
-    content: '◆';
-    display: inline-block;
-    font-size: 54px;
-    font-family: var(--font-family-monospace);
-    margin-top: -11px;
-    margin-left: -5px;
-    font-weight: 800;
-    transform: scaleX(.4);
-    text-shadow: 3px 0 0 var(--separator-color), 8px 0 6px rgba(0,0,0,0.15);
-    color: var(--page-background-color);
+    content: '';
+    border: 5px solid var(--page-background-color);
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    transform: scaleY(4.2);
+    z-index: 10;
+    margin-left: 6px;
+}
+
+#nav-path li.navelem:before {
+    content: '';
+    border: 5px solid var(--separator-color);
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    transform: scaleY(3.2);
+    margin-right: var(--spacing-small);
 }
 
 @media (prefers-color-scheme: dark) {
