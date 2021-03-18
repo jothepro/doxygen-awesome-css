@@ -1012,13 +1012,11 @@ li.navelem:first-child {
     padding: 0 0 0 var(--spacing-large);
 }
 
-
-
 #nav-path li.navelem:after {
     content: '▶';
     display: inline-block;
-    font-size: 50px;
-    margin-top: -10px;
+    font-size: 80px;
+    margin-top: -15px;
     font-family: var(--font-family-monospace);
     font-weight: 800;
     transform: scaleX(.25);
