@@ -994,28 +994,33 @@ address.footer {
 
 #nav-path li.navelem {
     background-image: none;
-    position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .navpath li.navelem a {
     text-shadow: none;
+    display: inline-block;
     color: var(--primary-dark-color)
 }
 
 li.navelem {
-    padding: 0 var(--spacing-large);
+    padding: 0 0 0 var(--spacing-small);
 }
+
+li.navelem:first-child {
+    padding: 0 0 0 var(--spacing-large);
+}
+
+
 
 #nav-path li.navelem:after {
     content: '▶';
-    font-size: 80px;
-    line-height: 18px;
+    display: inline-block;
+    font-size: 50px;
+    margin-top: -10px;
     font-family: var(--font-family-monospace);
     font-weight: 800;
-    position: absolute;
-    top: 0;
-    right: -20px;
-    bottom: 0;
     transform: scaleX(.25);
     text-shadow: 4px 0 0 var(--separator-color), 12px 0 5px rgba(0,0,0,0.15);
     color: var(--page-background-color);
