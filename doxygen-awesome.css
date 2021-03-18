@@ -1015,17 +1015,18 @@ li.navelem:first-child {
 #nav-path li.navelem:after {
     content: '◆';
     display: inline-block;
-    font-size: 40px;
-    margin-top: -4px;
-    margin-left: -4px;
+    font-size: 54px;
+    font-family: var(--font-family-monospace);
+    margin-top: -11px;
+    margin-left: -5px;
     font-weight: 800;
     transform: scaleX(.4);
-    text-shadow: 2px 0 0 var(--separator-color), 6px 0 5px rgba(0,0,0,0.15);
+    text-shadow: 3px 0 0 var(--separator-color), 8px 0 6px rgba(0,0,0,0.15);
     color: var(--page-background-color);
 }
 
 @media (prefers-color-scheme: dark) {
     #nav-path li.navelem:after {
-        text-shadow: 2px 0 0 var(--separator-color), 6px 0 5px rgba(0,0,0,0.4);
+        text-shadow: 3px 0 0 var(--separator-color), 8px 0 6px rgba(0,0,0,0.4);
     }
 }
