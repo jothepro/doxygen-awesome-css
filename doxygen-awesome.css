@@ -1008,15 +1008,21 @@ li.navelem {
 
 #nav-path li.navelem:after {
     content: '►';
-    font-size: 62px;
-    line-height: 33px;
-    font-family: "courier new";
+    font-size: 80px;
+    line-height: 16px;
+    font-family: var(--font-family-monospace);
     font-weight: 800;
     position: absolute;
     top: 0;
-    right: -15px;
+    right: -18px;
     bottom: 0;
-    transform: scaleX(.4);
+    transform: scaleX(.25);
     text-shadow: 4px 0 0 var(--separator-color), 12px 0 5px rgba(0,0,0,0.15);
     color: var(--page-background-color);
+}
+
+@media (prefers-color-scheme: dark) {
+    #nav-path li.navelem:after {
+        text-shadow: 4px 0 0 var(--separator-color), 12px 0 5px rgba(0,0,0,0.4);
+    }
 }
