@@ -69,6 +69,8 @@ HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css doxygen-awesome
 
 ## Configuration
 
+### CSS Variables
+
 This theme is highly customizable because a lot of things are parameterized with CSS variables. The following
 list of parameters is not complete! You can easily modify any variable with the developer tools of your browser to find
 out what it does.
@@ -94,9 +96,28 @@ HTML_EXTRA_STYLESHEET  = doxygen-awesome-theme/doxygen-awesome.css custom.css
 | `--border-radius-large`   | `8px`  |
 | `--border-radius-small`   | `4px`  |
 | `--border-radius-medium`  | `6px`  |
+| **Content Width**:<br>The content is centered and constraint in it's width. To make the content fill the whole page, set the variable to `auto`. ||
+| `--content-maxwidth`      | `900px` |
 | ...and many more                   ||
 
 If you miss a configuration option or find a bug, please consider [opening an issue](https://github.com/jothepro/doxygen-awesome-css/issues)!
+
+### Doxygen generator
+
+The theme overrides most colors with the `--primary-color-*` variables.
+
+But there is a few small images and graphics that the theme cannot adjust or replace. To make these blend in better with
+the rest, it is recommended to adjust the [doxygen color settings](https://www.doxygen.nl/manual/customize.html#minor_tweaks_colors) 
+to something that matches the chosen color-scheme.
+
+For the default color-scheme, these values work out quite well:
+
+```
+# Doxyfile
+HTML_COLORSTYLE_HUE    = 209
+HTML_COLORSTYLE_SAT    = 255
+HTML_COLORSTYLE_GAMMA  = 113
+```
 
 ## Browser support
 
