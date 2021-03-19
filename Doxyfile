@@ -32,7 +32,7 @@ DOXYFILE_ENCODING      = UTF-8
 # title of most generated pages and in a few other places.
 # The default value is: My Project.
 
-PROJECT_NAME           = "Doxygen Awesome CSS"
+PROJECT_NAME           = "Doxygen Awesome"
 
 # The PROJECT_NUMBER tag can be used to enter a project or revision number. This
 # could be handy for archiving the generated documentation or if some version
@@ -865,7 +865,8 @@ WARN_LOGFILE           =
 # Note: If this tag is empty the current directory is searched.
 
 INPUT                  = include \
-                         README.md
+                         README.md \
+                         docs/page.dox
 
 # This tag can be used to specify the character encoding of the source files
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding. Doxygen uses
@@ -1249,7 +1250,7 @@ HTML_FILE_EXTENSION    = .html
 # of the possible markers and block names see the documentation.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_HEADER            =
+HTML_HEADER            = docs/doxygen-custom/header.html
 
 # The HTML_FOOTER tag can be used to specify a user-defined HTML footer for each
 # generated HTML page. If the tag is left blank doxygen will generate a standard
@@ -1284,7 +1285,9 @@ HTML_STYLESHEET        =
 # list). For an example see the documentation.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_EXTRA_STYLESHEET  = doxygen-awesome.css doxygen-awesome-sidebar-only.css
+HTML_EXTRA_STYLESHEET  = doxygen-awesome.css \
+                         doxygen-awesome-sidebar-only.css \
+                         docs/doxygen-custom/custom.css
 
 # The HTML_EXTRA_FILES tag can be used to specify one or more extra images or
 # other source files which should be copied to the HTML output directory. Note
@@ -1600,7 +1603,7 @@ ENUM_VALUES_PER_LINE   = 4
 # Minimum value: 0, maximum value: 1500, default value: 250.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-TREEVIEW_WIDTH         = 400
+TREEVIEW_WIDTH         = 350
 
 # If the EXT_LINKS_IN_WINDOW option is set to YES, doxygen will open links to
 # external symbols imported via tag files in a separate window.

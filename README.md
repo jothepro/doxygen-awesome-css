@@ -1,10 +1,14 @@
-#  Doxygen Awesome CSS
+#  Doxygen Awesome
 
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/jothepro/doxygen-awesome-css)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/jothepro/doxygen-awesome-css)](https://github.com/jothepro/doxygen-awesome-css/releases/latest)
 
-![screenshot](img/screenshot.png)
+<div style="margin: -1% -4.4%;">
 
-**Doxygen Awesome CSS** is a custom CSS for doxygen html-documentation with lots of customization parameters.
+[![Screenshot of Doxygen Awesome CSS](img/screenshot.png)](https://jothepro.github.io/doxygen-awesome-css/)
+
+</div>
+
+**Doxygen Awesome** is a custom **CSS theme for doxygen** html-documentation with lots of customization parameters.
 
 ## Motivation
 
@@ -14,11 +18,12 @@ This theme is an attemt to update the visuals of doxygen without changing it's o
 
 ## Features
 
-- 🌈 Clean, modern design.
-- 🚀 Heavily customizable by changing just CSS-variables.
-- 🧩 No changes to the HTML structure of Doxygen required.
-- 📱 improved mobile usability.
-- 🌘 dark mode support!
+- 🌈 Clean, modern design
+- 🚀 Heavily customizable by adjusting CSS-variables
+- 🧩 No changes to the HTML structure of Doxygen required
+- 📱 Improved mobile usability
+- 🌘 Dark mode support!
+- 🥇 Works best with **doxygen 1.9.1**
  
 ## Installation
 
@@ -37,8 +42,6 @@ Then make the option `HTML_EXTRA_STYLESHEET` in your Doxyfile point to the `css`
 # ...
 HTML_EXTRA_STYLESHEET  = doxygen-awesome-theme/doxygen-awesome.css
 ```
-
-
 
 ## Variants
 
@@ -64,31 +67,36 @@ HTML_EXTRA_STYLESHEET  = doxygen-awesome-theme/doxygen-awesome.css doxygen-aweso
 
 - Documentation of this repository: [jothepro.github.io/doxygen-awesome-css](https://jothepro.github.io/doxygen-awesome-css/) (uses the sidebar-only theme)
 
-
-
-
 ## Configuration
 
-The theme is highly customizable because lot of things are parameterized with CSS variables. The following
-list of parameters is not complete! You can easily modify all variables in with the developer tools of your browser to find
-out what they do.
+This theme is highly customizable because a lot of things are parameterized with CSS variables. The following
+list of parameters is not complete! You can easily modify any variable with the developer tools of your browser to find
+out it does.
 
 To customize the existing theme, add your own `custom.css` and overwrite the variables there:
 ```
 HTML_EXTRA_STYLESHEET  = doxygen-awesome-theme/doxygen-awesome.css custom.css
 ```
 
+| Parameter                 | Default     |
+| :------------------------ | :---------- |
+| **Color Scheme**:<br>primary theme color. This will affect the entire websites color scheme: links, arrows, labels, ... ||
+| `--primary-color`         | <span style="background:#1982d2;color:white">#1982d2</span> |
+| `--primary-dark-color`    | <span style="background:#00559f;color:white">#00559f</span> |
+| `--primary-light-color`   | <span style="background:#7aabd6;color:black">#7aabd6</span> |
+| `--primary-lighter-color` | <span style="background:#cae1f1;color:black">#cae1f1</span> |
+| `--primary-lightest-color`| <span style="background:#e9f1f8;color:black">#e9f1f8</span> |
+| **Spacing:**<br>default spacings. Most compontest reference these values for spacing, to provide uniform spacing on the page. ||
+| `--spacing-small`         | `5px`  |
+| `--spacing-medium`        | `10px` |
+| `--spacing-large`         | `16px` |
+| **Border Radius**:<br>border radius for all rounded components. Will affect many components, like dropdowns, memitems, codeblocks, ...    ||
+| `--border-radius-large`   | `8px`  |
+| `--border-radius-small`   | `4px`  |
+| `--border-radius-medium`  | `6px`  |
+| ...and many more                   ||
+
 If you miss a configuration option or find a bug, please consider [opening an issue](https://github.com/jothepro/doxygen-awesome-css/issues)!
-
-| Parameter | Description | Default |
-| --------- | ----------- | ------- |
-| **Color Scheme** | | |
-| `--primary-color` | Primary theme color | <span style="background:#1982d2;color:white">#1982d2</span> |
-| `--primary-dark-color` | Dark primary color for accents | <span style="background:#00559f;color:white">#00559f</span> |
-| `--primary-light-color` | Light primary color| <span style="background:#7aabd6;color:black">#7aabd6</span> |
-| `--primary-lighter-color` | Extra light primary color. Used for `memitem` focus shadow | <span style="background:#cae1f1;color:black">#cae1f1</span> |
-|  `--primary-lightest-color` | Super light primary color. Used for `memitem` focus shadow | <span style="background:#e9f1f8;color:black">#e9f1f8</span> |
-
 
 ## Credits
 

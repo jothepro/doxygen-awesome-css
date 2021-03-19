@@ -18,7 +18,7 @@
     --border-radius-small: 4px;
     --border-radius-medium: 6px;
 
-    /* default spacings. Most compontest reference these values for spacing, to provide uniform spacing on the page */
+    /* default spacings. Most compontest reference these values for spacing, to provide uniform spacing on the page. */
     --spacing-small: 5px;
     --spacing-medium: 10px;
     --spacing-large: 16px;
@@ -164,6 +164,7 @@ body, table, div, p, dl, #nav-tree .label, .title, .sm-dox a, .sm-dox a:hover, .
 h1, h2, h3, h4, h5 {
     margin-top: .9em;
     font-weight: 600;
+    line-height: initial;
 }
 
 p, div, table, dl {
@@ -584,14 +585,14 @@ div.headertitle {
 div.header .title {
     font-weight: 600;
     font-size: 210%;
-    padding: var(--spacing-medium);
+    padding: var(--spacing-medium) var(--spacing-large);
 }
 
 div.header .summary {
     width: auto;
     display: block;
     float: none;
-    padding: 0 var(--spacing-medium);
+    padding: 0 var(--spacing-large);
 }
 
 td.memSeparator {
@@ -611,7 +612,7 @@ span.mlabel {
 }
 
 div.contents {
-    padding: 0 var(--spacing-medium);
+    padding: 0 var(--spacing-large);
 }
 
 div.contents p, div.contents li {
@@ -644,6 +645,59 @@ blockquote p {
 
 .alphachar a {
     color: var(--page-foreground-color);
+}
+
+/*
+toc
+ */
+
+
+
+div.toc {
+    background-color: var(--side-nav-background);
+    border: 1px solid var(--separator-color);
+    border-radius: var(--border-radius-medium);
+    box-shadow: var(--box-shadow);
+    padding: 0 var(--spacing-large);
+    margin: 0 0 var(--spacing-medium) var(--spacing-medium);
+}
+
+div.toc h3 {
+    color: var(--side-nav-foreground);
+    font-size: var(--navigation-font-size);
+    margin: var(--spacing-large) 0;
+}
+
+div.toc li {
+    font-size: var(--navigation-font-size);
+    padding: 0;
+    background: none;
+}
+
+div.toc li:before {
+    content: '↓';
+    font-weight: 800;
+    font-family: var(--font-family);
+    margin-right: var(--spacing-small);
+    color: var(--side-nav-foreground);
+    opacity: .4;
+}
+
+div.toc ul li.level1 {
+    margin: 0;
+}
+
+div.toc ul li.level2, div.toc ul li.level3 {
+    margin-top: 0;
+}
+
+
+@media screen and (max-width: 767px) {
+    div.toc {
+        float: none;
+        width: auto;
+        margin: 0 0 var(--spacing-medium) 0;
+    }
 }
 
 /*
@@ -890,8 +944,15 @@ dl.reflist dd {
 table
  */
 
-table.markdownTable {
+table.markdownTable, table.fieldtable {
     width: 100%;
+    border: 1px solid var(--separator-color);
+    margin: var(--spacing-medium) 0;
+}
+
+table.fieldtable {
+    box-shadow: none;
+    border-radius: var(--border-radius-small);
 }
 
 th.markdownTableHeadLeft, th.markdownTableHeadRight, th.markdownTableHeadCenter, th.markdownTableHeadNone {
@@ -900,10 +961,34 @@ th.markdownTableHeadLeft, th.markdownTableHeadRight, th.markdownTableHeadCenter,
     font-weight: 600;
 }
 
-table.markdownTable td, table.markdownTable th {
+table.markdownTable td, table.markdownTable th, table.fieldtable dt {
     border: 1px solid var(--separator-color);
-    padding: var(--spacing-small) var(--spacing-medium) ;
+    padding: var(--spacing-small) var(--spacing-medium);
 }
+
+table.fieldtable th {
+    font-size: var(--page-font-size);
+    font-weight: 600;
+    background-image: none;
+    background-color: var(--tablehead-background);
+    color: var(--tablehead-foreground);
+    border-bottom: 1px solid var(--separator-color);
+}
+
+.fieldtable td.fieldtype, .fieldtable td.fieldname {
+    border-bottom: 1px solid var(--separator-color);
+    border-right: 1px solid var(--separator-color);
+}
+
+.fieldtable td.fielddoc {
+    border-bottom: 1px solid var(--separator-color);
+}
+
+.memberdecls td.glow, .fieldtable tr.glow {
+    background-color: var(--primary-light-color);
+    box-shadow: 0 0 15px var(--primary-lighter-color);
+}
+
 
 /*
 hr
