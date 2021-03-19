@@ -40,7 +40,7 @@ Then make the option `HTML_EXTRA_STYLESHEET` in your Doxyfile point to the `css`
 ```
 # Doxyfile
 # ...
-HTML_EXTRA_STYLESHEET  = doxygen-awesome-theme/doxygen-awesome.css
+HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css
 ```
 
 ## Variants
@@ -53,14 +53,14 @@ There is two variants of the theme.
 ```
 # Doxyfile
 GENERATE_TREEVIEW      = YES # optional. Also works without treeview
-HTML_EXTRA_STYLESHEET  = doxygen-awesome-theme/doxygen-awesome.css
+HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css
 ```
 
 2. **Sidebar-only theme** (experimental):
 ```
 # Doxyfile
 GENERATE_TREEVIEW      = YES # required!
-HTML_EXTRA_STYLESHEET  = doxygen-awesome-theme/doxygen-awesome.css doxygen-awesome-theme/doxygen-awesome-sidenav.css
+HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css doxygen-awesome-css/doxygen-awesome-sidenav.css
 ```
 
 ## Example
