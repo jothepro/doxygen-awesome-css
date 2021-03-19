@@ -71,7 +71,7 @@ HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css doxygen-awesome
 
 This theme is highly customizable because a lot of things are parameterized with CSS variables. The following
 list of parameters is not complete! You can easily modify any variable with the developer tools of your browser to find
-out it does.
+out what it does.
 
 To customize the existing theme, add your own `custom.css` and overwrite the variables there:
 ```
