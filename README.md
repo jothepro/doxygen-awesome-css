@@ -98,6 +98,14 @@ HTML_EXTRA_STYLESHEET  = doxygen-awesome-theme/doxygen-awesome.css custom.css
 
 If you miss a configuration option or find a bug, please consider [opening an issue](https://github.com/jothepro/doxygen-awesome-css/issues)!
 
+## Browser support
+
+Tested with
+
+- Chrome 89, Chrome 89 for Android, Chrome 87 for iOS
+- Safari 14, Safari for iOS 14
+- Firefox 86, Firefox Daylight 86 for Android, Firefox Daylight 32 for iOS
+
 ## Credits
 
 This theme is heavily inspired by the beautiful [vuepress](https://vuepress.vuejs.org/) static site generator default theme!
