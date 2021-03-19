@@ -96,7 +96,7 @@ HTML_EXTRA_STYLESHEET  = doxygen-awesome-theme/doxygen-awesome.css custom.css
 | `--border-radius-large`   | `8px`  |
 | `--border-radius-small`   | `4px`  |
 | `--border-radius-medium`  | `6px`  |
-| **Content Width**:<br>The content is centered and constraint in it's width. To make the content fill the whole page, set the variable to `auto`. ||
+| **Content Width**:<br>The content is centered and constraint in it's width. To make the content fill the whole page, set the following variable to `auto`. ||
 | `--content-maxwidth`      | `900px` |
 | ...and many more                   ||
 
