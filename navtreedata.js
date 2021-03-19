@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "Doxygen Awesome CSS", "index.html", [
+  [ "Doxygen Awesome", "index.html", [
     [ "Motivation", "index.html#autotoc_md6", null ],
     [ "Features", "index.html#autotoc_md7", null ],
     [ "Installation", "index.html#autotoc_md8", null ],
@@ -32,10 +32,21 @@ var NAVTREE =
     [ "Example", "index.html#autotoc_md10", null ],
     [ "Configuration", "index.html#autotoc_md11", null ],
     [ "Credits", "index.html#autotoc_md12", null ],
+    [ "Example Page", "page1.html", [
+      [ "An example section", "page1.html#sec", [
+        [ "The first subsection", "page1.html#subsection1", null ],
+        [ "The second subsection", "page1.html#subsection2", null ]
+      ] ]
+    ] ],
     [ "Bug List", "bug.html", null ],
     [ "Deprecated List", "deprecated.html", null ],
     [ "Namespaces", "namespaces.html", [
-      [ "Namespace List", "namespaces.html", "namespaces_dup" ]
+      [ "Namespace List", "namespaces.html", "namespaces_dup" ],
+      [ "Namespace Members", "namespacemembers.html", [
+        [ "All", "namespacemembers.html", null ],
+        [ "Enumerations", "namespacemembers_enum.html", null ],
+        [ "Enumerator", "namespacemembers_eval.html", null ]
+      ] ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],

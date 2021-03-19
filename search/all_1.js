@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['deprecated_20list_1',['Deprecated List',['../deprecated.html',1,'']]],
-  ['doxygen_20awesome_20css_2',['Doxygen Awesome CSS',['../index.html',1,'']]]
+  ['color_2',['Color',['../namespace_my_library.html#a79a9f4bbb675f6c082b09249c5a95ced',1,'MyLibrary']]]
 ];

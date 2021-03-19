@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['staticfunc_7',['staticfunc',['../class_my_library_1_1_example.html#a8c3ea5ce33b9e1fada7ff46eab0956a7',1,'MyLibrary::Example']]]
+  ['mylibrary_9',['MyLibrary',['../namespace_my_library.html',1,'']]]
 ];
