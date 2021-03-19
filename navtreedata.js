@@ -30,8 +30,12 @@ var NAVTREE =
     [ "Installation", "index.html#autotoc_md8", null ],
     [ "Variants", "index.html#autotoc_md9", null ],
     [ "Example", "index.html#autotoc_md10", null ],
-    [ "Configuration", "index.html#autotoc_md11", null ],
-    [ "Credits", "index.html#autotoc_md12", null ],
+    [ "Configuration", "index.html#autotoc_md11", [
+      [ "CSS Variables", "index.html#autotoc_md12", null ],
+      [ "Doxygen generator", "index.html#autotoc_md13", null ]
+    ] ],
+    [ "Browser support", "index.html#autotoc_md14", null ],
+    [ "Credits", "index.html#autotoc_md15", null ],
     [ "Example Page", "page1.html", [
       [ "An example section", "page1.html#sec", [
         [ "The first subsection", "page1.html#subsection1", null ],
@@ -51,6 +55,7 @@ var NAVTREE =
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
+      [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", null ],
         [ "Functions", "functions_func.html", null ]

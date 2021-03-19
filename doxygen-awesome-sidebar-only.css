@@ -54,6 +54,7 @@
         padding-bottom: calc(3 * var(--spacing-large));
         padding-top: calc(var(--top-height) - 80px);
         box-sizing: border-box;
+        margin-left: calc(var(--side-nav-fixed-width) + 6px) !important;
     }
 
     #MSearchBox {

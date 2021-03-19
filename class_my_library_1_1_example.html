@@ -36,7 +36,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.drawio.svg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Doxygen Awesome
-   &#160;<span id="projectnumber">v1.0.0</span>
+   &#160;<span id="projectnumber">v1.1.0</span>
    </div>
    <div id="projectbrief">Modern Doxygen theme</div>
   </td>
@@ -103,10 +103,20 @@ $(document).ready(function(){initNavTree('class_my_library_1_1_example.html','')
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="example_8hpp_source.html">example.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for MyLibrary::Example:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_my_library_1_1_example.png" usemap="#MyLibrary::Example_map" alt=""/>
+  <map id="MyLibrary::Example_map" name="MyLibrary::Example_map">
+<area href="class_my_library_1_1_example_subclass.html" alt="MyLibrary::ExampleSubclass" shape="rect" coords="0,56,175,80"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a1c0046b0674eb4cad09c5d3e943912b8"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_library_1_1_example.html#a1c0046b0674eb4cad09c5d3e943912b8">test</a> (const std::string &amp;test)</td></tr>
+<tr class="memdesc:a1c0046b0674eb4cad09c5d3e943912b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">brief summary  <a href="class_my_library_1_1_example.html#a1c0046b0674eb4cad09c5d3e943912b8">More...</a><br /></td></tr>
 <tr class="separator:a1c0046b0674eb4cad09c5d3e943912b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8431ef1c10c4e2a36302b8e8556514f6"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_library_1_1_example.html#a8431ef1c10c4e2a36302b8e8556514f6">virtualfunc</a> ()=0</td></tr>
 <tr class="separator:a8431ef1c10c4e2a36302b8e8556514f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -160,6 +170,8 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>brief summary </p>
 <p>doxygen test documentation</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -193,7 +205,9 @@ Code block</h2>
 </div><!-- fragment --><div class="fragment"><div class="line"><span class="comment">// code within @code block</span></div>
 <div class="line"><span class="keyword">auto</span> example = std::make_shared&lt;Example&gt;(5);</div>
 <div class="line">example-&gt;test(<span class="stringliteral">&quot;test&quot;</span>);</div>
-</div><!-- fragment --><p>Inline <code>code</code> elements in a text. Lorem Ipsum set dolor. This also works within multiline text and does not break the <code>layout</code>.</p>
+</div><!-- fragment --> <pre class="fragment">// code within indented code block
+auto test = std::shared_ptr&lt;Example(5);
+</pre><p>Inline <code>code</code> elements in a text. Lorem Ipsum set dolor. This also works within multiline text and does not break the <code>layout</code>.</p>
 <h2><a class="anchor" id="autotoc_md4"></a>
 special hints</h2>
 <dl class="section warning"><dt>Warning</dt><dd>this is a warning only for demonstration purposes</dd></dl>
@@ -226,6 +240,8 @@ special hints</h2>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_my_library_1_1_example_subclass.html#a029599bc81e98d59be41ed87e3875bce">MyLibrary::ExampleSubclass</a>.</p>
 
 </div>
 </div>

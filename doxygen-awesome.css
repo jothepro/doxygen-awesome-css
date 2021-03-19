@@ -9,6 +9,7 @@
     /* page base colors */
     --page-background-color: white;
     --page-foreground-color: #2c3e50;
+    --page-secondary-foreground-color: #67727e;
 
     /* color for all separators on the website: hr, borders, ... */
     --separator-color: #dedede;
@@ -41,6 +42,7 @@
 
     /* content text properties. These only affect the page content, not the navigation or any other ui elements */
     --content-line-height: 27px;
+    /* The content is centered and constraint in it's width. To make the content fill the whole page, set the variable to auto.*/
     --content-maxwidth: 900px;
 
     /* colors for various content boxes: @warning, @note, @deprecated @bug */
@@ -126,6 +128,7 @@
 
         --page-background-color: #1C1D1F;
         --page-foreground-color: #d2dbde;
+        --page-secondary-foreground-color: #859399;
         --separator-color: #000000;
         --side-nav-background: #252628;
 
@@ -171,7 +174,7 @@ p, div, table, dl {
     font-size: var(--page-font-size);
 }
 
-a {
+a, a.el:visited, a.el:hover, a.el:focus, a.el:active {
     color: var(--primary-dark-color);
 }
 
@@ -532,6 +535,7 @@ iframe#MSearchResults {
 }
 
 .arrow {
+    color: var(--primary-light-color);
     font-family: serif;
     height: auto;
     text-align: right;
@@ -603,6 +607,10 @@ td.memSeparator {
     background: var(--code-background);
 }
 
+.mdescRight {
+    color: var(--page-secondary-foreground-color);
+}
+
 span.mlabel {
     background: var(--primary-color);
     border: none;
@@ -617,6 +625,16 @@ div.contents {
 
 div.contents p, div.contents li {
     line-height: var(--content-line-height);
+}
+
+div.contents div.dyncontent {
+    margin: var(--spacing-medium) 0;
+}
+
+@media (prefers-color-scheme: dark) {
+    div.contents div.dyncontent img {
+        filter: hue-rotate(180deg) invert();
+    }
 }
 
 h2.groupheader {
@@ -704,7 +722,7 @@ div.toc ul li.level2, div.toc ul li.level3 {
 code & fragment
  */
 
-code, div.fragment {
+code, div.fragment, pre.fragment {
     border-radius: var(--border-radius-small);
     border: none;
     overflow: hidden;
@@ -717,14 +735,14 @@ code {
     padding: 2px 6px;
 }
 
-div.fragment {
+div.fragment, pre.fragment {
     margin: var(--spacing-medium) 0;
     padding: 14px 16px;
     background: var(--fragment-background);
     color: var(--fragment-foreground);
 }
 
-code, code a, div.fragment, div.fragment .line, div.fragment span {
+code, code a, div.fragment, pre.fragment, div.fragment .line, div.fragment span {
     font-family: var(--font-family-monospace);
     font-size: var(--code-font-size);
     line-height: inherit;
@@ -1051,6 +1069,16 @@ table.directory {
     margin-bottom: 0;
 }
 
+.icondoc {
+    filter: saturate(0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+    .iconfopen, .iconfclosed {
+        filter: hue-rotate(180deg) invert();
+    }
+}
+
 
 /*
   footer / nav-path
@@ -1071,6 +1099,10 @@ table.directory {
 
 img.footer {
     width: 60px;
+}
+
+.navpath li.footer {
+    color: var(--page-secondary-foreground-color);
 }
 
 address.footer {
@@ -1127,4 +1159,8 @@ li.navelem:first-child:before {
     #nav-path li.navelem:after {
         text-shadow: 3px 0 0 var(--separator-color), 8px 0 6px rgba(0,0,0,0.4);
     }
+}
+
+.navpath li.navelem a:hover {
+    color: var(--primary-color);
 }

@@ -36,7 +36,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.drawio.svg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Doxygen Awesome
-   &#160;<span id="projectnumber">v1.0.0</span>
+   &#160;<span id="projectnumber">v1.1.0</span>
    </div>
    <div id="projectbrief">Modern Doxygen theme</div>
   </td>
@@ -122,7 +122,7 @@ Installation</h1>
 </div><!-- fragment --><p>Then make the option <code>HTML_EXTRA_STYLESHEET</code> in your Doxyfile point to the <code>css</code> files:</p>
 <div class="fragment"><div class="line"># Doxyfile</div>
 <div class="line"># ...</div>
-<div class="line">HTML_EXTRA_STYLESHEET  = doxygen-awesome-theme/doxygen-awesome.css</div>
+<div class="line">HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css</div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md9"></a>
 Variants</h1>
 <p>There is two variants of the theme.</p>
@@ -130,11 +130,11 @@ Variants</h1>
 <ol type="1">
 <li><b>Base theme</b>: <div class="fragment"><div class="line"># Doxyfile</div>
 <div class="line">GENERATE_TREEVIEW      = YES # optional. Also works without treeview</div>
-<div class="line">HTML_EXTRA_STYLESHEET  = doxygen-awesome-theme/doxygen-awesome.css</div>
+<div class="line">HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css</div>
 </div><!-- fragment --></li>
 <li><b>Sidebar-only theme</b> (experimental): <div class="fragment"><div class="line"># Doxyfile</div>
 <div class="line">GENERATE_TREEVIEW      = YES # required!</div>
-<div class="line">HTML_EXTRA_STYLESHEET  = doxygen-awesome-theme/doxygen-awesome.css doxygen-awesome-sidenav.css</div>
+<div class="line">HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css doxygen-awesome-css/doxygen-awesome-sidenav.css</div>
 </div><!-- fragment --></li>
 </ol>
 <h1><a class="anchor" id="autotoc_md10"></a>
@@ -144,7 +144,9 @@ Example</h1>
 </ul>
 <h1><a class="anchor" id="autotoc_md11"></a>
 Configuration</h1>
-<p>This theme is highly customizable because a lot of things are parameterized with CSS variables. The following list of parameters is not complete! You can easily modify any variable with the developer tools of your browser to find out it does.</p>
+<h2><a class="anchor" id="autotoc_md12"></a>
+CSS Variables</h2>
+<p>This theme is highly customizable because a lot of things are parameterized with CSS variables. The following list of parameters is not complete! You can easily modify any variable with the developer tools of your browser to find out what it does.</p>
 <p>To customize the existing theme, add your own <code>custom.css</code> and overwrite the variables there: </p><div class="fragment"><div class="line">HTML_EXTRA_STYLESHEET  = doxygen-awesome-theme/doxygen-awesome.css custom.css</div>
 </div><!-- fragment --><table class="markdownTable">
 <tr class="markdownTableHead">
@@ -181,10 +183,32 @@ border radius for all rounded components. Will affect many components, like drop
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft"><code>--border-radius-medium</code>   </td><td class="markdownTableBodyLeft"><code>6px</code>    </td></tr>
 <tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft" colspan="2"><b>Content Width</b>:<br  />
+The content is centered and constraint in it's width. To make the content fill the whole page, set the following variable to <code>auto</code>.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>--content-maxwidth</code>   </td><td class="markdownTableBodyLeft"><code>900px</code>    </td></tr>
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft" colspan="2">...and many more   </td></tr>
 </table>
 <p>If you miss a configuration option or find a bug, please consider <a href="https://github.com/jothepro/doxygen-awesome-css/issues">opening an issue</a>!</p>
-<h1><a class="anchor" id="autotoc_md12"></a>
+<h2><a class="anchor" id="autotoc_md13"></a>
+Doxygen generator</h2>
+<p>The theme overrides most colors with the <code>--primary-color-*</code> variables.</p>
+<p>But there is a few small images and graphics that the theme cannot adjust or replace. To make these blend in better with the rest, it is recommended to adjust the <a href="https://www.doxygen.nl/manual/customize.html#minor_tweaks_colors">doxygen color settings</a> to something that matches the chosen color-scheme.</p>
+<p>For the default color-scheme, these values work out quite well:</p>
+<div class="fragment"><div class="line"># Doxyfile</div>
+<div class="line">HTML_COLORSTYLE_HUE    = 209</div>
+<div class="line">HTML_COLORSTYLE_SAT    = 255</div>
+<div class="line">HTML_COLORSTYLE_GAMMA  = 113</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md14"></a>
+Browser support</h1>
+<p>Tested with</p>
+<ul>
+<li>Chrome 89, Chrome 89 for Android, Chrome 87 for iOS</li>
+<li>Safari 14, Safari for iOS 14</li>
+<li>Firefox 86, Firefox Daylight 86 for Android, Firefox Daylight 32 for iOS</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md15"></a>
 Credits</h1>
 <p>This theme is heavily inspired by the beautiful <a href="https://vuepress.vuejs.org/">vuepress</a> static site generator default theme! </p>
 </div></div><!-- PageDoc -->
