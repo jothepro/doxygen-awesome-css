@@ -64,9 +64,11 @@ GENERATE_TREEVIEW      = YES # required!
 HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css doxygen-awesome-css/doxygen-awesome-sidenav.css
 ```
 
-## Example
+## Examples
 
-- Documentation of this repository: [jothepro.github.io/doxygen-awesome-css](https://jothepro.github.io/doxygen-awesome-css/) (uses the sidebar-only theme)
+- Sidebar-Only theme: [Documentation of this repository](https://jothepro.github.io/doxygen-awesome-css/)
+- Basic theme: [libsl3](https://a4z.github.io/libsl3/)
+
 
 ## Configuration
 
