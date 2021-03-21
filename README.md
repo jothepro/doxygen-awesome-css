@@ -67,7 +67,7 @@ HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css doxygen-awesome
 ## Examples
 
 - Sidebar-Only theme: [Documentation of this repository](https://jothepro.github.io/doxygen-awesome-css/)
-- Basic theme: [libsl3](https://a4z.github.io/libsl3/)
+- Base theme: [libsl3](https://a4z.github.io/libsl3/)
 
 
 ## Configuration
