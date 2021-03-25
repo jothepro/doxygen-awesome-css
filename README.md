@@ -101,6 +101,11 @@ HTML_EXTRA_STYLESHEET  = doxygen-awesome-theme/doxygen-awesome.css custom.css
 | `--border-radius-medium`  | `6px`  |
 | **Content Width**:<br>The content is centered and constraint in it's width. To make the content fill the whole page, set the following variable to `auto`. ||
 | `--content-maxwidth`      | `900px` |
+| **Code Fragment Wrapping Behaviour**:<br>By default code does not wrap (`nowrap`). Overflowing content can be scrolled. If you want code to wrap, set the following variable to `initial`. ||
+| `--fragment-whitespace` | `nowrap` |
+| **Code Fragment Colors**:<br>Color-Scheme of multiline codeblocks ||
+| `--fragment-background` | <span style="background:#282c34;color:white">#282c34</span> |
+| `--fragment-foreground` | <span style="background:#fff;wolor:black">#fff</span> |
 | ...and many more                   ||
 
 If you miss a configuration option or find a bug, please consider [opening an issue](https://github.com/jothepro/doxygen-awesome-css/issues)!
