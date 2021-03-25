@@ -788,6 +788,14 @@ div.fragment, pre.fragment {
         border-radius: 0;
     }
 
+    .textblock li > .fragment {
+        margin: var(--spacing-medium) calc(0px - var(--spacing-large));
+    }
+
+    .memdoc li > .fragment {
+        margin: var(--spacing-medium) calc(0px - var(--spacing-medium));
+    }
+
     .memdoc > div.fragment, .memdoc > pre.fragment, dl dd > div.fragment, dl dd pre.fragment {
         margin: var(--spacing-medium) calc(0px - var(--spacing-medium));
         border-radius: 0;
