@@ -804,6 +804,10 @@ div.fragment, div.fragment .line, div.fragment span {
     white-space: var(--fragment-whitespace);
 }
 
+div.line:after {
+    content: '';
+}
+
 div.fragment span.keyword {
     color: var(--fragment-keyword);
 }
