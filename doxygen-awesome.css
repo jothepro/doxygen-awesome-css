@@ -987,10 +987,6 @@ div.memproto table.memname {
     color: var(--page-foreground-color);
 }
 
-table.mlabels tbody, table.mlabels table, table.mlabels td, table.mlabels tr {
-    display: inline-block;
-}
-
 table.mlabels, table.mlabels > tbody {
     display: block;
 }
@@ -1002,11 +998,6 @@ td.mlabels-left {
 table.mlabels > tbody > tr:first-child {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-table.memname > tbody > tr {
-    display: flex;
     flex-wrap: wrap;
 }
 
