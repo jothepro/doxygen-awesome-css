@@ -971,7 +971,7 @@ div.memdoc {
 }
 
 div.memproto {
-    border-radius: 0;
+    border-radius: 0 var(--border-radius-small) 0 0;
     overflow: auto;
     border-bottom: 1px solid var(--separator-color);
     padding: var(--spacing-medium);
