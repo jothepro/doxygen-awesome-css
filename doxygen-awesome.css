@@ -1002,7 +1002,6 @@ td.mlabels-left {
 table.mlabels > tbody > tr:first-child {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     flex-wrap: wrap;
 }
 
