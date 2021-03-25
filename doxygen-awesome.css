@@ -1,3 +1,32 @@
+/**
+
+Doxygen Awesome
+https://github.com/jothepro/doxygen-awesome-css
+
+MIT License
+
+Copyright (c) 2021 jothepro
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+ */
+
 :root {
     /* primary theme color. This will affect the entire websites color scheme: links, arrows, labels, ... */
     --primary-color: #1982d2;
@@ -81,7 +110,7 @@
     --header-foreground: var(--page-foreground-color);
 
     /* searchbar colors */
-    --searchbar-background: var(--page-background-color);
+    --searchbar-background: var(--side-nav-background);
     --searchbar-foreground: var(--page-foreground-color);
 
     /* searchbar size
@@ -105,6 +134,7 @@
     --fragment-preprocessor: #65cabe;
     --fragment-linenumber-color: #ccc;
     --fragment-linenumber-background: #35393c;
+    --fragment-whitespace: nowrap;
 
     /* sidebar navigation (treeview) colors */
     --side-nav-background: var(--page-background-color);
@@ -488,7 +518,7 @@ iframe#MSearchResults {
  */
 
 #side-nav {
-    padding: 0 6px 0 0;
+    padding: 0 !important;
     background: var(--side-nav-background);
 }
 
@@ -506,7 +536,6 @@ iframe#MSearchResults {
 
 #nav-tree {
     background: transparent;
-    padding: var(--spacing-medium) 0;
 }
 
 #nav-tree .label {
@@ -590,6 +619,7 @@ div.header .title {
     font-weight: 600;
     font-size: 210%;
     padding: var(--spacing-medium) var(--spacing-large);
+    word-break: break-word;
 }
 
 div.header .summary {
@@ -616,7 +646,11 @@ span.mlabel {
     border: none;
     padding: 4px 9px;
     border-radius: 12px;
-    margin-right: 10px;
+    margin-right: var(--spacing-medium);
+}
+
+span.mlabel:last-of-type {
+    margin-right: 2px;
 }
 
 div.contents {
@@ -740,12 +774,34 @@ div.fragment, pre.fragment {
     padding: 14px 16px;
     background: var(--fragment-background);
     color: var(--fragment-foreground);
+    overflow-x: auto;
 }
 
-code, code a, div.fragment, pre.fragment, div.fragment .line, div.fragment span {
+@media screen and (max-width: 767px) {
+    div.fragment, pre.fragment {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .contents > div.fragment, .textblock > div.fragment, .textblock > pre.fragment {
+        margin: var(--spacing-medium) calc(0px - var(--spacing-large));
+        border-radius: 0;
+    }
+
+    .memdoc > div.fragment, .memdoc > pre.fragment, dl dd > div.fragment, dl dd pre.fragment {
+        margin: var(--spacing-medium) calc(0px - var(--spacing-medium));
+        border-radius: 0;
+    }
+}
+
+code, code a, pre.fragment, div.fragment, div.fragment .line, div.fragment span {
     font-family: var(--font-family-monospace);
     font-size: var(--code-font-size);
     line-height: inherit;
+}
+
+div.fragment, div.fragment .line, div.fragment span {
+    white-space: var(--fragment-whitespace);
 }
 
 div.fragment span.keyword {
@@ -794,10 +850,10 @@ dl warning, attention, note, deprecated, bug, ...
  */
 
 dl.warning, dl.attention, dl.note, dl.deprecated, dl.bug {
-    padding: 12px;
+    padding: var(--spacing-medium);
     margin: var(--spacing-medium) 0;
     color: var(--page-background-color);
-
+    overflow: hidden;
     margin-left: 0;
     border-radius: var(--border-radius-small);
 }
@@ -887,7 +943,7 @@ a:target + h2.memtitle {
 }
 
 a:target + h2.memtitle + div.memitem {
-    box-shadow: 0 0px 10px 0 var(--primary-lighter-color);
+    box-shadow: 0 0 10px 0 var(--primary-lighter-color);
 }
 
 div.memitem {
@@ -895,6 +951,7 @@ div.memitem {
     border-bottom-right-radius: var(--border-radius-medium);
     border-bottom-left-radius: var(--border-radius-medium);
     overflow: hidden;
+    display: block !important;
 }
 
 div.memdoc {
@@ -903,7 +960,9 @@ div.memdoc {
 
 div.memproto {
     border-radius: 0;
+    overflow: auto;
     border-bottom: 1px solid var(--separator-color);
+    padding: var(--spacing-medium);
 }
 
 div.memtitle {
@@ -916,16 +975,33 @@ div.memproto table.memname {
     color: var(--page-foreground-color);
 }
 
-@media screen and (max-width: 767px) {
-    .memname td {
-        display: block;
-    }
-
-    table.mlabels .mlabels-left, table.mlabels .mlabels-right {
-        display: block;
-    }
+table.mlabels tbody, table.mlabels table, table.mlabels td, table.mlabels tr {
+    display: inline-block;
 }
 
+table.mlabels, table.mlabels > tbody {
+    display: block;
+}
+
+td.mlabels-left {
+    width: auto;
+}
+
+table.mlabels > tbody > tr:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+table.memname > tbody > tr:first-child {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.memname, .memitem span.mlabels {
+    margin: 0
+}
 /*
 reflist
  */
@@ -1086,6 +1162,7 @@ table.directory {
 
 #nav-path {
     margin-bottom: -1px;
+    width: 100%;
 }
 
 #nav-path ul {

@@ -6,6 +6,18 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="color-scheme" content="light dark" />
+<!-- BEGIN opengraph metadata -->
+<meta property="og:title" content="Doxygen Awesome" />
+<meta property="og:image" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta property="og:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<meta property="og:url" content="https://jothepro.github.io/doxygen-awesome-css/" />
+<!-- END opengraph metadata -->
+<!-- BEGIN twitter metadata -->
+<meta name="twitter:image:src" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta name="twitter:title" content="Doxygen Awesome" />
+<meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<!-- END twitter metadata -->
 <title>Doxygen Awesome: Doxygen Awesome</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link rel="icon" type="image/svg+xml" href="logo.drawio.svg">
@@ -36,7 +48,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.drawio.svg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Doxygen Awesome
-   &#160;<span id="projectnumber">v1.1.0</span>
+   &#160;<span id="projectnumber">v1.2.0</span>
    </div>
    <div id="projectbrief">Modern Doxygen theme</div>
   </td>
@@ -97,7 +109,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="title">Doxygen Awesome </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md_README"></a> <a href="https://github.com/jothepro/doxygen-awesome-css/releases/latest"><img src="https://img.shields.io/github/v/release/jothepro/doxygen-awesome-css" alt="GitHub release (latest by date)" class="inline"/></a></p>
+<div class="textblock"><p><a class="anchor" id="md_README"></a> <a href="https://github.com/jothepro/doxygen-awesome-css/releases/latest"><img src="https://img.shields.io/github/v/release/jothepro/doxygen-awesome-css" alt="GitHub release (latest by date)" class="inline"/></a> <a href="https://github.com/jothepro/doxygen-awesome-css/blob/main/LICENSE"><img src="https://img.shields.io/github/license/jothepro/doxygen-awesome-css" alt="GitHub" class="inline"/></a></p>
 <div style="margin: -1% -4.4%;"></div><div style="margin: -1% -4.4%;"><a href="https://jothepro.github.io/doxygen-awesome-css/"><img src="screenshot.png" alt="" class="inline" title="Screenshot of Doxygen Awesome CSS"/></a></div><div style="margin: -1% -4.4%;"></div><p><b>Doxygen Awesome</b> is a custom <b>CSS theme for doxygen</b> html-documentation with lots of customization parameters.</p>
 <h1><a class="anchor" id="autotoc_md6"></a>
 Motivation</h1>
@@ -138,9 +150,10 @@ Variants</h1>
 </div><!-- fragment --></li>
 </ol>
 <h1><a class="anchor" id="autotoc_md10"></a>
-Example</h1>
+Examples</h1>
 <ul>
-<li>Documentation of this repository: <a href="https://jothepro.github.io/doxygen-awesome-css/">jothepro.github.io/doxygen-awesome-css</a> (uses the sidebar-only theme)</li>
+<li>Sidebar-Only theme: <a href="https://jothepro.github.io/doxygen-awesome-css/">Documentation of this repository</a></li>
+<li>Base theme: <a href="https://a4z.github.io/libsl3/">libsl3</a></li>
 </ul>
 <h1><a class="anchor" id="autotoc_md11"></a>
 Configuration</h1>
@@ -188,6 +201,18 @@ The content is centered and constraint in it's width. To make the content fill t
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft"><code>--content-maxwidth</code>   </td><td class="markdownTableBodyLeft"><code>900px</code>    </td></tr>
 <tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft" colspan="2"><b>Code Fragment Wrapping Behaviour</b>:<br  />
+By default code does not wrap (<code>nowrap</code>). Overflowing content can be scrolled. If you want code to wrap, set the following variable to <code>initial</code>.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>--fragment-whitespace</code>   </td><td class="markdownTableBodyLeft"><code>nowrap</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft" colspan="2"><b>Code Fragment Colors</b>:<br  />
+Color-Scheme of multiline codeblocks    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>--fragment-background</code>   </td><td class="markdownTableBodyLeft"><span style="background:#282c34;color:white">#282c34</span>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>--fragment-foreground</code>   </td><td class="markdownTableBodyLeft"><span style="background:#fff;wolor:black">#fff</span>    </td></tr>
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft" colspan="2">...and many more   </td></tr>
 </table>
 <p>If you miss a configuration option or find a bug, please consider <a href="https://github.com/jothepro/doxygen-awesome-css/issues">opening an issue</a>!</p>

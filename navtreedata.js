@@ -29,7 +29,7 @@ var NAVTREE =
     [ "Features", "index.html#autotoc_md7", null ],
     [ "Installation", "index.html#autotoc_md8", null ],
     [ "Variants", "index.html#autotoc_md9", null ],
-    [ "Example", "index.html#autotoc_md10", null ],
+    [ "Examples", "index.html#autotoc_md10", null ],
     [ "Configuration", "index.html#autotoc_md11", [
       [ "CSS Variables", "index.html#autotoc_md12", null ],
       [ "Doxygen generator", "index.html#autotoc_md13", null ]
