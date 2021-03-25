@@ -971,7 +971,7 @@ div.memdoc {
 }
 
 div.memproto {
-    border-radius: 0;
+    border-radius: 0 var(--border-radius-small) 0 0;
     overflow: auto;
     border-bottom: 1px solid var(--separator-color);
     padding: var(--spacing-medium);
@@ -987,10 +987,6 @@ div.memproto table.memname {
     color: var(--page-foreground-color);
 }
 
-table.mlabels tbody, table.mlabels table, table.mlabels td, table.mlabels tr {
-    display: inline-block;
-}
-
 table.mlabels, table.mlabels > tbody {
     display: block;
 }
@@ -1002,12 +998,6 @@ td.mlabels-left {
 table.mlabels > tbody > tr:first-child {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-table.memname > tbody > tr:first-child {
-    display: flex;
     flex-wrap: wrap;
 }
 
