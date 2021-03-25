@@ -1006,7 +1006,7 @@ table.mlabels > tbody > tr:first-child {
     flex-wrap: wrap;
 }
 
-table.memname > tbody > tr:first-child {
+table.memname > tbody > tr {
     display: flex;
     flex-wrap: wrap;
 }
