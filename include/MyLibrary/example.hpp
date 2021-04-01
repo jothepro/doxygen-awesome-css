@@ -75,6 +75,10 @@ public:
      *
      * @deprecated None of this will be deprecated, because it's beautiful!
      *
+     * @invariant This is an invariant
+     *
+     * @pre This is a precondition
+     *
      *
      *
      */

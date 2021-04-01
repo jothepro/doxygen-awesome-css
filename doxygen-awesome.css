@@ -87,6 +87,9 @@ SOFTWARE.
     --bug-color: rgb(246, 208, 178);
     --bug-color-dark: #a53a00;
     --bug-color-darker: #5b1d00;
+    --invariant-color: #b7f8d0;
+    --invariant-color-dark: #00ba44;
+    --invariant-color-darker: #008622;
 
     /* blockquote colors */
     --blockquote-background: #f5f5f5;
@@ -861,13 +864,17 @@ div.fragment .line:first-child .lineno {
 dl warning, attention, note, deprecated, bug, ...
  */
 
-dl.warning, dl.attention, dl.note, dl.deprecated, dl.bug {
+dl.warning, dl.attention, dl.note, dl.deprecated, dl.bug, dl.invariant, dl.pre {
     padding: var(--spacing-medium);
     margin: var(--spacing-medium) 0;
     color: var(--page-background-color);
     overflow: hidden;
     margin-left: 0;
     border-radius: var(--border-radius-small);
+}
+
+dl.section dd {
+    margin-bottom: 2px;
 }
 
 dl.warning, dl.attention {
@@ -912,6 +919,12 @@ dl.deprecated dt a {
 
 dl.section dd, dl.bug dd, dl.deprecated dd {
     margin-inline-start: 0px;
+}
+
+dl.invariant, dl.pre {
+    background: var(--invariant-color);
+    border-left: 8px solid var(--invariant-color-dark);
+    color: var(--invariant-color-darker);
 }
 
 /*
