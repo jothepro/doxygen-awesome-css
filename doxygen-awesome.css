@@ -1279,11 +1279,7 @@ class list
 
 @media screen and (max-width: 767px) {
     .classindex {
-        margin: 0 calc(0px - var(--spacing-medium));
-    }
-
-    .classindex dl.odd {
-        border-radius: 0;
+        margin: 0 calc(0px - var(--spacing-small));
     }
 }
 
