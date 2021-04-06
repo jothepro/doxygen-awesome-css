@@ -56,6 +56,8 @@ SOFTWARE.
     /* default box shadow used for raising an element above the normal content. Used in dropdowns, Searchresult, ... */
     --box-shadow: 0 2px 10px 0 rgba(0,0,0,.1);
 
+    --odd-color: rgba(0,0,0,.03);
+
     /* font-families. will affect all text on the website
      * font-family: the normal font for text, headlines, menus
      * font-family-monospace: used for preformatted text in memtitle, code, fragments
@@ -87,6 +89,9 @@ SOFTWARE.
     --bug-color: rgb(246, 208, 178);
     --bug-color-dark: #a53a00;
     --bug-color-darker: #5b1d00;
+    --invariant-color: #b7f8d0;
+    --invariant-color-dark: #00ba44;
+    --invariant-color-darker: #008622;
 
     /* blockquote colors */
     --blockquote-background: #f5f5f5;
@@ -104,6 +109,7 @@ SOFTWARE.
 
     --menu-focus-foreground: var(--page-background-color);
     --menu-focus-background: var(--primary-color);
+    --menu-selected-background: rgba(0,0,0,.05);
 
 
     --header-background: var(--page-background-color);
@@ -146,6 +152,15 @@ SOFTWARE.
 
 }
 
+@media screen and (max-width: 767px) {
+    :root {
+        --page-font-size: 16px;
+        --navigation-font-size: 16px;
+        --code-font-size: 15px; /* affects code, fragment */
+        --title-font-size: 22px;
+    }
+}
+
 @media (prefers-color-scheme: dark) {
     :root {
         --primary-color: #00559f;
@@ -155,6 +170,10 @@ SOFTWARE.
         --primary-lightest-color: #191a1c;
 
         --box-shadow: 0 2px 10px 0 rgba(0,0,0,.35);
+
+        --odd-color: rgba(0,0,0,.1);
+
+        --menu-selected-background: rgba(0,0,0,.4);
 
         --page-background-color: #1C1D1F;
         --page-foreground-color: #d2dbde;
@@ -273,9 +292,14 @@ a, a.el:visited, a.el:hover, a.el:focus, a.el:active {
     margin-right: var(--spacing-small);
 }
 
-.sm-dox {
+.sm-dox, .tabs, .tabs2, .tabs3 {
     background: none;
     padding: 0;
+}
+
+.tabs, .tabs2, .tabs3 {
+    border-bottom: 1px solid var(--separator-color);
+    margin-bottom: -1px;
 }
 
 @media screen and (max-width: 767px) {
@@ -286,7 +310,7 @@ a, a.el:visited, a.el:hover, a.el:focus, a.el:active {
 
 
 @media screen and (min-width: 768px) {
-    .sm-dox li {
+    .sm-dox li, .tablist li {
         display: var(--menu-display);
     }
 
@@ -352,23 +376,39 @@ a, a.el:visited, a.el:hover, a.el:focus, a.el:active {
     border-radius: var(--border-radius-small) !important;
 }
 
-.sm-dox a, .sm-dox a:focus {
+.sm-dox a, .sm-dox a:focus, .tablist li, .tablist li a, .tablist li.current a {
     text-shadow: none;
     background: transparent;
     background-image: none !important;
     color: var(--header-foreground);
     font-weight: normal;
     font-size: var(--navigation-font-size);
-
 }
 
-.sm-dox a:hover, .sm-dox a:active {
+.sm-dox a:focus {
+    outline: auto;
+}
+
+.sm-dox a:hover, .sm-dox a:active, .tablist li a:hover {
     text-shadow: none;
     font-weight: normal;
     background: var(--menu-focus-background);
     color: var(--menu-focus-foreground);
     border-radius: var(--border-radius-small) !important;
     font-size: var(--navigation-font-size);
+}
+
+.tablist li.current {
+    border-radius: var(--border-radius-small);
+    background: var(--menu-selected-background);
+}
+
+.tablist li {
+    margin: var(--spacing-small) 0 var(--spacing-small) var(--spacing-small);
+}
+
+.tablist a {
+    padding: 0 var(--spacing-large);
 }
 
 
@@ -385,6 +425,41 @@ a, a.el:visited, a.el:hover, a.el:focus, a.el:active {
     width: var(--searchbar-width);
     position: relative;
     box-shadow: none;
+    display: block;
+    margin-top: 0;
+}
+
+.left #MSearchSelect {
+    left: 0;
+}
+
+.tabs .left #MSearchSelect {
+    padding-left: 0;
+}
+
+.tabs #MSearchBox {
+    position: absolute;
+    right: var(--spacing-medium);
+}
+
+@media screen and (max-width: 767px) {
+    .tabs #MSearchBox {
+        position: relative;
+        right: 0;
+        margin-left: var(--spacing-medium);
+        margin-top: 0;
+    }
+}
+
+
+
+#MSearchSelectWindow, #MSearchResultsWindow {
+    z-index: 9999;
+}
+
+#MSearchBox.MSearchBoxActive {
+    border-color: var(--primary-color);
+    box-shadow: inset 0 0 0 1px var(--primary-color);
 }
 
 #main-menu > li:last-child {
@@ -400,8 +475,8 @@ a, a.el:visited, a.el:hover, a.el:focus, a.el:active {
 #MSearchField {
     font-size: var(--navigation-font-size);
     height: calc(var(--searchbar-height) - 2px);
-    background: var(--searchbar-background);
-    width: calc(var(--searchbar-width) - 60px);
+    background: transparent;
+    width: calc(var(--searchbar-width) - 64px);
 }
 
 .MSearchBoxActive #MSearchField {
@@ -423,6 +498,10 @@ a, a.el:visited, a.el:hover, a.el:focus, a.el:active {
 
 #MSearchBox span.right {
     padding-top: calc(calc(var(--searchbar-height) / 2) - 12px);
+}
+
+.tabs #MSearchBox span.right {
+    top: calc(calc(var(--searchbar-height) / 2) - 12px);
 }
 
 @keyframes slideInSearchResults {
@@ -505,7 +584,7 @@ iframe#MSearchResults {
     #MSearchResultsWindow {
         left: var(--spacing-medium) !important;
         right: var(--spacing-medium);
-        overflow: scroll;
+        overflow: auto;
         transform: translate(0, 20px);
         animation: ease-out 280ms slideInSearchResultsMobile;
     }
@@ -563,6 +642,10 @@ iframe#MSearchResults {
     color: var(--side-nav-foreground);
 }
 
+#nav-tree a:focus {
+    outline-style: auto;
+}
+
 .arrow {
     color: var(--primary-light-color);
     font-family: serif;
@@ -574,7 +657,7 @@ iframe#MSearchResults {
     opacity: 0;
 }
 
-#nav-tree div.item:hover .arrow {
+#nav-tree div.item:hover .arrow, #nav-tree a:focus .arrow {
     opacity: 1;
 }
 
@@ -767,6 +850,7 @@ code {
     background: var(--code-background);
     color: var(--code-foreground);
     padding: 2px 6px;
+    word-break: break-word;
 }
 
 div.fragment, pre.fragment {
@@ -861,13 +945,17 @@ div.fragment .line:first-child .lineno {
 dl warning, attention, note, deprecated, bug, ...
  */
 
-dl.warning, dl.attention, dl.note, dl.deprecated, dl.bug {
+dl.warning, dl.attention, dl.note, dl.deprecated, dl.bug, dl.invariant, dl.pre {
     padding: var(--spacing-medium);
     margin: var(--spacing-medium) 0;
     color: var(--page-background-color);
     overflow: hidden;
     margin-left: 0;
     border-radius: var(--border-radius-small);
+}
+
+dl.section dd {
+    margin-bottom: 2px;
 }
 
 dl.warning, dl.attention {
@@ -914,6 +1002,12 @@ dl.section dd, dl.bug dd, dl.deprecated dd {
     margin-inline-start: 0px;
 }
 
+dl.invariant, dl.pre {
+    background: var(--invariant-color);
+    border-left: 8px solid var(--invariant-color-dark);
+    color: var(--invariant-color-darker);
+}
+
 /*
 memitem
  */
@@ -944,6 +1038,7 @@ h2.memtitle {
     border-bottom: none;
     border-top-left-radius: var(--border-radius-medium);
     border-top-right-radius: var(--border-radius-medium);
+    word-break: break-all;
 }
 
 a:target + h2.memtitle, a:target + h2.memtitle + div.memitem {
@@ -975,6 +1070,7 @@ div.memproto {
     overflow: auto;
     border-bottom: 1px solid var(--separator-color);
     padding: var(--spacing-medium);
+    margin-bottom: -1px;
 }
 
 div.memtitle {
@@ -1026,6 +1122,7 @@ dl.reflist dt, dl.reflist dd {
 
 
 dl.reflist dt {
+    border-radius: 0;
     background: var(--code-background);
     border-bottom: 1px solid var(--separator-color);
     color: var(--page-foreground-color)
@@ -1085,6 +1182,12 @@ table.fieldtable th {
     box-shadow: 0 0 15px var(--primary-lighter-color);
 }
 
+table.memberdecls {
+    display: block;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
 
 /*
 hr
@@ -1111,6 +1214,7 @@ hr {
 div.directory {
     border-top: 1px solid var(--separator-color);
     border-bottom: 1px solid var(--separator-color);
+    width: auto;
 }
 
 table.directory {
@@ -1126,7 +1230,7 @@ table.directory {
 }
 
 .directory tr.even {
-    background-color: rgba(0,0,0,.025);
+    background-color: var(--odd-color);
 }
 
 .icona {
@@ -1151,9 +1255,31 @@ table.directory {
     filter: saturate(0.2);
 }
 
+@media screen and (max-width: 767px) {
+    div.directory {
+        margin-left: calc(0px - var(--spacing-medium));
+        margin-right: calc(0px - var(--spacing-medium));
+    }
+}
+
 @media (prefers-color-scheme: dark) {
     .iconfopen, .iconfclosed {
         filter: hue-rotate(180deg) invert();
+    }
+}
+
+/*
+class list
+ */
+
+.classindex dl.odd {
+    background: var(--odd-color);
+    border-radius: var(--border-radius-small);
+}
+
+@media screen and (max-width: 767px) {
+    .classindex {
+        margin: 0 calc(0px - var(--spacing-small));
     }
 }
 

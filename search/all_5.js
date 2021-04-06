@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mylibrary_11',['MyLibrary',['../namespace_my_library.html',1,'']]]
+  ['mylibrary_9',['MyLibrary',['../namespace_my_library.html',1,'']]]
 ];
