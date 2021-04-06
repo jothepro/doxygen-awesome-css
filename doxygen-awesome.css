@@ -584,7 +584,7 @@ iframe#MSearchResults {
     #MSearchResultsWindow {
         left: var(--spacing-medium) !important;
         right: var(--spacing-medium);
-        overflow: scroll;
+        overflow: auto;
         transform: translate(0, 20px);
         animation: ease-out 280ms slideInSearchResultsMobile;
     }
@@ -1184,7 +1184,7 @@ table.fieldtable th {
 
 table.memberdecls {
     display: block;
-    overflow-x: scroll;
+    overflow-x: auto;
     overflow-y: hidden;
 }
 
