@@ -558,7 +558,7 @@ iframe#MSearchResults {
     #MSearchBox {
         margin-top: var(--spacing-medium);
         margin-bottom: var(--spacing-medium);
-        width: calc(100vw - 32px);
+        width: calc(100vw - 30px);
     }
 
     #main-menu > li:last-child {
