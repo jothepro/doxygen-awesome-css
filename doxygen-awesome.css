@@ -150,6 +150,9 @@ SOFTWARE.
     /* height of an item in any tree / collapsable table */
     --tree-item-height: 30px;
 
+    /* Set the number of columns in the Data structure index (default is 3) */
+    --classindex-columns: 3;
+
 }
 
 @media screen and (max-width: 767px) {
@@ -261,7 +264,7 @@ a, a.el:visited, a.el:hover, a.el:focus, a.el:active {
     #titlearea {
         padding-bottom: var(--spacing-small);
     }
-    
+
 }
 
 #titlearea table tbody tr {
@@ -1271,6 +1274,10 @@ table.directory {
 /*
 class list
  */
+
+.classindex dl {
+     column-count: var(--classindex-columns);
+}
 
 .classindex dl.odd {
     background: var(--odd-color);
