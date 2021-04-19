@@ -25,7 +25,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
- */
+*/
 
 :root {
     /* primary theme color. This will affect the entire websites color scheme: links, arrows, labels, ... */
@@ -134,6 +134,7 @@ SOFTWARE.
     --fragment-foreground: #fff;
     --fragment-keyword: #cc99cd;
     --fragment-keywordtype: #ab99cd;
+    --fragment-keywordflow: #e08000;
     --fragment-token: #7ec699;
     --fragment-comment: #999;
     --fragment-link: #98c0e3;
@@ -149,7 +150,6 @@ SOFTWARE.
 
     /* height of an item in any tree / collapsable table */
     --tree-item-height: 30px;
-
 }
 
 @media screen and (max-width: 767px) {
@@ -228,8 +228,9 @@ a, a.el:visited, a.el:hover, a.el:focus, a.el:active {
 }
 
 /*
- Title & top navigation
+ Title and top navigation
  */
+
 #top {
     background: var(--header-background);
     border-bottom: 1px solid var(--separator-color);
@@ -261,7 +262,6 @@ a, a.el:visited, a.el:hover, a.el:focus, a.el:active {
     #titlearea {
         padding-bottom: var(--spacing-small);
     }
-    
 }
 
 #titlearea table tbody tr {
@@ -308,7 +308,6 @@ a, a.el:visited, a.el:hover, a.el:focus, a.el:active {
     }
 }
 
-
 @media screen and (min-width: 768px) {
     .sm-dox li, .tablist li {
         display: var(--menu-display);
@@ -329,8 +328,6 @@ a, a.el:visited, a.el:hover, a.el:focus, a.el:active {
     .sm-dox ul a:hover span.sub-arrow {
         border-color: transparent transparent transparent var(--menu-focus-foreground);
     }
-
-
 }
 
 .sm-dox ul {
@@ -451,8 +448,6 @@ a, a.el:visited, a.el:hover, a.el:focus, a.el:active {
     }
 }
 
-
-
 #MSearchSelectWindow, #MSearchResultsWindow {
     z-index: 9999;
 }
@@ -494,7 +489,6 @@ a, a.el:visited, a.el:hover, a.el:focus, a.el:active {
 #MSearchBox span.left, #MSearchBox span.right {
     background: none;
 }
-
 
 #MSearchBox span.right {
     padding-top: calc(calc(var(--searchbar-height) / 2) - 12px);
@@ -552,8 +546,6 @@ iframe#MSearchResults {
     color: var(--menu-focus-foreground);
 }
 
-
-
 @media screen and (max-width: 767px) {
     #MSearchBox {
         margin-top: var(--spacing-medium);
@@ -588,8 +580,6 @@ iframe#MSearchResults {
         transform: translate(0, 20px);
         animation: ease-out 280ms slideInSearchResultsMobile;
     }
-
-
 }
 
 /*
@@ -671,8 +661,8 @@ iframe#MSearchResults {
     width: 1px;
 }
 
-/**
- content
+/*
+ Contents
  */
 
 div.header {
@@ -783,10 +773,8 @@ blockquote p {
 }
 
 /*
-toc
+ Table of Contents
  */
-
-
 
 div.toc {
     background-color: var(--side-nav-background);
@@ -836,7 +824,7 @@ div.toc ul li.level2, div.toc ul li.level3 {
 }
 
 /*
-code & fragment
+ Code & Fragments
  */
 
 code, div.fragment, pre.fragment {
@@ -908,6 +896,10 @@ div.fragment span.keywordtype {
     color: var(--fragment-keywordtype);
 }
 
+div.fragment span.keywordflow {
+    color: var(--fragment-keywordflow);
+}
+
 div.fragment span.stringliteral {
     color: var(--fragment-token)
 }
@@ -942,7 +934,7 @@ div.fragment .line:first-child .lineno {
 }
 
 /*
-dl warning, attention, note, deprecated, bug, ...
+ dl warning, attention, note, deprecated, bug, ...
  */
 
 dl.warning, dl.attention, dl.note, dl.deprecated, dl.bug, dl.invariant, dl.pre {
@@ -1009,7 +1001,7 @@ dl.invariant, dl.pre {
 }
 
 /*
-memitem
+ memitem
  */
 
 div.memdoc, div.memproto, h2.memtitle {
@@ -1100,8 +1092,9 @@ table.mlabels > tbody > tr:first-child {
 .memname, .memitem span.mlabels {
     margin: 0
 }
+
 /*
-reflist
+ reflist
  */
 
 dl.reflist {
@@ -1134,7 +1127,7 @@ dl.reflist dd {
 }
 
 /*
-table
+ Table
  */
 
 table.markdownTable, table.fieldtable {
@@ -1190,7 +1183,7 @@ table.memberdecls {
 
 
 /*
-hr
+ Horizontal Rule
  */
 
 hr {
@@ -1201,7 +1194,6 @@ hr {
 
 .contents hr {
     box-shadow: var(--content-maxwidth) 0 0 0 var(--separator-color), calc(0px - var(--content-maxwidth)) 0 0 0 var(--separator-color);
-
 }
 
 .contents img {
@@ -1209,7 +1201,7 @@ hr {
 }
 
 /*
- directories
+ Directories
  */
 div.directory {
     border-top: 1px solid var(--separator-color);
@@ -1269,7 +1261,7 @@ table.directory {
 }
 
 /*
-class list
+ Class list
  */
 
 .classindex dl.odd {
@@ -1283,9 +1275,8 @@ class list
     }
 }
 
-
 /*
-  footer / nav-path
+  Footer and nav-path
  */
 
 #nav-path {
