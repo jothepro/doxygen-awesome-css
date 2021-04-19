@@ -141,7 +141,6 @@ SOFTWARE.
     --fragment-preprocessor: #65cabe;
     --fragment-linenumber-color: #ccc;
     --fragment-linenumber-background: #35393c;
-    --fragment-whitespace: pre;
     --fragment-lineheight: 22px;
 
     /* sidebar navigation (treeview) colors */
@@ -882,7 +881,7 @@ code, code a, pre.fragment, div.fragment, div.fragment .line, div.fragment span 
 }
 
 div.fragment, div.fragment .line, div.fragment span {
-    white-space: var(--fragment-whitespace);
+    white-space: pre;
 }
 
 div.fragment .line {
