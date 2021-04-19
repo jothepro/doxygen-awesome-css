@@ -886,6 +886,7 @@ div.fragment, div.fragment .line, div.fragment span {
 
 div.fragment .line {
     display: inline-block;
+    word-wrap: initial;
     line-height: var(--fragment-lineheight);
 }
 
