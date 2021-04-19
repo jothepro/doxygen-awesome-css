@@ -141,7 +141,8 @@ SOFTWARE.
     --fragment-preprocessor: #65cabe;
     --fragment-linenumber-color: #ccc;
     --fragment-linenumber-background: #35393c;
-    --fragment-whitespace: nowrap;
+    --fragment-whitespace: pre;
+    --fragment-lineheight: 22px;
 
     /* sidebar navigation (treeview) colors */
     --side-nav-background: var(--page-background-color);
@@ -884,8 +885,9 @@ div.fragment, div.fragment .line, div.fragment span {
     white-space: var(--fragment-whitespace);
 }
 
-div.line:after {
-    content: '';
+div.fragment .line {
+    display: inline-block;
+    line-height: var(--fragment-lineheight);
 }
 
 div.fragment span.keyword {

@@ -51,8 +51,11 @@ public:
      *
      * @code{.cpp}
      * // code within @code block
-     * auto example = std::make_shared<Example>(5);
-     * example->test("test");
+     * if(true) {
+     *    auto example = std::make_shared<Example>(5);
+     *    example->test("test");
+     * }
+     * 
      * @endcode
      *
      *     // code within indented code block
