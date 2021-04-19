@@ -134,6 +134,7 @@ SOFTWARE.
     --fragment-foreground: #fff;
     --fragment-keyword: #cc99cd;
     --fragment-keywordtype: #ab99cd;
+    --fragment-keywordflow: #e08000;
     --fragment-token: #7ec699;
     --fragment-comment: #999;
     --fragment-link: #98c0e3;
@@ -261,7 +262,7 @@ a, a.el:visited, a.el:hover, a.el:focus, a.el:active {
     #titlearea {
         padding-bottom: var(--spacing-small);
     }
-    
+
 }
 
 #titlearea table tbody tr {
@@ -906,6 +907,10 @@ div.fragment span.keyword {
 
 div.fragment span.keywordtype {
     color: var(--fragment-keywordtype);
+}
+
+div.fragment span.keywordflow {
+    color: var(--fragment-keywordflow);
 }
 
 div.fragment span.stringliteral {
