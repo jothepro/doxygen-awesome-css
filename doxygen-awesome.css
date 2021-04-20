@@ -883,6 +883,10 @@ div.fragment {
     line-height: 0;
 }
 
+div.line:after {
+    margin-right: var(--spacing-medium);
+}
+
 div.fragment .line, pre.fragment {
     white-space: pre;
     word-wrap: initial;
