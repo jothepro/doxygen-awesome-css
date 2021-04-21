@@ -47,7 +47,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.drawio.svg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Doxygen Awesome
-   &#160;<span id="projectnumber">v1.3.0</span>
+   &#160;<span id="projectnumber">v1.4.0</span>
    </div>
    <div id="projectbrief">Modern Doxygen theme</div>
   </td>
@@ -111,24 +111,29 @@ $(document).ready(function(){initNavTree('subclass-example_8hpp_source.html','')
 <a href="subclass-example_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="example_8hpp.html">example.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_my_library.html">MyLibrary</a> {</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="class_my_library_1_1_subclass_example.html">    7</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_my_library_1_1_subclass_example.html">SubclassExample</a> : <span class="keyword">public</span> <a class="code" href="class_my_library_1_1_example.html">Example</a> {</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_my_library_1_1_subclass_example.html#a6c1b7e5c6e56d31a169ddd42e8992300">   14</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_my_library_1_1_subclass_example.html#a6c1b7e5c6e56d31a169ddd42e8992300">virtualfunc</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_my_library_1_1_subclass_example.html#ab45f5cdda2582ae3d098555c2d3cbf6d">   16</a></span>&#160;        std::shared_ptr&lt;std::string&gt; <a class="code" href="class_my_library_1_1_subclass_example.html#ab45f5cdda2582ae3d098555c2d3cbf6d">super_long_function_with_lots_of_parameters</a>(std::shared_ptr&lt;std::string&gt;&amp; text, std::shared_ptr&lt;std::string&gt;&amp; text2);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    };</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_my_library.html">MyLibrary</a> {</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="class_my_library_1_1_subclass_example.html">    8</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_my_library_1_1_subclass_example.html">SubclassExample</a> : <span class="keyword">public</span> <a class="code" href="class_my_library_1_1_example.html">Example</a> {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_my_library_1_1_subclass_example.html#a6c1b7e5c6e56d31a169ddd42e8992300">   15</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_my_library_1_1_subclass_example.html#a6c1b7e5c6e56d31a169ddd42e8992300">virtualfunc</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_my_library_1_1_subclass_example.html#ab45f5cdda2582ae3d098555c2d3cbf6d">   17</a></span>&#160;        std::shared_ptr&lt;std::string&gt; <a class="code" href="class_my_library_1_1_subclass_example.html#ab45f5cdda2582ae3d098555c2d3cbf6d">super_long_function_with_lots_of_parameters</a>(std::shared_ptr&lt;std::string&gt;&amp; text, std::shared_ptr&lt;std::string&gt;&amp; text2) {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keywordflow">if</span>(<span class="keyword">true</span>) {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                std::cout &lt;&lt; <span class="stringliteral">&quot;this even has some code.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            }</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    };</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="ttc" id="aclass_my_library_1_1_example_html"><div class="ttname"><a href="class_my_library_1_1_example.html">MyLibrary::Example</a></div><div class="ttdef"><b>Definition:</b> example.hpp:14</div></div>
-<div class="ttc" id="aclass_my_library_1_1_subclass_example_html"><div class="ttname"><a href="class_my_library_1_1_subclass_example.html">MyLibrary::SubclassExample</a></div><div class="ttdef"><b>Definition:</b> subclass-example.hpp:7</div></div>
+<div class="ttc" id="aclass_my_library_1_1_subclass_example_html"><div class="ttname"><a href="class_my_library_1_1_subclass_example.html">MyLibrary::SubclassExample</a></div><div class="ttdef"><b>Definition:</b> subclass-example.hpp:8</div></div>
 <div class="ttc" id="aclass_my_library_1_1_subclass_example_html_a6c1b7e5c6e56d31a169ddd42e8992300"><div class="ttname"><a href="class_my_library_1_1_subclass_example.html#a6c1b7e5c6e56d31a169ddd42e8992300">MyLibrary::SubclassExample::virtualfunc</a></div><div class="ttdeci">int virtualfunc() override</div></div>
-<div class="ttc" id="aclass_my_library_1_1_subclass_example_html_ab45f5cdda2582ae3d098555c2d3cbf6d"><div class="ttname"><a href="class_my_library_1_1_subclass_example.html#ab45f5cdda2582ae3d098555c2d3cbf6d">MyLibrary::SubclassExample::super_long_function_with_lots_of_parameters</a></div><div class="ttdeci">std::shared_ptr&lt; std::string &gt; super_long_function_with_lots_of_parameters(std::shared_ptr&lt; std::string &gt; &amp;text, std::shared_ptr&lt; std::string &gt; &amp;text2)</div></div>
+<div class="ttc" id="aclass_my_library_1_1_subclass_example_html_ab45f5cdda2582ae3d098555c2d3cbf6d"><div class="ttname"><a href="class_my_library_1_1_subclass_example.html#ab45f5cdda2582ae3d098555c2d3cbf6d">MyLibrary::SubclassExample::super_long_function_with_lots_of_parameters</a></div><div class="ttdeci">std::shared_ptr&lt; std::string &gt; super_long_function_with_lots_of_parameters(std::shared_ptr&lt; std::string &gt; &amp;text, std::shared_ptr&lt; std::string &gt; &amp;text2)</div><div class="ttdef"><b>Definition:</b> subclass-example.hpp:17</div></div>
 <div class="ttc" id="aexample_8hpp_html"><div class="ttname"><a href="example_8hpp.html">example.hpp</a></div></div>
 <div class="ttc" id="anamespace_my_library_html"><div class="ttname"><a href="namespace_my_library.html">MyLibrary</a></div><div class="ttdef"><b>Definition:</b> example.hpp:4</div></div>
 </div><!-- fragment --></div><!-- contents -->
