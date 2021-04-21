@@ -879,10 +879,6 @@ code, code a, pre.fragment, div.fragment, div.fragment .line, div.fragment span,
     font-size: var(--code-font-size) !important;
 }
 
-div.fragment {
-    line-height: 0;
-}
-
 div.line:after {
     margin-right: var(--spacing-medium);
 }
