@@ -131,16 +131,17 @@ SOFTWARE.
 
     /* fragment colors */
     --fragment-background: #282c34;
-    --fragment-foreground: #fff;
+    --fragment-foreground: #ffffff;
     --fragment-keyword: #cc99cd;
     --fragment-keywordtype: #ab99cd;
     --fragment-keywordflow: #e08000;
     --fragment-token: #7ec699;
-    --fragment-comment: #999;
+    --fragment-comment: #999999;
     --fragment-link: #98c0e3;
     --fragment-preprocessor: #65cabe;
-    --fragment-linenumber-color: #ccc;
+    --fragment-linenumber-color: #cccccc;
     --fragment-linenumber-background: #35393c;
+    --fragment-linenumber-border: #454545;
     --fragment-lineheight: 20px;
 
     /* sidebar navigation (treeview) colors */
@@ -931,7 +932,7 @@ div.fragment span.lineno a {
 }
 
 div.fragment .line:first-child .lineno {
-    box-shadow: -999999px 0px 0 999999px var(--fragment-linenumber-background), -999998px 0px 0 999999px var(--fragment-linenumber-color);
+    box-shadow: -999999px 0px 0 999999px var(--fragment-linenumber-background), -999998px 0px 0 999999px var(--fragment-linenumber-border);
 }
 
 /*
