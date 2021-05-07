@@ -141,7 +141,7 @@ SOFTWARE.
     --fragment-preprocessor: #65cabe;
     --fragment-linenumber-color: #cccccc;
     --fragment-linenumber-background: #35393c;
-    --fragment-linenumber-border: #454545;
+    --fragment-linenumber-border: #1f1f1f;
     --fragment-lineheight: 20px;
 
     /* sidebar navigation (treeview) colors */
