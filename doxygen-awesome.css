@@ -931,7 +931,7 @@ div.fragment span.lineno a {
 }
 
 div.fragment .line:first-child .lineno {
-    box-shadow: -9999px 0px 0 9999px var(--fragment-linenumber-background), -9998px 0px 0 9999px rgba(0,0,0,.3);
+    box-shadow: -999999px 0px 0 999999px var(--fragment-linenumber-background), -999998px 0px 0 999999px var(--fragment-linenumber-color);
 }
 
 /*
