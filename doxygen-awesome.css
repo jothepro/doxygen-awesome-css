@@ -145,7 +145,7 @@ SOFTWARE.
     --fragment-lineheight: 20px;
 
     /* sidebar navigation (treeview) colors */
-    --side-nav-background: var(--page-background-color);
+    --side-nav-background: #fbfbfb;
     --side-nav-foreground: var(--page-foreground-color);
     --side-nav-arrow-color: var(--page-background-color);
 
