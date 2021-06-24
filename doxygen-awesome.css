@@ -147,7 +147,8 @@ SOFTWARE.
     /* sidebar navigation (treeview) colors */
     --side-nav-background: #fbfbfb;
     --side-nav-foreground: var(--page-foreground-color);
-    --side-nav-arrow-color: var(--page-background-color);
+    --side-nav-arrow-opacity: 0;
+    --side-nav-arrow-hover-opacity: 0.9;
 
     /* height of an item in any tree / collapsable table */
     --tree-item-height: 30px;
@@ -637,19 +638,23 @@ iframe#MSearchResults {
     outline-style: auto;
 }
 
+#nav-tree .arrow {
+    opacity: var(--side-nav-arrow-opacity);
+}
+
 .arrow {
-    color: var(--primary-light-color);
+    color: inherit;
+    cursor: pointer;
+    font-size: 45%;
+    vertical-align: middle;
+    margin-right: 3.5px;
     font-family: serif;
     height: auto;
     text-align: right;
 }
 
-#nav-tree .arrow {
-    opacity: 0;
-}
-
 #nav-tree div.item:hover .arrow, #nav-tree a:focus .arrow {
-    opacity: 1;
+    opacity: var(--side-nav-arrow-hover-opacity);
 }
 
 #nav-tree .selected a {
