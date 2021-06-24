@@ -104,6 +104,9 @@ HTML_EXTRA_STYLESHEET  = doxygen-awesome-theme/doxygen-awesome.css custom.css
 | **Code Fragment Colors**:<br>Color-Scheme of multiline codeblocks ||
 | `--fragment-background` | <span style="background:#282c34;color:white">#282c34</span> |
 | `--fragment-foreground` | <span style="background:#fff;wolor:black">#fff</span> |
+| **Arrow Opacity**:<br>By default the arrows in the sidebar are only visible on hover. You can override this behaviour so they are visible all the time. | |
+| `--side-nav-arrow-opacity` | `0` |
+| `--side-nav-arrow-hover-opacity` | `0.9` |
 | ...and many more                   ||
 
 If you miss a configuration option or find a bug, please consider [opening an issue](https://github.com/jothepro/doxygen-awesome-css/issues)!
