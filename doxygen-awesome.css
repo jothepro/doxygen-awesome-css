@@ -27,9 +27,9 @@ SOFTWARE.
 
 */
 
-:root {
+html {
     /* primary theme color. This will affect the entire websites color scheme: links, arrows, labels, ... */
-    --primary-color: #1982d2;
+    --primary-color: #1779c4;
     --primary-dark-color: #00559f;
     --primary-light-color: #7aabd6;
     --primary-lighter-color: #cae1f1;
@@ -152,10 +152,12 @@ SOFTWARE.
 
     /* height of an item in any tree / collapsable table */
     --tree-item-height: 30px;
+
+    --darkmode-toggle-button-icon: '☀️'
 }
 
 @media screen and (max-width: 767px) {
-    :root {
+    html {
         --page-font-size: 16px;
         --navigation-font-size: 16px;
         --code-font-size: 15px; /* affects code, fragment */
@@ -164,9 +166,9 @@ SOFTWARE.
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
-        --primary-color: #00559f;
-        --primary-dark-color: #1982d2;
+    html:not(.light-mode) {
+        --primary-color: #1982d2;
+        --primary-dark-color: #5ca8e2;
         --primary-light-color: #4779ac;
         --primary-lighter-color: #191e21;
         --primary-lightest-color: #191a1c;
@@ -202,7 +204,52 @@ SOFTWARE.
         --bug-color: rgb(248, 113, 0);
         --bug-color-dark: #812a00;
         --bug-color-darker: #ffd3be;
+
+        --darkmode-toggle-button-icon: '🌛';
     }
+}
+
+/* dark mode variables are defined twice, to support both the dark-mode without and with doxygen-awesome-darkmode-toggle.js */
+html.dark-mode {
+    --primary-color: #1982d2;
+    --primary-dark-color: #5ca8e2;
+    --primary-light-color: #4779ac;
+    --primary-lighter-color: #191e21;
+    --primary-lightest-color: #191a1c;
+
+    --box-shadow: 0 2px 10px 0 rgba(0,0,0,.35);
+
+    --odd-color: rgba(0,0,0,.1);
+
+    --menu-selected-background: rgba(0,0,0,.4);
+
+    --page-background-color: #1C1D1F;
+    --page-foreground-color: #d2dbde;
+    --page-secondary-foreground-color: #859399;
+    --separator-color: #000000;
+    --side-nav-background: #252628;
+
+    --code-background: #2a2c2f;
+
+    --tablehead-background: #2a2c2f;
+
+    --blockquote-background: #1f2022;
+    --blockquote-foreground: #77848a;
+
+    --warning-color: #b61825;
+    --warning-color-dark: #510a02;
+    --warning-color-darker: #f5b1aa;
+    --note-color: rgb(255, 183, 0);
+    --note-color-dark: #9f7300;
+    --note-color-darker: #fff6df;
+    --deprecated-color: rgb(88, 90, 96);
+    --deprecated-color-dark: #262e37;
+    --deprecated-color-darker: #a0a5b0;
+    --bug-color: rgb(248, 113, 0);
+    --bug-color-dark: #812a00;
+    --bug-color-darker: #ffd3be;
+
+    --darkmode-toggle-button-icon: '🌛';
 }
 
 body {
@@ -225,8 +272,9 @@ p, div, table, dl {
     font-size: var(--page-font-size);
 }
 
-a, a.el:visited, a.el:hover, a.el:focus, a.el:active {
-    color: var(--primary-dark-color);
+a:link, a:visited, a:hover, a:focus, a:active {
+    color: var(--primary-color) !important;
+    font-weight: 500;
 }
 
 /*
@@ -324,7 +372,7 @@ a, a.el:visited, a.el:hover, a.el:focus, a.el:active {
     }
 
     .sm-dox ul a span.sub-arrow {
-        border-color: transparent transparent transparent var(--header-foreground);
+        border-color: transparent transparent transparent var(--page-foreground-color);
     }
 
     .sm-dox ul a:hover span.sub-arrow {
@@ -354,7 +402,7 @@ a, a.el:visited, a.el:hover, a.el:focus, a.el:active {
 }
 
 .sm-dox ul a {
-    color: var(--page-foreground-color);
+    color: var(--page-foreground-color) !important;
     background: var(--page-background-color);
     font-size: var(--navigation-font-size);
 }
@@ -368,8 +416,8 @@ a, a.el:visited, a.el:hover, a.el:focus, a.el:active {
 }
 
 .sm-dox ul a:hover, .sm-dox ul a:active, .sm-dox ul a:focus {
-    font-size: var(--navigation-font-size);
-    color: var(--menu-focus-foreground);
+    font-size: var(--navigation-font-size) !important;
+    color: var(--menu-focus-foreground) !important;
     text-shadow: none;
     background-color: var(--menu-focus-background);
     border-radius: var(--border-radius-small) !important;
@@ -379,7 +427,7 @@ a, a.el:visited, a.el:hover, a.el:focus, a.el:active {
     text-shadow: none;
     background: transparent;
     background-image: none !important;
-    color: var(--header-foreground);
+    color: var(--header-foreground) !important;
     font-weight: normal;
     font-size: var(--navigation-font-size);
 }
@@ -392,7 +440,7 @@ a, a.el:visited, a.el:hover, a.el:focus, a.el:active {
     text-shadow: none;
     font-weight: normal;
     background: var(--menu-focus-background);
-    color: var(--menu-focus-foreground);
+    color: var(--menu-focus-foreground) !important;
     border-radius: var(--border-radius-small) !important;
     font-size: var(--navigation-font-size);
 }
@@ -494,6 +542,8 @@ a, a.el:visited, a.el:hover, a.el:focus, a.el:active {
 
 #MSearchBox span.right {
     padding-top: calc(calc(var(--searchbar-height) / 2) - 12px);
+    position: absolute;
+    right: var(--spacing-small);
 }
 
 .tabs #MSearchBox span.right {
@@ -540,12 +590,13 @@ iframe#MSearchResults {
     line-height: var(--content-line-height);
     margin: 0 var(--spacing-small);
     border-radius: var(--border-radius-small);
-    color: var(--page-foreground-color);
+    color: var(--page-foreground-color) !important;
+    font-weight: normal;
 }
 
 #MSearchSelectWindow a.SelectItem:hover {
     background: var(--menu-focus-background);
-    color: var(--menu-focus-foreground);
+    color: var(--menu-focus-foreground) !important;
 }
 
 @media screen and (max-width: 767px) {
@@ -560,7 +611,7 @@ iframe#MSearchResults {
     }
 
     #MSearchField {
-        width: calc(100vw - 95px);
+        width: calc(100vw - 110px);
     }
 
     @keyframes slideInSearchResultsMobile {
@@ -627,11 +678,12 @@ iframe#MSearchResults {
     text-shadow: none;
     background-image: none;
     background-color: transparent;
-    box-shadow: inset 4px 0 0 0 var(--primary-dark-color);
+    box-shadow: inset 4px 0 0 0 var(--primary-color);
 }
 
 #nav-tree a {
-    color: var(--side-nav-foreground);
+    color: var(--side-nav-foreground) !important;
+    font-weight: normal;
 }
 
 #nav-tree a:focus {
@@ -647,7 +699,7 @@ iframe#MSearchResults {
     cursor: pointer;
     font-size: 45%;
     vertical-align: middle;
-    margin-right: 3.5px;
+    margin-right: 2px;
     font-family: serif;
     height: auto;
     text-align: right;
@@ -658,8 +710,9 @@ iframe#MSearchResults {
 }
 
 #nav-tree .selected a {
-    color: var(--primary-dark-color);
+    color: var(--primary-color) !important;
     font-weight: bolder;
+    font-weight: 600;
 }
 
 .ui-resizable-e {
@@ -767,6 +820,7 @@ blockquote p {
     margin: var(--spacing-small) 0 var(--spacing-medium) 0;
 }
 .paramname {
+    font-weight: 600;
     color: var(--primary-dark-color);
 }
 
@@ -916,7 +970,7 @@ div.fragment span.comment {
 }
 
 div.fragment a.code {
-    color: var(--fragment-link);
+    color: var(--fragment-link) !important;
 }
 
 div.fragment span.preprocessor {
@@ -933,7 +987,7 @@ div.fragment span.lineno {
 
 div.fragment span.lineno a {
     background: none;
-    color: var(--fragment-link);
+    color: var(--fragment-link) !important;
 }
 
 div.fragment .line:first-child .lineno {
@@ -1105,6 +1159,7 @@ table.mlabels > tbody > tr:first-child {
  */
 
 dl.reflist {
+    box-shadow: var(--box-shadow);
     border-radius: var(--border-radius-medium);
     border: 1px solid var(--separator-color);
     overflow: hidden;
@@ -1122,6 +1177,7 @@ dl.reflist dt, dl.reflist dd {
 
 
 dl.reflist dt {
+    font-weight: 500;
     border-radius: 0;
     background: var(--code-background);
     border-bottom: 1px solid var(--separator-color);
@@ -1152,6 +1208,7 @@ th.markdownTableHeadLeft, th.markdownTableHeadRight, th.markdownTableHeadCenter,
     background: var(--tablehead-background);
     color: var(--tablehead-foreground);
     font-weight: 600;
+    font-size: var(--page-font-size);
 }
 
 table.markdownTable td, table.markdownTable th, table.fieldtable dt {
@@ -1239,7 +1296,7 @@ table.directory {
 }
 
 .icon {
-    background: var(--primary-dark-color);
+    background: var(--primary-color);
     width: 18px;
     height: 18px;
     line-height: 18px;
@@ -1321,7 +1378,7 @@ address.footer {
 .navpath li.navelem a {
     text-shadow: none;
     display: inline-block;
-    color: var(--primary-dark-color)
+    color: var(--primary-color) !important;
 }
 
 li.navelem {
@@ -1366,4 +1423,30 @@ li.navelem:first-child:before {
 
 .navpath li.navelem a:hover {
     color: var(--primary-color);
+}
+
+/*
+  Optional Dark mode toggle button
+*/
+
+doxygen-awesome-dark-mode-toggle {
+    margin: 0 0 0 var(--spacing-small);
+    padding: 0;
+    width: var(--searchbar-height);
+    height: var(--searchbar-height);
+    background: none;
+    border: none;
+    font-size: 23px;
+    border-radius: var(--border-radius-medium);
+    vertical-align: middle;
+    text-align: center;
+    line-height: var(--searchbar-height);
+}
+
+doxygen-awesome-dark-mode-toggle:hover {
+    background: var(--separator-color);
+}
+
+doxygen-awesome-dark-mode-toggle:after {
+    content: var(--darkmode-toggle-button-icon)
 }

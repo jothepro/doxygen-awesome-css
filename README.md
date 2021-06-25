@@ -44,7 +44,7 @@ Then make the option `HTML_EXTRA_STYLESHEET` in your Doxyfile point to the `css`
 HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css
 ```
 
-## Variants
+### Variants
 
 There is two variants of the theme.
 
@@ -62,6 +62,55 @@ HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css
 # Doxyfile
 GENERATE_TREEVIEW      = YES # required!
 HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css doxygen-awesome-css/doxygen-awesome-sidebar-only.css
+```
+
+### Dark Mode Toggle (Experimental)
+
+The theme comes with an experimental feature that adds a button to enable and disable the dark theme variant manually.
+
+It requires customizations in both the header & footer html template.
+
+```bash
+# Create default header & footer templates 
+doxygen -w html header.html footer.html
+```
+
+```
+# Doxyfile
+
+# Include the required Javascript
+HTML_EXTRA_FILES       = doxygen-awesome-css/doxygen-awesome-darkmode-toggle.js
+
+# Add the additional CSS. This is ONLY required for the sidebar-only theme variant!
+HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css \ 
+                         doxygen-awesome-css/doxygen-awesome-sidebar-only.css \
+                         doxygen-awesome-css/doxygen-awesome-sidebar-only-darkmode-toggle.css
+
+# set custom header & footer templates
+HTML_HEADER            = header.html
+HTML_FOOTER            = footer.html
+```
+
+
+```html
+<!-- header.html -->
+<html>
+    <head>
+        <!-- import the script somewhere in the head -->
+        <script type="text/javascript" src="$relpath^doxygen-awesome-darkmode-toggle.js"></script>
+    </head>
+    <body>
+<!-- footer.html -->
+    </body>
+    <!-- add the button to toggle the theme -->
+    <script>
+    $(document).ready(function(){
+        toggleButton = document.createElement('doxygen-awesome-dark-mode-toggle')
+        toggleButton.title = "Toggle Light/Dark Mode"
+        document.getElementById("MSearchBox").parentNode.appendChild(toggleButton)
+    })
+    </script>
+</html>
 ```
 
 ## Examples
@@ -83,31 +132,50 @@ To customize the existing theme, add your own `custom.css` and overwrite the var
 HTML_EXTRA_STYLESHEET  = doxygen-awesome-theme/doxygen-awesome.css custom.css
 ```
 
-| Parameter                 | Default     |
-| :------------------------ | :---------- |
-| **Color Scheme**:<br>primary theme color. This will affect the entire websites color scheme: links, arrows, labels, ... ||
-| `--primary-color`         | <span style="background:#1982d2;color:white">#1982d2</span> |
-| `--primary-dark-color`    | <span style="background:#00559f;color:white">#00559f</span> |
-| `--primary-light-color`   | <span style="background:#7aabd6;color:black">#7aabd6</span> |
-| `--primary-lighter-color` | <span style="background:#cae1f1;color:black">#cae1f1</span> |
-| `--primary-lightest-color`| <span style="background:#e9f1f8;color:black">#e9f1f8</span> |
-| **Spacing:**<br>default spacings. Most compontest reference these values for spacing, to provide uniform spacing on the page. ||
-| `--spacing-small`         | `5px`  |
-| `--spacing-medium`        | `10px` |
-| `--spacing-large`         | `16px` |
-| **Border Radius**:<br>border radius for all rounded components. Will affect many components, like dropdowns, memitems, codeblocks, ...    ||
-| `--border-radius-large`   | `8px`  |
-| `--border-radius-small`   | `4px`  |
-| `--border-radius-medium`  | `6px`  |
-| **Content Width**:<br>The content is centered and constraint in it's width. To make the content fill the whole page, set the following variable to `auto`. ||
-| `--content-maxwidth`      | `900px` |
-| **Code Fragment Colors**:<br>Color-Scheme of multiline codeblocks ||
-| `--fragment-background` | <span style="background:#282c34;color:white">#282c34</span> |
-| `--fragment-foreground` | <span style="background:#fff;wolor:black">#fff</span> |
-| **Arrow Opacity**:<br>By default the arrows in the sidebar are only visible on hover. You can override this behaviour so they are visible all the time. | |
-| `--side-nav-arrow-opacity` | `0` |
-| `--side-nav-arrow-hover-opacity` | `0.9` |
-| ...and many more                   ||
+```css
+/* custom.css */
+html {
+    /* define light-mode variable overrides here */
+}
+
+@media (prefers-color-scheme: dark) {
+    html:not(.light-mode) {
+        /* define dark-mode variable overrides here if you DON'T use doxygen-awesome-darkmode-toggle.js */
+    }
+}
+
+html.dark-mode {
+    /* define dark-mode variable overrides here if you DO use doxygen-awesome-darkmode-toggle.js */
+}
+```
+
+| Parameter                         | Default (Light)                                             | Default (Dark)                                              |
+| :-------------------------------- | :---------------------------------------------------------- | ----------------------------------------------------------- |
+| **Color Scheme**:<br>primary theme color. This will affect the entire websites color scheme: links, arrows, labels, ...                                     |||
+| `--primary-color`                 | <span style="background:#1779c4;color:white">#1779c4</span> | <span style="background:#1982d2;color:white">#1982d2</span> |
+| `--primary-dark-color`            | <span style="background:#00559f;color:white">#00559f</span> | <span style="background:#5ca8e2;color:white">#5ca8e2</span> |
+| `--primary-light-color`           | <span style="background:#7aabd6;color:black">#7aabd6</span> | <span style="background:#4779ac;color:white">#4779ac</span> |
+| `--primary-lighter-color`         | <span style="background:#cae1f1;color:black">#cae1f1</span> | <span style="background:#191e21;color:white">#191e21</span> |
+| `--primary-lightest-color`        | <span style="background:#e9f1f8;color:black">#e9f1f8</span> | <span style="background:#191a1c;color:white">#191a1c</span> |
+| **Spacing:**<br>default spacings. Most compontest reference these values for spacing, to provide uniform spacing on the page.                               |||
+| `--spacing-small`                 | `5px`                                                       |                                                             |
+| `--spacing-medium`                | `10px`                                                      |                                                             |
+| `--spacing-large`                 | `16px`                                                      |                                                             |
+| **Border Radius**:<br>border radius for all rounded components. Will affect many components, like dropdowns, memitems, codeblocks, ...                      |||
+| `--border-radius-large`           | `8px`                                                       |                                                             |
+| `--border-radius-small`           | `4px`                                                       |                                                             |
+| `--border-radius-medium`          | `6px`                                                       |                                                             |
+| **Content Width**:<br>The content is centered and constraint in it's width. To make the content fill the whole page, set the following variable to `auto`.  |||
+| `--content-maxwidth`              | `900px`                                                     |                                                             |
+| **Code Fragment Colors**:<br>Color-Scheme of multiline codeblocks                                                                                           |||
+| `--fragment-background`           | <span style="background:#282c34;color:white">#282c34</span> |                                                             |
+| `--fragment-foreground`           | <span style="background:#fff;wolor:black">#fff</span>       |                                                             |
+| **Arrow Opacity**:<br>By default the arrows in the sidebar are only visible on hover. You can override this behaviour so they are visible all the time.     |||
+| `--side-nav-arrow-opacity`        | `0`                                                         |                                                             |
+| `--side-nav-arrow-hover-opacity`  | `0.9`                                                       |                                                             |
+| **Darkmode Toggle Icon**:<br>If you have enabled the darkmode toggle button, you can define the icon that is shown for the current mode.                    |||
+| `--darkmode-toggle-button-icon`   | ☀️                                                           | 🌛                                                          |
+| ...and many more                                                                                                                                            |||
 
 If you miss a configuration option or find a bug, please consider [opening an issue](https://github.com/jothepro/doxygen-awesome-css/issues)!
 
@@ -132,9 +200,9 @@ HTML_COLORSTYLE_GAMMA  = 113
 
 Tested with
 
-- Chrome 89, Chrome 89 for Android, Chrome 87 for iOS
+- Chrome 91, Chrome 91 for Android, Chrome 87 for iOS
 - Safari 14, Safari for iOS 14
-- Firefox 86, Firefox Daylight 86 for Android, Firefox Daylight 32 for iOS
+- Firefox 89, Firefox Daylight 89 for Android, Firefox Daylight 33 for iOS
 
 ## Credits
 
