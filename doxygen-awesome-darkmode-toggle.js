@@ -102,6 +102,4 @@ class DoxygenAwesomeDarkModeToggle extends HTMLElement {
     }
 }
 
-
 customElements.define("doxygen-awesome-dark-mode-toggle", DoxygenAwesomeDarkModeToggle);
-

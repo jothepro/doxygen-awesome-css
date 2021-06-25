@@ -798,9 +798,13 @@ div.contents div.dyncontent {
 }
 
 @media (prefers-color-scheme: dark) {
-    div.contents div.dyncontent img {
+    html:not(.light-mode) div.contents div.dyncontent img {
         filter: hue-rotate(180deg) invert();
     }
+}
+
+html.dark-mode div.contents div.dyncontent img {
+    filter: hue-rotate(180deg) invert();
 }
 
 h2.groupheader {
@@ -1319,9 +1323,13 @@ table.directory {
 }
 
 @media (prefers-color-scheme: dark) {
-    .iconfopen, .iconfclosed {
+    html:not(.light-mode) .iconfopen, html:not(.light-mode) .iconfclosed {
         filter: hue-rotate(180deg) invert();
     }
+}
+
+html.dark-mode .iconfopen, html.dark-mode .iconfclosed {
+    filter: hue-rotate(180deg) invert();
 }
 
 /*
@@ -1413,12 +1421,6 @@ li.navelem:first-child:before {
     border-top-color: transparent;
     transform: scaleY(3.2);
     margin-right: var(--spacing-small);
-}
-
-@media (prefers-color-scheme: dark) {
-    #nav-path li.navelem:after {
-        text-shadow: 3px 0 0 var(--separator-color), 8px 0 6px rgba(0,0,0,0.4);
-    }
 }
 
 .navpath li.navelem a:hover {

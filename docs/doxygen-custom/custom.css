@@ -5,8 +5,6 @@
     height: 72px;
 }
 
-
-
 @media screen and (max-width: 767px) {
     .github-corner svg {
         width: 55px;
