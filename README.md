@@ -204,6 +204,26 @@ Tested with
 - Safari 14, Safari for iOS 14
 - Firefox 89, Firefox Daylight 89 for Android, Firefox Daylight 33 for iOS
 
+## Tips & Tricks
+
+### Class Diagrams with Graphviz
+
+To get the best looking class diagrams for your documentation, generate them with Graphviz as vector graphics with transparent background:
+
+```
+# Doxyfile
+HAVE_DOT = YES
+DOT_IMAGE_FORMAT = svg
+DOT_TRANSPARENT = YES
+```
+
+### Share your own theme customizations
+
+If you customized the theme with custom colors, spacings, font-sizes, etc. and you want to share your creation with others, you can to this [here](https://github.com/jothepro/doxygen-awesome-css/discussions/13).
+
+I am always curious to learn about how you made the theme look even better!
+
+
 ## Credits
 
 This theme is heavily inspired by the beautiful [vuepress](https://vuepress.vuejs.org/) static site generator default theme!

@@ -574,8 +574,17 @@ a:link, a:visited, a:hover, a:focus, a:active {
 }
 
 iframe#MSearchResults {
-    background: var(--page-background-color);
     margin: 4px;
+}
+
+@media (prefers-color-scheme: dark) {
+    iframe#MSearchResults {
+        filter: invert() hue-rotate(180deg);
+    }
+}
+
+html.dark-mode iframe#MSearchResults {
+    filter: invert() hue-rotate(180deg);
 }
 
 #MSearchSelectWindow {
@@ -798,12 +807,14 @@ div.contents div.dyncontent {
 }
 
 @media (prefers-color-scheme: dark) {
-    html:not(.light-mode) div.contents div.dyncontent img {
+    html:not(.light-mode) div.contents div.dyncontent img,
+    html:not(.light-mode) div.contents div.dyncontent iframe {
         filter: hue-rotate(180deg) invert();
     }
 }
 
-html.dark-mode div.contents div.dyncontent img {
+html.dark-mode div.contents div.dyncontent img,
+html.dark-mode div.contents div.dyncontent iframe {
     filter: hue-rotate(180deg) invert();
 }
 
