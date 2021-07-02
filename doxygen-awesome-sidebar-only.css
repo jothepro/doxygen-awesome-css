@@ -31,7 +31,7 @@ SOFTWARE.
     /* side nav width. MUST be = `TREEVIEW_WIDTH`.
      * Make sure it is wide enought to contain the page title (logo + title + version)
      */
-    --side-nav-fixed-width: 350px;
+    --side-nav-fixed-width: 340px;
     --menu-display: none;
 
     --top-height: 120px;
@@ -67,6 +67,7 @@ SOFTWARE.
     }
     #main-nav {
         float: left;
+        padding-right: 0;
     }
 
     .ui-resizable-handle {
@@ -104,5 +105,3 @@ SOFTWARE.
         right: auto;
     }
 }
-
-

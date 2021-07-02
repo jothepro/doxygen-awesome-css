@@ -27,15 +27,21 @@ var NAVTREE =
   [ "Doxygen Awesome", "index.html", [
     [ "Motivation", "index.html#autotoc_md6", null ],
     [ "Features", "index.html#autotoc_md7", null ],
-    [ "Installation", "index.html#autotoc_md8", null ],
-    [ "Variants", "index.html#autotoc_md9", null ],
-    [ "Examples", "index.html#autotoc_md10", null ],
-    [ "Configuration", "index.html#autotoc_md11", [
-      [ "CSS Variables", "index.html#autotoc_md12", null ],
-      [ "Doxygen generator", "index.html#autotoc_md13", null ]
+    [ "Installation", "index.html#autotoc_md8", [
+      [ "Variants", "index.html#autotoc_md9", null ],
+      [ "Dark Mode Toggle (Experimental)", "index.html#autotoc_md10", null ]
     ] ],
-    [ "Browser support", "index.html#autotoc_md14", null ],
-    [ "Credits", "index.html#autotoc_md15", null ],
+    [ "Examples", "index.html#autotoc_md11", null ],
+    [ "Configuration", "index.html#autotoc_md12", [
+      [ "CSS Variables", "index.html#autotoc_md13", null ],
+      [ "Doxygen generator", "index.html#autotoc_md14", null ]
+    ] ],
+    [ "Browser support", "index.html#autotoc_md15", null ],
+    [ "Tips & Tricks", "index.html#autotoc_md16", [
+      [ "Class Diagrams with Graphviz", "index.html#autotoc_md17", null ],
+      [ "Share your own theme customizations", "index.html#autotoc_md18", null ]
+    ] ],
+    [ "Credits", "index.html#autotoc_md19", null ],
     [ "Example Page", "page1.html", [
       [ "An example section", "page1.html#sec", [
         [ "The first subsection", "page1.html#subsection1", null ],

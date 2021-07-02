@@ -1,5 +1,4 @@
-<!-- HTML header for doxygen 1.9.1-->
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
@@ -19,9 +18,10 @@
 <!-- END twitter metadata -->
 <title>Doxygen Awesome: Doxygen Awesome</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
-<link rel="icon" type="image/svg+xml" href="logo.drawio.svg">
+<link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="navtreedata.js"></script>
@@ -32,6 +32,7 @@
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
 <link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -47,7 +48,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.drawio.svg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Doxygen Awesome
-   &#160;<span id="projectnumber">v1.4.0</span>
+   &#160;<span id="projectnumber">v1.5.0</span>
    </div>
    <div id="projectbrief">Modern Doxygen theme</div>
   </td>
@@ -129,13 +130,13 @@ Installation</h1>
 <p>Copy the <code>css</code> files from this repository into your project or add this repository as submodule and check out the latest release:</p>
 <div class="fragment"><div class="line">git submodule add https://github.com/jothepro/doxygen-awesome-css.git</div>
 <div class="line">cd doxygen-awesome-css</div>
-<div class="line">git checkout &lt;release-version&gt; # e.g. v0.0.1</div>
+<div class="line">git checkout v1.5.0</div>
 </div><!-- fragment --><p>Then make the option <code>HTML_EXTRA_STYLESHEET</code> in your Doxyfile point to the <code>css</code> files:</p>
 <div class="fragment"><div class="line"># Doxyfile</div>
 <div class="line"># ...</div>
 <div class="line">HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md9"></a>
-Variants</h1>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md9"></a>
+Variants</h2>
 <p>There is two variants of the theme.</p>
 <p><img src="theme-variations.drawio.svg" alt="" style="pointer-events: none;" class="inline" title="theme variations"/></p>
 <ol type="1">
@@ -148,69 +149,132 @@ Variants</h1>
 <div class="line">HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css doxygen-awesome-css/doxygen-awesome-sidebar-only.css</div>
 </div><!-- fragment --></li>
 </ol>
-<h1><a class="anchor" id="autotoc_md10"></a>
+<h2><a class="anchor" id="autotoc_md10"></a>
+Dark Mode Toggle (Experimental)</h2>
+<p>The theme comes with an experimental feature that adds a button to enable and disable the dark theme variant manually.</p>
+<p>It requires customizations in both the header &amp; footer html template.</p>
+<div class="fragment"><div class="line"># Create default header &amp; footer templates </div>
+<div class="line">doxygen -w html header.html footer.html</div>
+</div><!-- fragment --><div class="fragment"><div class="line"># Doxyfile</div>
+<div class="line"> </div>
+<div class="line"># Include the required Javascript</div>
+<div class="line">HTML_EXTRA_FILES       = doxygen-awesome-css/doxygen-awesome-darkmode-toggle.js</div>
+<div class="line"> </div>
+<div class="line"># Add the additional CSS. This is ONLY required for the sidebar-only theme variant!</div>
+<div class="line">HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css \ </div>
+<div class="line">                         doxygen-awesome-css/doxygen-awesome-sidebar-only.css \</div>
+<div class="line">                         doxygen-awesome-css/doxygen-awesome-sidebar-only-darkmode-toggle.css</div>
+<div class="line"> </div>
+<div class="line"># set custom header &amp; footer templates</div>
+<div class="line">HTML_HEADER            = header.html</div>
+<div class="line">HTML_FOOTER            = footer.html</div>
+</div><!-- fragment --><div class="fragment"><div class="line">&lt;!-- header.html --&gt;</div>
+<div class="line">&lt;html&gt;</div>
+<div class="line">    &lt;head&gt;</div>
+<div class="line">        &lt;!-- import the script somewhere in the head --&gt;</div>
+<div class="line">        &lt;script type=&quot;text/javascript&quot; src=&quot;$relpath^doxygen-awesome-darkmode-toggle.js&quot;&gt;&lt;/script&gt;</div>
+<div class="line">    &lt;/head&gt;</div>
+<div class="line">    &lt;body&gt;</div>
+<div class="line">&lt;!-- footer.html --&gt;</div>
+<div class="line">    &lt;/body&gt;</div>
+<div class="line">    &lt;!-- add the button to toggle the theme --&gt;</div>
+<div class="line">    &lt;script&gt;</div>
+<div class="line">    $(document).ready(function(){</div>
+<div class="line">        toggleButton = document.createElement(&#39;doxygen-awesome-dark-mode-toggle&#39;)</div>
+<div class="line">        toggleButton.title = &quot;Toggle Light/Dark Mode&quot;</div>
+<div class="line">        document.getElementById(&quot;MSearchBox&quot;).parentNode.appendChild(toggleButton)</div>
+<div class="line">    })</div>
+<div class="line">    &lt;/script&gt;</div>
+<div class="line">&lt;/html&gt;</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md11"></a>
 Examples</h1>
 <ul>
 <li>Sidebar-Only theme: <a href="https://jothepro.github.io/doxygen-awesome-css/">Documentation of this repository</a></li>
 <li>Base theme: <a href="https://a4z.github.io/libsl3/">libsl3</a></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md11"></a>
+<h1><a class="anchor" id="autotoc_md12"></a>
 Configuration</h1>
-<h2><a class="anchor" id="autotoc_md12"></a>
+<h2><a class="anchor" id="autotoc_md13"></a>
 CSS Variables</h2>
 <p>This theme is highly customizable because a lot of things are parameterized with CSS variables. The following list of parameters is not complete! You can easily modify any variable with the developer tools of your browser to find out what it does.</p>
 <p>To customize the existing theme, add your own <code>custom.css</code> and overwrite the variables there: </p><div class="fragment"><div class="line">HTML_EXTRA_STYLESHEET  = doxygen-awesome-theme/doxygen-awesome.css custom.css</div>
+</div><!-- fragment --><div class="fragment"><div class="line">/* custom.css */</div>
+<div class="line">html {</div>
+<div class="line">    /* define light-mode variable overrides here */</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line">@media (prefers-color-scheme: dark) {</div>
+<div class="line">    html:not(.light-mode) {</div>
+<div class="line">        /* define dark-mode variable overrides here if you DON&#39;T use doxygen-awesome-darkmode-toggle.js */</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line">html.dark-mode {</div>
+<div class="line">    /* define dark-mode variable overrides here if you DO use doxygen-awesome-darkmode-toggle.js */</div>
+<div class="line">}</div>
 </div><!-- fragment --><table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadLeft">Parameter   </th><th class="markdownTableHeadLeft">Default    </th></tr>
+<th class="markdownTableHeadLeft">Parameter   </th><th class="markdownTableHeadLeft">Default (Light)   </th><th class="markdownTableHeadNone">Default (Dark)    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft" colspan="2"><b>Color Scheme</b>:<br  />
+<td class="markdownTableBodyLeft" colspan="3"><b>Color Scheme</b>:<br  />
 primary theme color. This will affect the entire websites color scheme: links, arrows, labels, ...    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><code>--primary-color</code>   </td><td class="markdownTableBodyLeft"><span style="background:#1982d2;color:white">#1982d2</span>    </td></tr>
+<td class="markdownTableBodyLeft"><code>--primary-color</code>   </td><td class="markdownTableBodyLeft"><span style="background:#1779c4;color:white">#1779c4</span>   </td><td class="markdownTableBodyNone"><span style="background:#1982d2;color:white">#1982d2</span>    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><code>--primary-dark-color</code>   </td><td class="markdownTableBodyLeft"><span style="background:#00559f;color:white">#00559f</span>    </td></tr>
+<td class="markdownTableBodyLeft"><code>--primary-dark-color</code>   </td><td class="markdownTableBodyLeft"><span style="background:#00559f;color:white">#00559f</span>   </td><td class="markdownTableBodyNone"><span style="background:#5ca8e2;color:white">#5ca8e2</span>    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><code>--primary-light-color</code>   </td><td class="markdownTableBodyLeft"><span style="background:#7aabd6;color:black">#7aabd6</span>    </td></tr>
+<td class="markdownTableBodyLeft"><code>--primary-light-color</code>   </td><td class="markdownTableBodyLeft"><span style="background:#7aabd6;color:black">#7aabd6</span>   </td><td class="markdownTableBodyNone"><span style="background:#4779ac;color:white">#4779ac</span>    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><code>--primary-lighter-color</code>   </td><td class="markdownTableBodyLeft"><span style="background:#cae1f1;color:black">#cae1f1</span>    </td></tr>
+<td class="markdownTableBodyLeft"><code>--primary-lighter-color</code>   </td><td class="markdownTableBodyLeft"><span style="background:#cae1f1;color:black">#cae1f1</span>   </td><td class="markdownTableBodyNone"><span style="background:#191e21;color:white">#191e21</span>    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><code>--primary-lightest-color</code>   </td><td class="markdownTableBodyLeft"><span style="background:#e9f1f8;color:black">#e9f1f8</span>    </td></tr>
+<td class="markdownTableBodyLeft"><code>--primary-lightest-color</code>   </td><td class="markdownTableBodyLeft"><span style="background:#e9f1f8;color:black">#e9f1f8</span>   </td><td class="markdownTableBodyNone"><span style="background:#191a1c;color:white">#191a1c</span>    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft" colspan="2"><b>Spacing:</b><br  />
-default spacings. Most compontest reference these values for spacing, to provide uniform spacing on the page.    </td></tr>
+<td class="markdownTableBodyLeft" colspan="3"><b>Spacing:</b><br  />
+default spacings. Most ui components reference these values for spacing, to provide uniform spacing on the page.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><code>--spacing-small</code>   </td><td class="markdownTableBodyLeft"><code>5px</code>    </td></tr>
+<td class="markdownTableBodyLeft"><code>--spacing-small</code>   </td><td class="markdownTableBodyLeft"><code>5px</code>   </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><code>--spacing-medium</code>   </td><td class="markdownTableBodyLeft"><code>10px</code>    </td></tr>
+<td class="markdownTableBodyLeft"><code>--spacing-medium</code>   </td><td class="markdownTableBodyLeft"><code>10px</code>   </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><code>--spacing-large</code>   </td><td class="markdownTableBodyLeft"><code>16px</code>    </td></tr>
+<td class="markdownTableBodyLeft"><code>--spacing-large</code>   </td><td class="markdownTableBodyLeft"><code>16px</code>   </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft" colspan="2"><b>Border Radius</b>:<br  />
-border radius for all rounded components. Will affect many components, like dropdowns, memitems, codeblocks, ...    </td></tr>
+<td class="markdownTableBodyLeft" colspan="3"><b>Border Radius</b>:<br  />
+border radius for all rounded ui components. Will affect many components, like dropdowns, memitems, codeblocks, ...    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><code>--border-radius-large</code>   </td><td class="markdownTableBodyLeft"><code>8px</code>    </td></tr>
+<td class="markdownTableBodyLeft"><code>--border-radius-small</code>   </td><td class="markdownTableBodyLeft"><code>4px</code>   </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><code>--border-radius-small</code>   </td><td class="markdownTableBodyLeft"><code>4px</code>    </td></tr>
+<td class="markdownTableBodyLeft"><code>--border-radius-medium</code>   </td><td class="markdownTableBodyLeft"><code>6px</code>   </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><code>--border-radius-medium</code>   </td><td class="markdownTableBodyLeft"><code>6px</code>    </td></tr>
+<td class="markdownTableBodyLeft"><code>--border-radius-large</code>   </td><td class="markdownTableBodyLeft"><code>8px</code>   </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft" colspan="2"><b>Content Width</b>:<br  />
+<td class="markdownTableBodyLeft" colspan="3"><b>Content Width</b>:<br  />
 The content is centered and constraint in it's width. To make the content fill the whole page, set the following variable to <code>auto</code>.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><code>--content-maxwidth</code>   </td><td class="markdownTableBodyLeft"><code>900px</code>    </td></tr>
+<td class="markdownTableBodyLeft"><code>--content-maxwidth</code>   </td><td class="markdownTableBodyLeft"><code>900px</code>   </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft" colspan="2"><b>Code Fragment Colors</b>:<br  />
+<td class="markdownTableBodyLeft" colspan="3"><b>Code Fragment Colors</b>:<br  />
 Color-Scheme of multiline codeblocks    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><code>--fragment-background</code>   </td><td class="markdownTableBodyLeft"><span style="background:#282c34;color:white">#282c34</span>    </td></tr>
+<td class="markdownTableBodyLeft"><code>--fragment-background</code>   </td><td class="markdownTableBodyLeft"><span style="background:#282c34;color:white">#282c34</span>   </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><code>--fragment-foreground</code>   </td><td class="markdownTableBodyLeft"><span style="background:#fff;wolor:black">#fff</span>    </td></tr>
+<td class="markdownTableBodyLeft"><code>--fragment-foreground</code>   </td><td class="markdownTableBodyLeft"><span style="background:#fff;wolor:black">#fff</span>   </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft" colspan="2">...and many more   </td></tr>
+<td class="markdownTableBodyLeft" colspan="3"><b>Arrow Opacity</b>:<br  />
+By default the arrows in the sidebar are only visible on hover. You can override this behaviour so they are visible all the time.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>--side-nav-arrow-opacity</code>   </td><td class="markdownTableBodyLeft"><code>0</code>   </td><td class="markdownTableBodyNone"></td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>--side-nav-arrow-hover-opacity</code>   </td><td class="markdownTableBodyLeft"><code>0.9</code>   </td><td class="markdownTableBodyNone"></td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft" colspan="3"><b>Darkmode Toggle Icon</b>:<br  />
+If you have enabled the darkmode toggle button, you can define the icon that is shown for the current mode.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>--darkmode-toggle-button-icon</code>   </td><td class="markdownTableBodyLeft">☀️   </td><td class="markdownTableBodyNone">🌛    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft" colspan="3">...and many more   </td></tr>
 </table>
 <p>If you miss a configuration option or find a bug, please consider <a href="https://github.com/jothepro/doxygen-awesome-css/issues">opening an issue</a>!</p>
-<h2><a class="anchor" id="autotoc_md13"></a>
+<h2><a class="anchor" id="autotoc_md14"></a>
 Doxygen generator</h2>
 <p>The theme overrides most colors with the <code>--primary-color-*</code> variables.</p>
 <p>But there is a few small images and graphics that the theme cannot adjust or replace. To make these blend in better with the rest, it is recommended to adjust the <a href="https://www.doxygen.nl/manual/customize.html#minor_tweaks_colors">doxygen color settings</a> to something that matches the chosen color-scheme.</p>
@@ -219,25 +283,46 @@ Doxygen generator</h2>
 <div class="line">HTML_COLORSTYLE_HUE    = 209</div>
 <div class="line">HTML_COLORSTYLE_SAT    = 255</div>
 <div class="line">HTML_COLORSTYLE_GAMMA  = 113</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md14"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md15"></a>
 Browser support</h1>
 <p>Tested with</p>
 <ul>
-<li>Chrome 89, Chrome 89 for Android, Chrome 87 for iOS</li>
+<li>Chrome 91, Chrome 91 for Android, Chrome 87 for iOS</li>
 <li>Safari 14, Safari for iOS 14</li>
-<li>Firefox 86, Firefox Daylight 86 for Android, Firefox Daylight 32 for iOS</li>
+<li>Firefox 89, Firefox Daylight 89 for Android, Firefox Daylight 33 for iOS</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md15"></a>
+<h1><a class="anchor" id="autotoc_md16"></a>
+Tips &amp; Tricks</h1>
+<h2><a class="anchor" id="autotoc_md17"></a>
+Class Diagrams with Graphviz</h2>
+<p>To get the best looking class diagrams for your documentation, generate them with Graphviz as vector graphics with transparent background:</p>
+<div class="fragment"><div class="line"># Doxyfile</div>
+<div class="line">HAVE_DOT = YES</div>
+<div class="line">DOT_IMAGE_FORMAT = svg</div>
+<div class="line">DOT_TRANSPARENT = YES</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md18"></a>
+Share your own theme customizations</h2>
+<p>If you customized the theme with custom colors, spacings, font-sizes, etc. and you want to share your creation with others, you can to this <a href="https://github.com/jothepro/doxygen-awesome-css/discussions/13">here</a>.</p>
+<p>I am always curious to learn about how you made the theme look even better!</p>
+<h1><a class="anchor" id="autotoc_md19"></a>
 Credits</h1>
 <p>This theme is heavily inspired by the beautiful <a href="https://vuepress.vuejs.org/">vuepress</a> static site generator default theme! </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
+<!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
+<script type="text/javascript">
+  $(document).ready(function(){
+    toggleButton = document.createElement('doxygen-awesome-dark-mode-toggle')
+    toggleButton.title = "Toggle Light/Dark Mode"
+    document.getElementById("MSearchBox").parentNode.appendChild(toggleButton)
+  })
+</script>
 </body>
 </html>
