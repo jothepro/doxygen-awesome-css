@@ -33,7 +33,7 @@ Copy the `css` files from this repository into your project or add this reposito
 ```bash
 git submodule add https://github.com/jothepro/doxygen-awesome-css.git
 cd doxygen-awesome-css
-git checkout v1.4.0
+git checkout v1.5.0
 ```
 
 Then make the option `HTML_EXTRA_STYLESHEET` in your Doxyfile point to the `css` files:
