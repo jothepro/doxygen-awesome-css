@@ -578,7 +578,7 @@ iframe#MSearchResults {
 }
 
 @media (prefers-color-scheme: dark) {
-    iframe#MSearchResults {
+    html:not(.light-mode) iframe#MSearchResults {
         filter: invert() hue-rotate(180deg);
     }
 }

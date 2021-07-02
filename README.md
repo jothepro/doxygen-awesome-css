@@ -157,14 +157,14 @@ html.dark-mode {
 | `--primary-light-color`           | <span style="background:#7aabd6;color:black">#7aabd6</span> | <span style="background:#4779ac;color:white">#4779ac</span> |
 | `--primary-lighter-color`         | <span style="background:#cae1f1;color:black">#cae1f1</span> | <span style="background:#191e21;color:white">#191e21</span> |
 | `--primary-lightest-color`        | <span style="background:#e9f1f8;color:black">#e9f1f8</span> | <span style="background:#191a1c;color:white">#191a1c</span> |
-| **Spacing:**<br>default spacings. Most compontest reference these values for spacing, to provide uniform spacing on the page.                               |||
+| **Spacing:**<br>default spacings. Most ui components reference these values for spacing, to provide uniform spacing on the page.                            |||
 | `--spacing-small`                 | `5px`                                                       |                                                             |
 | `--spacing-medium`                | `10px`                                                      |                                                             |
 | `--spacing-large`                 | `16px`                                                      |                                                             |
-| **Border Radius**:<br>border radius for all rounded components. Will affect many components, like dropdowns, memitems, codeblocks, ...                      |||
-| `--border-radius-large`           | `8px`                                                       |                                                             |
+| **Border Radius**:<br>border radius for all rounded ui components. Will affect many components, like dropdowns, memitems, codeblocks, ...                   |||
 | `--border-radius-small`           | `4px`                                                       |                                                             |
 | `--border-radius-medium`          | `6px`                                                       |                                                             |
+| `--border-radius-large`           | `8px`                                                       |                                                             |
 | **Content Width**:<br>The content is centered and constraint in it's width. To make the content fill the whole page, set the following variable to `auto`.  |||
 | `--content-maxwidth`              | `900px`                                                     |                                                             |
 | **Code Fragment Colors**:<br>Color-Scheme of multiline codeblocks                                                                                           |||
