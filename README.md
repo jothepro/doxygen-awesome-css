@@ -101,15 +101,15 @@ HTML_FOOTER            = footer.html
     </head>
     <body>
 <!-- footer.html -->
+        <!-- add the button to toggle the theme -->
+        <script type="text/javascript">
+            $(document).ready(function(){
+                toggleButton = document.createElement('doxygen-awesome-dark-mode-toggle')
+                toggleButton.title = "Toggle Light/Dark Mode"
+                document.getElementById("MSearchBox").parentNode.appendChild(toggleButton)
+            })
+        </script>
     </body>
-    <!-- add the button to toggle the theme -->
-    <script>
-    $(document).ready(function(){
-        toggleButton = document.createElement('doxygen-awesome-dark-mode-toggle')
-        toggleButton.title = "Toggle Light/Dark Mode"
-        document.getElementById("MSearchBox").parentNode.appendChild(toggleButton)
-    })
-    </script>
 </html>
 ```
 
