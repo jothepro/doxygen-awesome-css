@@ -72,7 +72,7 @@ It requires customizations in both the header & footer html template.
 
 ```bash
 # Create default header & footer templates 
-doxygen -w html header.html footer.html
+doxygen -w html header.html footer.html delete_me.css
 ```
 
 ```
