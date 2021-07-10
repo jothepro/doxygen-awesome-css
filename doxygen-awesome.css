@@ -1400,6 +1400,11 @@ address.footer {
     color: var(--primary-color) !important;
 }
 
+.navpath li.navelem b {
+    color: var(--primary-dark-color);
+    font-weight: 500;
+}
+
 li.navelem {
     padding: 0;
     margin-left: -8px;
