@@ -70,48 +70,48 @@ The theme comes with an experimental feature that adds a button to enable and di
 
 It requires customizations in both the header & footer html template.
 
-```bash
-# Create default header & footer templates 
-doxygen -w html header.html footer.html delete_me.css
-```
+1. Create default header & footer templates:
+   ```bash
+   doxygen -w html header.html footer.html delete_me.css
+   ```
 
-```
-# Doxyfile
+2. Reference the required resources in your `Doxyfile`:
+   ```
+   # Include the required Javascript
+   HTML_EXTRA_FILES       = doxygen-awesome-css/doxygen-awesome-darkmode-toggle.js
 
-# Include the required Javascript
-HTML_EXTRA_FILES       = doxygen-awesome-css/doxygen-awesome-darkmode-toggle.js
+   # Add the additional CSS. This is ONLY required for the sidebar-only theme variant!
+   HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css \ 
+                            doxygen-awesome-css/doxygen-awesome-sidebar-only.css \
+                            doxygen-awesome-css/doxygen-awesome-sidebar-only-darkmode-toggle.css
 
-# Add the additional CSS. This is ONLY required for the sidebar-only theme variant!
-HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css \ 
-                         doxygen-awesome-css/doxygen-awesome-sidebar-only.css \
-                         doxygen-awesome-css/doxygen-awesome-sidebar-only-darkmode-toggle.css
+   # set custom header & footer files generated in previous step
+   HTML_HEADER            = header.html
+   HTML_FOOTER            = footer.html
+   ```
 
-# set custom header & footer templates
-HTML_HEADER            = header.html
-HTML_FOOTER            = footer.html
-```
-
-
-```html
-<!-- header.html -->
-<html>
-    <head>
-        <!-- import the script somewhere in the head -->
-        <script type="text/javascript" src="$relpath^doxygen-awesome-darkmode-toggle.js"></script>
-    </head>
-    <body>
-<!-- footer.html -->
-        <!-- add the button to toggle the theme -->
-        <script type="text/javascript">
-            $(document).ready(function(){
-                toggleButton = document.createElement('doxygen-awesome-dark-mode-toggle')
-                toggleButton.title = "Toggle Light/Dark Mode"
-                document.getElementById("MSearchBox").parentNode.appendChild(toggleButton)
-            })
-        </script>
-    </body>
-</html>
-```
+3. In `header.html`, include `doxygen-awesome-darkmode-toggle.js` at the end of the `<head>`:
+   ```html
+   <html> 
+       <head>
+           <!-- ... other metadata & script includes ... -->
+           <script type="text/javascript" src="$relpath^doxygen-awesome-darkmode-toggle.js"></script>
+       </head>
+       <body>
+   ```
+4. In `footer.html`, initialize the `doxygen-awesome-dark-mode-toggle` element at the end of the `<body>`:
+   ```html
+           <!-- ... -->
+           <script type="text/javascript">
+               $(document).ready(function(){
+                   toggleButton = document.createElement('doxygen-awesome-dark-mode-toggle')
+                   toggleButton.title = "Toggle Light/Dark Mode"
+                   document.getElementById("MSearchBox").parentNode.appendChild(toggleButton)
+               })
+           </script>
+       </body>
+   </html>
+   ```
 
 ## Examples
 
