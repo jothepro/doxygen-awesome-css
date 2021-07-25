@@ -34,9 +34,19 @@ class DoxygenAwesomeDarkModeToggle extends HTMLElement {
     static _staticConstructor = function() {
         DoxygenAwesomeDarkModeToggle.darkModeEnabled = DoxygenAwesomeDarkModeToggle.userPreference
         DoxygenAwesomeDarkModeToggle.enableDarkMode(DoxygenAwesomeDarkModeToggle.darkModeEnabled)
+        // Update the color scheme when the browsers preference changes
+        // without user interaction on the website.
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
             DoxygenAwesomeDarkModeToggle.onSystemPreferenceChanged()
         })
+        // Update the color scheme when the tab is made visible again.
+        // It is possible that the appearance was changed in another tab 
+        // while this tab was in the background.
+        document.addEventListener("visibilitychange", visibilityState => {
+            if (document.visibilityState === 'visible') {
+                DoxygenAwesomeDarkModeToggle.onSystemPreferenceChanged()
+            }
+        });
     }()
 
     constructor() {
