@@ -56,6 +56,10 @@ html {
     #nav-tree {
         padding: 0;
     }
+    
+    #nav-tree::-webkit-scrollbar { 
+        display: none;
+    }
 
     #top {
         display: block;
