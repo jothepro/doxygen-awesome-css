@@ -1181,6 +1181,7 @@ div.memtitle {
 
 div.memproto table.memname {
     font-family: monospace, fixed;
+    font-size: var(--code-font-size) !important;
     color: var(--page-foreground-color);
 }
 
