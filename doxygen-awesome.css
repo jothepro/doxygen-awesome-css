@@ -74,7 +74,7 @@ html {
     /* content text properties. These only affect the page content, not the navigation or any other ui elements */
     --content-line-height: 27px;
     /* The content is centered and constraint in it's width. To make the content fill the whole page, set the variable to auto.*/
-    --content-maxwidth: 900px;
+    --content-maxwidth: 1000px;
 
     /* colors for various content boxes: @warning, @note, @deprecated @bug */
     --warning-color: #fca49b;
@@ -167,6 +167,8 @@ html {
 
 @media (prefers-color-scheme: dark) {
     html:not(.light-mode) {
+        color-scheme: dark;
+        
         --primary-color: #1982d2;
         --primary-dark-color: #5ca8e2;
         --primary-light-color: #4779ac;
@@ -197,7 +199,7 @@ html {
         --warning-color-darker: #f5b1aa;
         --note-color: rgb(255, 183, 0);
         --note-color-dark: #9f7300;
-        --note-color-darker: #fff6df;
+        --note-color-darker: #645b39;
         --deprecated-color: rgb(88, 90, 96);
         --deprecated-color-dark: #262e37;
         --deprecated-color-darker: #a0a5b0;
@@ -211,6 +213,8 @@ html {
 
 /* dark mode variables are defined twice, to support both the dark-mode without and with doxygen-awesome-darkmode-toggle.js */
 html.dark-mode {
+    color-scheme: dark;
+
     --primary-color: #1982d2;
     --primary-dark-color: #5ca8e2;
     --primary-light-color: #4779ac;
@@ -241,7 +245,7 @@ html.dark-mode {
     --warning-color-darker: #f5b1aa;
     --note-color: rgb(255, 183, 0);
     --note-color-dark: #9f7300;
-    --note-color-darker: #fff6df;
+    --note-color-darker: #645b39;
     --deprecated-color: rgb(88, 90, 96);
     --deprecated-color-dark: #262e37;
     --deprecated-color-darker: #a0a5b0;
@@ -808,13 +812,21 @@ div.contents div.dyncontent {
 
 @media (prefers-color-scheme: dark) {
     html:not(.light-mode) div.contents div.dyncontent img,
-    html:not(.light-mode) div.contents div.dyncontent iframe {
+    html:not(.light-mode) div.contents center img,
+    html:not(.light-mode) div.contents table img,
+    html:not(.light-mode) div.contents div.dyncontent iframe,
+    html:not(.light-mode) div.contents center iframe,
+    html:not(.light-mode) div.contents table iframe {
         filter: hue-rotate(180deg) invert();
     }
 }
 
 html.dark-mode div.contents div.dyncontent img,
-html.dark-mode div.contents div.dyncontent iframe {
+html.dark-mode div.contents center img,
+html.dark-mode div.contents table img,
+html.dark-mode div.contents div.dyncontent iframe,
+html.dark-mode div.contents center iframe,
+html.dark-mode div.contents table iframe {
     filter: hue-rotate(180deg) invert();
 }
 
@@ -1398,6 +1410,11 @@ address.footer {
     text-shadow: none;
     display: inline-block;
     color: var(--primary-color) !important;
+}
+
+.navpath li.navelem b {
+    color: var(--primary-dark-color);
+    font-weight: 500;
 }
 
 li.navelem {

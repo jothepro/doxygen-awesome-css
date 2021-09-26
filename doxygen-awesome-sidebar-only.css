@@ -27,7 +27,7 @@ SOFTWARE.
 
  */
 
-:root {
+html {
     /* side nav width. MUST be = `TREEVIEW_WIDTH`.
      * Make sure it is wide enought to contain the page title (logo + title + version)
      */
@@ -39,7 +39,7 @@ SOFTWARE.
 
 
 @media screen and (min-width: 768px) {
-    :root {
+    html {
         --searchbar-background: var(--page-background-color);
     }
 
@@ -47,6 +47,7 @@ SOFTWARE.
         min-width: var(--side-nav-fixed-width);
         max-width: var(--side-nav-fixed-width);
         top: var(--top-height);
+        overflow: visible;
     }
 
     #nav-tree, #side-nav {

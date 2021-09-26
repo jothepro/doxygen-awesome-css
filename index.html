@@ -48,7 +48,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.drawio.svg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Doxygen Awesome
-   &#160;<span id="projectnumber">v1.5.0</span>
+   &#160;<span id="projectnumber">v1.6.0</span>
    </div>
    <div id="projectbrief">Modern Doxygen theme</div>
   </td>
@@ -123,7 +123,7 @@ Features</h1>
 <li>🧩 No changes to the HTML structure of Doxygen required</li>
 <li>📱 Improved mobile usability</li>
 <li>🌘 Dark mode support!</li>
-<li>🥇 Works best with <b>doxygen 1.9.1</b></li>
+<li>🥇 Works best with <b>doxygen 1.9.1</b> or <b>1.9.2</b></li>
 </ul>
 <h1><a class="anchor" id="autotoc_md8"></a>
 Installation</h1>
@@ -153,11 +153,10 @@ Variants</h2>
 Dark Mode Toggle (Experimental)</h2>
 <p>The theme comes with an experimental feature that adds a button to enable and disable the dark theme variant manually.</p>
 <p>It requires customizations in both the header &amp; footer html template.</p>
-<div class="fragment"><div class="line"># Create default header &amp; footer templates </div>
-<div class="line">doxygen -w html header.html footer.html</div>
-</div><!-- fragment --><div class="fragment"><div class="line"># Doxyfile</div>
-<div class="line"> </div>
-<div class="line"># Include the required Javascript</div>
+<ol type="1">
+<li>Create default header &amp; footer templates: <div class="fragment"><div class="line">doxygen -w html header.html footer.html delete_me.css</div>
+</div><!-- fragment --></li>
+<li>Reference the required resources in your <code>Doxyfile</code>: <div class="fragment"><div class="line"># Include the required Javascript</div>
 <div class="line">HTML_EXTRA_FILES       = doxygen-awesome-css/doxygen-awesome-darkmode-toggle.js</div>
 <div class="line"> </div>
 <div class="line"># Add the additional CSS. This is ONLY required for the sidebar-only theme variant!</div>
@@ -165,28 +164,32 @@ Dark Mode Toggle (Experimental)</h2>
 <div class="line">                         doxygen-awesome-css/doxygen-awesome-sidebar-only.css \</div>
 <div class="line">                         doxygen-awesome-css/doxygen-awesome-sidebar-only-darkmode-toggle.css</div>
 <div class="line"> </div>
-<div class="line"># set custom header &amp; footer templates</div>
+<div class="line"># set custom header &amp; footer files generated in previous step</div>
 <div class="line">HTML_HEADER            = header.html</div>
 <div class="line">HTML_FOOTER            = footer.html</div>
-</div><!-- fragment --><div class="fragment"><div class="line">&lt;!-- header.html --&gt;</div>
-<div class="line">&lt;html&gt;</div>
+</div><!-- fragment --></li>
+<li>In <code>header.html</code>, include <code>doxygen-awesome-darkmode-toggle.js</code> at the end of the <code>&lt;head&gt;</code>: <div class="fragment"><div class="line">&lt;html&gt; </div>
 <div class="line">    &lt;head&gt;</div>
-<div class="line">        &lt;!-- import the script somewhere in the head --&gt;</div>
+<div class="line">        &lt;!-- ... other metadata &amp; script includes ... --&gt;</div>
 <div class="line">        &lt;script type=&quot;text/javascript&quot; src=&quot;$relpath^doxygen-awesome-darkmode-toggle.js&quot;&gt;&lt;/script&gt;</div>
 <div class="line">    &lt;/head&gt;</div>
 <div class="line">    &lt;body&gt;</div>
-<div class="line">&lt;!-- footer.html --&gt;</div>
+</div><!-- fragment --></li>
+<li>In <code>footer.html</code>, initialize the <code>doxygen-awesome-dark-mode-toggle</code> element at the end of the <code>&lt;body&gt;</code>: <div class="fragment"><div class="line">        &lt;!-- ... --&gt;</div>
+<div class="line">        &lt;script type=&quot;text/javascript&quot;&gt;</div>
+<div class="line">            $(function() {</div>
+<div class="line">                $(document).ready(function(){</div>
+<div class="line">                   toggleButton = document.createElement(&#39;doxygen-awesome-dark-mode-toggle&#39;)</div>
+<div class="line">                   toggleButton.title = &quot;Toggle Light/Dark Mode&quot;</div>
+<div class="line">                   document.getElementById(&quot;MSearchBox&quot;).parentNode.appendChild(toggleButton)</div>
+<div class="line">               })</div>
+<div class="line">            })</div>
+<div class="line">        &lt;/script&gt;</div>
 <div class="line">    &lt;/body&gt;</div>
-<div class="line">    &lt;!-- add the button to toggle the theme --&gt;</div>
-<div class="line">    &lt;script&gt;</div>
-<div class="line">    $(document).ready(function(){</div>
-<div class="line">        toggleButton = document.createElement(&#39;doxygen-awesome-dark-mode-toggle&#39;)</div>
-<div class="line">        toggleButton.title = &quot;Toggle Light/Dark Mode&quot;</div>
-<div class="line">        document.getElementById(&quot;MSearchBox&quot;).parentNode.appendChild(toggleButton)</div>
-<div class="line">    })</div>
-<div class="line">    &lt;/script&gt;</div>
 <div class="line">&lt;/html&gt;</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md11"></a>
+</div><!-- fragment --></li>
+</ol>
+<h1><a class="anchor" id="autotoc_md11"></a>
 Examples</h1>
 <ul>
 <li>Sidebar-Only theme: <a href="https://jothepro.github.io/doxygen-awesome-css/">Documentation of this repository</a></li>
@@ -248,9 +251,9 @@ border radius for all rounded ui components. Will affect many components, like d
 <td class="markdownTableBodyLeft"><code>--border-radius-large</code>   </td><td class="markdownTableBodyLeft"><code>8px</code>   </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft" colspan="3"><b>Content Width</b>:<br  />
-The content is centered and constraint in it's width. To make the content fill the whole page, set the following variable to <code>auto</code>.    </td></tr>
+The content is centered and constrained in its width. To make the content fill the whole page, set the following variable to <code>auto</code>.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><code>--content-maxwidth</code>   </td><td class="markdownTableBodyLeft"><code>900px</code>   </td><td class="markdownTableBodyNone"></td></tr>
+<td class="markdownTableBodyLeft"><code>--content-maxwidth</code>   </td><td class="markdownTableBodyLeft"><code>1000px</code>   </td><td class="markdownTableBodyNone"></td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft" colspan="3"><b>Code Fragment Colors</b>:<br  />
 Color-Scheme of multiline codeblocks    </td></tr>
@@ -318,10 +321,12 @@ Credits</h1>
   </ul>
 </div>
 <script type="text/javascript">
-  $(document).ready(function(){
-    toggleButton = document.createElement('doxygen-awesome-dark-mode-toggle')
-    toggleButton.title = "Toggle Light/Dark Mode"
-    document.getElementById("MSearchBox").parentNode.appendChild(toggleButton)
+  $(function() {
+    $(document).ready(function(){
+      toggleButton = document.createElement('doxygen-awesome-dark-mode-toggle')
+      toggleButton.title = "Toggle Light/Dark Mode"
+      document.getElementById("MSearchBox").parentNode.appendChild(toggleButton)
+    })
   })
 </script>
 </body>
