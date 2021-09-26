@@ -24,7 +24,7 @@ This theme is an attemt to update the visuals of doxygen without changing it's o
 - 🧩 No changes to the HTML structure of Doxygen required
 - 📱 Improved mobile usability
 - 🌘 Dark mode support!
-- 🥇 Works best with **doxygen 1.9.1**
+- 🥇 Works best with **doxygen 1.9.1** or **1.9.2**
  
 ## Installation
 
@@ -103,10 +103,12 @@ It requires customizations in both the header & footer html template.
    ```html
            <!-- ... -->
            <script type="text/javascript">
-               $(document).ready(function(){
-                   toggleButton = document.createElement('doxygen-awesome-dark-mode-toggle')
-                   toggleButton.title = "Toggle Light/Dark Mode"
-                   document.getElementById("MSearchBox").parentNode.appendChild(toggleButton)
+               $(function() {
+                   $(document).ready(function(){
+                      toggleButton = document.createElement('doxygen-awesome-dark-mode-toggle')
+                      toggleButton.title = "Toggle Light/Dark Mode"
+                      document.getElementById("MSearchBox").parentNode.appendChild(toggleButton)
+                  })
                })
            </script>
        </body>
