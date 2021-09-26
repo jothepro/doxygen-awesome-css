@@ -199,7 +199,7 @@ html {
         --warning-color-darker: #f5b1aa;
         --note-color: rgb(255, 183, 0);
         --note-color-dark: #9f7300;
-        --note-color-darker: #fff6df;
+        --note-color-darker: #645b39;
         --deprecated-color: rgb(88, 90, 96);
         --deprecated-color-dark: #262e37;
         --deprecated-color-darker: #a0a5b0;
@@ -245,7 +245,7 @@ html.dark-mode {
     --warning-color-darker: #f5b1aa;
     --note-color: rgb(255, 183, 0);
     --note-color-dark: #9f7300;
-    --note-color-darker: #fff6df;
+    --note-color-darker: #645b39;
     --deprecated-color: rgb(88, 90, 96);
     --deprecated-color-dark: #262e37;
     --deprecated-color-darker: #a0a5b0;
