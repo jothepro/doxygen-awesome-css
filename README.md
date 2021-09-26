@@ -167,7 +167,7 @@ html.dark-mode {
 | `--border-radius-small`           | `4px`                                                       |                                                             |
 | `--border-radius-medium`          | `6px`                                                       |                                                             |
 | `--border-radius-large`           | `8px`                                                       |                                                             |
-| **Content Width**:<br>The content is centered and constraint in it's width. To make the content fill the whole page, set the following variable to `auto`.  |||
+| **Content Width**:<br>The content is centered and constrained in its width. To make the content fill the whole page, set the following variable to `auto`.  |||
 | `--content-maxwidth`              | `1000px`                                                     |                                                             |
 | **Code Fragment Colors**:<br>Color-Scheme of multiline codeblocks                                                                                           |||
 | `--fragment-background`           | <span style="background:#282c34;color:white">#282c34</span> |                                                             |
