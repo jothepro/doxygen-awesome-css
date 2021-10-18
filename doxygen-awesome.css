@@ -623,16 +623,6 @@ html.dark-mode iframe#MSearchResults {
         width: calc(100vw - 30px);
     }
 
-    label.main-menu-btn ~ #searchBoxPos1 {
-        top: 4px !important;
-    }
-
-    label.main-menu-btn ~ #searchBoxPos1 > #MSearchBox {
-        margin-top: 0;
-        margin-bottom: 0;
-        width: calc(100vw - 55px);
-    }
-
     #main-menu > li:last-child {
         float: none !important;
     }
@@ -659,6 +649,21 @@ html.dark-mode iframe#MSearchResults {
         overflow: auto;
         transform: translate(0, 20px);
         animation: ease-out 280ms slideInSearchResultsMobile;
+    }
+
+    /* 
+     * Overwrites for fixing the searchbox on mobile in doxygen 1.9.2 
+     */
+    label.main-menu-btn ~ #searchBoxPos1 {
+        top: 4px !important;
+        right: unset !important;
+    }
+
+    label.main-menu-btn ~ #searchBoxPos1 > #MSearchBox {
+        margin-top: 0;
+        margin-bottom: 0;
+        width: calc(100vw - 86px);
+        float: left;
     }
 }
 
@@ -1474,6 +1479,7 @@ li.navelem:first-child:before {
 */
 
 doxygen-awesome-dark-mode-toggle {
+    display: inline-block;
     margin: 0 0 0 var(--spacing-small);
     padding: 0;
     width: var(--searchbar-height);

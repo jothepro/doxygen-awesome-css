@@ -103,6 +103,7 @@ It requires customizations in both the header & footer html template.
    ```html
            <!-- ... -->
            <script type="text/javascript">
+               // script for doxygen 1.9.1
                $(function() {
                    $(document).ready(function(){
                       toggleButton = document.createElement('doxygen-awesome-dark-mode-toggle')
@@ -113,6 +114,20 @@ It requires customizations in both the header & footer html template.
            </script>
        </body>
    </html>
+   ```
+   **Attention**: In Doxygen 1.9.2 the searchbox and it's siblings are deleted on every resize, which is why the toggle button has to be re-added every time:
+   ```js
+   $(function() {
+     toggleButton = document.createElement('doxygen-awesome-dark-mode-toggle')
+     toggleButton.title = "Toggle Light/Dark Mode"
+
+     $(document).ready(function(){
+       document.getElementById("MSearchBox").parentNode.appendChild(toggleButton)
+     })
+     $(window).resize(function(){
+       document.getElementById("MSearchBox").parentNode.appendChild(toggleButton)
+     })
+   })
    ```
 
 ## Examples
