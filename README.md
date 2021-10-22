@@ -3,11 +3,12 @@
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/jothepro/doxygen-awesome-css)](https://github.com/jothepro/doxygen-awesome-css/releases/latest)
 [![GitHub](https://img.shields.io/github/license/jothepro/doxygen-awesome-css)](https://github.com/jothepro/doxygen-awesome-css/blob/main/LICENSE)
 
-<div style="margin: -1% -4.4%;">
+<div style="filter: drop-shadow(0px 3px 15px rgba(0,0,0,0.25))">
 
 [![Screenshot of Doxygen Awesome CSS](img/screenshot.png)](https://jothepro.github.io/doxygen-awesome-css/)
 
 </div>
+<br>
 
 **Doxygen Awesome** is a custom **CSS theme for doxygen** html-documentation with lots of customization parameters.
 
