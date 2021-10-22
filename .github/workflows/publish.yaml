@@ -1,6 +1,7 @@
 name: publish
 on:
-  push
+  release:
+    types: [published]
 jobs:
   deploy:
     runs-on: ubuntu-20.04
