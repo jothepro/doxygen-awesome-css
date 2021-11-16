@@ -1308,8 +1308,9 @@ hr {
     box-shadow: var(--content-maxwidth) 0 0 0 var(--separator-color), calc(0px - var(--content-maxwidth)) 0 0 0 var(--separator-color);
 }
 
-.contents img {
+.contents img, .contents .center, .contents center {
     max-width: 100%;
+    overflow: scroll;
 }
 
 /*
