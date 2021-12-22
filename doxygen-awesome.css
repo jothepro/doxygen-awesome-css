@@ -1118,7 +1118,7 @@ dl.deprecated dt a {
     color: var(--deprecated-color-dark) !important;
 }
 
-dl.section dd, dl.bug dd, dl.deprecated dd {
+dl.section dd, dl.bug dd, dl.deprecated dd, dl.todo dd {
     margin-inline-start: 0px;
 }
 
