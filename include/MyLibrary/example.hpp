@@ -82,7 +82,9 @@ public:
      *
      * @pre This is a precondition
      *
+     * @todo This theme is never finished!
      *
+     * @remark This is awesome!
      *
      */
     std::string test(const std::string& test);
