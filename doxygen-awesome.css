@@ -83,6 +83,9 @@ html {
     --note-color: rgba(255,229,100,.3);
     --note-color-dark: #c39900;
     --note-color-darker: #8d7400;
+    --todo-color: rgba(100,160,200,.3);
+    --todo-color-dark: #00C0E0;
+    --todo-color-darker: #274a5c;
     --deprecated-color: rgb(214, 216, 224);
     --deprecated-color-dark: #5b6269;
     --deprecated-color-darker: #43454a;
@@ -168,7 +171,7 @@ html {
 @media (prefers-color-scheme: dark) {
     html:not(.light-mode) {
         color-scheme: dark;
-        
+
         --primary-color: #1982d2;
         --primary-dark-color: #5ca8e2;
         --primary-light-color: #4779ac;
@@ -200,6 +203,9 @@ html {
         --note-color: rgb(255, 183, 0);
         --note-color-dark: #9f7300;
         --note-color-darker: #645b39;
+        --todo-color: rgba(100,160,200,.3);
+        --todo-color-dark: #00C0E0;
+        --todo-color-darker: #dcf0fa;
         --deprecated-color: rgb(88, 90, 96);
         --deprecated-color-dark: #262e37;
         --deprecated-color-darker: #a0a5b0;
@@ -246,6 +252,9 @@ html.dark-mode {
     --note-color: rgb(255, 183, 0);
     --note-color-dark: #9f7300;
     --note-color-darker: #645b39;
+    --todo-color: rgba(100,160,200,.3);
+    --todo-color-dark: #00C0E0;
+    --todo-color-darker: #dcf0fa;
     --deprecated-color: rgb(88, 90, 96);
     --deprecated-color-dark: #262e37;
     --deprecated-color-darker: #a0a5b0;
@@ -651,8 +660,8 @@ html.dark-mode iframe#MSearchResults {
         animation: ease-out 280ms slideInSearchResultsMobile;
     }
 
-    /* 
-     * Overwrites for fixing the searchbox on mobile in doxygen 1.9.2 
+    /*
+     * Overwrites for fixing the searchbox on mobile in doxygen 1.9.2
      */
     label.main-menu-btn ~ #searchBoxPos1 {
         top: 3px !important;
@@ -1046,7 +1055,7 @@ div.fragment .line:first-child .lineno {
  dl warning, attention, note, deprecated, bug, ...
  */
 
-dl.warning, dl.attention, dl.note, dl.deprecated, dl.bug, dl.invariant, dl.pre {
+dl.warning, dl.attention, dl.note, dl.deprecated, dl.bug, dl.invariant, dl.pre, dl.todo, dl.remark {
     padding: var(--spacing-medium);
     margin: var(--spacing-medium) 0;
     color: var(--page-background-color);
@@ -1069,14 +1078,24 @@ dl.warning dt, dl.attention dt {
     color: var(--warning-color-dark);
 }
 
-dl.note {
+dl.note, dl.remark {
     background: var(--note-color);
     border-left: 8px solid var(--note-color-dark);
     color: var(--note-color-darker);
 }
 
-dl.note dt {
+dl.note dt, dl.remark dt {
     color: var(--note-color-dark);
+}
+
+dl.todo {
+    background: var(--todo-color);
+    border-left: 8px solid var(--todo-color-dark);
+    color: var(--todo-color-darker);
+}
+
+dl.todo dt {
+    color: var(--todo-color-dark);
 }
 
 dl.bug {
@@ -1099,7 +1118,7 @@ dl.deprecated dt a {
     color: var(--deprecated-color-dark) !important;
 }
 
-dl.section dd, dl.bug dd, dl.deprecated dd {
+dl.section dd, dl.bug dd, dl.deprecated dd, dl.todo dd {
     margin-inline-start: 0px;
 }
 
