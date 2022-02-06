@@ -721,8 +721,9 @@ html.dark-mode iframe#MSearchResults {
 }
 
 #nav-sync {
-    top: 12px !important;
+    bottom: 12px;
     right: 12px;
+    top: auto !important;
     user-select: none;
 }
 
