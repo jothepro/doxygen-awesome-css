@@ -1413,6 +1413,27 @@ html.dark-mode .iconfopen, html.dark-mode .iconfclosed {
     }
 }
 
+/* 
+ Class Index Doxygen 1.8 
+*/
+
+table.classindex table div.ah {
+    background-image: none;
+    background-color: initial;
+    border-color: var(--separator-color);
+    color: var(--page-foreground-color);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius-large);
+    padding: var(--spacing-small);
+}
+
+div.qindex {
+    background-color: var(--odd-color);
+    border-radius: var(--border-radius-small);
+    border: 1px solid var(--separator-color);
+    padding: var(--spacing-small);
+}
+
 /*
   Footer and nav-path
  */
