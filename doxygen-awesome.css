@@ -492,6 +492,11 @@ a:link, a:visited, a:hover, a:focus, a:active {
 
 .left #MSearchSelect {
     left: 0;
+    user-select: none;
+}
+
+.SelectionMark {
+    user-select: none;
 }
 
 .tabs .left #MSearchSelect {
@@ -610,6 +615,8 @@ html.dark-mode iframe#MSearchResults {
     border-radius: var(--border-radius-medium);
     box-shadow: var(--box-shadow);
     background: var(--page-background-color);
+    padding-top: var(--spacing-small);
+    padding-bottom: var(--spacing-small);
 }
 
 #MSearchSelectWindow a.SelectItem {
@@ -716,6 +723,7 @@ html.dark-mode iframe#MSearchResults {
 #nav-sync {
     top: 12px !important;
     right: 12px;
+    user-select: none;
 }
 
 #nav-tree .selected {
@@ -1536,6 +1544,8 @@ doxygen-awesome-dark-mode-toggle {
     vertical-align: middle;
     text-align: center;
     line-height: var(--searchbar-height);
+    user-select: none;
+    cursor: pointer;
 }
 
 doxygen-awesome-dark-mode-toggle:hover {
