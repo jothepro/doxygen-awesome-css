@@ -153,6 +153,9 @@ html {
     --side-nav-arrow-opacity: 0;
     --side-nav-arrow-hover-opacity: 0.9;
 
+    --toc-background: var(--side-nav-background);
+    --toc-foreground: var(--side-nav-foreground);
+
     /* height of an item in any tree / collapsable table */
     --tree-item-height: 30px;
 
@@ -904,7 +907,7 @@ blockquote p {
  */
 
 div.toc {
-    background-color: var(--side-nav-background);
+    background-color: var(--toc-background);
     border: 1px solid var(--separator-color);
     border-radius: var(--border-radius-medium);
     box-shadow: var(--box-shadow);
@@ -913,7 +916,7 @@ div.toc {
 }
 
 div.toc h3 {
-    color: var(--side-nav-foreground);
+    color: var(--toc-foreground);
     font-size: var(--navigation-font-size);
     margin: var(--spacing-large) 0;
 }
@@ -929,7 +932,7 @@ div.toc li:before {
     font-weight: 800;
     font-family: var(--font-family);
     margin-right: var(--spacing-small);
-    color: var(--side-nav-foreground);
+    color: var(--toc-foreground);
     opacity: .4;
 }
 
