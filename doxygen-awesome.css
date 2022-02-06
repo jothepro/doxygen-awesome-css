@@ -56,7 +56,7 @@ html {
     /* default box shadow used for raising an element above the normal content. Used in dropdowns, Searchresult, ... */
     --box-shadow: 0 2px 10px 0 rgba(0,0,0,.1);
 
-    --odd-color: rgba(0,0,0,.03);
+    --odd-color: rgba(0,0,0,.028);
 
     /* font-families. will affect all text on the website
      * font-family: the normal font for text, headlines, menus
@@ -181,7 +181,7 @@ html {
 
         --box-shadow: 0 2px 10px 0 rgba(0,0,0,.35);
 
-        --odd-color: rgba(0,0,0,.1);
+        --odd-color: rgba(100,100,100,.06);
 
         --menu-selected-background: rgba(0,0,0,.4);
 
@@ -230,7 +230,7 @@ html.dark-mode {
 
     --box-shadow: 0 2px 10px 0 rgba(0,0,0,.35);
 
-    --odd-color: rgba(0,0,0,.1);
+    --odd-color: rgba(100,100,100,.06);
 
     --menu-selected-background: rgba(0,0,0,.4);
 
