@@ -1348,12 +1348,9 @@ dl.reflist dd {
 
 table.markdownTable, table.fieldtable {
     width: 100%;
-    border: 1px solid var(--separator-color);
+    border: none;
     margin: var(--spacing-medium) 0;
-}
-
-table.fieldtable {
-    box-shadow: none;
+    box-shadow: 0 0 0 1px var(--separator-color);
     border-radius: var(--border-radius-small);
 }
 
@@ -1364,9 +1361,30 @@ th.markdownTableHeadLeft, th.markdownTableHeadRight, th.markdownTableHeadCenter,
     font-size: var(--page-font-size);
 }
 
+th.markdownTableHeadLeft:first-child, th.markdownTableHeadRight:first-child, th.markdownTableHeadCenter:first-child, th.markdownTableHeadNone:first-child {
+    border-radius: var(--border-radius-small) 0 0 0;
+}
+
+th.markdownTableHeadLeft:last-child, th.markdownTableHeadRight:last-child, th.markdownTableHeadCenter:last-child, th.markdownTableHeadNone:last-child {
+    border-radius: 0 var(--border-radius-small) 0 0;
+}
+
 table.markdownTable td, table.markdownTable th, table.fieldtable dt {
-    border: 1px solid var(--separator-color);
+    border: none;
+    border-right: 1px solid var(--separator-color);
     padding: var(--spacing-small) var(--spacing-medium);
+}
+
+table.markdownTable td:last-child, table.markdownTable th:last-child, table.fieldtable dt:last-child {
+    border: none;
+}
+
+table.markdownTable tr, table.markdownTable tr {
+    border-bottom: 1px solid var(--separator-color);
+}
+
+table.markdownTable tr:last-child, table.markdownTable tr:last-child {
+    border-bottom: none;
 }
 
 table.fieldtable th {
