@@ -127,6 +127,7 @@ html {
      * on smaller screens the searchbar will always fill the entire screen width) */
     --searchbar-height: 33px;
     --searchbar-width: 210px;
+    --searchbar-border-radius: var(--searchbar-height);
 
     /* code block colors */
     --code-background: #f5f5f5;
@@ -487,7 +488,7 @@ a:link, a:visited, a:hover, a:focus, a:active {
 #MSearchBox {
     height: var(--searchbar-height);
     background: var(--searchbar-background);
-    border-radius: var(--searchbar-height);
+    border-radius: var(--searchbar-border-radius);
     border: 1px solid var(--separator-color);
     overflow: hidden;
     width: var(--searchbar-width);
