@@ -134,18 +134,18 @@ html {
     --code-foreground: var(--page-foreground-color);
 
     /* fragment colors */
-    --fragment-background: #282c34;
-    --fragment-foreground: #ffffff;
-    --fragment-keyword: #cc99cd;
-    --fragment-keywordtype: #ab99cd;
-    --fragment-keywordflow: #e08000;
-    --fragment-token: #7ec699;
-    --fragment-comment: #999999;
-    --fragment-link: #98c0e3;
-    --fragment-preprocessor: #65cabe;
-    --fragment-linenumber-color: #cccccc;
-    --fragment-linenumber-background: #35393c;
-    --fragment-linenumber-border: #1f1f1f;
+    --fragment-background: #F8F9FA;
+    --fragment-foreground: #37474F;
+    --fragment-keyword: #bb6bb2;
+    --fragment-keywordtype: #8258b3;
+    --fragment-keywordflow: #d67c3b;
+    --fragment-token: #438a59;
+    --fragment-comment: #969696;
+    --fragment-link: #5383d6;
+    --fragment-preprocessor: #46aaa5;
+    --fragment-linenumber-color: #797979;
+    --fragment-linenumber-background: #f4f4f5;
+    --fragment-linenumber-border: #e3e5e7;
     --fragment-lineheight: 20px;
 
     /* sidebar navigation (treeview) colors */
@@ -219,6 +219,20 @@ html {
         --invariant-color: #303a35;
         --invariant-color-dark: #76ce96;
         --invariant-color-darker: #cceed5;
+
+        --fragment-background: #282c34;
+        --fragment-foreground: #ffffff;
+        --fragment-keyword: #cc99cd;
+        --fragment-keywordtype: #ab99cd;
+        --fragment-keywordflow: #e08000;
+        --fragment-token: #7ec699;
+        --fragment-comment: #999999;
+        --fragment-link: #98c0e3;
+        --fragment-preprocessor: #65cabe;
+        --fragment-linenumber-color: #cccccc;
+        --fragment-linenumber-background: #35393c;
+        --fragment-linenumber-border: #1f1f1f;
+
         --darkmode-toggle-button-icon: '🌛';
     }
 }
@@ -270,6 +284,19 @@ html.dark-mode {
     --invariant-color: #303a35;
     --invariant-color-dark: #76ce96;
     --invariant-color-darker: #cceed5;
+
+    --fragment-background: #282c34;
+    --fragment-foreground: #ffffff;
+    --fragment-keyword: #cc99cd;
+    --fragment-keywordtype: #ab99cd;
+    --fragment-keywordflow: #e08000;
+    --fragment-token: #7ec699;
+    --fragment-comment: #999999;
+    --fragment-link: #98c0e3;
+    --fragment-preprocessor: #65cabe;
+    --fragment-linenumber-color: #cccccc;
+    --fragment-linenumber-background: #35393c;
+    --fragment-linenumber-border: #1f1f1f;
 
     --darkmode-toggle-button-icon: '🌛';
 }
@@ -988,7 +1015,7 @@ div.toc ul li.level2, div.toc ul li.level3 {
 
 code, div.fragment, pre.fragment {
     border-radius: var(--border-radius-small);
-    border: none;
+    border: 1px solid var(--separator-color);
     overflow: hidden;
 }
 
@@ -1002,7 +1029,7 @@ code {
 
 div.fragment, pre.fragment {
     margin: var(--spacing-medium) 0;
-    padding: 14px 16px;
+    padding: calc(var(--spacing-large) - (var(--spacing-large) / 6)) var(--spacing-large);
     background: var(--fragment-background);
     color: var(--fragment-foreground);
     overflow-x: auto;
@@ -1012,11 +1039,13 @@ div.fragment, pre.fragment {
     div.fragment, pre.fragment {
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
+        border-right: 0;
     }
 
     .contents > div.fragment, .textblock > div.fragment, .textblock > pre.fragment {
         margin: var(--spacing-medium) calc(0px - var(--spacing-large));
         border-radius: 0;
+        border-left: 0;
     }
 
     .textblock li > .fragment {
@@ -1030,6 +1059,7 @@ div.fragment, pre.fragment {
     .memdoc > div.fragment, .memdoc > pre.fragment, dl dd > div.fragment, dl dd pre.fragment {
         margin: var(--spacing-medium) calc(0px - var(--spacing-medium));
         border-radius: 0;
+        border-left: 0;
     }
 }
 
