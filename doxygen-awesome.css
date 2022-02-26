@@ -97,8 +97,8 @@ html {
     --invariant-color-darker: #265532;
 
     /* blockquote colors */
-    --blockquote-background: #f5f5f5;
-    --blockquote-foreground: #727272;
+    --blockquote-background: #f8f9fa;
+    --blockquote-foreground: #636568;
 
     /* table colors */
     --tablehead-background: #f1f1f1;
@@ -197,10 +197,9 @@ html {
         --code-background: #2a2c2f;
 
         --tablehead-background: #2a2c2f;
-
-        --blockquote-background: #1f2022;
-        --blockquote-foreground: #77848a;
-
+    
+        --blockquote-background: #222325;
+        --blockquote-foreground: #7e8c92;
         --warning-color: #2e1917;
         --warning-color-dark: #ad2617;
         --warning-color-darker: #f5b1aa;
@@ -249,8 +248,8 @@ html.dark-mode {
 
     --tablehead-background: #2a2c2f;
 
-    --blockquote-background: #1f2022;
-    --blockquote-foreground: #77848a;
+    --blockquote-background: #222325;
+    --blockquote-foreground: #7e8c92;
 
     --warning-color: #2e1917;
     --warning-color-dark: #ad2617;
@@ -884,11 +883,35 @@ h2.groupheader {
 }
 
 blockquote {
-    padding: var(--spacing-small) var(--spacing-medium);
+    margin: 0 var(--spacing-medium) 0 var(--spacing-medium);
+    padding: var(--spacing-small) var(--spacing-large);
     background: var(--blockquote-background);
     color: var(--blockquote-foreground);
-    border-left: 2px solid var(--blockquote-foreground);
-    margin: 0;
+    border-left: 0;
+    overflow: visible;
+    border-radius: var(--border-radius-medium);
+    overflow: visible;
+    position: relative;
+}
+
+blockquote::before, blockquote::after {
+    font-weight: bold;
+    font-family: serif;
+    font-size: 360%;
+    opacity: .15;
+    position: absolute;
+}
+
+blockquote::before {
+    content: "“";
+    left: -10px;
+    top: 4px;
+}
+
+blockquote::after {
+    content: "”";
+    right: -8px;
+    bottom: -25px;
 }
 
 blockquote p {
