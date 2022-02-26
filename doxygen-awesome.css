@@ -160,8 +160,11 @@ html {
     /* height of an item in any tree / collapsable table */
     --tree-item-height: 30px;
 
-    --darkmode-toggle-button-icon: '☀️';
     --memname-font-size: var(--page-font-size);
+
+    --webkit-scrollbar-size: 7px;
+    --webkit-scrollbar-padding: 4px;
+    --webkit-scrollbar-color: var(--separator-color);
 }
 
 @media screen and (max-width: 767px) {
@@ -233,8 +236,6 @@ html {
         --fragment-linenumber-color: #cccccc;
         --fragment-linenumber-background: #35393c;
         --fragment-linenumber-border: #1f1f1f;
-
-        --darkmode-toggle-button-icon: '🌛';
     }
 }
 
@@ -298,8 +299,6 @@ html.dark-mode {
     --fragment-linenumber-color: #cccccc;
     --fragment-linenumber-background: #35393c;
     --fragment-linenumber-border: #1f1f1f;
-
-    --darkmode-toggle-button-icon: '🌛';
 }
 
 body {
@@ -325,6 +324,10 @@ p, div, table, dl {
 a:link, a:visited, a:hover, a:focus, a:active {
     color: var(--primary-color) !important;
     font-weight: 500;
+}
+
+a.anchor {
+    scroll-margin-top: var(--spacing-large);
 }
 
 /*
@@ -1043,21 +1046,35 @@ div.fragment, pre.fragment {
         border-right: 0;
     }
 
-    .contents > div.fragment, .textblock > div.fragment, .textblock > pre.fragment {
+    .contents > div.fragment,
+    .textblock > div.fragment,
+    .textblock > pre.fragment,
+    .contents > .doxygen-awesome-fragment-wrapper > div.fragment,
+    .textblock > .doxygen-awesome-fragment-wrapper > div.fragment,
+    .textblock > .doxygen-awesome-fragment-wrapper > pre.fragment {
         margin: var(--spacing-medium) calc(0px - var(--spacing-large));
         border-radius: 0;
         border-left: 0;
     }
 
-    .textblock li > .fragment {
+    .textblock li > .fragment,
+    .textblock li > .doxygen-awesome-fragment-wrapper > .fragment {
         margin: var(--spacing-medium) calc(0px - var(--spacing-large));
     }
 
-    .memdoc li > .fragment {
+    .memdoc li > .fragment,
+    .memdoc li > .doxygen-awesome-fragment-wrapper > .fragment {
         margin: var(--spacing-medium) calc(0px - var(--spacing-medium));
     }
 
-    .memdoc > div.fragment, .memdoc > pre.fragment, dl dd > div.fragment, dl dd pre.fragment {
+    .memdoc > div.fragment,
+    .memdoc > pre.fragment,
+    dl dd > div.fragment,
+    dl dd pre.fragment,
+    .memdoc > .doxygen-awesome-fragment-wrapper > div.fragment,
+    .memdoc > .doxygen-awesome-fragment-wrapper > pre.fragment,
+    dl dd > .doxygen-awesome-fragment-wrapper > div.fragment,
+    dl dd .doxygen-awesome-fragment-wrapper > pre.fragment {
         margin: var(--spacing-medium) calc(0px - var(--spacing-medium));
         border-radius: 0;
         border-left: 0;
@@ -1622,6 +1639,58 @@ li.navelem:first-child:before {
 }
 
 /*
+ Scrollbars for Webkit
+*/
+
+#nav-tree::-webkit-scrollbar,
+div.fragment::-webkit-scrollbar,
+pre.fragment::-webkit-scrollbar,
+div.memproto::-webkit-scrollbar,
+.contents center::-webkit-scrollbar {
+    width: calc(var(--webkit-scrollbar-size) + var(--webkit-scrollbar-padding) + var(--webkit-scrollbar-padding));
+    height: calc(var(--webkit-scrollbar-size) + var(--webkit-scrollbar-padding) + var(--webkit-scrollbar-padding));
+}
+
+#nav-tree::-webkit-scrollbar-thumb,
+div.fragment::-webkit-scrollbar-thumb,
+pre.fragment::-webkit-scrollbar-thumb,
+div.memproto::-webkit-scrollbar-thumb,
+.contents center::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border: var(--webkit-scrollbar-padding) solid transparent;
+    border-radius: calc(var(--webkit-scrollbar-padding) + var(--webkit-scrollbar-padding));
+    background-clip: padding-box;  
+}
+
+#nav-tree:hover::-webkit-scrollbar-thumb,
+div.fragment:hover::-webkit-scrollbar-thumb,
+pre.fragment:hover::-webkit-scrollbar-thumb,
+div.memproto:hover::-webkit-scrollbar-thumb,
+.contents center:hover::-webkit-scrollbar-thumb {
+    background-color: var(--webkit-scrollbar-color);
+}
+
+#nav-tree::-webkit-scrollbar-track,
+div.fragment::-webkit-scrollbar-track,
+pre.fragment::-webkit-scrollbar-track,
+div.memproto::-webkit-scrollbar-track,
+.contents center::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#nav-tree, div.fragment, pre.fragment, div.memproto, .contents center {
+    overflow-x: overlay;
+}
+
+/*
+ Scrollbars for Firefox
+*/
+
+#nav-tree, div.fragment, pre.fragment, div.memproto, .contents center {
+    scrollbar-width: thin;
+}
+
+/*
   Optional Dark mode toggle button
 */
 
@@ -1633,19 +1702,119 @@ doxygen-awesome-dark-mode-toggle {
     height: var(--searchbar-height);
     background: none;
     border: none;
-    font-size: 23px;
-    border-radius: var(--border-radius-medium);
+    border-radius: var(--searchbar-height);
     vertical-align: middle;
     text-align: center;
     line-height: var(--searchbar-height);
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     user-select: none;
     cursor: pointer;
 }
 
-doxygen-awesome-dark-mode-toggle:hover {
-    background: var(--separator-color);
+doxygen-awesome-dark-mode-toggle > svg {
+    transition: transform .1s ease-in-out;
 }
 
-doxygen-awesome-dark-mode-toggle:after {
-    content: var(--darkmode-toggle-button-icon)
+doxygen-awesome-dark-mode-toggle:active > svg {
+    transform: scale(.5);
+}
+
+doxygen-awesome-dark-mode-toggle:hover {
+    background-color: rgba(0,0,0,.03);
+}
+
+html.dark-mode doxygen-awesome-dark-mode-toggle:hover {
+    background-color: rgba(0,0,0,.18);
+}
+
+/*
+ Optional fragment copy button
+*/
+.doxygen-awesome-fragment-wrapper {
+    position: relative;
+}
+
+doxygen-awesome-fragment-copy-button {
+    opacity: 0;
+    background: var(--fragment-background);
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    right: calc(var(--spacing-large) - (var(--spacing-large) / 2.5));
+    top: calc(var(--spacing-large) - (var(--spacing-large) / 2.5));
+    border: 1px solid var(--fragment-foreground);
+    cursor: pointer;
+    border-radius: var(--border-radius-small);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.doxygen-awesome-fragment-wrapper:hover doxygen-awesome-fragment-copy-button, doxygen-awesome-fragment-copy-button.success {
+    opacity: .28;
+}
+
+doxygen-awesome-fragment-copy-button:hover, doxygen-awesome-fragment-copy-button.success {
+    opacity: 1 !important;
+}
+
+doxygen-awesome-fragment-copy-button:active:not([class~=success]) svg {
+    transform: scale(.91);
+}
+
+doxygen-awesome-fragment-copy-button svg {
+    fill: var(--fragment-foreground);
+    width: 18px;
+    height: 18px;
+}
+
+doxygen-awesome-fragment-copy-button.success svg {
+    fill: rgb(14, 168, 14);
+}
+
+doxygen-awesome-fragment-copy-button.success {
+    border-color: rgb(14, 168, 14);
+}
+
+@media screen and (max-width: 767px) {
+    .textblock li > .doxygen-awesome-fragment-wrapper > doxygen-awesome-fragment-copy-button,
+    .memdoc li > .doxygen-awesome-fragment-wrapper > doxygen-awesome-fragment-copy-button,
+    .memdoc > .doxygen-awesome-fragment-wrapper > doxygen-awesome-fragment-copy-button,
+    dl dd > .doxygen-awesome-fragment-wrapper > doxygen-awesome-fragment-copy-button {
+        right: 0;
+    }
+}
+
+/*
+ Optional paragraph link button
+*/
+
+a.anchorlink {
+    font-size: 90%;
+    margin-left: var(--spacing-small);
+    color: var(--page-foreground-color) !important;
+    text-decoration: none;
+    opacity: .15;
+    display: none;
+    transition: opacity .1s ease-in-out, color .1s ease-in-out;
+}
+
+a.anchorlink svg {
+    fill: var(--page-foreground-color);
+}
+
+h3 a.anchorlink svg, h4 a.anchorlink svg {
+    margin-bottom: -3px;
+    margin-top: -4px;
+}
+
+a.anchorlink:hover {
+    opacity: .45;
+}
+
+h2:hover a.anchorlink, h1:hover a.anchorlink, h3:hover a.anchorlink, h4:hover a.anchorlink  {
+    display: inline-block;
 }
