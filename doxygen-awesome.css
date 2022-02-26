@@ -967,6 +967,8 @@ blockquote p {
  */
 
 div.toc {
+    z-index: 10;
+    position: relative;
     background-color: var(--toc-background);
     border: 1px solid var(--separator-color);
     border-radius: var(--border-radius-medium);
@@ -1145,9 +1147,9 @@ div.fragment .line:first-child .lineno {
  dl warning, attention, note, deprecated, bug, ...
  */
 
- dl dt a {
+dl.bug dt a, dl.deprecated dt a, dl.todo dt a {
     font-weight: bold !important;
- }
+}
 
 dl.warning, dl.attention, dl.note, dl.deprecated, dl.bug, dl.invariant, dl.pre, dl.todo, dl.remark {
     padding: var(--spacing-medium);
