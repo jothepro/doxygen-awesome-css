@@ -1795,6 +1795,7 @@ doxygen-awesome-fragment-copy-button.success {
 }
 
 @media screen and (max-width: 767px) {
+    .textblock > .doxygen-awesome-fragment-wrapper > doxygen-awesome-fragment-copy-button,
     .textblock li > .doxygen-awesome-fragment-wrapper > doxygen-awesome-fragment-copy-button,
     .memdoc li > .doxygen-awesome-fragment-wrapper > doxygen-awesome-fragment-copy-button,
     .memdoc > .doxygen-awesome-fragment-wrapper > doxygen-awesome-fragment-copy-button,
