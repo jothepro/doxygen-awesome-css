@@ -1640,6 +1640,19 @@ li.navelem:first-child:before {
     color: var(--primary-color);
 }
 
+/* make footer stick to the bottom on mobile */
+@media screen and (max-width: 767px) {
+    body {
+        position: relative;
+        min-height: 100vh;
+    }
+
+    #nav-path {
+        position: absolute;
+        bottom: 0;
+    }
+}
+
 /*
  Scrollbars for Webkit
 */
