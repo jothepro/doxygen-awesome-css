@@ -39,7 +39,7 @@ Copy the file `doxygen-awesome.css` from this repository into your project or ad
 ```bash
 git submodule add https://github.com/jothepro/doxygen-awesome-css.git
 cd doxygen-awesome-css
-git checkout v1.6.1
+git checkout v2.0.0
 ```
 
 Choose one of the theme variants and configure Doxygen accordingly:
@@ -67,8 +67,8 @@ HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css \
 
 Further installation instructions:
 
-- [How to customize the theme (colors, spacing, border-radius, ...)](docs/customization.md)
 - [How to install extensions](docs/extensions.md)
+- [How to customize the theme (colors, spacing, border-radius, ...)](docs/customization.md)
 
 ## Browser support
 
