@@ -1086,6 +1086,10 @@ div.fragment, pre.fragment {
         margin: var(--spacing-medium) calc(0px - var(--spacing-medium));
     }
 
+    .textblock ul, .memdoc ul {
+        overflow: initial;
+    }
+
     .memdoc > div.fragment,
     .memdoc > pre.fragment,
     dl dd > div.fragment,
