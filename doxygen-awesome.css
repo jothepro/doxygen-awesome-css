@@ -1619,7 +1619,9 @@ hr {
 }
 
 .contents hr {
-    box-shadow: var(--content-maxwidth) 0 0 0 var(--separator-color),
+    box-shadow: 100px 0 0 0 var(--separator-color),
+                -100px 0 0 0 var(--separator-color),
+                var(--content-maxwidth) 0 0 0 var(--separator-color),
                 calc(0px - var(--content-maxwidth)) 0 0 0 var(--separator-color),
                 calc(2 * var(--content-maxwidth)) 0 0 0 var(--separator-color),
                 calc(0px - 2* var(--content-maxwidth)) 0 0 0 var(--separator-color);
