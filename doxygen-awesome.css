@@ -1398,11 +1398,11 @@ th.markdownTableHeadLeft, th.markdownTableHeadRight, th.markdownTableHeadCenter,
 }
 
 th.markdownTableHeadLeft:first-child, th.markdownTableHeadRight:first-child, th.markdownTableHeadCenter:first-child, th.markdownTableHeadNone:first-child {
-    border-radius: var(--border-radius-small) 0 0 0;
+    border-top-left-radius: var(--border-radius-small);
 }
 
 th.markdownTableHeadLeft:last-child, th.markdownTableHeadRight:last-child, th.markdownTableHeadCenter:last-child, th.markdownTableHeadNone:last-child {
-    border-radius: 0 var(--border-radius-small) 0 0;
+    border-top-right-radius: var(--border-radius-small);
 }
 
 table.markdownTable td, table.markdownTable th, table.fieldtable dt {
@@ -1492,8 +1492,6 @@ table.directory {
 
 .directory td.entry {
     padding: var(--spacing-small);
-    display: flex;
-    align-items: center;
 }
 
 .directory tr.even {
