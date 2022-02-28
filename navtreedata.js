@@ -27,29 +27,35 @@ var NAVTREE =
   [ "Doxygen Awesome", "index.html", [
     [ "Motivation", "index.html#autotoc_md6", null ],
     [ "Features", "index.html#autotoc_md7", null ],
-    [ "Installation", "index.html#autotoc_md8", [
-      [ "Variants", "index.html#autotoc_md9", null ],
-      [ "Dark Mode Toggle (Experimental)", "index.html#autotoc_md10", null ]
+    [ "Examples", "index.html#autotoc_md8", null ],
+    [ "Installation", "index.html#autotoc_md9", null ],
+    [ "Browser support", "index.html#autotoc_md10", null ],
+    [ "Tips & Tricks", "index.html#autotoc_md11", [
+      [ "Class Diagrams with Graphviz", "index.html#autotoc_md12", null ]
     ] ],
-    [ "Examples", "index.html#autotoc_md11", null ],
-    [ "Configuration", "index.html#autotoc_md12", [
-      [ "CSS Variables", "index.html#autotoc_md13", null ],
-      [ "Doxygen generator", "index.html#autotoc_md14", null ]
-    ] ],
-    [ "Browser support", "index.html#autotoc_md15", null ],
-    [ "Tips & Tricks", "index.html#autotoc_md16", [
-      [ "Class Diagrams with Graphviz", "index.html#autotoc_md17", null ],
-      [ "Share your own theme customizations", "index.html#autotoc_md18", null ]
-    ] ],
-    [ "Credits", "index.html#autotoc_md19", null ],
-    [ "Example Page", "page1.html", [
-      [ "An example section", "page1.html#sec", [
-        [ "The first subsection", "page1.html#subsection1", null ],
-        [ "The second subsection", "page1.html#subsection2", null ]
+    [ "Credits", "index.html#autotoc_md13", null ],
+    [ "Extensions", "md_docs_extensions.html", [
+      [ "Dark Mode Toggle", "md_docs_extensions.html#autotoc_md15", [
+        [ "Installation", "md_docs_extensions.html#autotoc_md16", null ]
+      ] ],
+      [ "Fragment Copy Button", "md_docs_extensions.html#autotoc_md17", [
+        [ "Installation", "md_docs_extensions.html#autotoc_md18", null ]
+      ] ],
+      [ "Paragraph Linking", "md_docs_extensions.html#autotoc_md19", [
+        [ "Installation", "md_docs_extensions.html#autotoc_md20", null ]
       ] ]
+    ] ],
+    [ "Customization", "md_docs_customization.html", [
+      [ "CSS-Variables", "md_docs_customization.html#autotoc_md22", [
+        [ "Setup", "md_docs_customization.html#autotoc_md23", null ],
+        [ "Available variables", "md_docs_customization.html#autotoc_md24", null ]
+      ] ],
+      [ "Doxygen generator", "md_docs_customization.html#autotoc_md25", null ],
+      [ "Share your customizations", "md_docs_customization.html#autotoc_md26", null ]
     ] ],
     [ "Bug List", "bug.html", null ],
     [ "Deprecated List", "deprecated.html", null ],
+    [ "Todo List", "todo.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
