@@ -14,7 +14,13 @@ namespace MyLibrary {
          */
         int virtualfunc() override;
 
-        std::shared_ptr<std::string> super_long_function_with_lots_of_parameters(std::shared_ptr<std::string>& text, std::shared_ptr<std::string>& text2) {
+        /**
+         * @brief Extra long function with lots of parameters
+         * @param param1 first parameter
+         * @param param2 second parameter
+         * @param parameter3 third parameter
+         */
+        std::shared_ptr<std::string> long_function_with_many_parameters(std::shared_ptr<std::string>& param1, std::shared_ptr<std::string>& param2, bool parameter3) {
             if(true) {
                 std::cout << "this even has some code." << std::endl;
             }

@@ -2,9 +2,9 @@
 
 [TOC]
 
-On top of the base theme provided by `doxygen-awesome.css`, this repository comes with extensions that require additional setup steps to get them running.
+On top of the base theme provided by `doxygen-awesome.css`, this repository comes with Javascript extensions that require additional setup steps to get them running.
 
-Some extensions require customizations in the header HTML-template.
+The extensions require customizations in the header HTML-template.
 This is how you can create the default template with Doxygen:
 
 1. Create default header template:
@@ -16,6 +16,8 @@ This is how you can create the default template with Doxygen:
     ```
     HTML_HEADER            = header.html
     ```
+
+[More details on header customization](https://www.doxygen.nl/manual/customize.html#minor_tweaks_header_css)
 
 ## Dark Mode Toggle
 
@@ -97,7 +99,7 @@ Shows a copy button when the user hovers over a code fragment:
 
 ***This feature is experimental!***
 
-Provides a button on hover behind every headline that has a unique `id` to easily create a permanent link to the headline:
+Provides a button on hover behind every headline to allow easy creation of a permanent link to the headline:
 
 <img width=220 src="paragraph_link.png" style="border-radius: var(--border-radius-small); border: 1px solid var(--separator-color)"/>
 
@@ -132,5 +134,7 @@ Works for all headlines and for many documentation section titles.
     All customizations must be applied before calling `DoxygenAwesomeParagraphLink.init()`!
 
 
+<span class="next_section_button">
 
-
+Read Next: [Customization](customization.md)
+</span>

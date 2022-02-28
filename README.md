@@ -93,5 +93,10 @@ DOT_TRANSPARENT = YES
 
 ## Credits
 
-- This theme is inspired by the beautiful [vuepress](https://vuepress.vuejs.org/) static site generator default theme.
+- This theme is inspired by the [vuepress](https://vuepress.vuejs.org/) static site generator default theme.
 - Thank you for all the feedback on github!
+
+<span class="next_section_button">
+
+Read Next: [Extensions](docs/extensions.md)
+</span>
