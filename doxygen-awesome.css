@@ -30,15 +30,13 @@ SOFTWARE.
 html {
     /* primary theme color. This will affect the entire websites color scheme: links, arrows, labels, ... */
     --primary-color: #1779c4;
-    --primary-dark-color: #00559f;
-    --primary-light-color: #7aabd6;
-    --primary-lighter-color: #cae1f1;
-    --primary-lightest-color: #e9f1f8;
+    --primary-dark-color: #335c80;
+    --primary-light-color: #70b1e9;
 
     /* page base colors */
     --page-background-color: white;
-    --page-foreground-color: #2c3e50;
-    --page-secondary-foreground-color: #67727e;
+    --page-foreground-color: #2f4153;
+    --page-secondary-foreground-color: #637485;
 
     /* color for all separators on the website: hr, borders, ... */
     --separator-color: #dedede;
@@ -54,7 +52,7 @@ html {
     --spacing-large: 16px;
 
     /* default box shadow used for raising an element above the normal content. Used in dropdowns, Searchresult, ... */
-    --box-shadow: 0 2px 10px 0 rgba(0,0,0,.1);
+    --box-shadow: 0 2px 8px 0 rgba(0,0,0,.075);
 
     --odd-color: rgba(0,0,0,.028);
 
@@ -63,12 +61,12 @@ html {
      * font-family-monospace: used for preformatted text in memtitle, code, fragments
      */
     --font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
-    --font-family-monospace: source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace;
+    --font-family-monospace: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
 
     /* font sizes */
     --page-font-size: 15.6px;
     --navigation-font-size: 14.4px;
-    --code-font-size: 14.4px; /* affects code, fragment */
+    --code-font-size: 14px; /* affects code, fragment */
     --title-font-size: 22px;
 
     /* content text properties. These only affect the page content, not the navigation or any other ui elements */
@@ -160,7 +158,8 @@ html {
     /* height of an item in any tree / collapsable table */
     --tree-item-height: 30px;
 
-    --memname-font-size: var(--page-font-size);
+    --memname-font-size: var(--code-font-size);
+    --memtitle-font-size: 18px;
 
     --webkit-scrollbar-size: 7px;
     --webkit-scrollbar-padding: 4px;
@@ -181,12 +180,10 @@ html {
         color-scheme: dark;
 
         --primary-color: #1982d2;
-        --primary-dark-color: #5ca8e2;
+        --primary-dark-color: #86a9c4;
         --primary-light-color: #4779ac;
-        --primary-lighter-color: #191e21;
-        --primary-lightest-color: #191a1c;
 
-        --box-shadow: 0 2px 10px 0 rgba(0,0,0,.35);
+        --box-shadow: 0 2px 8px 0 rgba(0,0,0,.35);
 
         --odd-color: rgba(100,100,100,.06);
 
@@ -225,7 +222,7 @@ html {
         --invariant-color-darker: #cceed5;
 
         --fragment-background: #282c34;
-        --fragment-foreground: #ffffff;
+        --fragment-foreground: #dbe4eb;
         --fragment-keyword: #cc99cd;
         --fragment-keywordtype: #ab99cd;
         --fragment-keywordflow: #e08000;
@@ -244,12 +241,10 @@ html.dark-mode {
     color-scheme: dark;
 
     --primary-color: #1982d2;
-    --primary-dark-color: #5ca8e2;
+    --primary-dark-color: #86a9c4;
     --primary-light-color: #4779ac;
-    --primary-lighter-color: #191e21;
-    --primary-lightest-color: #191a1c;
 
-    --box-shadow: 0 2px 10px 0 rgba(0,0,0,.35);
+    --box-shadow: 0 2px 8px 0 rgba(0,0,0,.30);
 
     --odd-color: rgba(100,100,100,.06);
 
@@ -288,7 +283,7 @@ html.dark-mode {
     --invariant-color-darker: #cceed5;
 
     --fragment-background: #282c34;
-    --fragment-foreground: #ffffff;
+    --fragment-foreground: #dbe4eb;
     --fragment-keyword: #cc99cd;
     --fragment-keywordtype: #ab99cd;
     --fragment-keywordflow: #e08000;
@@ -859,10 +854,6 @@ td.memSeparator {
     background: var(--code-background);
 }
 
-.mdescRight {
-    color: var(--page-secondary-foreground-color);
-}
-
 span.mlabel {
     background: var(--primary-color);
     border: none;
@@ -969,6 +960,17 @@ blockquote p {
 .paramname {
     font-weight: 600;
     color: var(--primary-dark-color);
+}
+
+.paramname > code {
+    border: 0;
+}
+
+table.params .paramname {
+    font-weight: 600;
+    font-family: var(--font-family-monospace);
+    font-size: var(--code-font-size);
+    padding-right: var(--spacing-small);
 }
 
 .glow {
@@ -1270,32 +1272,64 @@ div.memdoc {
 
 h2.memtitle, div.memitem {
     border: 1px solid var(--separator-color);
+    box-shadow: var(--box-shadow);
+}
+
+h2.memtitle {
+    box-shadow: 0px var(--spacing-medium) 0 -1px var(--fragment-background), var(--box-shadow);
+}
+
+div.memitem {
+    transition: none;
 }
 
 div.memproto, h2.memtitle {
-    background: var(--code-background);
+    background: var(--fragment-background);
     text-shadow: none;
 }
 
 h2.memtitle {
     font-weight: 500;
-    font-family: monospace, fixed;
+    font-size: var(--memtitle-font-size);
+    font-family: var(--font-family-monospace);
     border-bottom: none;
     border-top-left-radius: var(--border-radius-medium);
     border-top-right-radius: var(--border-radius-medium);
     word-break: break-all;
+    position: relative;
+}
+
+h2.memtitle:after {
+    content: "";
+    display: block;
+    background: var(--fragment-background);
+    height: var(--spacing-medium);
+    bottom: calc(0px - var(--spacing-medium));
+    left: 0;
+    right: -14px;
+    position: absolute;
+    border-top-right-radius: var(--border-radius-medium);
+}
+
+h2.memtitle > span.permalink {
+    font-size: inherit;
+}
+
+h2.memtitle > span.permalink > a {
+    text-decoration: none;
+    padding-left: 3px;
+    margin-right: -4px;
+    user-select: none;
+    display: inline-block;
+    margin-top: -6px;
+}
+
+h2.memtitle > span.permalink > a:hover {
+    color: var(--primary-dark-color) !important;
 }
 
 a:target + h2.memtitle, a:target + h2.memtitle + div.memitem {
     border-color: var(--primary-light-color);
-}
-
-a:target + h2.memtitle {
-    box-shadow: -3px -3px 3px 0 var(--primary-lightest-color), 3px -3px 3px 0 var(--primary-lightest-color);
-}
-
-a:target + h2.memtitle + div.memitem {
-    box-shadow: 0 0 10px 0 var(--primary-lighter-color);
 }
 
 div.memitem {
@@ -1324,7 +1358,7 @@ div.memtitle {
 }
 
 div.memproto table.memname {
-    font-family: monospace, fixed;
+    font-family: var(--font-family-monospace);
     color: var(--page-foreground-color);
     font-size: var(--memname-font-size);
 }
@@ -1335,6 +1369,12 @@ table.mlabels, table.mlabels > tbody {
 
 td.mlabels-left {
     width: auto;
+}
+
+td.mlabels-right {
+    margin-top: 3px;
+    position: sticky;
+    left: 0;
 }
 
 table.mlabels > tbody > tr:first-child {
@@ -1447,13 +1487,124 @@ table.fieldtable th {
 
 .memberdecls td.glow, .fieldtable tr.glow {
     background-color: var(--primary-light-color);
-    box-shadow: 0 0 15px var(--primary-lighter-color);
+    box-shadow: 0 0 15px var(--primary-light-color);
 }
 
 table.memberdecls {
     display: block;
-    overflow-x: auto;
-    overflow-y: hidden;
+}
+
+table.memberdecls tr[class^='memitem'] {
+    font-family: var(--font-family-monospace);
+    font-size: var(--code-font-size);
+}
+
+table.memberdecls .memItemLeft, table.memberdecls .memItemRight {
+    transition: none;
+    padding-top: var(--spacing-small);
+    padding-bottom: var(--spacing-small);
+    border-top: 1px solid var(--separator-color);
+    border-bottom: 1px solid var(--separator-color);
+    background-color: var(--fragment-background);
+}
+
+table.memberdecls .memItemLeft {
+    border-radius: var(--border-radius-small) 0 0 var(--border-radius-small);
+    border-left: 1px solid var(--separator-color);
+    padding-left: var(--spacing-medium);
+    padding-right: 0;
+}
+
+table.memberdecls .memItemRight {
+    border-radius: 0 var(--border-radius-small) var(--border-radius-small) 0;
+    border-right: 1px solid var(--separator-color);
+    padding-right: var(--spacing-medium);
+    padding-left: 0;
+
+}
+
+table.memberdecls .mdescLeft, table.memberdecls .mdescRight {
+    background: none;
+    color: var(--page-foreground-color);
+    padding: var(--spacing-small) 0;
+}
+
+table.memberdecls .memSeparator {
+    background: var(--page-background-color);
+    height: var(--spacing-large);
+    border: 0;
+    transition: none;
+}
+
+table.memberdecls .groupheader {
+    margin-bottom: var(--spacing-large);
+}
+
+table.memberdecls .inherit_header td {
+    padding: 0 0 var(--spacing-medium) 0;
+    text-indent: -12px;
+    line-height: 1.5em;
+    color: var(--page-secondary-foreground-color);
+}
+
+@media screen and (max-width: 767px) {
+
+    table.memberdecls .memItemLeft, table.memberdecls .memItemRight, table.memberdecls .mdescLeft, table.memberdecls .mdescRight {
+        display: block;
+        text-align: left;
+        padding-left: var(--spacing-large);
+        margin: 0 calc(0px - var(--spacing-large)) 0 calc(0px - var(--spacing-large));
+        border-right: none;
+        border-left: none;
+        border-radius: 0;
+    }
+
+    table.memberdecls .memItemLeft, table.memberdecls .mdescLeft {
+        border-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    table.memberdecls .mdescLeft {
+        margin-top: calc(0px - var(--page-font-size));
+    }
+
+    table.memberdecls .memItemRight, table.memberdecls .mdescRight {
+        border-top: 0;
+        padding-top: 0;
+        padding-right: var(--spacing-large);
+    }
+
+    table.memberdecls tr[class^='memitem']:not(.inherit) {
+        display: block;
+        width: calc(100vw - 2 * var(--spacing-large));
+    }
+
+    table.memberdecls .mdescRight {
+        color: var(--page-foreground-color);
+    }
+
+    table.memberdecls tr.inherit {
+        visibility: hidden;
+    }
+
+    table.memberdecls tr[style="display: table-row;"] {
+        display: block !important;
+        visibility: visible;
+        width: calc(100vw - 2 * var(--spacing-large));
+        animation: fade .5s;
+    }
+
+    @keyframes fade {
+        0% {
+            opacity: 0;
+            max-height: 0;
+        }
+
+        100% {
+            opacity: 1;
+            max-height: 200px;
+        }
+    }
 }
 
 
