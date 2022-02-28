@@ -45,10 +45,10 @@ For dark-mode overrides you have to choose where to put them, depending on wethe
 
 ### Available variables
 
-The following list gives an overwiew of the variables defined in [`doxygen-awesome.css`](https://github.com/jothepro/doxygen-awesome-css/blob/main/doxygen-awesome.css).
+The following list gives an overview of the variables defined in [`doxygen-awesome.css`](https://github.com/jothepro/doxygen-awesome-css/blob/main/doxygen-awesome.css).
 
 The list is not complete. To explore all available variables, have a look at the CSS starting from [here](https://github.com/jothepro/doxygen-awesome-css/blob/main/doxygen-awesome.css#L30).
-All variables are defined at the beginning of the document.
+All variables are defined at the beginning of the stylesheet.
 
 | Parameter                         | Default (Light)                                             | Default (Dark)                                              |
 | :-------------------------------- | :---------------------------------------------------------- | ----------------------------------------------------------- |
