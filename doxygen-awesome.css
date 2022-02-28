@@ -741,8 +741,6 @@ html.dark-mode iframe#MSearchResults {
 
     #doc-content {
         margin-left: 0 !important;
-        height: auto !important;
-        padding-bottom: calc(2 * var(--spacing-large));
     }
 }
 
@@ -1638,19 +1636,6 @@ li.navelem:first-child:before {
 
 .navpath li.navelem a:hover {
     color: var(--primary-color);
-}
-
-/* make footer stick to the bottom on mobile */
-@media screen and (max-width: 767px) {
-    body {
-        position: relative;
-        min-height: 100vh;
-    }
-
-    #nav-path {
-        position: absolute;
-        bottom: 0;
-    }
 }
 
 /*
