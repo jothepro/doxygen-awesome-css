@@ -867,7 +867,8 @@ WARN_LOGFILE           =
 INPUT                  = include \
                          README.md \
                          docs/extensions.md \
-                         docs/customization.md
+                         docs/customization.md \
+                         docs/tricks.md
                          
 
 # This tag can be used to specify the character encoding of the source files

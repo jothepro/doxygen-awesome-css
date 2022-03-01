@@ -69,6 +69,7 @@ Further installation instructions:
 
 - [How to install extensions](docs/extensions.md)
 - [How to customize the theme (colors, spacing, border-radius, ...)](docs/customization.md)
+- [Tips and Tricks for further configuration](docs/tricks.md)
 
 ## Browser support
 
@@ -77,19 +78,6 @@ Tested with
 - Chrome 98, Chrome 98 for Android, Chrome 87 for iOS
 - Safari 15, Safari for iOS 15
 - Firefox 97, Firefox Daylight 97 for Android, Firefox Daylight 96 for iOS
-
-## Tips & Tricks
-
-### Class Diagrams with Graphviz
-
-To get the best looking class diagrams for your documentation, generate them with Graphviz as vector graphics with transparent background:
-
-```
-# Doxyfile
-HAVE_DOT = YES
-DOT_IMAGE_FORMAT = svg
-DOT_TRANSPARENT = YES
-```
 
 ## Credits
 

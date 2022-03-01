@@ -106,5 +106,5 @@ I am always curious to learn about how you made the theme look even better!
 
 <span class="next_section_button">
 
-Read Next: [Example](https://jothepro.github.io/doxygen-awesome-css/class_my_library_1_1_example.html)
+Read Next: [Tips & Tricks](tricks.md)
 </span>
