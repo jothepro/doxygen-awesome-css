@@ -30,28 +30,30 @@ var NAVTREE =
     [ "Examples", "index.html#autotoc_md8", null ],
     [ "Installation", "index.html#autotoc_md9", null ],
     [ "Browser support", "index.html#autotoc_md10", null ],
-    [ "Tips & Tricks", "index.html#autotoc_md11", [
-      [ "Class Diagrams with Graphviz", "index.html#autotoc_md12", null ]
-    ] ],
-    [ "Credits", "index.html#autotoc_md13", null ],
+    [ "Credits", "index.html#autotoc_md11", null ],
     [ "Extensions", "md_docs_extensions.html", [
-      [ "Dark Mode Toggle", "md_docs_extensions.html#autotoc_md15", [
+      [ "Dark Mode Toggle", "md_docs_extensions.html#autotoc_md13", [
+        [ "Installation", "md_docs_extensions.html#autotoc_md14", null ]
+      ] ],
+      [ "Fragment Copy Button", "md_docs_extensions.html#autotoc_md15", [
         [ "Installation", "md_docs_extensions.html#autotoc_md16", null ]
       ] ],
-      [ "Fragment Copy Button", "md_docs_extensions.html#autotoc_md17", [
+      [ "Paragraph Linking", "md_docs_extensions.html#autotoc_md17", [
         [ "Installation", "md_docs_extensions.html#autotoc_md18", null ]
-      ] ],
-      [ "Paragraph Linking", "md_docs_extensions.html#autotoc_md19", [
-        [ "Installation", "md_docs_extensions.html#autotoc_md20", null ]
       ] ]
     ] ],
     [ "Customization", "md_docs_customization.html", [
-      [ "CSS-Variables", "md_docs_customization.html#autotoc_md22", [
-        [ "Setup", "md_docs_customization.html#autotoc_md23", null ],
-        [ "Available variables", "md_docs_customization.html#autotoc_md24", null ]
+      [ "CSS-Variables", "md_docs_customization.html#autotoc_md20", [
+        [ "Setup", "md_docs_customization.html#autotoc_md21", null ],
+        [ "Available variables", "md_docs_customization.html#autotoc_md22", null ]
       ] ],
-      [ "Doxygen generator", "md_docs_customization.html#autotoc_md25", null ],
-      [ "Share your customizations", "md_docs_customization.html#autotoc_md26", null ]
+      [ "Doxygen generator", "md_docs_customization.html#autotoc_md23", null ],
+      [ "Share your customizations", "md_docs_customization.html#autotoc_md24", null ]
+    ] ],
+    [ "Tips & Tricks", "md_docs_tricks.html", [
+      [ "Class Diagrams with Graphviz", "md_docs_tricks.html#autotoc_md26", null ],
+      [ "Disable Dark Mode", "md_docs_tricks.html#autotoc_md27", null ],
+      [ "Choosing Sidebar Width", "md_docs_tricks.html#autotoc_md28", null ]
     ] ],
     [ "Bug List", "bug.html", null ],
     [ "Deprecated List", "deprecated.html", null ],
