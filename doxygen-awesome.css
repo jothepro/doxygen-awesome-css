@@ -404,6 +404,15 @@ a.anchor {
     .sm-dox a span.sub-arrow {
         background: var(--code-background);
     }
+
+    #main-menu a.has-submenu span.sub-arrow {
+        color: var(--page-secondary-foreground-color);
+        border-radius: var(--border-radius-medium);
+    }
+
+    #main-menu a.has-submenu:hover span.sub-arrow {
+        color: var(--page-foreground-color);
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -478,6 +487,7 @@ a.anchor {
     color: var(--header-foreground) !important;
     font-weight: normal;
     font-size: var(--navigation-font-size);
+    border-radius: var(--border-radius-small) !important;
 }
 
 .sm-dox a:focus {
