@@ -1758,7 +1758,6 @@ div.qindex {
  */
 
 #nav-path {
-    margin-bottom: -1px;
     width: 100%;
 }
 
@@ -1768,9 +1767,9 @@ div.qindex {
     border: none;
     border-top: 1px solid var(--separator-color);
     border-bottom: 1px solid var(--separator-color);
+    border-bottom: 0;
+    box-shadow: 0 1px 0 var(--separator-color);
     font-size: var(--navigation-font-size);
-    line-height: 29px;
-    height: 30px;
 }
 
 img.footer {
