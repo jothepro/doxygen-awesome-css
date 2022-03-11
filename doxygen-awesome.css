@@ -1782,6 +1782,7 @@ img.footer {
 }
 
 address.footer {
+    color: var(--page-secondary-foreground-color);
     margin-bottom: var(--spacing-large);
 }
 
