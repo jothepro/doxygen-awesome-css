@@ -6,7 +6,7 @@ namespace MyLibrary {
 enum Color { red, green, blue };
 
 /**
- * Example class to demonstrate the features of the custom CSS.
+ * @brief Example class to demonstrate the features of the custom CSS.
  *
  * @author jothepro
  *
@@ -23,6 +23,14 @@ public:
      * # Supported elements
      *
      * These elements have been tested with the custom CSS.
+     *
+     * ## Tables
+     *
+     * The table content is scrollable if the table gets too wide.
+     * 
+     * | first_column | second_column | third_column | fourth_column | fifth_column | sixth_column | seventh_column | eighth_column | ninth_column |
+     * |--------------|---------------|--------------|---------------|--------------|--------------|----------------|---------------|--------------|
+     * | 1            | 2             | 3            | 4             | 5            | 6            | 7              | 8             | 9            |
      *
      *
      * ## Lists

@@ -5,6 +5,9 @@
 
 namespace MyLibrary {
 
+    /**
+     * @brief some subclass
+     */
     class SubclassExample : public Example {
     public:
 
