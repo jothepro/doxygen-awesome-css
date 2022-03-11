@@ -739,6 +739,10 @@ html.dark-mode iframe#MSearchResults {
     background: var(--side-nav-background);
 }
 
+#doc-content {
+    overflow-x: hidden;
+}
+
 @media screen and (max-width: 767px) {
     #side-nav {
         display: none;
@@ -911,25 +915,18 @@ html.dark-mode div.contents table iframe {
 h2.groupheader {
     border-bottom: 0px;
     color: var(--page-foreground-color);
-    box-shadow: 
-        100px 0 var(--page-background-color), 
-        -100px 0 var(--page-background-color),
-        100px 1px var(--separator-color),
-        -100px 1px var(--separator-color),
-        500px 0 var(--page-background-color), 
-        -500px 0 var(--page-background-color),
-        500px 1px var(--separator-color),
-        -500px 1px var(--separator-color),
-        1500px 0 var(--page-background-color), 
-        1500px 1px var(--separator-color),
-        var(--content-maxwidth) 0 var(--page-background-color),
-        calc(0px - var(--content-maxwidth)) 0 var(--page-background-color),
-        var(--content-maxwidth) 1px var(--separator-color),
-        calc(0px - var(--content-maxwidth)) 1px var(--separator-color),
-        calc(2 * var(--content-maxwidth)) 0 var(--page-background-color),
-        calc(0px - 2 * var(--content-maxwidth)) 0 var(--page-background-color),
-        calc(2 * var(--content-maxwidth)) 1px var(--separator-color),
-        calc(0px - 2 * var(--content-maxwidth)) 1px var(--separator-color);
+    position: relative
+}
+
+h2.groupheader::after {
+    content: "";
+    display: block;
+    background: var(--separator-color);
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: -50vw;
+    right: -50vw;
 }
 
 blockquote {
@@ -1582,6 +1579,7 @@ table.memberdecls .inherit_header td {
         border-top: 0;
         padding-top: 0;
         padding-right: var(--spacing-large);
+        overflow-x: auto;
     }
 
     table.memberdecls tr[class^='memitem']:not(.inherit) {
@@ -1629,12 +1627,8 @@ hr {
 }
 
 .contents hr {
-    box-shadow: 100px 0 0 0 var(--separator-color),
-                -100px 0 0 0 var(--separator-color),
-                var(--content-maxwidth) 0 0 0 var(--separator-color),
-                calc(0px - var(--content-maxwidth)) 0 0 0 var(--separator-color),
-                calc(2 * var(--content-maxwidth)) 0 0 0 var(--separator-color),
-                calc(0px - 2* var(--content-maxwidth)) 0 0 0 var(--separator-color);
+    margin-left: -50vw;
+    margin-right: -50vw;
 }
 
 .contents img, .contents .center, .contents center, .contents div.image object {
@@ -1756,6 +1750,8 @@ div.qindex {
     border-top: 1px solid var(--separator-color);
     border-bottom: 1px solid var(--separator-color);
     font-size: var(--navigation-font-size);
+    line-height: 29px;
+    height: 30px;
 }
 
 img.footer {
@@ -1833,7 +1829,8 @@ li.navelem:first-child:before {
 div.fragment::-webkit-scrollbar,
 pre.fragment::-webkit-scrollbar,
 div.memproto::-webkit-scrollbar,
-.contents center::-webkit-scrollbar {
+.contents center::-webkit-scrollbar,
+.contents .center::-webkit-scrollbar {
     width: calc(var(--webkit-scrollbar-size) + var(--webkit-scrollbar-padding) + var(--webkit-scrollbar-padding));
     height: calc(var(--webkit-scrollbar-size) + var(--webkit-scrollbar-padding) + var(--webkit-scrollbar-padding));
 }
@@ -1842,7 +1839,8 @@ div.memproto::-webkit-scrollbar,
 div.fragment::-webkit-scrollbar-thumb,
 pre.fragment::-webkit-scrollbar-thumb,
 div.memproto::-webkit-scrollbar-thumb,
-.contents center::-webkit-scrollbar-thumb {
+.contents center::-webkit-scrollbar-thumb,
+.contents .center::-webkit-scrollbar-thumb {
     background-color: transparent;
     border: var(--webkit-scrollbar-padding) solid transparent;
     border-radius: calc(var(--webkit-scrollbar-padding) + var(--webkit-scrollbar-padding));
@@ -1853,7 +1851,8 @@ div.memproto::-webkit-scrollbar-thumb,
 div.fragment:hover::-webkit-scrollbar-thumb,
 pre.fragment:hover::-webkit-scrollbar-thumb,
 div.memproto:hover::-webkit-scrollbar-thumb,
-.contents center:hover::-webkit-scrollbar-thumb {
+.contents center:hover::-webkit-scrollbar-thumb,
+.contents .center:hover::-webkit-scrollbar-thumb {
     background-color: var(--webkit-scrollbar-color);
 }
 
@@ -1861,7 +1860,8 @@ div.memproto:hover::-webkit-scrollbar-thumb,
 div.fragment::-webkit-scrollbar-track,
 pre.fragment::-webkit-scrollbar-track,
 div.memproto::-webkit-scrollbar-track,
-.contents center::-webkit-scrollbar-track {
+.contents center::-webkit-scrollbar-track,
+.contents .center::-webkit-scrollbar-track {
     background: transparent;
 }
 
