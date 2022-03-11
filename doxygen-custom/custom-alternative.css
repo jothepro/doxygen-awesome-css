@@ -19,6 +19,8 @@ html.alternative {
     --spacing-medium: 14px;
     --spacing-large: 19px;
 
+    --top-height: 125px;
+
     --side-nav-background: #324067;
     --side-nav-foreground: #F1FDFF;
     --header-foreground: var(--side-nav-foreground);

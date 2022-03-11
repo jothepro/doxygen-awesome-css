@@ -1833,7 +1833,8 @@ li.navelem:first-child:before {
 div.fragment::-webkit-scrollbar,
 pre.fragment::-webkit-scrollbar,
 div.memproto::-webkit-scrollbar,
-.contents center::-webkit-scrollbar {
+.contents center::-webkit-scrollbar,
+.contents .center::-webkit-scrollbar {
     width: calc(var(--webkit-scrollbar-size) + var(--webkit-scrollbar-padding) + var(--webkit-scrollbar-padding));
     height: calc(var(--webkit-scrollbar-size) + var(--webkit-scrollbar-padding) + var(--webkit-scrollbar-padding));
 }
@@ -1842,7 +1843,8 @@ div.memproto::-webkit-scrollbar,
 div.fragment::-webkit-scrollbar-thumb,
 pre.fragment::-webkit-scrollbar-thumb,
 div.memproto::-webkit-scrollbar-thumb,
-.contents center::-webkit-scrollbar-thumb {
+.contents center::-webkit-scrollbar-thumb,
+.contents .center::-webkit-scrollbar-thumb {
     background-color: transparent;
     border: var(--webkit-scrollbar-padding) solid transparent;
     border-radius: calc(var(--webkit-scrollbar-padding) + var(--webkit-scrollbar-padding));
@@ -1853,7 +1855,8 @@ div.memproto::-webkit-scrollbar-thumb,
 div.fragment:hover::-webkit-scrollbar-thumb,
 pre.fragment:hover::-webkit-scrollbar-thumb,
 div.memproto:hover::-webkit-scrollbar-thumb,
-.contents center:hover::-webkit-scrollbar-thumb {
+.contents center:hover::-webkit-scrollbar-thumb,
+.contents .center:hover::-webkit-scrollbar-thumb {
     background-color: var(--webkit-scrollbar-color);
 }
 
@@ -1861,7 +1864,8 @@ div.memproto:hover::-webkit-scrollbar-thumb,
 div.fragment::-webkit-scrollbar-track,
 pre.fragment::-webkit-scrollbar-track,
 div.memproto::-webkit-scrollbar-track,
-.contents center::-webkit-scrollbar-track {
+.contents center::-webkit-scrollbar-track,
+.contents .center::-webkit-scrollbar-track {
     background: transparent;
 }
 
