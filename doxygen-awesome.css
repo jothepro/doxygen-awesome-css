@@ -1750,6 +1750,8 @@ div.qindex {
     border-top: 1px solid var(--separator-color);
     border-bottom: 1px solid var(--separator-color);
     font-size: var(--navigation-font-size);
+    line-height: 29px;
+    height: 30px;
 }
 
 img.footer {
