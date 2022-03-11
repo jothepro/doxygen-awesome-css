@@ -1433,12 +1433,26 @@ dl.reflist dd {
  Table
  */
 
+.contents table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname) {
+     display: inline-block;
+     max-width: 100%;
+ }
+
+.contents > table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname):not(.classindex) {
+    margin-left: calc(0px - var(--spacing-large));
+    margin-right: calc(0px - var(--spacing-large));
+    max-width: calc(100% + 2 * var(--spacing-large));
+}
+
 table.markdownTable, table.fieldtable {
-    width: 100%;
     border: none;
     margin: var(--spacing-medium) 0;
     box-shadow: 0 0 0 1px var(--separator-color);
     border-radius: var(--border-radius-small);
+}
+
+table.fieldtable {
+    width: 100%;
 }
 
 th.markdownTableHeadLeft, th.markdownTableHeadRight, th.markdownTableHeadCenter, th.markdownTableHeadNone {
@@ -1649,13 +1663,18 @@ table.directory {
     font-family: var(--font-family);
     font-size: var(--page-font-size);
     font-weight: normal;
+    width: 100%;
 }
 
-.directory td.entry {
+table.directory td.entry {
     padding: var(--spacing-small);
 }
 
-.directory tr.even {
+table.directory td.desc {
+    min-width: 250px;
+}
+
+table.directory tr.even {
     background-color: var(--odd-color);
 }
 
@@ -1683,8 +1702,8 @@ table.directory {
 
 @media screen and (max-width: 767px) {
     div.directory {
-        margin-left: calc(0px - var(--spacing-medium));
-        margin-right: calc(0px - var(--spacing-medium));
+        margin-left: calc(0px - var(--spacing-large));
+        margin-right: calc(0px - var(--spacing-large));
     }
 }
 
@@ -1707,15 +1726,15 @@ html.dark-mode .iconfopen, html.dark-mode .iconfclosed {
     border-radius: var(--border-radius-small);
 }
 
-@media screen and (max-width: 767px) {
-    .classindex {
-        margin: 0 calc(0px - var(--spacing-small));
-    }
-}
-
 /* 
  Class Index Doxygen 1.8 
 */
+
+table.classindex {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+}
 
 table.classindex table div.ah {
     background-image: none;
@@ -1830,7 +1849,8 @@ div.fragment::-webkit-scrollbar,
 pre.fragment::-webkit-scrollbar,
 div.memproto::-webkit-scrollbar,
 .contents center::-webkit-scrollbar,
-.contents .center::-webkit-scrollbar {
+.contents .center::-webkit-scrollbar,
+.contents table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname)::-webkit-scrollbar {
     width: calc(var(--webkit-scrollbar-size) + var(--webkit-scrollbar-padding) + var(--webkit-scrollbar-padding));
     height: calc(var(--webkit-scrollbar-size) + var(--webkit-scrollbar-padding) + var(--webkit-scrollbar-padding));
 }
@@ -1840,7 +1860,8 @@ div.fragment::-webkit-scrollbar-thumb,
 pre.fragment::-webkit-scrollbar-thumb,
 div.memproto::-webkit-scrollbar-thumb,
 .contents center::-webkit-scrollbar-thumb,
-.contents .center::-webkit-scrollbar-thumb {
+.contents .center::-webkit-scrollbar-thumb,
+.contents table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname)::-webkit-scrollbar-thumb {
     background-color: transparent;
     border: var(--webkit-scrollbar-padding) solid transparent;
     border-radius: calc(var(--webkit-scrollbar-padding) + var(--webkit-scrollbar-padding));
@@ -1852,7 +1873,8 @@ div.fragment:hover::-webkit-scrollbar-thumb,
 pre.fragment:hover::-webkit-scrollbar-thumb,
 div.memproto:hover::-webkit-scrollbar-thumb,
 .contents center:hover::-webkit-scrollbar-thumb,
-.contents .center:hover::-webkit-scrollbar-thumb {
+.contents .center:hover::-webkit-scrollbar-thumb,
+.contents table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname):hover::-webkit-scrollbar-thumb {
     background-color: var(--webkit-scrollbar-color);
 }
 
@@ -1861,11 +1883,19 @@ div.fragment::-webkit-scrollbar-track,
 pre.fragment::-webkit-scrollbar-track,
 div.memproto::-webkit-scrollbar-track,
 .contents center::-webkit-scrollbar-track,
-.contents .center::-webkit-scrollbar-track {
+.contents .center::-webkit-scrollbar-track,
+.contents table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname)::-webkit-scrollbar-track {
     background: transparent;
 }
 
-#nav-tree, div.fragment, pre.fragment, div.memproto, .contents center {
+#nav-tree,
+div.fragment,
+pre.fragment,
+div.memproto,
+.contents center,
+.contents .center,
+.contents table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname) {
+    overflow-x: auto;
     overflow-x: overlay;
 }
 
@@ -1873,7 +1903,13 @@ div.memproto::-webkit-scrollbar-track,
  Scrollbars for Firefox
 */
 
-#nav-tree, div.fragment, pre.fragment, div.memproto, .contents center {
+#nav-tree,
+div.fragment,
+pre.fragment,
+div.memproto,
+.contents center,
+.contents .center,
+.contents table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname) {
     scrollbar-width: thin;
 }
 
