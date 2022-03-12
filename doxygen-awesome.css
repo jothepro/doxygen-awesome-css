@@ -1830,7 +1830,7 @@ li.navelem:first-child:before {
     border-bottom-color: transparent;
     border-right-color: transparent;
     border-top-color: transparent;
-    transform: scaleY(4.2);
+    transform: translateY(-1px) scaleY(4.2);
     z-index: 10;
     margin-left: 6px;
 }
@@ -1841,7 +1841,7 @@ li.navelem:first-child:before {
     border-bottom-color: transparent;
     border-right-color: transparent;
     border-top-color: transparent;
-    transform: scaleY(3.2);
+    transform: translateY(-1px) scaleY(3.2);
     margin-right: var(--spacing-small);
 }
 
