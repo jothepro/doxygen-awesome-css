@@ -1659,6 +1659,14 @@ hr {
     overflow: auto;
 }
 
+@media screen and (max-width: 767px) {
+    .contents > .dyncontent > .center, .contents > center {
+        margin-left: calc(0px - var(--spacing-large));
+        margin-right: calc(0px - var(--spacing-large));
+        max-width: calc(100% + 2 * var(--spacing-large));
+    }
+}
+
 /*
  Directories
  */
