@@ -25,35 +25,35 @@
 var NAVTREE =
 [
   [ "Doxygen Awesome", "index.html", [
-    [ "Motivation", "index.html#autotoc_md6", null ],
-    [ "Features", "index.html#autotoc_md7", null ],
-    [ "Examples", "index.html#autotoc_md8", null ],
-    [ "Installation", "index.html#autotoc_md9", null ],
-    [ "Browser support", "index.html#autotoc_md10", null ],
-    [ "Credits", "index.html#autotoc_md11", null ],
+    [ "Motivation", "index.html#autotoc_md7", null ],
+    [ "Features", "index.html#autotoc_md8", null ],
+    [ "Examples", "index.html#autotoc_md9", null ],
+    [ "Installation", "index.html#autotoc_md10", null ],
+    [ "Browser support", "index.html#autotoc_md11", null ],
+    [ "Credits", "index.html#autotoc_md12", null ],
     [ "Extensions", "md_docs_extensions.html", [
-      [ "Dark Mode Toggle", "md_docs_extensions.html#autotoc_md13", [
-        [ "Installation", "md_docs_extensions.html#autotoc_md14", null ]
+      [ "Dark Mode Toggle", "md_docs_extensions.html#autotoc_md14", [
+        [ "Installation", "md_docs_extensions.html#autotoc_md15", null ]
       ] ],
-      [ "Fragment Copy Button", "md_docs_extensions.html#autotoc_md15", [
-        [ "Installation", "md_docs_extensions.html#autotoc_md16", null ]
+      [ "Fragment Copy Button", "md_docs_extensions.html#autotoc_md16", [
+        [ "Installation", "md_docs_extensions.html#autotoc_md17", null ]
       ] ],
-      [ "Paragraph Linking", "md_docs_extensions.html#autotoc_md17", [
-        [ "Installation", "md_docs_extensions.html#autotoc_md18", null ]
+      [ "Paragraph Linking", "md_docs_extensions.html#autotoc_md18", [
+        [ "Installation", "md_docs_extensions.html#autotoc_md19", null ]
       ] ]
     ] ],
     [ "Customization", "md_docs_customization.html", [
-      [ "CSS-Variables", "md_docs_customization.html#autotoc_md20", [
-        [ "Setup", "md_docs_customization.html#autotoc_md21", null ],
-        [ "Available variables", "md_docs_customization.html#autotoc_md22", null ]
+      [ "CSS-Variables", "md_docs_customization.html#autotoc_md21", [
+        [ "Setup", "md_docs_customization.html#autotoc_md22", null ],
+        [ "Available variables", "md_docs_customization.html#autotoc_md23", null ]
       ] ],
-      [ "Doxygen generator", "md_docs_customization.html#autotoc_md23", null ],
-      [ "Share your customizations", "md_docs_customization.html#autotoc_md24", null ]
+      [ "Doxygen generator", "md_docs_customization.html#autotoc_md24", null ],
+      [ "Share your customizations", "md_docs_customization.html#autotoc_md25", null ]
     ] ],
     [ "Tips & Tricks", "md_docs_tricks.html", [
-      [ "Class Diagrams with Graphviz", "md_docs_tricks.html#autotoc_md26", null ],
-      [ "Disable Dark Mode", "md_docs_tricks.html#autotoc_md27", null ],
-      [ "Choosing Sidebar Width", "md_docs_tricks.html#autotoc_md28", null ]
+      [ "Class Diagrams with Graphviz", "md_docs_tricks.html#autotoc_md27", null ],
+      [ "Disable Dark Mode", "md_docs_tricks.html#autotoc_md28", null ],
+      [ "Choosing Sidebar Width", "md_docs_tricks.html#autotoc_md29", null ]
     ] ],
     [ "Bug List", "bug.html", null ],
     [ "Deprecated List", "deprecated.html", null ],

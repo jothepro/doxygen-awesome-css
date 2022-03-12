@@ -1,4 +1,4 @@
 <map id="MyLibrary::Example" name="MyLibrary::Example">
-<area shape="rect" id="node1" title=" " alt="" coords="34,5,185,32"/>
-<area shape="rect" id="node2" href="$class_my_library_1_1_subclass_example.html" title=" " alt="" coords="5,80,213,107"/>
+<area shape="rect" id="node1" title="Example class to demonstrate the features of the custom CSS." alt="" coords="34,5,185,32"/>
+<area shape="rect" id="node2" href="$class_my_library_1_1_subclass_example.html" title="some subclass" alt="" coords="5,80,213,107"/>
 </map>

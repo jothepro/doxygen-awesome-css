@@ -739,10 +739,6 @@ html.dark-mode iframe#MSearchResults {
     background: var(--side-nav-background);
 }
 
-#doc-content {
-    overflow-x: hidden;
-}
-
 @media screen and (max-width: 767px) {
     #side-nav {
         display: none;
@@ -915,18 +911,23 @@ html.dark-mode div.contents table iframe {
 h2.groupheader {
     border-bottom: 0px;
     color: var(--page-foreground-color);
-    position: relative
-}
-
-h2.groupheader::after {
-    content: "";
-    display: block;
-    background: var(--separator-color);
-    height: 1px;
-    position: absolute;
-    bottom: 0;
-    left: -50vw;
-    right: -50vw;
+    box-shadow: 
+        100px 0 var(--page-background-color), 
+        -100px 0 var(--page-background-color),
+        100px 0.75px var(--separator-color),
+        -100px 0.75px var(--separator-color),
+        500px 0 var(--page-background-color), 
+        -500px 0 var(--page-background-color),
+        500px 0.75px var(--separator-color),
+        -500px 0.75px var(--separator-color),
+        1500px 0 var(--page-background-color),
+        -1500px 0 var(--page-background-color), 
+        1500px 0.75px var(--separator-color),
+        -1500px 0.75px var(--separator-color),
+        2000px 0 var(--page-background-color),
+        -2000px 0 var(--page-background-color),
+        2000px 0.75px var(--separator-color),
+        -2000px 0.75px var(--separator-color);
 }
 
 blockquote {
@@ -1433,12 +1434,26 @@ dl.reflist dd {
  Table
  */
 
+.contents table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname) {
+     display: inline-block;
+     max-width: 100%;
+ }
+
+.contents > table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname):not(.classindex) {
+    margin-left: calc(0px - var(--spacing-large));
+    margin-right: calc(0px - var(--spacing-large));
+    max-width: calc(100% + 2 * var(--spacing-large));
+}
+
 table.markdownTable, table.fieldtable {
-    width: 100%;
     border: none;
     margin: var(--spacing-medium) 0;
     box-shadow: 0 0 0 1px var(--separator-color);
     border-radius: var(--border-radius-small);
+}
+
+table.fieldtable {
+    width: 100%;
 }
 
 th.markdownTableHeadLeft, th.markdownTableHeadRight, th.markdownTableHeadCenter, th.markdownTableHeadNone {
@@ -1623,17 +1638,33 @@ table.memberdecls .inherit_header td {
 hr {
     margin-top: var(--spacing-large);
     margin-bottom: var(--spacing-large);
-    border-top:1px solid var(--separator-color);
+    height: 1px;
+    background-color: var(--separator-color);
+    border: 0;
 }
 
 .contents hr {
-    margin-left: -50vw;
-    margin-right: -50vw;
+    box-shadow: 100px 0 0 var(--separator-color),
+                -100px 0 0 var(--separator-color),
+                500px 0 0 var(--separator-color),
+                -500px 0 0 var(--separator-color),
+                1500px 0 0 var(--separator-color),
+                -1500px 0 0 var(--separator-color),
+                2000px 0 0 var(--separator-color),
+                -2000px 0 0 var(--separator-color);
 }
 
 .contents img, .contents .center, .contents center, .contents div.image object {
     max-width: 100%;
     overflow: auto;
+}
+
+@media screen and (max-width: 767px) {
+    .contents .dyncontent > .center, .contents > center {
+        margin-left: calc(0px - var(--spacing-large));
+        margin-right: calc(0px - var(--spacing-large));
+        max-width: calc(100% + 2 * var(--spacing-large));
+    }
 }
 
 /*
@@ -1649,13 +1680,18 @@ table.directory {
     font-family: var(--font-family);
     font-size: var(--page-font-size);
     font-weight: normal;
+    width: 100%;
 }
 
-.directory td.entry {
+table.directory td.entry {
     padding: var(--spacing-small);
 }
 
-.directory tr.even {
+table.directory td.desc {
+    min-width: 250px;
+}
+
+table.directory tr.even {
     background-color: var(--odd-color);
 }
 
@@ -1683,8 +1719,8 @@ table.directory {
 
 @media screen and (max-width: 767px) {
     div.directory {
-        margin-left: calc(0px - var(--spacing-medium));
-        margin-right: calc(0px - var(--spacing-medium));
+        margin-left: calc(0px - var(--spacing-large));
+        margin-right: calc(0px - var(--spacing-large));
     }
 }
 
@@ -1707,15 +1743,15 @@ html.dark-mode .iconfopen, html.dark-mode .iconfclosed {
     border-radius: var(--border-radius-small);
 }
 
-@media screen and (max-width: 767px) {
-    .classindex {
-        margin: 0 calc(0px - var(--spacing-small));
-    }
-}
-
 /* 
  Class Index Doxygen 1.8 
 */
+
+table.classindex {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+}
 
 table.classindex table div.ah {
     background-image: none;
@@ -1739,7 +1775,6 @@ div.qindex {
  */
 
 #nav-path {
-    margin-bottom: -1px;
     width: 100%;
 }
 
@@ -1749,9 +1784,9 @@ div.qindex {
     border: none;
     border-top: 1px solid var(--separator-color);
     border-bottom: 1px solid var(--separator-color);
+    border-bottom: 0;
+    box-shadow: 0 0.75px 0 var(--separator-color);
     font-size: var(--navigation-font-size);
-    line-height: 29px;
-    height: 30px;
 }
 
 img.footer {
@@ -1763,6 +1798,7 @@ img.footer {
 }
 
 address.footer {
+    color: var(--page-secondary-foreground-color);
     margin-bottom: var(--spacing-large);
 }
 
@@ -1802,7 +1838,7 @@ li.navelem:first-child:before {
     border-bottom-color: transparent;
     border-right-color: transparent;
     border-top-color: transparent;
-    transform: scaleY(4.2);
+    transform: translateY(-1px) scaleY(4.2);
     z-index: 10;
     margin-left: 6px;
 }
@@ -1813,7 +1849,7 @@ li.navelem:first-child:before {
     border-bottom-color: transparent;
     border-right-color: transparent;
     border-top-color: transparent;
-    transform: scaleY(3.2);
+    transform: translateY(-1px) scaleY(3.2);
     margin-right: var(--spacing-small);
 }
 
@@ -1830,7 +1866,8 @@ div.fragment::-webkit-scrollbar,
 pre.fragment::-webkit-scrollbar,
 div.memproto::-webkit-scrollbar,
 .contents center::-webkit-scrollbar,
-.contents .center::-webkit-scrollbar {
+.contents .center::-webkit-scrollbar,
+.contents table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname)::-webkit-scrollbar {
     width: calc(var(--webkit-scrollbar-size) + var(--webkit-scrollbar-padding) + var(--webkit-scrollbar-padding));
     height: calc(var(--webkit-scrollbar-size) + var(--webkit-scrollbar-padding) + var(--webkit-scrollbar-padding));
 }
@@ -1840,7 +1877,8 @@ div.fragment::-webkit-scrollbar-thumb,
 pre.fragment::-webkit-scrollbar-thumb,
 div.memproto::-webkit-scrollbar-thumb,
 .contents center::-webkit-scrollbar-thumb,
-.contents .center::-webkit-scrollbar-thumb {
+.contents .center::-webkit-scrollbar-thumb,
+.contents table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname)::-webkit-scrollbar-thumb {
     background-color: transparent;
     border: var(--webkit-scrollbar-padding) solid transparent;
     border-radius: calc(var(--webkit-scrollbar-padding) + var(--webkit-scrollbar-padding));
@@ -1852,7 +1890,8 @@ div.fragment:hover::-webkit-scrollbar-thumb,
 pre.fragment:hover::-webkit-scrollbar-thumb,
 div.memproto:hover::-webkit-scrollbar-thumb,
 .contents center:hover::-webkit-scrollbar-thumb,
-.contents .center:hover::-webkit-scrollbar-thumb {
+.contents .center:hover::-webkit-scrollbar-thumb,
+.contents table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname):hover::-webkit-scrollbar-thumb {
     background-color: var(--webkit-scrollbar-color);
 }
 
@@ -1861,11 +1900,19 @@ div.fragment::-webkit-scrollbar-track,
 pre.fragment::-webkit-scrollbar-track,
 div.memproto::-webkit-scrollbar-track,
 .contents center::-webkit-scrollbar-track,
-.contents .center::-webkit-scrollbar-track {
+.contents .center::-webkit-scrollbar-track,
+.contents table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname)::-webkit-scrollbar-track {
     background: transparent;
 }
 
-#nav-tree, div.fragment, pre.fragment, div.memproto, .contents center {
+#nav-tree,
+div.fragment,
+pre.fragment,
+div.memproto,
+.contents center,
+.contents .center,
+.contents table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname) {
+    overflow-x: auto;
     overflow-x: overlay;
 }
 
@@ -1873,7 +1920,13 @@ div.memproto::-webkit-scrollbar-track,
  Scrollbars for Firefox
 */
 
-#nav-tree, div.fragment, pre.fragment, div.memproto, .contents center {
+#nav-tree,
+div.fragment,
+pre.fragment,
+div.memproto,
+.contents center,
+.contents .center,
+.contents table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname) {
     scrollbar-width: thin;
 }
 
