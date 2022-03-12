@@ -739,10 +739,6 @@ html.dark-mode iframe#MSearchResults {
     background: var(--side-nav-background);
 }
 
-#doc-content {
-    overflow-x: hidden;
-}
-
 @media screen and (max-width: 767px) {
     #side-nav {
         display: none;
@@ -915,18 +911,23 @@ html.dark-mode div.contents table iframe {
 h2.groupheader {
     border-bottom: 0px;
     color: var(--page-foreground-color);
-    position: relative
-}
-
-h2.groupheader::after {
-    content: "";
-    display: block;
-    background: var(--separator-color);
-    height: 1px;
-    position: absolute;
-    bottom: 0;
-    left: -50vw;
-    right: -50vw;
+    box-shadow: 
+        100px 0 var(--page-background-color), 
+        -100px 0 var(--page-background-color),
+        100px 0.75px var(--separator-color),
+        -100px 0.75px var(--separator-color),
+        500px 0 var(--page-background-color), 
+        -500px 0 var(--page-background-color),
+        500px 0.75px var(--separator-color),
+        -500px 0.75px var(--separator-color),
+        1500px 0 var(--page-background-color),
+        -1500px 0 var(--page-background-color), 
+        1500px 0.75px var(--separator-color),
+        -1500px 0.75px var(--separator-color),
+        2000px 0 var(--page-background-color),
+        -2000px 0 var(--page-background-color),
+        2000px 0.75px var(--separator-color),
+        -2000px 0.75px var(--separator-color);
 }
 
 blockquote {
@@ -1637,12 +1638,20 @@ table.memberdecls .inherit_header td {
 hr {
     margin-top: var(--spacing-large);
     margin-bottom: var(--spacing-large);
-    border-top:1px solid var(--separator-color);
+    height: 1px;
+    background-color: var(--separator-color);
+    border: 0;
 }
 
 .contents hr {
-    margin-left: -50vw;
-    margin-right: -50vw;
+    box-shadow: 100px 0 0 var(--separator-color),
+                -100px 0 0 var(--separator-color),
+                500px 0 0 var(--separator-color),
+                -500px 0 0 var(--separator-color),
+                1500px 0 0 var(--separator-color),
+                -1500px 0 0 var(--separator-color),
+                2000px 0 0 var(--separator-color),
+                -2000px 0 0 var(--separator-color);
 }
 
 .contents img, .contents .center, .contents center, .contents div.image object {
@@ -1768,7 +1777,7 @@ div.qindex {
     border-top: 1px solid var(--separator-color);
     border-bottom: 1px solid var(--separator-color);
     border-bottom: 0;
-    box-shadow: 0 1px 0 var(--separator-color);
+    box-shadow: 0 0.75px 0 var(--separator-color);
     font-size: var(--navigation-font-size);
 }
 
