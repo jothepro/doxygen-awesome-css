@@ -1905,6 +1905,10 @@ div.memproto::-webkit-scrollbar-track,
     background: transparent;
 }
 
+#nav-tree::-webkit-scrollbar-corner {
+    background-color: var(--side-nav-background);
+}
+
 #nav-tree,
 div.fragment,
 pre.fragment,
