@@ -23,7 +23,8 @@ namespace MyLibrary {
          * @param param2 second parameter
          * @param parameter3 third parameter
          */
-        std::shared_ptr<std::string> long_function_with_many_parameters(std::shared_ptr<std::string>& param1, std::shared_ptr<std::string>& param2, bool parameter3) {
+        template <typename T>
+        std::shared_ptr<std::string> long_function_with_many_parameters(std::shared_ptr<T>& param1, std::shared_ptr<std::string>& param2, bool parameter3) {
             if(true) {
                 std::cout << "this even has some code." << std::endl;
             }
