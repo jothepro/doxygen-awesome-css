@@ -1972,6 +1972,12 @@ div.memproto,
     overflow-x: overlay;
 }
 
+#nav-tree {
+    overflow-x: auto;
+    overflow-y: auto;
+    overflow-y: overlay;
+}
+
 /*
  Scrollbars for Firefox
 */
