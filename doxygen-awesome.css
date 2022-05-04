@@ -537,6 +537,11 @@ a.anchor {
 .left #MSearchSelect {
     left: 0;
     user-select: none;
+    padding-left: 8px;
+}
+
+.left #MSearchSelect[src$=".png"] {
+    padding-left: 0
 }
 
 .SelectionMark {
@@ -595,12 +600,9 @@ a.anchor {
     top: calc(calc(var(--searchbar-height) / 2) - 11px);
 }
 
-.left #MSearchSelect {
-    padding-left: 8px;
-}
-
 #MSearchBox span.left, #MSearchBox span.right {
     background: none;
+    background-image: none;
 }
 
 #MSearchBox span.right {
