@@ -16,7 +16,7 @@
 
 I really like how the Doxygen HTML-documentation is structured! But IMHO it looks a bit outdated.
 
-This theme is an attemt to update the visuals of Doxygen without changing it's overall layout too much.
+This theme is an attempt to update the visuals of Doxygen without changing its overall layout too much.
 
 ## Features
 
