@@ -34,7 +34,9 @@ This theme is an attempt to update the visuals of Doxygen without changing its o
  
 ## Installation
 
-Copy the file `doxygen-awesome.css` from this repository into your project or add this repository as submodule and check out the latest release:
+For the Base theme you can copy the file `doxygen-awesome.css` from this repository into your project. If you would like to use the Sidebar-Only theme, you must copy both `doxygen-awesome.css` _and_ `doxygen-awesome-sidebar-only.css` into your project.
+
+Alternatively, add this repository as submodule and check out the latest release:
 
 ```bash
 git submodule add https://github.com/jothepro/doxygen-awesome-css.git
@@ -61,8 +63,8 @@ HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css
 ```
 # Doxyfile
 GENERATE_TREEVIEW      = YES # required!
-HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css \
-                         doxygen-awesome-css/doxygen-awesome-sidebar-only.css
+HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css \              # Both of these are required!
+                         doxygen-awesome-css/doxygen-awesome-sidebar-only.css   # Both of these are required!
 ```
 
 Further installation instructions:
