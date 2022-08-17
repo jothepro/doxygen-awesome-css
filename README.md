@@ -25,7 +25,7 @@ This theme is an attempt to update the visuals of Doxygen without changing its o
 - 🧩 No changes to the HTML structure of Doxygen required
 - 📱 Improved mobile usability
 - 🌘 Dark mode support!
-- 🥇 Works best with **doxygen 1.9.1** - **1.9.3**
+- 🥇 Works best with **doxygen 1.9.1** - **1.9.4**
 
 ## Examples
 
@@ -75,9 +75,9 @@ Further installation instructions:
 
 Tested with
 
-- Chrome 98, Chrome 98 for Android, Chrome 87 for iOS
+- Chrome 104, Chrome 104 for Android, Chrome 103 for iOS
 - Safari 15, Safari for iOS 15
-- Firefox 97, Firefox Daylight 97 for Android, Firefox Daylight 96 for iOS
+- Firefox 103, Firefox 103 for Android, Firefox Daylight 102 for iOS
 
 ## Credits
 

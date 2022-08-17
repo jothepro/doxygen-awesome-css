@@ -2,7 +2,7 @@
 
 [TOC]
 
-## Class Diagrams with Graphviz
+## Diagrams with Graphviz
 
 To get the best looking class diagrams for your documentation, generate them with Graphviz as vector graphics with transparent background:
 

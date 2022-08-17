@@ -1306,7 +1306,8 @@ HTML_EXTRA_STYLESHEET  = doxygen-awesome.css \
 HTML_EXTRA_FILES       = doxygen-awesome-darkmode-toggle.js \
                          doxygen-awesome-fragment-copy-button.js \
                          doxygen-awesome-paragraph-link.js \
-                         doxygen-custom/toggle-alternative-theme.js
+                         doxygen-custom/toggle-alternative-theme.js \
+                         doxygen-awesome-interactive-toc.js
 
 # The HTML_COLORSTYLE_HUE tag controls the color of the HTML output. Doxygen
 # will adjust the colors in the style sheet and background images according to
