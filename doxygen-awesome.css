@@ -1155,7 +1155,6 @@ code {
     background: var(--code-background);
     color: var(--code-foreground);
     padding: 2px 6px;
-    word-break: break-word;
 }
 
 div.fragment, pre.fragment {
