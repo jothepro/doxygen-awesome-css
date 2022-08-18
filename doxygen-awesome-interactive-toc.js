@@ -33,9 +33,9 @@ class DoxygenAwesomeInteractiveToc {
     static headers = []
 
     static init() {
-        $(function() {
-            $(document).ready(function() {
-                let toc = document.querySelector(".contents > .toc")
+        window.addEventListener("load", () => {
+            let toc = document.querySelector(".contents > .toc")
+            if(toc) {
                 toc.classList.add("interactive")
                 if(!DoxygenAwesomeInteractiveToc.hideMobileMenu) {
                     toc.classList.add("open")
@@ -46,7 +46,6 @@ class DoxygenAwesomeInteractiveToc {
                     } else {
                         toc.classList.add("open")
                     }
-                    
                 })
 
                 document.querySelectorAll(".contents > .toc > ul a").forEach((node) => {
@@ -61,7 +60,7 @@ class DoxygenAwesomeInteractiveToc {
                     })
                 })
                 DoxygenAwesomeInteractiveToc.update()
-            })
+            }
         })
     }
 
