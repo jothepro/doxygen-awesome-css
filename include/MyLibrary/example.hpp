@@ -38,6 +38,29 @@ public:
      * |---------------------------|-------------------------------------------------|
      * | ![doxygen](testimage.png) | ← the image should not be inverted in dark-mode |
      *
+     * Complex [Doxygen tables](https://www.doxygen.nl/manual/tables.html) are also supported as seen in @ref multi_row "this example":
+     * 
+     * <table>
+     * <caption id="multi_row">Complex table</caption>
+     * <tr><th>Column 1                      <th>Column 2        <th>Column 3
+     * <tr><td rowspan="2">cell row=1+2,col=1<td>cell row=1,col=2<td>cell row=1,col=3
+     * <tr><td rowspan="2">cell row=2+3,col=2                    <td>cell row=2,col=3
+     * <tr><td>cell row=3,col=1                                  <td rowspan="2">cell row=3+4,col=3
+     * <tr><td colspan="2">cell row=4,col=1+2
+     * <tr><td>cell row=5,col=1              <td colspan="2">cell row=5,col=2+3
+     * <tr><td colspan="2" rowspan="2">cell row=6+7,col=1+2      <td>cell row=6,col=3
+     * <tr>                                                      <td>cell row=7,col=3
+     * <tr><td>cell row=8,col=1              <td>cell row=8,col=2\n
+     *   <table>
+     *     <tr><td>Inner cell row=1,col=1<td>Inner cell row=1,col=2
+     *     <tr><td>Inner cell row=2,col=1<td>Inner cell row=2,col=2
+     *   </table>
+     *   <td>cell row=8,col=3
+     *   <ul>
+     *     <li>Item 1
+     *     <li>Item 2
+     *   </ul>
+     * </table>
      *
      * ## Lists
      *

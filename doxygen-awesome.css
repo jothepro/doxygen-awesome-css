@@ -328,6 +328,7 @@ a:link, a:visited, a:hover, a:focus, a:active {
 
 a.anchor {
     scroll-margin-top: var(--spacing-large);
+    display: block;
 }
 
 /*
@@ -1538,10 +1539,11 @@ dl.reflist dd {
  Table
  */
 
-.contents table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname) {
-     display: inline-block;
-     max-width: 100%;
- }
+.contents table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname),
+.contents table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname) tbody {
+    display: inline-block;
+    max-width: 100%;
+}
 
 .contents > table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname):not(.classindex) {
     margin-left: calc(0px - var(--spacing-large));
@@ -1549,47 +1551,102 @@ dl.reflist dd {
     max-width: calc(100% + 2 * var(--spacing-large));
 }
 
-table.markdownTable, table.fieldtable {
+table.fieldtable,
+table.markdownTable tbody,
+table.doxtable tbody {
     border: none;
     margin: var(--spacing-medium) 0;
     box-shadow: 0 0 0 1px var(--separator-color);
     border-radius: var(--border-radius-small);
 }
 
+table.doxtable caption {
+    display: block;
+}
+
 table.fieldtable {
+    border-collapse: collapse;
     width: 100%;
 }
 
-th.markdownTableHeadLeft, th.markdownTableHeadRight, th.markdownTableHeadCenter, th.markdownTableHeadNone {
+th.markdownTableHeadLeft,
+th.markdownTableHeadRight,
+th.markdownTableHeadCenter,
+th.markdownTableHeadNone,
+table.doxtable th {
     background: var(--tablehead-background);
     color: var(--tablehead-foreground);
     font-weight: 600;
     font-size: var(--page-font-size);
 }
 
-th.markdownTableHeadLeft:first-child, th.markdownTableHeadRight:first-child, th.markdownTableHeadCenter:first-child, th.markdownTableHeadNone:first-child {
+th.markdownTableHeadLeft:first-child,
+th.markdownTableHeadRight:first-child,
+th.markdownTableHeadCenter:first-child,
+th.markdownTableHeadNone:first-child,
+table.doxtable tr th:first-child {
     border-top-left-radius: var(--border-radius-small);
 }
 
-th.markdownTableHeadLeft:last-child, th.markdownTableHeadRight:last-child, th.markdownTableHeadCenter:last-child, th.markdownTableHeadNone:last-child {
+th.markdownTableHeadLeft:last-child,
+th.markdownTableHeadRight:last-child,
+th.markdownTableHeadCenter:last-child,
+th.markdownTableHeadNone:last-child,
+table.doxtable tr th:last-child {
     border-top-right-radius: var(--border-radius-small);
 }
 
-table.markdownTable td, table.markdownTable th, table.fieldtable dt {
-    border: none;
-    border-right: 1px solid var(--separator-color);
+table.markdownTable td,
+table.markdownTable th,
+table.fieldtable td,
+table.fieldtable th,
+table.doxtable td,
+table.doxtable th {
+    border: 1px solid var(--separator-color);
     padding: var(--spacing-small) var(--spacing-medium);
 }
 
-table.markdownTable td:last-child, table.markdownTable th:last-child, table.fieldtable dt:last-child {
-    border: none;
+table.markdownTable td:last-child,
+table.markdownTable th:last-child,
+table.fieldtable td:last-child,
+table.fieldtable th:last-child,
+table.doxtable td:last-child,
+table.doxtable th:last-child {
+    border-right: none;
 }
 
-table.markdownTable tr, table.markdownTable tr {
+table.markdownTable td:first-child,
+table.markdownTable th:first-child,
+table.fieldtable td:first-child,
+table.fieldtable th:first-child,
+table.doxtable td:first-child,
+table.doxtable th:first-child {
+    border-left: none;
+}
+
+table.markdownTable tr:first-child td,
+table.markdownTable tr:first-child th,
+table.fieldtable tr:first-child td,
+table.fieldtable tr:first-child th,
+table.doxtable tr:first-child td,
+table.doxtable tr:first-child th {
+    border-top: none;
+}
+
+table.markdownTable tr:last-child td,
+table.markdownTable tr:last-child th,
+table.fieldtable tr:last-child td,
+table.fieldtable tr:last-child th,
+table.doxtable tr:last-child td,
+table.doxtable tr:last-child th {
+    border-bottom: none;
+}
+
+table.markdownTable tr, table.doxtable tr {
     border-bottom: 1px solid var(--separator-color);
 }
 
-table.markdownTable tr:last-child, table.markdownTable tr:last-child {
+table.markdownTable tr:last-child, table.doxtable tr:last-child {
     border-bottom: none;
 }
 
@@ -1599,21 +1656,24 @@ table.fieldtable th {
     background-image: none;
     background-color: var(--tablehead-background);
     color: var(--tablehead-foreground);
-    border-bottom: 1px solid var(--separator-color);
 }
 
-.fieldtable td.fieldtype, .fieldtable td.fieldname {
+table.fieldtable td.fieldtype, .fieldtable td.fieldname, .fieldtable td.fielddoc, .fieldtable th {
     border-bottom: 1px solid var(--separator-color);
     border-right: 1px solid var(--separator-color);
 }
 
-.fieldtable td.fielddoc {
-    border-bottom: 1px solid var(--separator-color);
+table.fieldtable tr:last-child td:first-child {
+    border-bottom-left-radius: var(--border-radius-small);
+}
+
+table.fieldtable tr:last-child td:last-child {
+    border-bottom-right-radius: var(--border-radius-small);
 }
 
 .memberdecls td.glow, .fieldtable tr.glow {
     background-color: var(--primary-light-color);
-    box-shadow: 0 0 15px var(--primary-light-color);
+    box-shadow: none;
 }
 
 table.memberdecls {
@@ -2020,7 +2080,7 @@ pre.fragment::-webkit-scrollbar,
 div.memproto::-webkit-scrollbar,
 .contents center::-webkit-scrollbar,
 .contents .center::-webkit-scrollbar,
-.contents table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname)::-webkit-scrollbar,
+.contents table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname) tbody::-webkit-scrollbar,
 div.contents .toc::-webkit-scrollbar {
     width: calc(var(--webkit-scrollbar-size) + var(--webkit-scrollbar-padding) + var(--webkit-scrollbar-padding));
     height: calc(var(--webkit-scrollbar-size) + var(--webkit-scrollbar-padding) + var(--webkit-scrollbar-padding));
@@ -2032,7 +2092,7 @@ pre.fragment::-webkit-scrollbar-thumb,
 div.memproto::-webkit-scrollbar-thumb,
 .contents center::-webkit-scrollbar-thumb,
 .contents .center::-webkit-scrollbar-thumb,
-.contents table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname)::-webkit-scrollbar-thumb,
+.contents table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname) tbody::-webkit-scrollbar-thumb,
 div.contents .toc::-webkit-scrollbar-thumb {
     background-color: transparent;
     border: var(--webkit-scrollbar-padding) solid transparent;
@@ -2046,7 +2106,7 @@ pre.fragment:hover::-webkit-scrollbar-thumb,
 div.memproto:hover::-webkit-scrollbar-thumb,
 .contents center:hover::-webkit-scrollbar-thumb,
 .contents .center:hover::-webkit-scrollbar-thumb,
-.contents table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname):hover::-webkit-scrollbar-thumb,
+.contents table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname) tbody:hover::-webkit-scrollbar-thumb,
 div.contents .toc:hover::-webkit-scrollbar-thumb {
     background-color: var(--webkit-scrollbar-color);
 }
@@ -2057,7 +2117,7 @@ pre.fragment::-webkit-scrollbar-track,
 div.memproto::-webkit-scrollbar-track,
 .contents center::-webkit-scrollbar-track,
 .contents .center::-webkit-scrollbar-track,
-.contents table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname)::-webkit-scrollbar-track,
+.contents table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname) tbody::-webkit-scrollbar-track,
 div.contents .toc::-webkit-scrollbar-track {
     background: transparent;
 }
@@ -2072,7 +2132,7 @@ pre.fragment,
 div.memproto,
 .contents center,
 .contents .center,
-.contents table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname),
+.contents table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname) tbody,
 div.contents .toc {
     overflow-x: auto;
     overflow-x: overlay;
@@ -2094,7 +2154,7 @@ pre.fragment,
 div.memproto,
 .contents center,
 .contents .center,
-.contents table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname),
+.contents table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname) tbody,
 div.contents .toc {
     scrollbar-width: thin;
 }
