@@ -34,7 +34,7 @@ html {
     --primary-light-color: #70b1e9;
 
     /* page base colors */
-    --page-background-color: white;
+    --page-background-color: #ffffff;
     --page-foreground-color: #2f4153;
     --page-secondary-foreground-color: #6f7e8e;
 
@@ -46,12 +46,12 @@ html {
     --border-radius-small: 4px;
     --border-radius-medium: 6px;
 
-    /* default spacings. Most compontest reference these values for spacing, to provide uniform spacing on the page. */
+    /* default spacings. Most components reference these values for spacing, to provide uniform spacing on the page. */
     --spacing-small: 5px;
     --spacing-medium: 10px;
     --spacing-large: 16px;
 
-    /* default box shadow used for raising an element above the normal content. Used in dropdowns, Searchresult, ... */
+    /* default box shadow used for raising an element above the normal content. Used in dropdowns, search result, ... */
     --box-shadow: 0 2px 8px 0 rgba(0,0,0,.075);
 
     --odd-color: rgba(0,0,0,.028);
