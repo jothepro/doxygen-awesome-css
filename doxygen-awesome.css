@@ -1677,6 +1677,7 @@ table.fieldtable tr:last-child td:last-child {
 
 table.memberdecls {
     display: block;
+    -webkit-tap-highlight-color: transparent;
 }
 
 table.memberdecls tr[class^='memitem'] {
@@ -1765,6 +1766,26 @@ table.memberdecls .inherit_header td {
     text-indent: -12px;
     line-height: 1.5em;
     color: var(--page-secondary-foreground-color);
+}
+
+table.memberdecls img[src="closed.png"], table.memberdecls img[src="open.png"] {
+    width: 0; 
+    height: 0; 
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 7px solid var(--primary-color);
+    margin-top: 8px;
+    display: block;
+    float: left;
+    margin-right: var(--spacing-small);
+    margin-left: -10px;
+    margin-right: 10px;
+    transition: transform 0.25s ease-out;
+}
+
+table.memberdecls img[src="closed.png"] {
+    transform: rotate(-90deg);
+    
 }
 
 @media screen and (max-width: 767px) {
