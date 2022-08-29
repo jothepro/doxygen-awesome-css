@@ -74,6 +74,7 @@ html {
     --content-line-height: 27px;
     /* The content is centered and constraint in it's width. To make the content fill the whole page, set the variable to auto.*/
     --content-maxwidth: 1050px;
+    --table-line-height: 24px;
     --toc-sticky-top: var(--spacing-medium);
     --toc-width: 200px;
     --toc-max-height: calc(100vh - 2 * var(--spacing-medium) - 85px);
@@ -1923,8 +1924,25 @@ table.directory {
     width: 100%;
 }
 
-table.directory td.entry {
-    padding: var(--spacing-small);
+table.directory td.entry, table.directory td.desc {
+    padding: calc(var(--spacing-small) / 2) var(--spacing-small);
+    line-height: var(--table-line-height);
+}
+
+table.directory tr.even td:last-child {
+    border-radius: 0 var(--border-radius-small) var(--border-radius-small) 0;
+}
+
+table.directory tr.even td:first-child {
+    border-radius: var(--border-radius-small) 0 0 var(--border-radius-small);
+}
+
+table.directory tr.even:last-child td:last-child {
+    border-radius: 0 var(--border-radius-small) 0 0;
+}
+
+table.directory tr.even:last-child td:first-child {
+    border-radius: var(--border-radius-small) 0 0 0;
 }
 
 table.directory td.desc {
@@ -1943,14 +1961,20 @@ table.directory tr.even {
 
 .icon {
     background: var(--primary-color);
-    width: 18px;
-    height: 18px;
-    line-height: 18px;
+    border-radius: var(--border-radius-small);
+    font-size: var(--page-font-size);
+    padding: calc(var(--page-font-size) / 5);
+    line-height: var(--page-font-size);
+    transform: scale(0.8);
+    height: auto;
+    width: var(--page-font-size);
+    user-select: none;
 }
 
 .iconfopen, .icondoc, .iconfclosed {
     background-position: center;
     margin-bottom: 0;
+    height: var(--table-line-height);
 }
 
 .icondoc {
