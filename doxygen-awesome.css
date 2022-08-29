@@ -1054,6 +1054,12 @@ div.toc h3 {
 div.toc li {
     padding: 0;
     background: none;
+    line-height: var(--toc-font-size);
+    margin: var(--toc-font-size) 0 0 0;
+}
+
+div.toc li::before {
+    display: none;
 }
 
 div.toc ul {
@@ -1072,15 +1078,6 @@ div.toc li a:hover, div.toc li a.active {
 
 div.toc li a.aboveActive {
     color: var(--page-secondary-foreground-color) !important;
-}
-
-
-div.toc ul li.level1 {
-    margin: 0;
-}
-
-div.toc ul li.level2, div.toc ul li.level3 {
-    margin-top: 0;
 }
 
 
@@ -1112,6 +1109,7 @@ div.toc ul li.level2, div.toc ul li.level3 {
         background-color: var(--toc-background);
         margin: 0;
         padding: var(--spacing-large) 0;
+        display: block;
     }
 
     div.contents .toc.interactive > h3::before {
@@ -1120,11 +1118,10 @@ div.toc ul li.level2, div.toc ul li.level3 {
         height: 0; 
         border-left: 4px solid transparent;
         border-right: 4px solid transparent;
-        border-top: 7px solid var(--primary-color);
-        margin-top: 5px;
-        display: block;
-        float: left;
+        border-top: 5px solid var(--primary-color);
+        display: inline-block;
         margin-right: var(--spacing-small);
+        margin-bottom: calc(var(--navigation-font-size) / 4);
         transform: rotate(-90deg);
         transition: transform 0.25s ease-out;
     }
