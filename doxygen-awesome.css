@@ -414,6 +414,10 @@ a.anchor {
     margin-bottom: -1px;
 }
 
+.main-menu-btn-icon, .main-menu-btn-icon:before, .main-menu-btn-icon:after {
+    background: var(--page-secondary-foreground-color);
+}
+
 @media screen and (max-width: 767px) {
     .sm-dox a span.sub-arrow {
         background: var(--code-background);
@@ -548,10 +552,19 @@ a.anchor {
     margin-top: 0;
 }
 
-.left #MSearchSelect {
+/* until Doxygen 1.9.4 */
+.left img#MSearchSelect {
     left: 0;
     user-select: none;
     padding-left: 8px;
+}
+
+/* Doxygen 1.9.5 */
+.left span#MSearchSelect {
+    left: 0;
+    user-select: none;
+    margin-left: 8px;
+    padding: 0;
 }
 
 .left #MSearchSelect[src$=".png"] {
@@ -670,6 +683,15 @@ html.dark-mode iframe#MSearchResults {
     filter: invert() hue-rotate(180deg);
 }
 
+#MSearchResults .SRPage {
+    background-color: transparent;
+}
+
+#MSearchResults .SRPage .SREntry {
+    font-size: 10pt;
+    padding: var(--spacing-small) var(--spacing-medium);
+}
+
 #MSearchSelectWindow {
     border: 1px solid var(--separator-color);
     border-radius: var(--border-radius-medium);
@@ -726,6 +748,7 @@ html.dark-mode iframe#MSearchResults {
         overflow: auto;
         transform: translate(0, 20px);
         animation: ease-out 280ms slideInSearchResultsMobile;
+        width: auto !important;
     }
 
     /*
@@ -1971,6 +1994,10 @@ table.directory tr.even {
     background-color: var(--odd-color);
 }
 
+table.directory tr.odd {
+    background-color: transparent;
+}
+
 .icona {
     width: auto;
     height: auto;
@@ -2023,6 +2050,10 @@ html.dark-mode .iconfopen, html.dark-mode .iconfclosed {
 .classindex dl.odd {
     background: var(--odd-color);
     border-radius: var(--border-radius-small);
+}
+
+.classindex dl.even {
+    background-color: transparent;
 }
 
 /* 
@@ -2151,6 +2182,7 @@ div.memproto::-webkit-scrollbar,
 .contents .center::-webkit-scrollbar,
 .contents table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname) tbody::-webkit-scrollbar,
 div.contents .toc::-webkit-scrollbar {
+    background: transparent;
     width: calc(var(--webkit-scrollbar-size) + var(--webkit-scrollbar-padding) + var(--webkit-scrollbar-padding));
     height: calc(var(--webkit-scrollbar-size) + var(--webkit-scrollbar-padding) + var(--webkit-scrollbar-padding));
 }
