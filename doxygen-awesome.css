@@ -1516,6 +1516,7 @@ div.memproto div.memtemplate {
     color: var(--primary-dark-color);
     font-size: var(--memname-font-size);
     margin-left: 2px;
+    text-shadow: none;
 }
 
 table.mlabels, table.mlabels > tbody {
@@ -1732,6 +1733,7 @@ table.memberdecls tr[class^='memitem'] .memTemplParams {
     font-family: var(--font-family-monospace);
     font-size: var(--code-font-size);
     color: var(--primary-dark-color);
+    white-space: normal;
 }
 
 table.memberdecls .memItemLeft,
@@ -1757,7 +1759,7 @@ table.memberdecls .memTemplParams {
     border-left: 1px solid var(--separator-color);
     border-right: 1px solid var(--separator-color);
     border-radius: var(--border-radius-small) var(--border-radius-small) 0 0;
-    padding-bottom: 0;
+    padding-bottom: var(--spacing-small);
 }
 
 table.memberdecls .memTemplItemLeft {
@@ -1792,6 +1794,11 @@ table.memberdecls .mdescLeft, table.memberdecls .mdescRight {
     background: none;
     color: var(--page-foreground-color);
     padding: var(--spacing-small) 0;
+}
+
+table.memberdecls .memItemLeft,
+table.memberdecls .memTemplItemLeft {
+    padding-right: var(--spacing-medium);
 }
 
 table.memberdecls .memSeparator {
@@ -1837,6 +1844,12 @@ div.dynheader img[src="closed.png"] {
     
 }
 
+.compoundTemplParams {
+    font-family: var(--font-family-monospace);
+    color: var(--primary-dark-color);
+    font-size: var(--code-font-size);
+}
+
 @media screen and (max-width: 767px) {
 
     table.memberdecls .memItemLeft,
@@ -1853,6 +1866,7 @@ div.dynheader img[src="closed.png"] {
         border-right: none;
         border-left: none;
         border-radius: 0;
+        white-space: normal;
     }
 
     table.memberdecls .memItemLeft,
