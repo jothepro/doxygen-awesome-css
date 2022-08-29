@@ -1734,6 +1734,7 @@ table.memberdecls .memTemplItemLeft {
 table.memberdecls .memTemplItemRight {
     border-radius: 0 0 var(--border-radius-small) 0;
     border-right: 1px solid var(--separator-color);
+    padding-left: 0;
     border-top: 0;
 }
 
@@ -1772,26 +1773,31 @@ table.memberdecls .groupheader {
 table.memberdecls .inherit_header td {
     padding: 0 0 var(--spacing-medium) 0;
     text-indent: -12px;
-    line-height: 1.5em;
     color: var(--page-secondary-foreground-color);
 }
 
-table.memberdecls img[src="closed.png"], table.memberdecls img[src="open.png"] {
+table.memberdecls img[src="closed.png"],
+table.memberdecls img[src="open.png"],
+div.dynheader img[src="open.png"],
+div.dynheader img[src="closed.png"] {
     width: 0; 
     height: 0; 
     border-left: 4px solid transparent;
     border-right: 4px solid transparent;
-    border-top: 7px solid var(--primary-color);
+    border-top: 5px solid var(--primary-color);
     margin-top: 8px;
     display: block;
     float: left;
-    margin-right: var(--spacing-small);
     margin-left: -10px;
-    margin-right: 10px;
     transition: transform 0.25s ease-out;
 }
 
-table.memberdecls img[src="closed.png"] {
+table.memberdecls img {
+    margin-right: 10px;
+}
+
+table.memberdecls img[src="closed.png"],
+div.dynheader img[src="closed.png"] {
     transform: rotate(-90deg);
     
 }
@@ -1826,7 +1832,7 @@ table.memberdecls img[src="closed.png"] {
     }
 
     table.memberdecls .mdescLeft {
-        margin-top: calc(0px - var(--page-font-size));
+        margin-bottom: calc(0px - var(--page-font-size));
     }
 
     table.memberdecls .memItemRight, 
