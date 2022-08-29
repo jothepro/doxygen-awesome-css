@@ -73,6 +73,29 @@
     background: var(--primary-dark-color);
 }
 
-html.dark-mode #variants_image img {
+html.dark-mode .darkmode_inverted_image img, /* < doxygen 1.9.3 */
+html.dark-mode .darkmode_inverted_image object[type="image/svg+xml"] /* doxygen 1.9.3 */ {
     filter: brightness(87%) hue-rotate(180deg) invert();
+}
+
+.bordered_image {
+    border-radius: var(--border-radius-small);
+    border: 1px solid var(--separator-color);
+    display: inline-block;
+    overflow: hidden;
+}
+
+html.dark-mode .bordered_image img, /* < doxygen 1.9.3 */
+html.dark-mode .bordered_image object[type="image/svg+xml"] /* doxygen 1.9.3 */ {
+    border-radius: var(--border-radius-small);
+}
+
+.title_screenshot {
+    filter: drop-shadow(0px 3px 10px rgba(0,0,0,0.22));
+    max-width: 500px;
+    margin: var(--spacing-large) 0;
+}
+
+.title_screenshot .caption {
+    display: none;
 }

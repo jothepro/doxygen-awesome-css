@@ -21,9 +21,11 @@ This is how you can create the default template with Doxygen:
 
 ## Dark Mode Toggle
 
-Adds a button next to the search bar to enable and disable the dark theme variant manually.
+Adds a button next to the search bar to enable and disable the dark theme variant manually:
 
-<img width=250 src="darkmode_toggle.png" style="border-radius: var(--border-radius-small); border: 1px solid var(--separator-color)"/>
+<div class="darkmode_inverted_image bordered_image">
+    <img width=250 src="darkmode_toggle.png" />
+</div>
 
 ### Installation
 
@@ -67,7 +69,9 @@ All customizations must be applied before calling `DoxygenAwesomeDarkModeToggle.
 
 Shows a copy button when the user hovers over a code fragment:
 
-<img width=490 src="fragment_copy_button.png" style="border-radius: var(--border-radius-small); border: 1px solid var(--separator-color)"/>
+<div class="darkmode_inverted_image bordered_image">
+    <img width=490 src="fragment_copy_button.png"/>
+</div>
 
 ### Installation
 
@@ -107,7 +111,9 @@ All customizations must be applied before calling `DoxygenAwesomeDarkModeToggle.
 
 Provides a button on hover behind every headline to allow easy creation of a permanent link to the headline:
 
-<img width=220 src="paragraph_link.png" style="border-radius: var(--border-radius-small); border: 1px solid var(--separator-color)"/>
+<div class="darkmode_inverted_image bordered_image">
+    <img width=220 src="paragraph_link.png"/>
+</div>
 
 Works for all headlines and for many documentation section titles.
 
@@ -146,7 +152,12 @@ All customizations must be applied before calling `DoxygenAwesomeParagraphLink.i
 
 On large screens the Table of Contents (TOC) is anchored on the top right of the page. This extension visualizes the reading progress by dynamically highlighting the currently active section.
 
-On small screens the extension hides the TOC by default. The user can open it manually when needed.
+On small screens the extension hides the TOC by default. The user can open it manually when needed:
+
+
+<div class="darkmode_inverted_image bordered_image">
+    <img width=380 src="interactive_toc_mobile.png" />
+</div>
 
 ### Installation
 
@@ -167,7 +178,7 @@ On small screens the extension hides the TOC by default. The user can open it ma
 
 ### Customizing
 
-The offset for when a headline is considered active can be changed. A smaller value means that the headline of the section must closer to the top of the viewport before it is highlighted in the TOC:
+The offset for when a headline is considered active can be changed. A smaller value means that the headline of the section must be closer to the top of the viewport before it is highlighted in the TOC:
 ```js
 DoxygenAwesomeInteractiveToc.topOffset = 45
 ```
