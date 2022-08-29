@@ -307,7 +307,10 @@ body {
     font-size: var(--page-font-size);
 }
 
-body, table, div, p, dl, #nav-tree .label, .title, .sm-dox a, .sm-dox a:hover, .sm-dox a:focus, #projectname, .SelectItem, #MSearchField, .navpath li.navelem a, .navpath li.navelem a:hover {
+body, table, div, p, dl, #nav-tree .label, .title,
+.sm-dox a, .sm-dox a:hover, .sm-dox a:focus, #projectname,
+.SelectItem, #MSearchField, .navpath li.navelem a,
+.navpath li.navelem a:hover, p.reference, p.definition {
     font-family: var(--font-family);
 }
 
@@ -317,8 +320,12 @@ h1, h2, h3, h4, h5 {
     line-height: initial;
 }
 
-p, div, table, dl {
+p, div, table, dl, p.reference, p.definition {
     font-size: var(--page-font-size);
+}
+
+p.reference, p.definition {
+    color: var(--page-secondary-foreground-color);
 }
 
 a:link, a:visited, a:hover, a:focus, a:active {
