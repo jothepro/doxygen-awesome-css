@@ -1025,8 +1025,8 @@ table.params .paramname {
     line-height: var(--table-line-height);
 }
 
-.glow {
-    text-shadow: 0 0 15px var(--primary-light-color) !important;
+h1.glow, h2.glow, h3.glow, h4.glow, h5.glow, h6.glow {
+    text-shadow: 0 0 15px var(--primary-light-color);
 }
 
 .alphachar a {
@@ -1282,6 +1282,15 @@ div.fragment .line:first-child .lineno {
     box-shadow: -999999px 0px 0 999999px var(--fragment-linenumber-background), -999998px 0px 0 999999px var(--fragment-linenumber-border);
 }
 
+div.line {
+    border-radius: var(--border-radius-small);
+}
+
+div.line.glow {
+    background-color: var(--primary-light-color);
+    box-shadow: none;
+}
+
 /*
  dl warning, attention, note, deprecated, bug, ...
  */
@@ -1401,7 +1410,6 @@ div.memitem {
 
 div.memproto, h2.memtitle {
     background: var(--fragment-background);
-    text-shadow: none;
 }
 
 h2.memtitle {
@@ -1477,6 +1485,7 @@ div.memproto table.memname {
     font-family: var(--font-family-monospace);
     color: var(--page-foreground-color);
     font-size: var(--memname-font-size);
+    text-shadow: none;
 }
 
 div.memproto div.memtemplate {
