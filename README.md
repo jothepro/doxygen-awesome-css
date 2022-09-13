@@ -47,7 +47,7 @@ To use the theme in your documentation, copy the required CSS and JS files from 
 ```bash
 git submodule add https://github.com/jothepro/doxygen-awesome-css.git
 cd doxygen-awesome-css
-git checkout v2.0.3
+git checkout v2.1.0
 ```
 
 All theme files are located in the root of this repository and start with the prefix `doxygen-awesome-`. You may not need all of them. Follow the install instructions to figure out what files are required for your setup.
