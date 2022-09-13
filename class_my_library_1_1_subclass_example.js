@@ -1,5 +1,6 @@
 var class_my_library_1_1_subclass_example =
 [
-    [ "long_function_with_many_parameters", "class_my_library_1_1_subclass_example.html#a2c69c14f8d3f516b457470a6d0d7c5ba", null ],
-    [ "virtualfunc", "class_my_library_1_1_subclass_example.html#a6c1b7e5c6e56d31a169ddd42e8992300", null ]
+    [ "function_template_test", "class_my_library_1_1_subclass_example.html#ad2432fe3b060789f6f7052c515d515f4", null ],
+    [ "long_function_with_many_parameters", "class_my_library_1_1_subclass_example.html#a92227fff4f72a11be0e21d88914ba63e", null ],
+    [ "virtualfunc", "class_my_library_1_1_subclass_example.html#a08668a9f16511ad37fb547c985d62764", null ]
 ];

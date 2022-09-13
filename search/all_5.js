@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['long_5ffunction_5fwith_5fmany_5fparameters_0',['long_function_with_many_parameters',['../class_my_library_1_1_subclass_example.html#a2c69c14f8d3f516b457470a6d0d7c5ba',1,'MyLibrary::SubclassExample']]]
+  ['green_0',['green',['../namespace_my_library.html#a79a9f4bbb675f6c082b09249c5a95ceda7170352a3cd8a59b864c0166ff98182e',1,'MyLibrary']]]
 ];

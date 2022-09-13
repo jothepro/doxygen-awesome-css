@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['green_0',['green',['../namespace_my_library.html#a79a9f4bbb675f6c082b09249c5a95ceda7170352a3cd8a59b864c0166ff98182e',1,'MyLibrary']]]
+  ['function_5ftemplate_5ftest_0',['function_template_test',['../class_my_library_1_1_subclass_example.html#ad2432fe3b060789f6f7052c515d515f4',1,'MyLibrary::SubclassExample']]]
 ];
