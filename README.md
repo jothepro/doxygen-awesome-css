@@ -39,7 +39,7 @@ Some websites using this theme:
 - [Spatial Audio Framework (SAF)](https://leomccormack.github.io/Spatial_Audio_Framework/index.html)
 - [libCloudSync](https://jothepro.github.io/libCloudSync/)
 - [libsl3](https://a4z.github.io/libsl3/)
- 
+
 ## Installation
 
 To use the theme in your documentation, copy the required CSS and JS files from this repository into your project or add the repository as submodule and check out the latest release:
@@ -49,6 +49,8 @@ git submodule add https://github.com/jothepro/doxygen-awesome-css.git
 cd doxygen-awesome-css
 git checkout v2.1.0
 ```
+
+You can even install the theme system-wide by running `make install`. The files will be installed to `/usr/local/share/` by default, but you can customize the install location with `make PREFIX=/my/custom/path install`.
 
 All theme files are located in the root of this repository and start with the prefix `doxygen-awesome-`. You may not need all of them. Follow the install instructions to figure out what files are required for your setup.
 
