@@ -187,7 +187,7 @@ html {
         color-scheme: dark;
 
         --primary-color: #1982d2;
-        --primary-dark-color: #86a9c4;
+        --primary-dark-color: #ddb582;
         --primary-light-color: #4779ac;
 
         --box-shadow: 0 2px 8px 0 rgba(0,0,0,.35);
@@ -249,7 +249,7 @@ html.dark-mode {
     color-scheme: dark;
 
     --primary-color: #1982d2;
-    --primary-dark-color: #86a9c4;
+    --primary-dark-color: #ddb582;
     --primary-light-color: #4779ac;
 
     --box-shadow: 0 2px 8px 0 rgba(0,0,0,.30);
@@ -1419,6 +1419,10 @@ div.memdoc, div.memproto, h2.memtitle {
 div.memdoc {
     padding: 2px var(--spacing-medium);
     background: var(--fragment-desc-background);
+}
+
+div.memdoc {
+    color: var(--primary-dark-color);
 }
 
 h2.memtitle, div.memitem {
