@@ -1034,7 +1034,7 @@ blockquote::after {
 blockquote p {
     margin: var(--spacing-small) 0 var(--spacing-medium) 0;
 }
-.paramname {
+.paramname, div.memdoc em {
     font-weight: 600;
     color: var(--primary-dark-color);
 }
@@ -1419,10 +1419,6 @@ div.memdoc, div.memproto, h2.memtitle {
 div.memdoc {
     padding: 2px var(--spacing-medium);
     background: var(--fragment-desc-background);
-}
-
-div.memdoc {
-    color: var(--primary-dark-color);
 }
 
 h2.memtitle, div.memitem {
