@@ -150,6 +150,7 @@ html {
     --fragment-linenumber-background: #f4f4f5;
     --fragment-linenumber-border: #e3e5e7;
     --fragment-lineheight: 20px;
+    --fragment-desc-background: #f4f4f4;
 
     /* sidebar navigation (treeview) colors */
     --side-nav-background: #fbfbfb;
@@ -239,6 +240,7 @@ html {
         --fragment-linenumber-color: #cccccc;
         --fragment-linenumber-background: #35393c;
         --fragment-linenumber-border: #1f1f1f;
+        --fragment-desc-background: #2e343e;
     }
 }
 
@@ -300,6 +302,7 @@ html.dark-mode {
     --fragment-linenumber-color: #cccccc;
     --fragment-linenumber-background: #35393c;
     --fragment-linenumber-border: #1f1f1f;
+    --fragment-desc-background: #2e343e;
 }
 
 body {
@@ -1414,8 +1417,8 @@ div.memdoc, div.memproto, h2.memtitle {
 }
 
 div.memdoc {
-    padding: 0 var(--spacing-medium);
-    background: var(--page-background-color);
+    padding: 2px var(--spacing-medium);
+    background: var(--fragment-desc-background);
 }
 
 h2.memtitle, div.memitem {
@@ -1791,7 +1794,7 @@ table.memberdecls .memItemRight  {
 }
 
 table.memberdecls .mdescLeft, table.memberdecls .mdescRight {
-    background: none;
+    background: var(--fragment-desc-background);
     color: var(--page-foreground-color);
     padding: var(--spacing-small) 0;
 }
