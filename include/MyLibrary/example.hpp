@@ -121,6 +121,8 @@ public:
      *
      * @pre This is a precondition
      *
+     * @post This is a postcondition
+     *
      * @todo This theme is never finished!
      *
      * @remark This is awesome!
