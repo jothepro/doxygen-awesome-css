@@ -3,16 +3,3 @@ repos:
     rev: v2.1.0
     hooks:
       - id: codespell
-# how use
-# pip3 install pre-commit
-# pre-commit run --all-files --verbose
-#
-# ❯ pre-commit run --all-files --verbose
-# codespell................................................................Failed
-# - hook id: codespell
-# - duration: 0.2s
-# - exit code: 65
-
-# docs/tricks.md:47: choosen ==> chosen
-# docs/customization.md:29: wether ==> weather, whether
-# doxygen-awesome.css:163: collapsable ==> collapsible
