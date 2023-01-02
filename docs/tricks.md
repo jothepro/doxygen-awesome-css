@@ -44,7 +44,7 @@ html {
 }
 ```
 
-The choosen width should also be set in the Doxyfile:
+The chosen width should also be set in the Doxyfile:
 
 ```
 # Doxyfile

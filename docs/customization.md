@@ -26,7 +26,7 @@ html {
 }
 ```
 
-For dark-mode overrides you have to choose where to put them, depending on wether the dark-mode toggle extension is installed or not:
+For dark-mode overrides you have to choose where to put them, depending on whether the dark-mode toggle extension is installed or not:
 
 - dark-mode toggle is installed:
     ```css
