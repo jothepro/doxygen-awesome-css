@@ -1417,7 +1417,8 @@ div.memdoc, div.memproto, h2.memtitle {
 }
 
 div.memdoc {
-    padding: 2px var(--spacing-medium);
+    padding: 0 var(--spacing-medium);
+    overflow: auto;
     background: var(--fragment-desc-background);
 }
 
