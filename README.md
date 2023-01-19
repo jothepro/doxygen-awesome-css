@@ -25,7 +25,7 @@ This theme is an attempt to update the visuals of Doxygen without changing its o
 - 🧩 No changes to the HTML structure of Doxygen required
 - 📱 Improved mobile usability
 - 🌘 Dark mode support!
-- 🥇 Works best with **doxygen 1.9.1** - **1.9.4**
+- 🥇 Works best with **doxygen 1.9.1** - **1.9.4** and **1.9.6**
 
 ## Examples
 
@@ -78,6 +78,7 @@ GENERATE_TREEVIEW      = YES # optional. Also works without treeview
 DISABLE_INDEX = NO
 FULL_SIDEBAR = NO
 HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css
+HTML_COLORSTYLE        = LIGHT # required with Doxygen >= 1.9.5
 ```
 
 #### Sidebar-Only Theme (2)
@@ -88,15 +89,19 @@ Required files: `doxygen-awesome.css`, `doxygen-awesome-sidebar-only.css`
 
 Required `Doxyfile` configuration:
 ```
+
 GENERATE_TREEVIEW      = YES # required!
 DISABLE_INDEX          = NO
 FULL_SIDEBAR           = NO
 HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css \
                          doxygen-awesome-css/doxygen-awesome-sidebar-only.css
+HTML_COLORSTYLE        = LIGHT # required with Doxygen >= 1.9.5
 ```
 
 
-**Caution**: This theme is not compatible with the `FULL_SIDEBAR = YES` option provided by Doxygen!
+**Caution**: 
+- This theme is not compatible with the `FULL_SIDEBAR = YES` option provided by Doxygen!
+- `HTML_COLORSTYLE` must be set to `LIGHT` since Doxygen 1.9.5!
 
 ### Further installation instructions:
 
