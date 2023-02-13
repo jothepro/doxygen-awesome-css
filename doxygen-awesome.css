@@ -790,6 +790,7 @@ html.dark-mode iframe#MSearchResults {
 
 #nav-tree {
     background: transparent;
+    margin-right: 1px;
 }
 
 #nav-tree .label {
