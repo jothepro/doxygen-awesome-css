@@ -61,6 +61,13 @@ public:
      *     <li>Item 2
      *   </ul>
      * </table>
+     * 
+     * A table can be centered with the `<center>` html tag:
+     * <center>
+     * | Centered         | Table          |
+     * |------------------|----------------|
+     * | with some random | content
+     * </center>
      *
      * ## Lists
      *

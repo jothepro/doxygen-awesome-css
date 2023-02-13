@@ -1603,6 +1603,10 @@ table.doxtable tbody {
     border-radius: var(--border-radius-small);
 }
 
+table.markdownTable, table.doxtable, table.fieldtable {
+    padding: 1px;
+}
+
 table.doxtable caption {
     display: block;
 }
