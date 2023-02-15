@@ -113,10 +113,11 @@ HTML_COLORSTYLE        = LIGHT # required with Doxygen >= 1.9.5
 
 Tested with
 
-- Chrome 104, Chrome 104 for Android, Chrome 103 for iOS
-- Safari 15, Safari for iOS 15
-- Firefox 103, Firefox 103 for Android, Firefox Daylight 102 for iOS
-- Edge 104
+- Chrome 110, Chrome 109 for Android, Chrome 110 for iOS
+- Safari 16, Safari for iOS 16
+- Firefox 110, Firefox 110 for Android, Firefox 109 for iOS
+- Edge 110
+
 
 The theme does not strive to be backwards compatible to (significantly) older browser versions.
 
