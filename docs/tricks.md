@@ -60,6 +60,67 @@ The chosen width should also be set in the Doxyfile:
 TREEVIEW_WIDTH = 335
 ```
 
+## Formatting Tables
+
+By default tables in this theme are left aligned and as wide as required to fit their content.
+Those properties can be changed for individual tables.
+
+### Centering
+
+Tables can be centered by wrapping them in the `<center>` HTML-tag.
+
+**Example:**
+
+```md
+<center>
+
+| This table | is centered          |
+|------------|----------------------|
+| test 1     | test 2               |
+
+</center>
+```
+
+**Result:**
+
+<center>
+
+| This table | is centered |
+|------------|----------------------|
+| test 1     | test 2               |
+
+</center>
+
+### Full Width
+
+To make tables span the full width of the page, no matter how wide the content is, wrap the table in the `full_width_table` CSS class.
+
+@warning Apply with caution! This breaks the overflow scrolling on small screens!
+
+**Example:**
+
+```md
+<div class="full_width_table">
+
+| This table | fills the full width |
+|------------|----------------------|
+| test 1     | test 2               |
+
+</div>
+```
+
+**Result:**
+
+<div class="full_width_table">
+
+| This table | fills the full width |
+|------------|----------------------|
+| test 1     | test 2               |
+
+</div>
+
+
+
 <span class="next_section_button">
 
 Read Next: [Example](https://jothepro.github.io/doxygen-awesome-css/class_my_library_1_1_example.html)

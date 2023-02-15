@@ -1711,6 +1711,15 @@ table.markdownTable tr:last-child, table.doxtable tr:last-child {
     border-bottom: none;
 }
 
+.full_width_table table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname) {
+    display: block;
+}
+
+.full_width_table table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname) tbody {
+    display: table;
+    width: 100%;
+}
+
 table.fieldtable th {
     font-size: var(--page-font-size);
     font-weight: 600;
