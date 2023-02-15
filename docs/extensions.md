@@ -218,8 +218,8 @@ This extension allows to arrange list content in tabs:
 
 ### Usage
 
-Each List that is supposed to be displayed as tabs has to be wrapped with the `tabbed` CSS class.
-Each Item in the list must start with an element that has the class `tab-title`. It will then be used as tab title.
+Each list that is supposed to be displayed as tabs has to be wrapped with the `tabbed` CSS class.
+Each item in the list must start with an element that has the class `tab-title`. It will then be used as tab title.
 
 ```md
 <div class="tabbed">
