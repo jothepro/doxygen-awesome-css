@@ -64,9 +64,9 @@ public:
      * 
      * A table can be centered with the `<center>` html tag:
      * <center>
-     * | Centered         | Table          |
-     * |------------------|----------------|
-     * | with some random | content
+     * | Foo         | Bar            | Baz                       | FooBar      |
+     * |-------------|----------------|---------------------------|-------------|
+     * | Lorem imsum | dolor sit amet | cenectetur adipisici elit | At vero eos |
      * </center>
      *
      * Embedded Graphviz graphs support dark mode and can be scrolled once they get too wide:
