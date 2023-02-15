@@ -2228,7 +2228,8 @@ div.memproto::-webkit-scrollbar,
 .contents .center::-webkit-scrollbar,
 .contents table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname) tbody::-webkit-scrollbar,
 div.contents .toc::-webkit-scrollbar,
-.contents .dotgraph::-webkit-scrollbar {
+.contents .dotgraph::-webkit-scrollbar,
+.contents .tabs-overview-container::-webkit-scrollbar {
     background: transparent;
     width: calc(var(--webkit-scrollbar-size) + var(--webkit-scrollbar-padding) + var(--webkit-scrollbar-padding));
     height: calc(var(--webkit-scrollbar-size) + var(--webkit-scrollbar-padding) + var(--webkit-scrollbar-padding));
@@ -2242,7 +2243,8 @@ div.memproto::-webkit-scrollbar-thumb,
 .contents .center::-webkit-scrollbar-thumb,
 .contents table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname) tbody::-webkit-scrollbar-thumb,
 div.contents .toc::-webkit-scrollbar-thumb,
-.contents .dotgraph::-webkit-scrollbar-thumb {
+.contents .dotgraph::-webkit-scrollbar-thumb,
+.contents .tabs-overview-container::-webkit-scrollbar-thumb {
     background-color: transparent;
     border: var(--webkit-scrollbar-padding) solid transparent;
     border-radius: calc(var(--webkit-scrollbar-padding) + var(--webkit-scrollbar-padding));
@@ -2257,7 +2259,8 @@ div.memproto:hover::-webkit-scrollbar-thumb,
 .contents .center:hover::-webkit-scrollbar-thumb,
 .contents table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname) tbody:hover::-webkit-scrollbar-thumb,
 div.contents .toc:hover::-webkit-scrollbar-thumb,
-.contents .dotgraph:hover::-webkit-scrollbar-thumb {
+.contents .dotgraph:hover::-webkit-scrollbar-thumb,
+.contents .tabs-overview-container:hover::-webkit-scrollbar-thumb {
     background-color: var(--webkit-scrollbar-color);
 }
 
@@ -2269,7 +2272,8 @@ div.memproto::-webkit-scrollbar-track,
 .contents .center::-webkit-scrollbar-track,
 .contents table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname) tbody::-webkit-scrollbar-track,
 div.contents .toc::-webkit-scrollbar-track,
-.contents .dotgraph::-webkit-scrollbar-track {
+.contents .dotgraph::-webkit-scrollbar-track,
+.contents .tabs-overview-container::-webkit-scrollbar-track {
     background: transparent;
 }
 
@@ -2307,7 +2311,8 @@ div.memproto,
 .contents .center,
 .contents table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname) tbody,
 div.contents .toc,
-.contents .dotgraph {
+.contents .dotgraph,
+.contents .tabs-overview-container {
     scrollbar-width: thin;
 }
 
@@ -2439,4 +2444,79 @@ a.anchorlink:hover {
 
 h2:hover a.anchorlink, h1:hover a.anchorlink, h3:hover a.anchorlink, h4:hover a.anchorlink  {
     display: inline-block;
+}
+
+/*
+ Optional tab feature
+*/
+
+.tabbed ul {
+    padding-inline-start: 0px;
+    margin: 0;
+    padding: var(--spacing-small) 0;
+    border-bottom: 1px solid var(--separator-color);
+}
+
+.tabbed li {
+    display: none;
+}
+
+.tabbed li.selected {
+    display: block;
+}
+
+.tabs-overview-container {
+    overflow-x: auto;
+    display: block;
+    overflow-y: visible;
+}
+
+.tabs-overview {
+    border-bottom: 1px solid var(--separator-color);
+    display: flex;
+    flex-direction: row;
+}
+
+.tabs-overview button.tab-button {
+    color: var(--page-foreground-color);
+    margin: 0;
+    border: none;
+    background: transparent;
+    padding: var(--spacing-small) 0;
+    display: inline-block;
+    font-size: var(--page-font-size);
+    cursor: pointer;
+    box-shadow: 0 1px 0 0 var(--separator-color);
+}
+
+.tabs-overview button.tab-button .tab-title {
+    float: left;
+    white-space: nowrap;
+    padding: var(--spacing-small) var(--spacing-large);
+    border-radius: var(--border-radius-medium);
+}
+
+.tabs-overview button.tab-button:not(:last-child) .tab-title {
+    box-shadow: 8px 0 0 -7px var(--separator-color);
+}
+
+.tabs-overview button.tab-button:hover .tab-title {
+    background: var(--primary-color);
+    color: var(--page-background-color);
+    box-shadow: none;
+}
+
+.tabs-overview button.tab-button.active {
+    color: var(--primary-color);
+    box-shadow: 0 1px 0 0 var(--primary-color), inset 0 -1px 0 0 var(--primary-color);
+}
+
+@media (prefers-color-scheme: dark) {
+    html:not(.light-mode) .tabs-overview button.tab-button:hover .tab-title {
+        color: var(--page-foreground-color);
+    }
+}
+
+html.dark-mode .tabs-overview button.tab-button:hover .tab-title {
+    color: var(--page-foreground-color);
 }

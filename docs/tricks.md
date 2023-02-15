@@ -13,18 +13,21 @@ DOT_IMAGE_FORMAT = svg
 DOT_TRANSPARENT = YES
 ```
 
-In case `INTERACTIVE_SVG = YES` is set in the Doxyfile, make sure to add this CSS snippet in order for the interactive svg viewer to be
-rendered correctly:
+In case `INTERACTIVE_SVG = YES` is set in the Doxyfile, all user-defined dotgraphs must be wrapped with the `interactive_dotgraph` CSS class in order for them to be rendered correctly:
 
-```css
-.dotgraph iframe {
-  max-width: 100%;
-}
+```md
+<div class="interactive_dotgraph">
+
+\dotfile graph.dot
+
+</div>
 ```
+
+@note Both the default overflow scrolling behavior in this theme and the interactive editor enabled by `INTERACTIVE_SVG` are unsatisfying workarounds IMHO. Consider designing your graphs to be narrow enough to fit the page to avoid scrolling.
 
 ## Disable Dark Mode
 
-If for some reason you don't want the theme to automatically switch to dark mode depending on the browser preference,
+If you don't want the theme to automatically switch to dark mode depending on the browser preference,
 you can disable dark mode by adding the `light-mode` class to the html-tag in the header template:
 
 ```html
@@ -38,7 +41,7 @@ The same can be done to always enable dark-mode:
 ```
 
 
-**This only works if you don't use the dark-mode toggle extension.**
+@warning This only works if you don't use the dark-mode toggle extension.
 
 ## Choosing Sidebar Width
 
@@ -62,64 +65,58 @@ TREEVIEW_WIDTH = 335
 
 ## Formatting Tables
 
-By default tables in this theme are left aligned and as wide as required to fit their content.
+By default tables in this theme are left-aligned and as wide as required to fit their content.
 Those properties can be changed for individual tables.
 
 ### Centering
 
 Tables can be centered by wrapping them in the `<center>` HTML-tag.
 
-**Example:**
+<div class="tabbed">
 
-```md
-<center>
+- <span class="tab-title">Code</span>
+    ```md
+    <center>
+        | This table | is centered          |
+        |------------|----------------------|
+        | test 1     | test 2               |
+    </center>
+    ```
+- <span class="tab-title">Result</span>
+    <center>
+        | This table | is centered |
+        |------------|----------------------|
+        | test 1     | test 2               |
+    </center>
 
-| This table | is centered          |
-|------------|----------------------|
-| test 1     | test 2               |
+</div>
 
-</center>
-```
 
-**Result:**
-
-<center>
-
-| This table | is centered |
-|------------|----------------------|
-| test 1     | test 2               |
-
-</center>
 
 ### Full Width
 
 To make tables span the full width of the page, no matter how wide the content is, wrap the table in the `full_width_table` CSS class.
 
-@warning Apply with caution! This breaks the overflow scrolling on small screens!
+@warning Apply with caution! This breaks the overflow scrolling of the table. Content might be cut of on small screens!
 
-**Example:**
+<div class="tabbed">
 
-```md
-<div class="full_width_table">
-
-| This table | fills the full width |
-|------------|----------------------|
-| test 1     | test 2               |
-
-</div>
-```
-
-**Result:**
-
-<div class="full_width_table">
-
-| This table | fills the full width |
-|------------|----------------------|
-| test 1     | test 2               |
+- <span class="tab-title">Code</span>
+    ```md
+    <div class="full_width_table">
+        | This table | spans the full width |
+        |------------|----------------------|
+        | test 1     | test 2               |
+    </div>
+    ```
+- <span class="tab-title">Result</span>
+    <div class="full_width_table">
+        | This table | spans the full width |
+        |------------|----------------------|
+        | test 1     | test 2               |
+    </div>
 
 </div>
-
-
 
 <span class="next_section_button">
 

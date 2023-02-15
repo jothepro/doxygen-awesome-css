@@ -64,40 +64,39 @@ There is two layout options. Choose one of them and configure Doxygen accordingl
 
 </div>
 
+<div class="tabbed">
 
+- <b class="tab-title">1️⃣ Base Theme </b>
+    Comes with the typical Doxygen titlebar. Optionally the treeview in the sidebar can be enabled. 
 
-#### Base Theme (1)
+    Required files: `doxygen-awesome.css`
 
-Comes with the typical Doxygen titlebar. Optionally the treeview in the sidebar can be enabled. 
+    Required `Doxyfile` configuration:
+    ```
+    GENERATE_TREEVIEW      = YES # optional. Also works without treeview
+    DISABLE_INDEX = NO
+    FULL_SIDEBAR = NO
+    HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css
+    HTML_COLORSTYLE        = LIGHT # required with Doxygen >= 1.9.5
+    ```
 
-Required files: `doxygen-awesome.css`
+- <b class="tab-title">2️⃣ Sidebar-Only Theme </b>
+    Hides the top titlebar to give more space to the content. The treeview must be enabled in order for this theme to work.
 
-Required `Doxyfile` configuration:
-```
-GENERATE_TREEVIEW      = YES # optional. Also works without treeview
-DISABLE_INDEX = NO
-FULL_SIDEBAR = NO
-HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css
-HTML_COLORSTYLE        = LIGHT # required with Doxygen >= 1.9.5
-```
+    Required files: `doxygen-awesome.css`, `doxygen-awesome-sidebar-only.css`
 
-#### Sidebar-Only Theme (2)
+    Required `Doxyfile` configuration:
+    ```
 
-Hides the top titlebar to give more space to the content. The treeview must be enabled in order for this theme to work.
+    GENERATE_TREEVIEW      = YES # required!
+    DISABLE_INDEX          = NO
+    FULL_SIDEBAR           = NO
+    HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css \
+                            doxygen-awesome-css/doxygen-awesome-sidebar-only.css
+    HTML_COLORSTYLE        = LIGHT # required with Doxygen >= 1.9.5
+    ```
 
-Required files: `doxygen-awesome.css`, `doxygen-awesome-sidebar-only.css`
-
-Required `Doxyfile` configuration:
-```
-
-GENERATE_TREEVIEW      = YES # required!
-DISABLE_INDEX          = NO
-FULL_SIDEBAR           = NO
-HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css \
-                         doxygen-awesome-css/doxygen-awesome-sidebar-only.css
-HTML_COLORSTYLE        = LIGHT # required with Doxygen >= 1.9.5
-```
-
+</div>
 
 **Caution**: 
 - This theme is not compatible with the `FULL_SIDEBAR = YES` option provided by Doxygen!

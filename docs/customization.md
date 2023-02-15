@@ -28,13 +28,16 @@ html {
 
 For dark-mode overrides you have to choose where to put them, depending on whether the dark-mode toggle extension is installed or not:
 
-- dark-mode toggle is installed:
+<div class="tabbed">
+
+- <b class="tab-title">dark-mode toggle is installed</b>
     ```css
     html.dark-mode {
         /* define dark-mode variable overrides here if you DO use doxygen-awesome-darkmode-toggle.js */
     }
     ```
-- dark-mode toggle is **NOT** installed. The dark-mode is enabled automatically depending on the system preference:
+- <b class="tab-title">dark-mode toggle is **NOT** installed</b>
+   The dark-mode is enabled automatically depending on the system preference:
     ```css
     @media (prefers-color-scheme: dark) {
         html:not(.light-mode) {
@@ -42,6 +45,8 @@ For dark-mode overrides you have to choose where to put them, depending on wheth
         }
     }
     ```
+
+</div>
 
 ### Available variables
 
@@ -73,7 +78,7 @@ All variables are defined at the beginning of the stylesheet.
 | **Code Fragment Colors**:<br>Color-Scheme of multiline codeblocks                                                                                             |||
 | `--fragment-background`             | <code style="background:#F8F9FA;color:black">#F8F9FA</code> | <code style="background:#282c34;color:white">#282c34</code> |
 | `--fragment-foreground`             | <code style="background:#37474F;color:white">#37474F</code> | <code style="background:#dbe4eb;color:black">#dbe4eb</code> |
-| **Arrow Opacity**:<br>By default the arrows in the sidebar are only visible on hover. You can override this behaviour so they are visible all the time.       |||
+| **Arrow Opacity**:<br>By default the arrows in the sidebar are only visible on hover. You can override this behavior so they are visible all the time.       |||
 | `--side-nav-arrow-opacity`          | `0`                                                         |                                                             |
 | `--side-nav-arrow-hover-opacity`    | `0.9`                                                       |                                                             |
 | ...and many more                                                                                                                                              |||

@@ -184,6 +184,52 @@ Hiding the TOC on small screens can be disabled. It is still interactive and can
 DoxygenAwesomeInteractiveToc.hideMobileMenu = false
 ```
 
+## Tabs
+
+@note Experimental feature! Please report bugs [here](https://github.com/jothepro/doxygen-awesome-css/issues).
+
+
+This extension allows to arrange list content in tabs:
+
+<div class="tabbed">
+
+- <b class="tab-title">Tab 1</b> This is the content of tab 1
+- <b class="tab-title">Tab 2</b> This is the content of tab 2
+
+</div>
+
+
+### Installation
+
+1. Add the required resources in your `Doxyfile`:
+   - **HTML_EXTRA_FILES:** `doxygen-awesome-tabs.js`
+2. In the `header.html` template, include `doxygen-awesome-tabs.js` at the end of the `<head>` and then initialize it:
+    ```html
+   <html>
+       <head>
+           <!-- ... other metadata & script includes ... -->
+           <script type="text/javascript" src="$relpath^doxygen-awesome-tabs.js"></script>
+           <script type="text/javascript">
+               DoxygenAwesomeTabs.init()
+           </script>
+       </head>
+       <body>
+    ```
+
+### Usage
+
+Each List that is supposed to be displayed as tabs has to be wrapped with the `tabbed` CSS class.
+Each Item in the list must start with an element that has the class `tab-title`. It will then be used as tab title.
+
+```md
+<div class="tabbed">
+
+- <b class="tab-title">Tab 1</b> This is the content of tab 1
+- <b class="tab-title">Tab 2</b> This is the content of tab 2
+
+</div>
+```
+
 <span class="next_section_button">
 
 Read Next: [Customization](customization.md)
