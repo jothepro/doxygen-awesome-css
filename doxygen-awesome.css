@@ -1070,6 +1070,11 @@ h1.glow, h2.glow, h3.glow, h4.glow, h5.glow, h6.glow {
     left: 0;
 }
 
+/* Wrap Graphviz graphs with the `interactive_dotgraph` class if `INTERACTIVE_SVG = YES` */
+.interactive_dotgraph .dotgraph iframe {
+    max-width: 100%;
+}
+
 /*
  Table of Contents
  */
