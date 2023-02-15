@@ -120,10 +120,16 @@ Tested with
 
 The theme does not strive to be backwards compatible to (significantly) older browser versions.
 
+
 ## Credits
 
-- This theme was initially inspired by the [vuepress](https://vuepress.vuejs.org/) static site generator default theme.
-- Thank you for all the bug reports, pull requests and inspiring feedback on github!
+Thanks for all the bug reports and inspiring feedback on github!
+
+Special thanks to all the contributors:
+<br><br>
+<a href="https://github.com/jothepro/doxygen-awesome-css/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=jothepro/doxygen-awesome-css" />
+</a>
 
 <span class="next_section_button">
 
