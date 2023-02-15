@@ -47,7 +47,7 @@ To use the theme in your documentation, copy the required CSS and JS files from 
 ```bash
 git submodule add https://github.com/jothepro/doxygen-awesome-css.git
 cd doxygen-awesome-css
-git checkout v2.1.0
+git checkout v2.2.0
 ```
 
 You can even install the theme system-wide by running `make install`. The files will be installed to `/usr/local/share/` by default, but you can customize the install location with `make PREFIX=/my/custom/path install`.

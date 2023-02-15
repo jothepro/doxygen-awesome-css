@@ -2,7 +2,7 @@
 
 [TOC]
 
-## Diagrams with Graphviz
+## Diagrams with Graphviz {#tricks-graphviz}
 
 To get the best looking class diagrams for your documentation, generate them with Graphviz as vector graphics with transparent background:
 
@@ -25,7 +25,7 @@ In case `INTERACTIVE_SVG = YES` is set in the Doxyfile, all user-defined dotgrap
 
 @note Both the default overflow scrolling behavior in this theme and the interactive editor enabled by `INTERACTIVE_SVG` are unsatisfying workarounds IMHO. Consider designing your graphs to be narrow enough to fit the page to avoid scrolling.
 
-## Disable Dark Mode
+## Disable Dark Mode {#tricks-darkmode}
 
 If you don't want the theme to automatically switch to dark mode depending on the browser preference,
 you can disable dark mode by adding the `light-mode` class to the html-tag in the header template:
@@ -43,7 +43,7 @@ The same can be done to always enable dark-mode:
 
 @warning This only works if you don't use the dark-mode toggle extension.
 
-## Choosing Sidebar Width
+## Choosing Sidebar Width {#tricks-sidebar}
 
 If you have enabled the sidebar-only theme variant, make sure to carefully choose a proper width for your sidebar.
 It should be wide enough to hold the icon, project title and version number. If the content is too wide, it will be
@@ -63,7 +63,7 @@ The chosen width should also be set in the Doxyfile:
 TREEVIEW_WIDTH = 335
 ```
 
-## Formatting Tables
+## Formatting Tables {#tricks-tables}
 
 By default tables in this theme are left-aligned and as wide as required to fit their content.
 Those properties can be changed for individual tables.

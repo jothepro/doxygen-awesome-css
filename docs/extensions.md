@@ -19,7 +19,7 @@ This is how you can create the default template with Doxygen:
 
 [More details on header customization](https://www.doxygen.nl/manual/customize.html#minor_tweaks_header_css)
 
-## Dark Mode Toggle
+## Dark Mode Toggle {#extension-dark-mode-toggle}
 
 Adds a button next to the search bar to enable and disable the dark theme variant manually:
 
@@ -63,7 +63,7 @@ DoxygenAwesomeDarkModeToggle.darkModeIcon = `<svg xmlns="http://www.w3.org/2000/
 All customizations must be applied before calling `DoxygenAwesomeDarkModeToggle.init()`!
 
 
-## Fragment Copy Button
+## Fragment Copy Button {#extension-copy-button}
 
 Shows a copy button when the user hovers over a code fragment:
 
@@ -103,7 +103,7 @@ DoxygenAwesomeFragmentCopyButton.successIcon = `<svg ...>`
 
 All customizations must be applied before calling `DoxygenAwesomeDarkModeToggle.init()`!
 
-## Paragraph Linking
+## Paragraph Linking {#extension-para}
 
 Provides a button on hover behind every headline to allow easy creation of a permanent link to the headline:
 
@@ -144,7 +144,7 @@ DoxygenAwesomeParagraphLink.icon = "¶"
 
 All customizations must be applied before calling `DoxygenAwesomeParagraphLink.init()`!
 
-## Interactive TOC
+## Interactive TOC {#extension-toc}
 
 On large screens the Table of Contents (TOC) is anchored on the top right of the page. This extension visualizes the reading progress by dynamically highlighting the currently active section.
 
@@ -184,7 +184,7 @@ Hiding the TOC on small screens can be disabled. It is still interactive and can
 DoxygenAwesomeInteractiveToc.hideMobileMenu = false
 ```
 
-## Tabs
+## Tabs {#extension-tabs}
 
 @note Experimental feature! Please report bugs [here](https://github.com/jothepro/doxygen-awesome-css/issues).
 
