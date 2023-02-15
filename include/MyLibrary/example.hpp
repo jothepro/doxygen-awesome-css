@@ -69,6 +69,15 @@ public:
      * | with some random | content
      * </center>
      *
+     * Embedded Graphviz graphs support dark mode and can be scrolled once they get too wide:
+     * \dot Graphviz with a caption
+     *  digraph example {
+     *      node [fontsize="12"];
+     *      rankdir="LR"
+     *      a -> b -> c -> d -> e -> f -> g -> h -> i -> j -> k;
+     *  }
+     *  \enddot
+     *
      * ## Lists
      *
      * - element 1

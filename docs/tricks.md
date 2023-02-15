@@ -13,6 +13,15 @@ DOT_IMAGE_FORMAT = svg
 DOT_TRANSPARENT = YES
 ```
 
+In case `INTERACTIVE_SVG = YES` is set in the Doxyfile, make sure to add this CSS snippet in order for the interactive svg viewer to be
+rendered correctly:
+
+```css
+.dotgraph iframe {
+  max-width: 100%;
+}
+```
+
 ## Disable Dark Mode
 
 If for some reason you don't want the theme to automatically switch to dark mode depending on the browser preference,
