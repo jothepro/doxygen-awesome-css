@@ -65,8 +65,6 @@ All customizations must be applied before calling `DoxygenAwesomeDarkModeToggle.
 
 ## Fragment Copy Button
 
-***This feature is experimental!***
-
 Shows a copy button when the user hovers over a code fragment:
 
 <div class="darkmode_inverted_image bordered_image">
@@ -106,8 +104,6 @@ DoxygenAwesomeFragmentCopyButton.successIcon = `<svg ...>`
 All customizations must be applied before calling `DoxygenAwesomeDarkModeToggle.init()`!
 
 ## Paragraph Linking
-
-***This feature is experimental!***
 
 Provides a button on hover behind every headline to allow easy creation of a permanent link to the headline:
 
