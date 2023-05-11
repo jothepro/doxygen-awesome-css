@@ -42,17 +42,55 @@ Some websites using this theme:
 
 ## Installation
 
-To use the theme in your documentation, copy the required CSS and JS files from this repository into your project or add the repository as submodule and check out the latest release:
+To use the theme when generating your documentation, bring the required CSS and JS files from this repository into your project.
+
+This can be done in several ways:
+
+- manually copying the files
+- adding the project as a Git submodule
+- adding the project as a npm/xpm dependency
+- installing the theme system wide
+
+All theme files are located in the root of this repository and start with the prefix `doxygen-awesome-`. You may not need all of them. Follow the install instructions to figure out what files are required for your setup.
+
+### Git submodule
+
+For projects which use git, add the repository as a submodule and check out the desired release:
 
 ```bash
 git submodule add https://github.com/jothepro/doxygen-awesome-css.git
 cd doxygen-awesome-css
-git checkout v2.2.0
+git checkout v2.2.1
 ```
 
-You can even install the theme system-wide by running `make install`. The files will be installed to `/usr/local/share/` by default, but you can customize the install location with `make PREFIX=/my/custom/path install`.
+### npm dependency
 
-All theme files are located in the root of this repository and start with the prefix `doxygen-awesome-`. You may not need all of them. Follow the install instructions to figure out what files are required for your setup.
+In the npm ecosystem, this project can be added as a development dependency
+to your project:
+
+```bash
+cd your-project
+npm install https://github.com/jothepro/doxygen-awesome-css#v2.2.1 --save-dev
+
+ls -l node_module/@jothepro/doxygen-awesome-css
+```
+
+### xpm dependency
+
+In the [xPack](https://xpack.github.io) ecosystem, this project can be added
+as a development dependency to an [`xpm`](https://xpack.github.io/xpm/)
+managed project.
+
+```bash
+cd your-project
+xpm install https://github.com/jothepro/doxygen-awesome-css#v2.2.1 --save-dev
+
+ls -l xpacks/jothepro-doxygen-awesome-css
+```
+
+### System-wide
+
+You can even install the theme system-wide by running `make install`. The files will be installed to `/usr/local/share/` by default, but you can customize the install location with `make PREFIX=/my/custom/path install`.
 
 ### Choosing a layout
 
