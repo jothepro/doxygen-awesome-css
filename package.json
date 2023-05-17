@@ -5,7 +5,6 @@
   "main": "",
   "scripts": {
     "npm-pack": "npm pack",
-    "postversion": "git push origin --all && git push origin --tags",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
