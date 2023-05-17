@@ -57,7 +57,7 @@ All theme files are located in the root of this repository and start with the pr
 
 For projects which use git, add the repository as a submodule and check out the desired release:
 
-```bash
+```sh
 git submodule add https://github.com/jothepro/doxygen-awesome-css.git
 cd doxygen-awesome-css
 git checkout v2.2.1
@@ -68,7 +68,7 @@ git checkout v2.2.1
 In the npm ecosystem, this project can be added as a development dependency
 to your project:
 
-```bash
+```sh
 cd your-project
 npm install https://github.com/jothepro/doxygen-awesome-css#v2.2.1 --save-dev
 
