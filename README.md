@@ -63,7 +63,7 @@ cd doxygen-awesome-css
 git checkout v2.2.1
 ```
 
-### npm dependency
+### **npm**/**xpm** dependency
 
 In the npm ecosystem, this project can be added as a development dependency
 to your project:
@@ -75,18 +75,9 @@ npm install https://github.com/jothepro/doxygen-awesome-css#v2.2.1 --save-dev
 ls -l node_module/@jothepro/doxygen-awesome-css
 ```
 
-### xpm dependency
-
-In the [xPack](https://xpack.github.io) ecosystem, this project can be added
+Similarly, in the [xPack](https://xpack.github.io) ecosystem, this project can be added
 as a development dependency to an [`xpm`](https://xpack.github.io/xpm/)
 managed project.
-
-```bash
-cd your-project
-xpm install https://github.com/jothepro/doxygen-awesome-css#v2.2.1 --save-dev
-
-ls -l xpacks/jothepro-doxygen-awesome-css
-```
 
 ### System-wide
 
