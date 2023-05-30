@@ -63,7 +63,7 @@ cd doxygen-awesome-css
 git checkout v2.2.1
 ```
 
-### **npm**/**xpm** dependency
+### npm/xpm dependency
 
 In the npm ecosystem, this project can be added as a development dependency
 to your project:
