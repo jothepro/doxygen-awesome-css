@@ -776,6 +776,8 @@ html.dark-mode iframe#MSearchResults {
 #side-nav {
     padding: 0 !important;
     background: var(--side-nav-background);
+    min-width: 8px;
+    max-width: 50vw;
 }
 
 @media screen and (max-width: 767px) {
@@ -863,8 +865,9 @@ html.dark-mode iframe#MSearchResults {
 }
 
 .ui-resizable-e {
-    background: var(--separator-color);
-    width: 1px;
+    width: 4px;
+    background: transparent;
+    box-shadow: inset -1px 0 0 0 var(--separator-color);
 }
 
 /*
