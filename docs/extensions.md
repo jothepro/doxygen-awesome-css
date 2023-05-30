@@ -193,8 +193,8 @@ This extension allows to arrange list content in tabs:
 
 <div class="tabbed">
 
-- <b class="tab-title">Tab 1</b> This is the content of tab 1
-- <b class="tab-title">Tab 2</b> This is the content of tab 2
+- <span class="tab-title">Tab 1</span> This is the content of tab 1
+- <span class="tab-title">Tab 2</span> This is the content of tab 2
 
 </div>
 
@@ -224,8 +224,8 @@ Each item in the list must start with an element that has the class `tab-title`.
 ```md
 <div class="tabbed">
 
-- <b class="tab-title">Tab 1</b> This is the content of tab 1
-- <b class="tab-title">Tab 2</b> This is the content of tab 2
+- <span class="tab-title">Tab 1</span> This is the content of tab 1
+- <span class="tab-title">Tab 2</span> This is the content of tab 2
 
 </div>
 ```
