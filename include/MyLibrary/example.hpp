@@ -101,7 +101,7 @@ public:
      * ## Code block
      *
      * ```cpp
-     * auto x = "code within md fences (```)";
+     * auto x = "code within md fences";
      * ```
      *
      * @code{.cpp}
@@ -110,7 +110,6 @@ public:
      *    auto example = std::make_shared<Example>(5);
      *    example->test("test");
      * }
-     * 
      * @endcode
      *
      *     // code within indented code block
