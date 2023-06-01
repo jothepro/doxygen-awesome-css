@@ -16,7 +16,7 @@
 <meta name="twitter:title" content="Doxygen Awesome" />
 <meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
 <!-- END twitter metadata -->
-<title>Doxygen Awesome: include/MyLibrary/subclass-example.hpp File Reference</title>
+<title>Doxygen Awesome: Tips &amp; Tricks</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -100,7 +100,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('subclass-example_8hpp.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('md_docs_2tricks.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -125,41 +125,100 @@ $(document).ready(function(){initNavTree('subclass-example_8hpp.html',''); initR
 </div>
 </div>
 
-<div class="header">
-  <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
-  <div class="headertitle"><div class="title">subclass-example.hpp File Reference</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">Tips &amp; Tricks</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;string&gt;</code><br />
-<code>#include &quot;<a class="el" href="example_8hpp_source.html">example.hpp</a>&quot;</code><br />
-<code>#include &lt;iostream&gt;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for subclass-example.hpp:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="subclass-example_8hpp__incl.svg" width="243" height="199"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="toc"><h3>Table of Contents</h3>
+<ul><li class="level1"><a href="#tricks-graphviz">Diagrams with Graphviz</a></li>
+<li class="level1"><a href="#tricks-darkmode">Disable Dark Mode</a></li>
+<li class="level1"><a href="#tricks-sidebar">Choosing Sidebar Width</a></li>
+<li class="level1"><a href="#tricks-tables">Formatting Tables</a><ul><li class="level2"><a href="#autotoc_md36">Centering</a></li>
+<li class="level2"><a href="#autotoc_md37">Full Width</a></li>
+</ul>
+</li>
+</ul>
 </div>
-</div>
-<p><a href="subclass-example_8hpp_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_library_1_1_subclass_example.html">MyLibrary::SubclassExample&lt; TemplatedClass &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">some subclass  <a href="class_my_library_1_1_subclass_example.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:namespace_my_library"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_my_library.html">MyLibrary</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<div class="textblock"><p><a class="anchor" id="autotoc_md35"></a></p>
+<h1><a class="anchor" id="tricks-graphviz"></a>
+Diagrams with Graphviz</h1>
+<p>To get the best looking class diagrams for your documentation, generate them with Graphviz as vector graphics with transparent background:</p>
+<div class="fragment"><div class="line"># Doxyfile</div>
+<div class="line">HAVE_DOT = YES</div>
+<div class="line">DOT_IMAGE_FORMAT = svg</div>
+<div class="line">DOT_TRANSPARENT = YES</div>
+</div><!-- fragment --><p>In case <code>INTERACTIVE_SVG = YES</code> is set in the Doxyfile, all user-defined dotgraphs must be wrapped with the <code>interactive_dotgraph</code> CSS class in order for them to be rendered correctly:</p>
+<div class="fragment"><div class="line">&lt;div class=&quot;interactive_dotgraph&quot;&gt;</div>
+<div class="line"> </div>
+<div class="line">\dotfile graph.dot</div>
+<div class="line"> </div>
+<div class="line">&lt;/div&gt;</div>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Both the default overflow scrolling behavior in this theme and the interactive editor enabled by <code>INTERACTIVE_SVG</code> are unsatisfying workarounds IMHO. Consider designing your graphs to be narrow enough to fit the page to avoid scrolling.</dd></dl>
+<h1><a class="anchor" id="tricks-darkmode"></a>
+Disable Dark Mode</h1>
+<p>If you don't want the theme to automatically switch to dark mode depending on the browser preference, you can disable dark mode by adding the <code>light-mode</code> class to the html-tag in the header template:</p>
+<div class="fragment"><div class="line">&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; class=&quot;light-mode&quot;&gt;</div>
+</div><!-- fragment --><p>The same can be done to always enable dark-mode:</p>
+<div class="fragment"><div class="line">&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; class=&quot;dark-mode&quot;&gt;</div>
+</div><!-- fragment --><dl class="section warning"><dt>Warning</dt><dd>This only works if you don't use the dark-mode toggle extension.</dd></dl>
+<h1><a class="anchor" id="tricks-sidebar"></a>
+Choosing Sidebar Width</h1>
+<p>If you have enabled the sidebar-only theme variant, make sure to carefully choose a proper width for your sidebar. It should be wide enough to hold the icon, project title and version number. If the content is too wide, it will be cut off.</p>
+<div class="fragment"><div class="line">html {</div>
+<div class="line">    /* Make sure sidebar is wide enough to contain the page title (logo + title + version) */</div>
+<div class="line">    --side-nav-fixed-width: 335px;</div>
+<div class="line">}</div>
+</div><!-- fragment --><p>The chosen width should also be set in the Doxyfile:</p>
+<div class="fragment"><div class="line"># Doxyfile</div>
+<div class="line">TREEVIEW_WIDTH = 335</div>
+</div><!-- fragment --><h1><a class="anchor" id="tricks-tables"></a>
+Formatting Tables</h1>
+<p>By default tables in this theme are left-aligned and as wide as required to fit their content. Those properties can be changed for individual tables.</p>
+<h2><a class="anchor" id="autotoc_md36"></a>
+Centering</h2>
+<p>Tables can be centered by wrapping them in the <code>&lt;center&gt;</code> HTML-tag.</p>
+<div class="tabbed"></div><div class="tabbed"><ul>
+<li><span class="tab-title">Code</span> <div class="fragment"><div class="line">&lt;center&gt;</div>
+<div class="line">    | This table | is centered          |</div>
+<div class="line">    |------------|----------------------|</div>
+<div class="line">    | test 1     | test 2               |</div>
+<div class="line">&lt;/center&gt;</div>
+</div><!-- fragment --></li>
+<li><span class="tab-title">Result</span> <center> <table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">This table   </th><th class="markdownTableHeadNone">is centered    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">test 1   </td><td class="markdownTableBodyNone">test 2   </td></tr>
 </table>
-</div><!-- contents -->
+</center></li>
+</ul>
+</div><div class="tabbed"></div><h2><a class="anchor" id="autotoc_md37"></a>
+Full Width</h2>
+<p>To make tables span the full width of the page, no matter how wide the content is, wrap the table in the <code>full_width_table</code> CSS class.</p>
+<dl class="section warning"><dt>Warning</dt><dd>Apply with caution! This breaks the overflow scrolling of the table. Content might be cut of on small screens!</dd></dl>
+<div class="tabbed"></div><div class="tabbed"><ul>
+<li><span class="tab-title">Code</span> <div class="fragment"><div class="line">&lt;div class=&quot;full_width_table&quot;&gt;</div>
+<div class="line">    | This table | spans the full width |</div>
+<div class="line">    |------------|----------------------|</div>
+<div class="line">    | test 1     | test 2               |</div>
+<div class="line">&lt;/div&gt;</div>
+</div><!-- fragment --></li>
+<li><span class="tab-title">Result</span> <div class="full_width_table"> <table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">This table   </th><th class="markdownTableHeadNone">spans the full width    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">test 1   </td><td class="markdownTableBodyNone">test 2   </td></tr>
+</table>
+</div></li>
+</ul>
+</div><div class="tabbed"></div><p><span class="next_section_button"></span></p>
+<p><span class="next_section_button">Read Next: <a href="https://jothepro.github.io/doxygen-awesome-css/class_my_library_1_1_example.html">Example</a> </span> </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_0bed9bdbe20071aa10d0d00e40d77c56.html">MyLibrary</a></li><li class="navelem"><a class="el" href="subclass-example_8hpp.html">subclass-example.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7 </li>
   </ul>
 </div>

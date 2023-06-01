@@ -29,48 +29,51 @@ var NAVTREE =
     [ "Features", "index.html#autotoc_md8", null ],
     [ "Examples", "index.html#autotoc_md9", null ],
     [ "Installation", "index.html#autotoc_md10", [
-      [ "Choosing a layout", "index.html#autotoc_md11", null ],
-      [ "Further installation instructions:", "index.html#autotoc_md12", null ]
+      [ "Git submodule", "index.html#autotoc_md11", null ],
+      [ "npm/xpm dependency", "index.html#autotoc_md12", null ],
+      [ "System-wide", "index.html#autotoc_md13", null ],
+      [ "Choosing a layout", "index.html#autotoc_md14", null ],
+      [ "Further installation instructions:", "index.html#autotoc_md15", null ]
     ] ],
-    [ "Browser support", "index.html#autotoc_md13", null ],
-    [ "Credits", "index.html#autotoc_md14", null ],
-    [ "Extensions", "md_docs_extensions.html", [
-      [ "Dark Mode Toggle", "md_docs_extensions.html#extension-dark-mode-toggle", [
-        [ "Installation", "md_docs_extensions.html#autotoc_md16", null ],
-        [ "Customizing", "md_docs_extensions.html#autotoc_md17", null ]
+    [ "Browser support", "index.html#autotoc_md16", null ],
+    [ "Credits", "index.html#autotoc_md17", null ],
+    [ "Extensions", "md_docs_2extensions.html", [
+      [ "Dark Mode Toggle", "md_docs_2extensions.html#extension-dark-mode-toggle", [
+        [ "Installation", "md_docs_2extensions.html#autotoc_md19", null ],
+        [ "Customizing", "md_docs_2extensions.html#autotoc_md20", null ]
       ] ],
-      [ "Fragment Copy Button", "md_docs_extensions.html#extension-copy-button", [
-        [ "Installation", "md_docs_extensions.html#autotoc_md18", null ],
-        [ "Customizing", "md_docs_extensions.html#autotoc_md19", null ]
+      [ "Fragment Copy Button", "md_docs_2extensions.html#extension-copy-button", [
+        [ "Installation", "md_docs_2extensions.html#autotoc_md21", null ],
+        [ "Customizing", "md_docs_2extensions.html#autotoc_md22", null ]
       ] ],
-      [ "Paragraph Linking", "md_docs_extensions.html#extension-para", [
-        [ "Installation", "md_docs_extensions.html#autotoc_md20", null ],
-        [ "Customizing", "md_docs_extensions.html#autotoc_md21", null ]
+      [ "Paragraph Linking", "md_docs_2extensions.html#extension-para", [
+        [ "Installation", "md_docs_2extensions.html#autotoc_md23", null ],
+        [ "Customizing", "md_docs_2extensions.html#autotoc_md24", null ]
       ] ],
-      [ "Interactive TOC", "md_docs_extensions.html#extension-toc", [
-        [ "Installation", "md_docs_extensions.html#autotoc_md22", null ],
-        [ "Customizing", "md_docs_extensions.html#autotoc_md23", null ]
+      [ "Interactive TOC", "md_docs_2extensions.html#extension-toc", [
+        [ "Installation", "md_docs_2extensions.html#autotoc_md25", null ],
+        [ "Customizing", "md_docs_2extensions.html#autotoc_md26", null ]
       ] ],
-      [ "Tabs", "md_docs_extensions.html#extension-tabs", [
-        [ "Installation", "md_docs_extensions.html#autotoc_md24", null ],
-        [ "Usage", "md_docs_extensions.html#autotoc_md25", null ]
+      [ "Tabs", "md_docs_2extensions.html#extension-tabs", [
+        [ "Installation", "md_docs_2extensions.html#autotoc_md27", null ],
+        [ "Usage", "md_docs_2extensions.html#autotoc_md28", null ]
       ] ]
     ] ],
-    [ "Customization", "md_docs_customization.html", [
-      [ "CSS-Variables", "md_docs_customization.html#autotoc_md27", [
-        [ "Setup", "md_docs_customization.html#autotoc_md28", null ],
-        [ "Available variables", "md_docs_customization.html#autotoc_md29", null ]
+    [ "Customization", "md_docs_2customization.html", [
+      [ "CSS-Variables", "md_docs_2customization.html#autotoc_md30", [
+        [ "Setup", "md_docs_2customization.html#autotoc_md31", null ],
+        [ "Available variables", "md_docs_2customization.html#autotoc_md32", null ]
       ] ],
-      [ "Doxygen generator", "md_docs_customization.html#autotoc_md30", null ],
-      [ "Share your customizations", "md_docs_customization.html#autotoc_md31", null ]
+      [ "Doxygen generator", "md_docs_2customization.html#autotoc_md33", null ],
+      [ "Share your customizations", "md_docs_2customization.html#autotoc_md34", null ]
     ] ],
-    [ "Tips & Tricks", "md_docs_tricks.html", [
-      [ "Diagrams with Graphviz", "md_docs_tricks.html#tricks-graphviz", null ],
-      [ "Disable Dark Mode", "md_docs_tricks.html#tricks-darkmode", null ],
-      [ "Choosing Sidebar Width", "md_docs_tricks.html#tricks-sidebar", null ],
-      [ "Formatting Tables", "md_docs_tricks.html#tricks-tables", [
-        [ "Centering", "md_docs_tricks.html#autotoc_md33", null ],
-        [ "Full Width", "md_docs_tricks.html#autotoc_md34", null ]
+    [ "Tips & Tricks", "md_docs_2tricks.html", [
+      [ "Diagrams with Graphviz", "md_docs_2tricks.html#tricks-graphviz", null ],
+      [ "Disable Dark Mode", "md_docs_2tricks.html#tricks-darkmode", null ],
+      [ "Choosing Sidebar Width", "md_docs_2tricks.html#tricks-sidebar", null ],
+      [ "Formatting Tables", "md_docs_2tricks.html#tricks-tables", [
+        [ "Centering", "md_docs_2tricks.html#autotoc_md36", null ],
+        [ "Full Width", "md_docs_2tricks.html#autotoc_md37", null ]
       ] ]
     ] ],
     [ "Bug List", "bug.html", null ],
