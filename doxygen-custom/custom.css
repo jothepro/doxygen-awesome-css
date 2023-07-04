@@ -25,6 +25,11 @@
     text-decoration: none;
 }
 
+.section_buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
 .next_section_button {
     display: block;
     padding: var(--spacing-large) 0 var(--spacing-small) 0;
@@ -67,6 +72,50 @@
 .next_section_button a:hover::after {
     color: var(--page-foreground-color) !important;
     transform: translateX(3px);
+}
+
+.previous_section_button {
+    display: block;
+    padding: var(--spacing-large) 0 var(--spacing-small) 0;
+    color: var(--page-background-color);
+    user-select: none;
+}
+
+.previous_section_button::after {
+    /* clearfix */
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.previous_section_button a {
+    overflow: hidden;
+    float: left;
+    border: 1px solid var(--separator-color);
+    padding: var(--spacing-medium) var(--spacing-large) var(--spacing-medium) calc(var(--spacing-large) / 2);
+    border-radius: var(--border-radius-medium);
+    color: var(--page-secondary-foreground-color) !important;
+    text-decoration: none;
+    background-color: var(--page-background-color);
+    transition: color .08s ease-in-out, background-color .1s ease-in-out;
+}
+
+.previous_section_button a:hover {
+    color: var(--page-foreground-color) !important;
+    background-color: var(--odd-color);
+}
+
+.previous_section_button a::before {
+    content: '〈';
+    color: var(--page-secondary-foreground-color) !important;
+    padding-right: var(--spacing-large);
+    display: inline-block;
+    transition: color .08s ease-in-out, transform .09s ease-in-out;
+}
+
+.previous_section_button a:hover::before {
+    color: var(--page-foreground-color) !important;
+    transform: translateX(-3px);
 }
 
 .alter-theme-button:hover {
