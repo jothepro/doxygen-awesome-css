@@ -22,6 +22,7 @@ FILES = doxygen-awesome-darkmode-toggle.js \
   doxygen-awesome-paragraph-link.js \
   doxygen-awesome-sidebar-only-darkmode-toggle.css \
   doxygen-awesome-sidebar-only.css \
+  doxygen-awesome-tabs.js \
   doxygen-awesome.css
 
 # Empty targets so that `make` and `make clean` do not cause errors
