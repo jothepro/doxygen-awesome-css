@@ -152,5 +152,9 @@ public:
 
 };
 
+class SecondExample {
+    std::string foo();
+}
+
 }
 
