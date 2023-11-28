@@ -109,7 +109,12 @@ If you customized the theme with custom colors, spacings, font-sizes, etc. and y
 
 I am always curious to learn about how you made the theme look even better!
 
-<span class="next_section_button">
 
+<div class="section_buttons">
+<span class="previous_section_button">
+Read Previous: [Extensions](extensions.md)
+</span>
+<span class="next_section_button">
 Read Next: [Tips & Tricks](tricks.md)
 </span>
+</div>

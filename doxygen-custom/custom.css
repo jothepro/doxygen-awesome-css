@@ -30,21 +30,24 @@
     justify-content: space-between;
 }
 
-.next_section_button {
+.next_section_button, 
+.previous_section_button {
     display: block;
-    padding: var(--spacing-large) 0 var(--spacing-small) 0;
+    padding: calc(var(--spacing-large) * 2) 0 var(--spacing-small) 0;
     color: var(--page-background-color);
     user-select: none;
 }
 
-.next_section_button::after {
+.next_section_button::after,
+.previous_section_button::after {
     /* clearfix */
     content: "";
     clear: both;
     display: table;
 }
 
-.next_section_button a {
+.next_section_button a,
+.previous_section_button a {
     overflow: hidden;
     float: right;
     border: 1px solid var(--separator-color);
@@ -56,61 +59,58 @@
     transition: color .08s ease-in-out, background-color .1s ease-in-out;
 }
 
-.next_section_button a:hover {
-    color: var(--page-foreground-color) !important;
-    background-color: var(--odd-color);
-}
-
-.next_section_button a::after {
-    content: '〉';
-    color: var(--page-secondary-foreground-color) !important;
-    padding-left: var(--spacing-large);
-    display: inline-block;
-    transition: color .08s ease-in-out, transform .09s ease-in-out;
-}
-
-.next_section_button a:hover::after {
-    color: var(--page-foreground-color) !important;
-    transform: translateX(3px);
-}
-
-.previous_section_button {
-    display: block;
-    padding: var(--spacing-large) 0 var(--spacing-small) 0;
-    color: var(--page-background-color);
-    user-select: none;
-}
-
-.previous_section_button::after {
-    /* clearfix */
-    content: "";
-    clear: both;
-    display: table;
-}
-
 .previous_section_button a {
-    overflow: hidden;
     float: left;
-    border: 1px solid var(--separator-color);
     padding: var(--spacing-medium) var(--spacing-large) var(--spacing-medium) calc(var(--spacing-large) / 2);
-    border-radius: var(--border-radius-medium);
-    color: var(--page-secondary-foreground-color) !important;
-    text-decoration: none;
-    background-color: var(--page-background-color);
-    transition: color .08s ease-in-out, background-color .1s ease-in-out;
 }
 
+@media screen and (max-width: 500px) {
+    .section_buttons .next_section_button, .section_buttons .next_section_button a,
+    .section_buttons .previous_section_button, .section_buttons .previous_section_button a {
+        width: 100%;
+        box-sizing: border-box;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .section_buttons .next_section_button a {
+        border-radius: 0 var(--border-radius-medium) var(--border-radius-medium) 0;
+        text-align: right;
+    }
+
+    .section_buttons .previous_section_button a {
+        border-radius: var(--border-radius-medium) 0 0 var(--border-radius-medium);
+        border-right: none;
+    }
+}
+
+.next_section_button a:hover,
 .previous_section_button a:hover {
     color: var(--page-foreground-color) !important;
     background-color: var(--odd-color);
 }
 
+.next_section_button a::after,
 .previous_section_button a::before {
-    content: '〈';
     color: var(--page-secondary-foreground-color) !important;
-    padding-right: var(--spacing-large);
     display: inline-block;
     transition: color .08s ease-in-out, transform .09s ease-in-out;
+}
+
+.next_section_button a::after {
+    content: '〉';
+    padding-left: var(--spacing-large);
+}
+
+.previous_section_button a::before {
+    content: '〈';
+    padding-right: var(--spacing-large);
+}
+
+.next_section_button a:hover::after {
+    color: var(--page-foreground-color) !important;
+    transform: translateX(3px);
 }
 
 .previous_section_button a:hover::before {

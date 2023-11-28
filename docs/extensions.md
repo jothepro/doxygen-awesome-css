@@ -230,7 +230,11 @@ Each item in the list must start with an element that has the class `tab-title`.
 </div>
 ```
 
+<div class="section_buttons">
+<span class="previous_section_button">
+Read Previous: [Home](README.md)
+</span>
 <span class="next_section_button">
-
 Read Next: [Customization](customization.md)
 </span>
+</div>
