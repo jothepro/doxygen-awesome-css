@@ -118,12 +118,10 @@ To make tables span the full width of the page, no matter how wide the content i
 
 </div>
 
-
 <div class="section_buttons">
-<span class="previous_section_button">
-Read Previous: [Customization](customization.md)
-</span>
-<span class="next_section_button">
-Read Next: [Example](https://jothepro.github.io/doxygen-awesome-css/class_my_library_1_1_example.html)
-</span>
+
+| Previous                          |                                   Next |
+|:----------------------------------|---------------------------------------:|
+| [Customization](customization.md) | [Example](https://jothepro.github.io/doxygen-awesome-css/class_my_library_1_1_example.html) |
+
 </div>

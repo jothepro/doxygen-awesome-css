@@ -186,8 +186,7 @@ DoxygenAwesomeInteractiveToc.hideMobileMenu = false
 
 ## Tabs {#extension-tabs}
 
-@note Experimental feature! Please report bugs [here](https://github.com/jothepro/doxygen-awesome-css/issues).
-
+@warning Experimental feature! Please report bugs [here](https://github.com/jothepro/doxygen-awesome-css/issues).
 
 This extension allows to arrange list content in tabs:
 
@@ -230,11 +229,47 @@ Each item in the list must start with an element that has the class `tab-title`.
 </div>
 ```
 
+## Page Navigation
+
+@warning Experimental feature! Please report bugs [here](https://github.com/jothepro/doxygen-awesome-css/issues).
+
+To allow the user to easily navigate from one document to another, "Next" and "Previous" buttons can be added at the end of a Markdown document.
+
+### Installation
+
+The feature is shipped inside the default `doxygen-awesome.css`. No additional stylesheets or scripts need to be added.
+
+### Usage
+
+The following conditions must be met for the feature to work properly:
+- The navigation must be inside a Markdown table with 1-2 columns.
+- The alignment of the column defines the alignment of the arrow on the navigation button.
+- the table must be wrapped inside a `<div>` with the class `section_buttons`.
+
+<div class="tabbed">
+
+- <span class="tab-title">Code</span>
+    ```md
+    <div class="section_buttons">
+
+    | Previous          |                              Next |
+    |:------------------|----------------------------------:|
+    | [Home](README.md) | [Customization](customization.md) |
+
+    </div>
+    ```
+- <span class="tab-title">Result</span>
+    <div class="section_buttons">
+    | Previous          |                              Next |
+    |:------------------|----------------------------------:|
+    | [Home](README.md) | [Customization](customization.md) |
+    </div>
+
+</div>
+
 <div class="section_buttons">
-<span class="previous_section_button">
-Read Previous: [Home](README.md)
-</span>
-<span class="next_section_button">
-Read Next: [Customization](customization.md)
-</span>
+
+| Previous          |                              Next |
+|:------------------|----------------------------------:|
+| [Home](README.md) | [Customization](customization.md) |
 </div>

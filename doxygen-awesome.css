@@ -2561,3 +2561,109 @@ h2:hover a.anchorlink, h1:hover a.anchorlink, h3:hover a.anchorlink, h4:hover a.
     box-sizing: border-box;
     height: 3px;
 }
+
+
+/*
+ Navigation Buttons
+*/
+
+.section_buttons:not(:empty) {
+    margin-top: calc(var(--spacing-large) * 3);
+}
+
+.section_buttons table.markdownTable {
+    display: block;
+    width: 100%;
+}
+
+.section_buttons table.markdownTable tbody {
+    display: table !important;
+    width: 100%;
+    box-shadow: none;
+    border-spacing: 10px;
+}
+
+.section_buttons table.markdownTable td {
+    padding: 0;
+}
+
+.section_buttons table.markdownTable th {
+    display: none;
+}
+
+.section_buttons table.markdownTable tr.markdownTableHead {
+    border: none;
+}
+
+.section_buttons tr th, .section_buttons tr td {
+    background: none;
+    border: none;
+    padding: var(--spacing-large) 0 var(--spacing-small);
+}
+
+.section_buttons a {
+    display: inline-block;
+    border: 1px solid var(--separator-color);
+    border-radius: var(--border-radius-medium);
+    color: var(--page-secondary-foreground-color) !important;
+    text-decoration: none;
+    transition: color var(--animation-duration) ease-in-out, background-color var(--animation-duration) ease-in-out;
+}
+
+.section_buttons a:hover {
+    color: var(--page-foreground-color) !important;
+    background-color: var(--odd-color);
+}
+
+.section_buttons tr td.markdownTableBodyLeft a {
+    padding: var(--spacing-medium) var(--spacing-large) var(--spacing-medium) calc(var(--spacing-large) / 2);
+}
+
+.section_buttons tr td.markdownTableBodyRight a {
+    padding: var(--spacing-medium) calc(var(--spacing-large) / 2) var(--spacing-medium) var(--spacing-large);
+}
+
+.section_buttons tr td.markdownTableBodyLeft a::before,
+.section_buttons tr td.markdownTableBodyRight a::after {
+    color: var(--page-secondary-foreground-color) !important;
+    display: inline-block;
+    transition: color .08s ease-in-out, transform .09s ease-in-out;
+}
+
+.section_buttons tr td.markdownTableBodyLeft a::before {
+    content: '〈';
+    padding-right: var(--spacing-large);
+}
+
+
+.section_buttons tr td.markdownTableBodyRight a::after {
+    content: '〉';
+    padding-left: var(--spacing-large);
+}
+
+
+.section_buttons tr td.markdownTableBodyLeft a:hover::before {
+    color: var(--page-foreground-color) !important;
+    transform: translateX(-3px);
+}
+
+.section_buttons tr td.markdownTableBodyRight a:hover::after {
+    color: var(--page-foreground-color) !important;
+    transform: translateX(3px);
+}
+
+@media screen and (max-width: 450px) {
+    .section_buttons a {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .section_buttons tr td:nth-of-type(1).markdownTableBodyLeft a {
+        border-radius: var(--border-radius-medium) 0 0 var(--border-radius-medium);
+        border-right: none;
+    }
+
+    .section_buttons tr td:nth-of-type(2).markdownTableBodyRight a {
+        border-radius: 0 var(--border-radius-medium) var(--border-radius-medium) 0;
+    }
+}

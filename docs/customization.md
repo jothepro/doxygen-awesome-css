@@ -111,10 +111,9 @@ I am always curious to learn about how you made the theme look even better!
 
 
 <div class="section_buttons">
-<span class="previous_section_button">
-Read Previous: [Extensions](extensions.md)
-</span>
-<span class="next_section_button">
-Read Next: [Tips & Tricks](tricks.md)
-</span>
+
+| Previous                    |                       Next |
+|:----------------------------|---------------------------:|
+| [Extensions](extensions.md) | [Tips & Tricks](tricks.md) |
+
 </div>

@@ -25,7 +25,7 @@ This theme is an attempt to update the visuals of Doxygen without changing its o
 - 🧩 No changes to the HTML structure of Doxygen required
 - 📱 Improved mobile usability
 - 🌘 Dark mode support!
-- 🥇 Works best with **doxygen 1.9.1** - **1.9.4** and **1.9.6** - **1.9.7**
+- 🥇 Works best with **doxygen 1.9.1** - **1.9.4** and **1.9.6** - **1.9.8**
 
 ## Examples
 
@@ -141,10 +141,10 @@ There is two layout options. Choose one of them and configure Doxygen accordingl
 
 Tested with
 
-- Chrome 110, Chrome 109 for Android, Chrome 110 for iOS
-- Safari 16, Safari for iOS 16
-- Firefox 110, Firefox 110 for Android, Firefox 109 for iOS
-- Edge 110
+- Chrome 119, Chrome 119 for Android, Chrome 119 for iOS
+- Safari 17, Safari for iOS 16
+- Firefox 118, Firefox 120 for Android, Firefox 119 for iOS
+- Edge 119
 
 
 The theme does not strive to be backwards compatible to (significantly) older browser versions.
@@ -160,7 +160,11 @@ Special thanks to all the contributors:
     <img src="https://contrib.rocks/image?repo=jothepro/doxygen-awesome-css" />
 </a>
 
-<span class="next_section_button">
 
-Read Next: [Extensions](docs/extensions.md)
-</span>
+<div class="section_buttons">
+
+|                             Next |
+|---------------------------------:|
+| [Extensions](docs/extensions.md) |
+
+</div>
