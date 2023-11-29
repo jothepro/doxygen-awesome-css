@@ -229,7 +229,7 @@ Each item in the list must start with an element that has the class `tab-title`.
 </div>
 ```
 
-## Page Navigation
+## Page Navigation {#extension-page-navigation}
 
 @warning Experimental feature! Please report bugs [here](https://github.com/jothepro/doxygen-awesome-css/issues).
 
