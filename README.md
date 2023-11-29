@@ -87,15 +87,11 @@ You can even install the theme system-wide by running `make install`. The files 
 
 There is two layout options. Choose one of them and configure Doxygen accordingly:
 
-<div class="darkmode_inverted_image">
-
-![Available theme variants](img/theme-variants.drawio.svg)
-
-</div>
-
 <div class="tabbed">
 
-- <b class="tab-title">1️⃣ Base Theme </b>
+- <b class="tab-title">Base Theme</b><div class="darkmode_inverted_image">
+    ![](img/theme-variants-base.drawio.svg){}
+    </div>
     Comes with the typical Doxygen titlebar. Optionally the treeview in the sidebar can be enabled. 
 
     Required files: `doxygen-awesome.css`
@@ -109,7 +105,9 @@ There is two layout options. Choose one of them and configure Doxygen accordingl
     HTML_COLORSTYLE        = LIGHT # required with Doxygen >= 1.9.5
     ```
 
-- <b class="tab-title">2️⃣ Sidebar-Only Theme </b>
+- <b class="tab-title">Sidebar-Only Theme</b><div class="darkmode_inverted_image">
+    ![](img/theme-variants-sidebar-only.drawio.svg)
+    </div>
     Hides the top titlebar to give more space to the content. The treeview must be enabled in order for this theme to work.
 
     Required files: `doxygen-awesome.css`, `doxygen-awesome-sidebar-only.css`
@@ -126,6 +124,8 @@ There is two layout options. Choose one of them and configure Doxygen accordingl
     ```
 
 </div>
+
+<br> 
 
 **Caution**: 
 - This theme is not compatible with the `FULL_SIDEBAR = YES` option provided by Doxygen!
