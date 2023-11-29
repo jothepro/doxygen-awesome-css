@@ -318,7 +318,7 @@ body, table, div, p, dl, #nav-tree .label, .title,
 }
 
 h1, h2, h3, h4, h5 {
-    margin-top: .9em;
+    margin-top: 1em;
     font-weight: 600;
     line-height: initial;
 }
