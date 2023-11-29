@@ -1,6 +1,7 @@
 var namespace_my_library =
 [
     [ "Example", "class_my_library_1_1_example.html", "class_my_library_1_1_example" ],
+    [ "SecondExample", "class_my_library_1_1_second_example.html", null ],
     [ "SubclassExample", "class_my_library_1_1_subclass_example.html", "class_my_library_1_1_subclass_example" ],
     [ "Color", "namespace_my_library.html#a79a9f4bbb675f6c082b09249c5a95ced", [
       [ "red", "namespace_my_library.html#a79a9f4bbb675f6c082b09249c5a95ceda82b4a54f6fbf39698c2a6982d75f4f0c", null ],

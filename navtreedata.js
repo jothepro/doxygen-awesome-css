@@ -57,23 +57,27 @@ var NAVTREE =
       [ "Tabs", "md_docs_2extensions.html#extension-tabs", [
         [ "Installation", "md_docs_2extensions.html#autotoc_md27", null ],
         [ "Usage", "md_docs_2extensions.html#autotoc_md28", null ]
+      ] ],
+      [ "Page Navigation", "md_docs_2extensions.html#extension-page-navigation", [
+        [ "Installation", "md_docs_2extensions.html#autotoc_md29", null ],
+        [ "Usage", "md_docs_2extensions.html#autotoc_md30", null ]
       ] ]
     ] ],
     [ "Customization", "md_docs_2customization.html", [
-      [ "CSS-Variables", "md_docs_2customization.html#autotoc_md30", [
-        [ "Setup", "md_docs_2customization.html#autotoc_md31", null ],
-        [ "Available variables", "md_docs_2customization.html#autotoc_md32", null ]
+      [ "CSS-Variables", "md_docs_2customization.html#autotoc_md32", [
+        [ "Setup", "md_docs_2customization.html#autotoc_md33", null ],
+        [ "Available variables", "md_docs_2customization.html#autotoc_md34", null ]
       ] ],
-      [ "Doxygen generator", "md_docs_2customization.html#autotoc_md33", null ],
-      [ "Share your customizations", "md_docs_2customization.html#autotoc_md34", null ]
+      [ "Doxygen generator", "md_docs_2customization.html#autotoc_md35", null ],
+      [ "Share your customizations", "md_docs_2customization.html#autotoc_md36", null ]
     ] ],
     [ "Tips & Tricks", "md_docs_2tricks.html", [
       [ "Diagrams with Graphviz", "md_docs_2tricks.html#tricks-graphviz", null ],
       [ "Disable Dark Mode", "md_docs_2tricks.html#tricks-darkmode", null ],
       [ "Choosing Sidebar Width", "md_docs_2tricks.html#tricks-sidebar", null ],
       [ "Formatting Tables", "md_docs_2tricks.html#tricks-tables", [
-        [ "Centering", "md_docs_2tricks.html#autotoc_md36", null ],
-        [ "Full Width", "md_docs_2tricks.html#autotoc_md37", null ]
+        [ "Centering", "md_docs_2tricks.html#autotoc_md38", null ],
+        [ "Full Width", "md_docs_2tricks.html#autotoc_md39", null ]
       ] ]
     ] ],
     [ "Bug List", "bug.html", null ],

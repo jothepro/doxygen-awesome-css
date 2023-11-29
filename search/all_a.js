@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['test_0',['test',['../class_my_library_1_1_example.html#a1c0046b0674eb4cad09c5d3e943912b8',1,'MyLibrary::Example']]],
-  ['tips_20_26_20tricks_1',['Tips &amp; Tricks',['../md_docs_2tricks.html',1,'']]],
-  ['todo_20list_2',['Todo List',['../todo.html',1,'']]],
-  ['tricks_2emd_3',['tricks.md',['../tricks_8md.html',1,'']]]
+  ['mode_0',['Disable Dark Mode',['../md_docs_2tricks.html#tricks-darkmode',1,'']]],
+  ['mode_20toggle_1',['Dark Mode Toggle',['../md_docs_2extensions.html#extension-dark-mode-toggle',1,'']]],
+  ['motivation_2',['Motivation',['../index.html#autotoc_md7',1,'']]],
+  ['mylibrary_3',['MyLibrary',['../namespace_my_library.html',1,'']]]
 ];

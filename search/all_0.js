@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['blue_0',['blue',['../namespace_my_library.html#a79a9f4bbb675f6c082b09249c5a95ceda3d4a113e58853e5d81725d92fbfceb4d',1,'MyLibrary']]],
-  ['bug_20list_1',['Bug List',['../bug.html',1,'']]]
+  ['a_20layout_0',['Choosing a layout',['../index.html#autotoc_md14',1,'']]],
+  ['available_20variables_1',['Available variables',['../md_docs_2customization.html#autotoc_md34',1,'']]],
+  ['awesome_2',['Doxygen Awesome',['../index.html',1,'']]]
 ];
