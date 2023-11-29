@@ -60,7 +60,7 @@ For projects which use git, add the repository as a submodule and check out the 
 ```sh
 git submodule add https://github.com/jothepro/doxygen-awesome-css.git
 cd doxygen-awesome-css
-git checkout v2.2.1
+git checkout v2.3.0
 ```
 
 ### npm/xpm dependency
@@ -70,7 +70,7 @@ to your project:
 
 ```sh
 cd your-project
-npm install https://github.com/jothepro/doxygen-awesome-css#v2.2.1 --save-dev
+npm install https://github.com/jothepro/doxygen-awesome-css#v2.3.0 --save-dev
 
 ls -l node_module/@jothepro/doxygen-awesome-css
 ```
@@ -163,7 +163,7 @@ Special thanks to all the contributors:
 
 <div class="section_buttons">
 
-|                             Next |
+|                        Read Next |
 |---------------------------------:|
 | [Extensions](docs/extensions.md) |
 
