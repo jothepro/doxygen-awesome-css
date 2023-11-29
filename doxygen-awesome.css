@@ -2486,7 +2486,7 @@ h2:hover a.anchorlink, h1:hover a.anchorlink, h3:hover a.anchorlink, h4:hover a.
     flex-direction: row;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 767px) {
     .tabs-overview-container {
         margin: 0 calc(0px - var(--spacing-large));
     }
