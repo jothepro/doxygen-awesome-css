@@ -10,19 +10,19 @@
 
 </div>
 
-**Doxygen Awesome** is a custom **CSS theme for Doxygen HTML-documentation** with lots of customization parameters.
+**Doxygen Awesome** is a custom CSS theme for Doxygen HTML documentation with lots of customization parameters.
 
 ## Motivation
 
-I really like how the Doxygen HTML-documentation is structured! But IMHO it looks a bit outdated.
+I really like how the Doxygen HTML documentation is structured! But IMHO it looks a bit outdated.
 
 This theme is an attempt to update the visuals of Doxygen without changing its overall layout too much.
 
 ## Features
 
 - 🌈 Clean, modern design
-- 🚀 Heavily customizable by adjusting CSS-variables
-- 🧩 No changes to the HTML structure of Doxygen required
+- 🚀 Heavily customizable by adjusting CSS variables
+- 🧩 No changes to the HTML structure of Doxygen are required
 - 📱 Improved mobile usability
 - 🌘 Dark mode support!
 - 🥇 Works best with **doxygen 1.9.1** - **1.9.4** and **1.9.6** - **1.9.8**
@@ -49,13 +49,12 @@ This can be done in several ways:
 - manually copying the files
 - adding the project as a Git submodule
 - adding the project as a npm/xpm dependency
-- installing the theme system wide
+- installing the theme system-wide
 
 All theme files are located in the root of this repository and start with the prefix `doxygen-awesome-`. You may not need all of them. Follow the install instructions to figure out what files are required for your setup.
 
 ### Git submodule
-
-For projects which use git, add the repository as a submodule and check out the desired release:
+For projects that use git, add the repository as a submodule and check out the desired release:
 
 ```sh
 git submodule add https://github.com/jothepro/doxygen-awesome-css.git
@@ -81,16 +80,18 @@ managed project.
 
 ### System-wide
 
-You can even install the theme system-wide by running `make install`. The files will be installed to `/usr/local/share/` by default, but you can customize the install location with `make PREFIX=/my/custom/path install`.
+You can even install the theme system-wide by running `make install`. 
+The files will be installed to `/usr/local/share/` by default, 
+but you can customize the install location with `make PREFIX=/my/custom/path install`.
 
 ### Choosing a layout
 
-There is two layout options. Choose one of them and configure Doxygen accordingly:
+There are two layout options. Choose one of them and configure Doxygen accordingly:
 
 <div class="tabbed">
 
 - <b class="tab-title">Base Theme</b><div class="darkmode_inverted_image">
-    ![](img/theme-variants-base.drawio.svg){}
+    ![](img/theme-variants-base.drawio.svg)
     </div>
     Comes with the typical Doxygen titlebar. Optionally the treeview in the sidebar can be enabled. 
 
@@ -125,13 +126,13 @@ There is two layout options. Choose one of them and configure Doxygen accordingl
 
 </div>
 
-<br> 
+<br>
 
-**Caution**: 
+@warning
 - This theme is not compatible with the `FULL_SIDEBAR = YES` option provided by Doxygen!
 - `HTML_COLORSTYLE` must be set to `LIGHT` since Doxygen 1.9.5!
 
-### Further installation instructions:
+### Further installation instructions
 
 - [Installing extensions](docs/extensions.md)
 - [Customizing the theme (colors, spacing, border-radius, ...)](docs/customization.md)
@@ -147,12 +148,12 @@ Tested with
 - Edge 119
 
 
-The theme does not strive to be backwards compatible to (significantly) older browser versions.
+The theme does not strive to be backward compatible with (significantly) older browser versions.
 
 
 ## Credits
 
-Thanks for all the bug reports and inspiring feedback on github!
+Thanks for all the bug reports and inspiring feedback on GitHub!
 
 Special thanks to all the contributors:
 <br><br>

@@ -4,7 +4,7 @@
 
 ## Diagrams with Graphviz {#tricks-graphviz}
 
-To get the best looking class diagrams for your documentation, generate them with Graphviz as vector graphics with transparent background:
+To get the best-looking class diagrams for your documentation, generate them with Graphviz as vector graphics with transparent background:
 
 ```
 # Doxyfile
@@ -13,7 +13,7 @@ DOT_IMAGE_FORMAT = svg
 DOT_TRANSPARENT = YES
 ```
 
-In case `INTERACTIVE_SVG = YES` is set in the Doxyfile, all user-defined dotgraphs must be wrapped with the `interactive_dotgraph` CSS class in order for them to be rendered correctly:
+In case `INTERACTIVE_SVG = YES` is set in the Doxyfile, all user-defined dotgraphs must be wrapped with the `interactive_dotgraph` CSS class for them to be rendered correctly:
 
 ```md
 <div class="interactive_dotgraph">
@@ -28,13 +28,13 @@ In case `INTERACTIVE_SVG = YES` is set in the Doxyfile, all user-defined dotgrap
 ## Disable Dark Mode {#tricks-darkmode}
 
 If you don't want the theme to automatically switch to dark mode depending on the browser preference,
-you can disable dark mode by adding the `light-mode` class to the html-tag in the header template:
+you can disable dark mode by adding the `light-mode` class to the HTML tag in the header template:
 
 ```html
 <html xmlns="http://www.w3.org/1999/xhtml" class="light-mode">
 ```
 
-The same can be done to always enable dark-mode:
+The same can be done to always enable dark mode:
 
 ```html
 <html xmlns="http://www.w3.org/1999/xhtml" class="dark-mode">
@@ -70,7 +70,7 @@ Those properties can be changed for individual tables.
 
 ### Centering
 
-Tables can be centered by wrapping them in the `<center>` HTML-tag.
+Tables can be centered by wrapping them in the `<center>` HTML tag.
 
 <div class="tabbed">
 
@@ -97,7 +97,7 @@ Tables can be centered by wrapping them in the `<center>` HTML-tag.
 
 To make tables span the full width of the page, no matter how wide the content is, wrap the table in the `full_width_table` CSS class.
 
-@warning Apply with caution! This breaks the overflow scrolling of the table. Content might be cut of on small screens!
+@warning Apply with caution! This breaks the overflow scrolling of the table. Content might be cut off on small screens!
 
 <div class="tabbed">
 

@@ -26,50 +26,59 @@ public:
      *
      * ## Tables
      *
-     * The table content is scrollable if the table gets too wide.
-     * 
-     * | first_column | second_column | third_column | fourth_column | fifth_column | sixth_column | seventh_column | eighth_column | ninth_column |
-     * |--------------|---------------|--------------|---------------|--------------|--------------|----------------|---------------|--------------|
-     * | 1            | 2             | 3            | 4             | 5            | 6            | 7              | 8             | 9            |
+     * <div class="tabbed">
      *
-     * A table can contain images:
-     *
-     * | Column 1                  | Column 2                                        |
-     * |---------------------------|-------------------------------------------------|
-     * | ![doxygen](testimage.png) | ← the image should not be inverted in dark-mode |
-     *
-     * Complex [Doxygen tables](https://www.doxygen.nl/manual/tables.html) are also supported as seen in @ref multi_row "this example":
-     * 
-     * <table>
-     * <caption id="multi_row">Complex table</caption>
-     * <tr><th>Column 1                      <th>Column 2        <th>Column 3
-     * <tr><td rowspan="2">cell row=1+2,col=1<td>cell row=1,col=2<td>cell row=1,col=3
-     * <tr><td rowspan="2">cell row=2+3,col=2                    <td>cell row=2,col=3
-     * <tr><td>cell row=3,col=1                                  <td rowspan="2">cell row=3+4,col=3
-     * <tr><td colspan="2">cell row=4,col=1+2
-     * <tr><td>cell row=5,col=1              <td colspan="2">cell row=5,col=2+3
-     * <tr><td colspan="2" rowspan="2">cell row=6+7,col=1+2      <td>cell row=6,col=3
-     * <tr>                                                      <td>cell row=7,col=3
-     * <tr><td>cell row=8,col=1              <td>cell row=8,col=2\n
+     * - <b class="tab-title">Basic</b>
+     *   This theme supports normal markdown tables:<br>
+     *   | Item | Title | Description           | More                                       |
+     *   |-----:|-------|-----------------------|--------------------------------------------|
+     *   |    1 | Foo   | A placeholder         | Some lorem ipsum to make this table wider. |
+     *   |    2 | Bar   | Also a placeholder    | More lorem ipsum.                          |
+     *   |    3 | Baz   | The third placeholder | More lorem ipsum.                          |
+     * - <b class="tab-title">Centered</b>
+     *   <center>
+     *   A table can be centered with the `<center>` html tag:<br>
+     *   | Item | Title | Description           | More                                       |
+     *   |-----:|-------|-----------------------|--------------------------------------------|
+     *   |    1 | Foo   | A placeholder         | Some lorem ipsum to make this table wider. |
+     *   |    2 | Bar   | Also a placeholder    | More lorem ipsum.                          |
+     *   |    3 | Baz   | The third placeholder | More lorem ipsum.                          |
+     *   </center>
+     * - <b class="tab-title">Stretched</b>
+     *   A table wrapped in `<div class="full_width_table">` fills the full page width.
+     *   <div class="full_width_table">
+     *   | Item | Title | Description           | More                                       |
+     *   |-----:|-------|-----------------------|--------------------------------------------|
+     *   |    1 | Foo   | A placeholder         | Some lorem ipsum to make this table wider. |
+     *   |    2 | Bar   | Also a placeholder    | More lorem ipsum.                          |
+     *   |    3 | Baz   | The third placeholder | More lorem ipsum.                          |
+     *   </div>
+     *   **Caution**: This will break the overflow scrolling support!
+     * - <b class="tab-title">Complex</b>
+     *   Complex [Doxygen tables](https://www.doxygen.nl/manual/tables.html) are also supported as seen in @ref multi_row "this example":<br>
      *   <table>
-     *     <tr><td>Inner cell row=1,col=1<td>Inner cell row=1,col=2
-     *     <tr><td>Inner cell row=2,col=1<td>Inner cell row=2,col=2
+     *   <caption id="multi_row">Complex table</caption>
+     *   <tr><th>Column 1                      <th>Column 2        <th>Column 3
+     *   <tr><td rowspan="2">cell row=1+2,col=1<td>cell row=1,col=2<td>cell row=1,col=3
+     *   <tr><td rowspan="2">cell row=2+3,col=2                    <td>cell row=2,col=3
+     *   <tr><td>cell row=3,col=1                                  <td>cell row=3,col=3
      *   </table>
-     *   <td>cell row=8,col=3
-     *   <ul>
-     *     <li>Item 1
-     *     <li>Item 2
-     *   </ul>
-     * </table>
+     * - <b class="tab-title">Overflow Scrolling</b> The table content is scrollable if the table gets too wide.<br>
+     *   | first_column | second_column | third_column | fourth_column | fifth_column | sixth_column | seventh_column | eighth_column | ninth_column |
+     *   |--------------|---------------|--------------|---------------|--------------|--------------|----------------|---------------|--------------|
+     *   | 1            | 2             | 3            | 4             | 5            | 6            | 7              | 8             | 9            |
+     * - <b class="tab-title">Images</b>A table can contain images:<br>
+     *   | Column 1                  | Column 2                                        |
+     *   |---------------------------|-------------------------------------------------|
+     *   | ![doxygen](testimage.png) | ← the image should not be inverted in dark-mode |
      * 
-     * A table can be centered with the `<center>` html tag:
-     * <center>
-     * | Foo         | Bar            | Baz                       | FooBar      |
-     * |-------------|----------------|---------------------------|-------------|
-     * | Lorem imsum | dolor sit amet | cenectetur adipisici elit | At vero eos |
-     * </center>
      *
-     * Embedded Graphviz graphs support dark mode and can be scrolled once they get too wide:
+     * </div>
+     *
+     * ## Diagrams
+     *
+     * Graphviz diagrams support dark mode and can be scrolled once they get too wide:
+     *
      * \dot Graphviz with a caption
      *  digraph example {
      *      node [fontsize="12"];

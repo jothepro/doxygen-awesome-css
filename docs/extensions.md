@@ -4,7 +4,7 @@
 
 On top of the base theme provided by `doxygen-awesome.css`, this repository comes with Javascript extensions that require additional setup steps to get them running.
 
-The extensions require customizations in the header HTML-template.
+The extensions require customizations in the header HTML template.
 This is how you can create the default template with Doxygen:
 
 1. Create default header template:
@@ -24,7 +24,8 @@ This is how you can create the default template with Doxygen:
 Adds a button next to the search bar to enable and disable the dark theme variant manually:
 
 <div class="darkmode_inverted_image bordered_image">
-    <img width=250 src="darkmode_toggle.png" />
+
+![](img/darkmode_toggle.png){width=250px}
 </div>
 
 ### Installation
@@ -68,7 +69,8 @@ All customizations must be applied before calling `DoxygenAwesomeDarkModeToggle.
 Shows a copy button when the user hovers over a code fragment:
 
 <div class="darkmode_inverted_image bordered_image">
-    <img width=490 src="fragment_copy_button.png"/>
+
+![](img/fragment_copy_button.png){width=490}
 </div>
 
 ### Installation
@@ -108,7 +110,8 @@ All customizations must be applied before calling `DoxygenAwesomeDarkModeToggle.
 Provides a button on hover behind every headline to allow easy creation of a permanent link to the headline:
 
 <div class="darkmode_inverted_image bordered_image">
-    <img width=220 src="paragraph_link.png"/>
+
+![](img/paragraph_link.png){width=220}
 </div>
 
 Works for all headlines and for many documentation section titles.
@@ -146,13 +149,14 @@ All customizations must be applied before calling `DoxygenAwesomeParagraphLink.i
 
 ## Interactive TOC {#extension-toc}
 
-On large screens the Table of Contents (TOC) is anchored on the top right of the page. This extension visualizes the reading progress by dynamically highlighting the currently active section.
+On large screens, the Table of Contents (TOC) is anchored on the top right of the page. This extension visualizes the reading progress by dynamically highlighting the currently active section.
 
-On small screens the extension hides the TOC by default. The user can open it manually when needed:
+On small screens, the extension hides the TOC by default. The user can open it manually when needed:
 
 
 <div class="darkmode_inverted_image bordered_image">
-    <img width=380 src="interactive_toc_mobile.png" />
+
+![](img/interactive_toc_mobile.png){width=380}
 </div>
 
 ### Installation
@@ -192,8 +196,8 @@ This extension allows to arrange list content in tabs:
 
 <div class="tabbed">
 
-- <span class="tab-title">Tab 1</span> This is the content of tab 1
-- <span class="tab-title">Tab 2</span> This is the content of tab 2
+- <b class="tab-title">Tab 1</b> This is the content of tab 1
+- <b class="tab-title">Tab 2</b> This is the content of tab 2
 
 </div>
 
@@ -223,8 +227,8 @@ Each item in the list must start with an element that has the class `tab-title`.
 ```md
 <div class="tabbed">
 
-- <span class="tab-title">Tab 1</span> This is the content of tab 1
-- <span class="tab-title">Tab 2</span> This is the content of tab 2
+- <b class="tab-title">Tab 1</b> This is the content of tab 1
+- <b class="tab-title">Tab 2</b> This is the content of tab 2
 
 </div>
 ```
