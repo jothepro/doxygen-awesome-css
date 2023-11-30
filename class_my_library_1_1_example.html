@@ -61,7 +61,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.drawio.svg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Doxygen Awesome
-   &#160;<span id="projectnumber">v2.3.0</span>
+   &#160;<span id="projectnumber">v2.3.1</span>
    </div>
    <div id="projectbrief">Modern Doxygen theme</div>
   </td>
@@ -215,22 +215,44 @@ Supported elements</h1>
 <p>These elements have been tested with the custom CSS.</p>
 <h2><a class="anchor" id="autotoc_md1"></a>
 Tables</h2>
-<p>The table content is scrollable if the table gets too wide.</p>
-<table class="markdownTable">
+<div class="tabbed"></div><div class="tabbed"><ul>
+<li><b class="tab-title">Basic</b> This theme supports normal markdown tables:<br  />
+ <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone">first_column   </th><th class="markdownTableHeadNone">second_column   </th><th class="markdownTableHeadNone">third_column   </th><th class="markdownTableHeadNone">fourth_column   </th><th class="markdownTableHeadNone">fifth_column   </th><th class="markdownTableHeadNone">sixth_column   </th><th class="markdownTableHeadNone">seventh_column   </th><th class="markdownTableHeadNone">eighth_column   </th><th class="markdownTableHeadNone">ninth_column    </th></tr>
+<th class="markdownTableHeadRight">Item   </th><th class="markdownTableHeadNone">Title   </th><th class="markdownTableHeadNone">Description   </th><th class="markdownTableHeadNone">More    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">2   </td><td class="markdownTableBodyNone">3   </td><td class="markdownTableBodyNone">4   </td><td class="markdownTableBodyNone">5   </td><td class="markdownTableBodyNone">6   </td><td class="markdownTableBodyNone">7   </td><td class="markdownTableBodyNone">8   </td><td class="markdownTableBodyNone">9   </td></tr>
+<td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyNone">Foo   </td><td class="markdownTableBodyNone">A placeholder   </td><td class="markdownTableBodyNone">Some lorem ipsum to make this table wider.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyNone">Bar   </td><td class="markdownTableBodyNone">Also a placeholder   </td><td class="markdownTableBodyNone">More lorem ipsum.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyNone">Baz   </td><td class="markdownTableBodyNone">The third placeholder   </td><td class="markdownTableBodyNone">More lorem ipsum.   </td></tr>
 </table>
-<p>A table can contain images:</p>
-<table class="markdownTable">
+</li>
+<li><b class="tab-title">Centered</b> <center> A table can be centered with the <code>&lt;center&gt;</code> html tag:<br  />
+ <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Column 1   </th><th class="markdownTableHeadNone">Column 2    </th></tr>
+<th class="markdownTableHeadRight">Item   </th><th class="markdownTableHeadNone">Title   </th><th class="markdownTableHeadNone">Description   </th><th class="markdownTableHeadNone">More    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><img src="testimage.png" alt="" class="inline" title="doxygen"/>      </td><td class="markdownTableBodyNone">← the image should not be inverted in dark-mode   </td></tr>
+<td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyNone">Foo   </td><td class="markdownTableBodyNone">A placeholder   </td><td class="markdownTableBodyNone">Some lorem ipsum to make this table wider.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyNone">Bar   </td><td class="markdownTableBodyNone">Also a placeholder   </td><td class="markdownTableBodyNone">More lorem ipsum.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyNone">Baz   </td><td class="markdownTableBodyNone">The third placeholder   </td><td class="markdownTableBodyNone">More lorem ipsum.   </td></tr>
 </table>
-<p>Complex <a href="https://www.doxygen.nl/manual/tables.html">Doxygen tables</a> are also supported as seen in <a class="el" href="class_my_library_1_1_example.html#multi_row">this example</a>:</p>
-<a class="anchor" id="multi_row"></a>
+</center></li>
+<li><b class="tab-title">Stretched</b> A table wrapped in <code>&lt;div class="full_width_table"&gt;</code> fills the full page width. <div class="full_width_table"> <table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadRight">Item   </th><th class="markdownTableHeadNone">Title   </th><th class="markdownTableHeadNone">Description   </th><th class="markdownTableHeadNone">More    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyNone">Foo   </td><td class="markdownTableBodyNone">A placeholder   </td><td class="markdownTableBodyNone">Some lorem ipsum to make this table wider.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyNone">Bar   </td><td class="markdownTableBodyNone">Also a placeholder   </td><td class="markdownTableBodyNone">More lorem ipsum.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyNone">Baz   </td><td class="markdownTableBodyNone">The third placeholder   </td><td class="markdownTableBodyNone">More lorem ipsum.   </td></tr>
+</table>
+</div> <b>Caution</b>: This will break the overflow scrolling support!</li>
+<li><b class="tab-title">Complex</b> Complex <a href="https://www.doxygen.nl/manual/tables.html">Doxygen tables</a> are also supported as seen in <a class="el" href="class_my_library_1_1_example.html#multi_row">this example</a>:<br  />
+ <a class="anchor" id="multi_row"></a>
 <table class="doxtable">
 <caption>Complex table</caption>
 <tr>
@@ -240,42 +262,34 @@ Tables</h2>
 <tr>
 <td rowspan="2">cell row=2+3,col=2 </td><td>cell row=2,col=3 </td></tr>
 <tr>
-<td>cell row=3,col=1 </td><td rowspan="2">cell row=3+4,col=3 </td></tr>
-<tr>
-<td colspan="2">cell row=4,col=1+2 </td></tr>
-<tr>
-<td>cell row=5,col=1 </td><td colspan="2">cell row=5,col=2+3 </td></tr>
-<tr>
-<td colspan="2" rowspan="2">cell row=6+7,col=1+2 </td><td>cell row=6,col=3 </td></tr>
-<tr>
-<td>cell row=7,col=3 </td></tr>
-<tr>
-<td>cell row=8,col=1 </td><td>cell row=8,col=2<br  />
- <table class="doxtable">
-<tr>
-<td>Inner cell row=1,col=1</td><td>Inner cell row=1,col=2 </td></tr>
-<tr>
-<td>Inner cell row=2,col=1</td><td>Inner cell row=2,col=2 </td></tr>
+<td>cell row=3,col=1 </td><td>cell row=3,col=3 </td></tr>
 </table>
-</td><td>cell row=8,col=3 <ul>
-<li>
-Item 1 </li>
-<li>
-Item 2 </li>
-</ul>
-</td></tr>
-</table>
-<p>A table can be centered with the <code>&lt;center&gt;</code> html tag: </p><center> <table class="markdownTable">
+</li>
+<li><b class="tab-title">Overflow Scrolling</b> The table content is scrollable if the table gets too wide.<br  />
+ <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Foo   </th><th class="markdownTableHeadNone">Bar   </th><th class="markdownTableHeadNone">Baz   </th><th class="markdownTableHeadNone">FooBar    </th></tr>
+<th class="markdownTableHeadNone">first_column   </th><th class="markdownTableHeadNone">second_column   </th><th class="markdownTableHeadNone">third_column   </th><th class="markdownTableHeadNone">fourth_column   </th><th class="markdownTableHeadNone">fifth_column   </th><th class="markdownTableHeadNone">sixth_column   </th><th class="markdownTableHeadNone">seventh_column   </th><th class="markdownTableHeadNone">eighth_column   </th><th class="markdownTableHeadNone">ninth_column    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Lorem imsum   </td><td class="markdownTableBodyNone">dolor sit amet   </td><td class="markdownTableBodyNone">cenectetur adipisici elit   </td><td class="markdownTableBodyNone">At vero eos   </td></tr>
+<td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">2   </td><td class="markdownTableBodyNone">3   </td><td class="markdownTableBodyNone">4   </td><td class="markdownTableBodyNone">5   </td><td class="markdownTableBodyNone">6   </td><td class="markdownTableBodyNone">7   </td><td class="markdownTableBodyNone">8   </td><td class="markdownTableBodyNone">9   </td></tr>
 </table>
-</center><p>Embedded Graphviz graphs support dark mode and can be scrolled once they get too wide: </p><div class="dotgraph">
+</li>
+<li><b class="tab-title">Images</b>A table can contain images:<br  />
+ <table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Column 1   </th><th class="markdownTableHeadNone">Column 2    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><img src="testimage.png" alt="" class="inline" title="doxygen"/>      </td><td class="markdownTableBodyNone">← the image should not be inverted in dark-mode   </td></tr>
+</table>
+</li>
+</ul>
+</div><div class="tabbed"></div><h2><a class="anchor" id="autotoc_md2"></a>
+Diagrams</h2>
+<p>Graphviz diagrams support dark mode and can be scrolled once they get too wide:</p>
+<div class="dotgraph">
 <iframe scrolling="no" frameborder="0" src="dot_inline_dotgraph_1.svg" width="1283" height="59"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe><div class="caption">
 Graphviz with a caption</div>
 </div>
-<h2><a class="anchor" id="autotoc_md2"></a>
+<h2><a class="anchor" id="autotoc_md3"></a>
 Lists</h2>
 <ul>
 <li>element 1</li>
@@ -286,14 +300,14 @@ Lists</h2>
 </div><!-- fragment --></li>
 <li>element 2</li>
 </ol>
-<h2><a class="anchor" id="autotoc_md3"></a>
+<h2><a class="anchor" id="autotoc_md4"></a>
 Quotes</h2>
 <blockquote class="doxtable">
 <p>&zwj;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra. Velit sed ullamcorper morbi tincidunt ornare.</p>
 <p>Lorem ipsum dolor sit amet consectetur adipiscing elit duis. </p>
 </blockquote>
 <p><em>- jothepro</em></p>
-<h2><a class="anchor" id="autotoc_md4"></a>
+<h2><a class="anchor" id="autotoc_md5"></a>
 Code block</h2>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> x = <span class="stringliteral">&quot;code within md fences&quot;</span>;</div>
 </div><!-- fragment --><div class="fragment"><div class="line"><span class="comment">// code within @code block</span></div>
@@ -304,7 +318,7 @@ Code block</h2>
 </div><!-- fragment --> <pre class="fragment">// code within indented code block
 auto test = std::shared_ptr&lt;Example(5);
 </pre><p>Inline <code>code</code> elements in a text. <em>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</em> This also works within multiline text and does not break the <code>layout</code>.</p>
-<h2><a class="anchor" id="autotoc_md5"></a>
+<h2><a class="anchor" id="autotoc_md6"></a>
 Special hints</h2>
 <dl class="section warning"><dt>Warning</dt><dd>this is a warning only for demonstration purposes</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>this is a note to show that notes work. They can also include <code>code</code>: <div class="fragment"><div class="line"><span class="keywordtype">void</span> this_looks_awesome();</div>

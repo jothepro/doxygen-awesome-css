@@ -61,7 +61,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.drawio.svg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Doxygen Awesome
-   &#160;<span id="projectnumber">v2.3.0</span>
+   &#160;<span id="projectnumber">v2.3.1</span>
    </div>
    <div id="projectbrief">Modern Doxygen theme</div>
   </td>
@@ -133,21 +133,21 @@ $(document).ready(function(){initNavTree('md_docs_2tricks.html',''); initResizab
 <ul><li class="level1"><a href="#tricks-graphviz">Diagrams with Graphviz</a></li>
 <li class="level1"><a href="#tricks-darkmode">Disable Dark Mode</a></li>
 <li class="level1"><a href="#tricks-sidebar">Choosing Sidebar Width</a></li>
-<li class="level1"><a href="#tricks-tables">Formatting Tables</a><ul><li class="level2"><a href="#autotoc_md38">Centering</a></li>
-<li class="level2"><a href="#autotoc_md39">Full Width</a></li>
+<li class="level1"><a href="#tricks-tables">Formatting Tables</a><ul><li class="level2"><a href="#autotoc_md39">Centering</a></li>
+<li class="level2"><a href="#autotoc_md40">Full Width</a></li>
 </ul>
 </li>
 </ul>
 </div>
-<div class="textblock"><p><a class="anchor" id="autotoc_md37"></a></p>
+<div class="textblock"><p><a class="anchor" id="autotoc_md38"></a></p>
 <h1><a class="anchor" id="tricks-graphviz"></a>
 Diagrams with Graphviz</h1>
-<p>To get the best looking class diagrams for your documentation, generate them with Graphviz as vector graphics with transparent background:</p>
+<p>To get the best-looking class diagrams for your documentation, generate them with Graphviz as vector graphics with transparent background:</p>
 <div class="fragment"><div class="line"># Doxyfile</div>
 <div class="line">HAVE_DOT = YES</div>
 <div class="line">DOT_IMAGE_FORMAT = svg</div>
 <div class="line">DOT_TRANSPARENT = YES</div>
-</div><!-- fragment --><p>In case <code>INTERACTIVE_SVG = YES</code> is set in the Doxyfile, all user-defined dotgraphs must be wrapped with the <code>interactive_dotgraph</code> CSS class in order for them to be rendered correctly:</p>
+</div><!-- fragment --><p>In case <code>INTERACTIVE_SVG = YES</code> is set in the Doxyfile, all user-defined dotgraphs must be wrapped with the <code>interactive_dotgraph</code> CSS class for them to be rendered correctly:</p>
 <div class="fragment"><div class="line">&lt;div class=&quot;interactive_dotgraph&quot;&gt;</div>
 <div class="line"> </div>
 <div class="line">\dotfile graph.dot</div>
@@ -156,9 +156,9 @@ Diagrams with Graphviz</h1>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Both the default overflow scrolling behavior in this theme and the interactive editor enabled by <code>INTERACTIVE_SVG</code> are unsatisfying workarounds IMHO. Consider designing your graphs to be narrow enough to fit the page to avoid scrolling.</dd></dl>
 <h1><a class="anchor" id="tricks-darkmode"></a>
 Disable Dark Mode</h1>
-<p>If you don't want the theme to automatically switch to dark mode depending on the browser preference, you can disable dark mode by adding the <code>light-mode</code> class to the html-tag in the header template:</p>
+<p>If you don't want the theme to automatically switch to dark mode depending on the browser preference, you can disable dark mode by adding the <code>light-mode</code> class to the HTML tag in the header template:</p>
 <div class="fragment"><div class="line">&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; class=&quot;light-mode&quot;&gt;</div>
-</div><!-- fragment --><p>The same can be done to always enable dark-mode:</p>
+</div><!-- fragment --><p>The same can be done to always enable dark mode:</p>
 <div class="fragment"><div class="line">&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; class=&quot;dark-mode&quot;&gt;</div>
 </div><!-- fragment --><dl class="section warning"><dt>Warning</dt><dd>This only works if you don't use the dark-mode toggle extension.</dd></dl>
 <h1><a class="anchor" id="tricks-sidebar"></a>
@@ -174,9 +174,9 @@ Choosing Sidebar Width</h1>
 </div><!-- fragment --><h1><a class="anchor" id="tricks-tables"></a>
 Formatting Tables</h1>
 <p>By default tables in this theme are left-aligned and as wide as required to fit their content. Those properties can be changed for individual tables.</p>
-<h2><a class="anchor" id="autotoc_md38"></a>
+<h2><a class="anchor" id="autotoc_md39"></a>
 Centering</h2>
-<p>Tables can be centered by wrapping them in the <code>&lt;center&gt;</code> HTML-tag.</p>
+<p>Tables can be centered by wrapping them in the <code>&lt;center&gt;</code> HTML tag.</p>
 <div class="tabbed"></div><div class="tabbed"><ul>
 <li><span class="tab-title">Code</span> <div class="fragment"><div class="line">&lt;center&gt;</div>
 <div class="line">    | This table | is centered          |</div>
@@ -192,10 +192,10 @@ Centering</h2>
 </table>
 </center></li>
 </ul>
-</div><div class="tabbed"></div><h2><a class="anchor" id="autotoc_md39"></a>
+</div><div class="tabbed"></div><h2><a class="anchor" id="autotoc_md40"></a>
 Full Width</h2>
 <p>To make tables span the full width of the page, no matter how wide the content is, wrap the table in the <code>full_width_table</code> CSS class.</p>
-<dl class="section warning"><dt>Warning</dt><dd>Apply with caution! This breaks the overflow scrolling of the table. Content might be cut of on small screens!</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Apply with caution! This breaks the overflow scrolling of the table. Content might be cut off on small screens!</dd></dl>
 <div class="tabbed"></div><div class="tabbed"><ul>
 <li><span class="tab-title">Code</span> <div class="fragment"><div class="line">&lt;div class=&quot;full_width_table&quot;&gt;</div>
 <div class="line">    | This table | spans the full width |</div>

@@ -61,7 +61,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.drawio.svg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Doxygen Awesome
-   &#160;<span id="projectnumber">v2.3.0</span>
+   &#160;<span id="projectnumber">v2.3.1</span>
    </div>
    <div id="projectbrief">Modern Doxygen theme</div>
   </td>
@@ -130,35 +130,35 @@ $(document).ready(function(){initNavTree('md_docs_2extensions.html',''); initRes
 </div><!--header-->
 <div class="contents">
 <div class="toc"><h3>Table of Contents</h3>
-<ul><li class="level1"><a href="#extension-dark-mode-toggle">Dark Mode Toggle</a><ul><li class="level2"><a href="#autotoc_md19">Installation</a></li>
-<li class="level2"><a href="#autotoc_md20">Customizing</a></li>
+<ul><li class="level1"><a href="#extension-dark-mode-toggle">Dark Mode Toggle</a><ul><li class="level2"><a href="#autotoc_md20">Installation</a></li>
+<li class="level2"><a href="#autotoc_md21">Customizing</a></li>
 </ul>
 </li>
-<li class="level1"><a href="#extension-copy-button">Fragment Copy Button</a><ul><li class="level2"><a href="#autotoc_md21">Installation</a></li>
-<li class="level2"><a href="#autotoc_md22">Customizing</a></li>
+<li class="level1"><a href="#extension-copy-button">Fragment Copy Button</a><ul><li class="level2"><a href="#autotoc_md22">Installation</a></li>
+<li class="level2"><a href="#autotoc_md23">Customizing</a></li>
 </ul>
 </li>
-<li class="level1"><a href="#extension-para">Paragraph Linking</a><ul><li class="level2"><a href="#autotoc_md23">Installation</a></li>
-<li class="level2"><a href="#autotoc_md24">Customizing</a></li>
+<li class="level1"><a href="#extension-para">Paragraph Linking</a><ul><li class="level2"><a href="#autotoc_md24">Installation</a></li>
+<li class="level2"><a href="#autotoc_md25">Customizing</a></li>
 </ul>
 </li>
-<li class="level1"><a href="#extension-toc">Interactive TOC</a><ul><li class="level2"><a href="#autotoc_md25">Installation</a></li>
-<li class="level2"><a href="#autotoc_md26">Customizing</a></li>
+<li class="level1"><a href="#extension-toc">Interactive TOC</a><ul><li class="level2"><a href="#autotoc_md26">Installation</a></li>
+<li class="level2"><a href="#autotoc_md27">Customizing</a></li>
 </ul>
 </li>
-<li class="level1"><a href="#extension-tabs">Tabs</a><ul><li class="level2"><a href="#autotoc_md27">Installation</a></li>
-<li class="level2"><a href="#autotoc_md28">Usage</a></li>
+<li class="level1"><a href="#extension-tabs">Tabs</a><ul><li class="level2"><a href="#autotoc_md28">Installation</a></li>
+<li class="level2"><a href="#autotoc_md29">Usage</a></li>
 </ul>
 </li>
-<li class="level1"><a href="#extension-page-navigation">Page Navigation</a><ul><li class="level2"><a href="#autotoc_md29">Installation</a></li>
-<li class="level2"><a href="#autotoc_md30">Usage</a></li>
+<li class="level1"><a href="#extension-page-navigation">Page Navigation</a><ul><li class="level2"><a href="#autotoc_md30">Installation</a></li>
+<li class="level2"><a href="#autotoc_md31">Usage</a></li>
 </ul>
 </li>
 </ul>
 </div>
-<div class="textblock"><p><a class="anchor" id="autotoc_md18"></a></p>
+<div class="textblock"><p><a class="anchor" id="autotoc_md19"></a></p>
 <p>On top of the base theme provided by <code>doxygen-awesome.css</code>, this repository comes with Javascript extensions that require additional setup steps to get them running.</p>
-<p>The extensions require customizations in the header HTML-template. This is how you can create the default template with Doxygen:</p>
+<p>The extensions require customizations in the header HTML template. This is how you can create the default template with Doxygen:</p>
 <ol type="1">
 <li>Create default header template: <div class="fragment"><div class="line">doxygen -w html header.html delete_me.html delete_me.css</div>
 </div><!-- fragment --></li>
@@ -169,7 +169,7 @@ $(document).ready(function(){initNavTree('md_docs_2extensions.html',''); initRes
 <h1><a class="anchor" id="extension-dark-mode-toggle"></a>
 Dark Mode Toggle</h1>
 <p>Adds a button next to the search bar to enable and disable the dark theme variant manually:</p>
-<div class="darkmode_inverted_image bordered_image"> <img src="darkmode_toggle.png" alt="" width="250" class="inline"/> </div><h2><a class="anchor" id="autotoc_md19"></a>
+<div class="darkmode_inverted_image bordered_image"></div><div class="darkmode_inverted_image bordered_image"><img src="darkmode_toggle.png" alt="" width="250px" class="inline"/>    </div><div class="darkmode_inverted_image bordered_image"></div><h2><a class="anchor" id="autotoc_md20"></a>
 Installation</h2>
 <ol type="1">
 <li>Add the required resources in your <code>Doxyfile</code>:<ul>
@@ -188,7 +188,7 @@ Installation</h2>
 <div class="line">    &lt;body&gt;</div>
 </div><!-- fragment --></li>
 </ol>
-<h2><a class="anchor" id="autotoc_md20"></a>
+<h2><a class="anchor" id="autotoc_md21"></a>
 Customizing</h2>
 <p>Changing the tooltip of the button: </p><div class="fragment"><div class="line">DoxygenAwesomeDarkModeToggle.title = &quot;Zwischen hellem/dunklem Modus wechseln&quot;</div>
 </div><!-- fragment --><p>Changing Icons. Both Emoji or SVG icons are supported: </p><div class="fragment"><div class="line">DoxygenAwesomeDarkModeToggle.lightModeIcon = &#39;🌞&#39;</div>
@@ -198,7 +198,7 @@ Customizing</h2>
 <h1><a class="anchor" id="extension-copy-button"></a>
 Fragment Copy Button</h1>
 <p>Shows a copy button when the user hovers over a code fragment:</p>
-<div class="darkmode_inverted_image bordered_image"> <img src="fragment_copy_button.png" alt="" width="490" class="inline"/> </div><h2><a class="anchor" id="autotoc_md21"></a>
+<div class="darkmode_inverted_image bordered_image"></div><div class="darkmode_inverted_image bordered_image"><img src="fragment_copy_button.png" alt="" width="490" class="inline"/>    </div><div class="darkmode_inverted_image bordered_image"></div><h2><a class="anchor" id="autotoc_md22"></a>
 Installation</h2>
 <ol type="1">
 <li>Add the required resources in your <code>Doxyfile</code>:<ul>
@@ -216,7 +216,7 @@ Installation</h2>
 <div class="line">    &lt;body&gt;</div>
 </div><!-- fragment --></li>
 </ol>
-<h2><a class="anchor" id="autotoc_md22"></a>
+<h2><a class="anchor" id="autotoc_md23"></a>
 Customizing</h2>
 <p>The tooltip of the button can be changed: </p><div class="fragment"><div class="line">DoxygenAwesomeFragmentCopyButton.title = &quot;In die Zwischenablage kopieren&quot;</div>
 </div><!-- fragment --><p>The icon can be changed. It must be an SVG: </p><div class="fragment"><div class="line">DoxygenAwesomeFragmentCopyButton.copyIcon = `&lt;svg ...&gt;`</div>
@@ -225,8 +225,8 @@ Customizing</h2>
 <h1><a class="anchor" id="extension-para"></a>
 Paragraph Linking</h1>
 <p>Provides a button on hover behind every headline to allow easy creation of a permanent link to the headline:</p>
-<div class="darkmode_inverted_image bordered_image"> <img src="paragraph_link.png" alt="" width="220" class="inline"/> </div><p>Works for all headlines and for many documentation section titles.</p>
-<h2><a class="anchor" id="autotoc_md23"></a>
+<div class="darkmode_inverted_image bordered_image"></div><div class="darkmode_inverted_image bordered_image"><img src="paragraph_link.png" alt="" width="220" class="inline"/>    </div><div class="darkmode_inverted_image bordered_image"></div><p>Works for all headlines and for many documentation section titles.</p>
+<h2><a class="anchor" id="autotoc_md24"></a>
 Installation</h2>
 <ol type="1">
 <li>Add the required resources in your <code>Doxyfile</code>:<ul>
@@ -244,16 +244,16 @@ Installation</h2>
 <div class="line">    &lt;body&gt;</div>
 </div><!-- fragment --></li>
 </ol>
-<h2><a class="anchor" id="autotoc_md24"></a>
+<h2><a class="anchor" id="autotoc_md25"></a>
 Customizing</h2>
 <p>The button tooltip can be changed: </p><div class="fragment"><div class="line">DoxygenAwesomeParagraphLink.title = &quot;Abschnitt verknüpfen&quot;</div>
 </div><!-- fragment --><p>The icon of the button can be changed. Both plain characters or SVG icons are supported: </p><div class="fragment"><div class="line">DoxygenAwesomeParagraphLink.icon = &quot;¶&quot;</div>
 </div><!-- fragment --><p>All customizations must be applied before calling <code>DoxygenAwesomeParagraphLink.init()</code>!</p>
 <h1><a class="anchor" id="extension-toc"></a>
 Interactive TOC</h1>
-<p>On large screens the Table of Contents (TOC) is anchored on the top right of the page. This extension visualizes the reading progress by dynamically highlighting the currently active section.</p>
-<p>On small screens the extension hides the TOC by default. The user can open it manually when needed:</p>
-<div class="darkmode_inverted_image bordered_image"> <img src="interactive_toc_mobile.png" alt="" width="380" class="inline"/> </div><h2><a class="anchor" id="autotoc_md25"></a>
+<p>On large screens, the Table of Contents (TOC) is anchored on the top right of the page. This extension visualizes the reading progress by dynamically highlighting the currently active section.</p>
+<p>On small screens, the extension hides the TOC by default. The user can open it manually when needed:</p>
+<div class="darkmode_inverted_image bordered_image"></div><div class="darkmode_inverted_image bordered_image"><img src="interactive_toc_mobile.png" alt="" width="380" class="inline"/>    </div><div class="darkmode_inverted_image bordered_image"></div><h2><a class="anchor" id="autotoc_md26"></a>
 Installation</h2>
 <ol type="1">
 <li>Add the required resources in your <code>Doxyfile</code>:<ul>
@@ -271,7 +271,7 @@ Installation</h2>
 <div class="line">    &lt;body&gt;</div>
 </div><!-- fragment --></li>
 </ol>
-<h2><a class="anchor" id="autotoc_md26"></a>
+<h2><a class="anchor" id="autotoc_md27"></a>
 Customizing</h2>
 <p>The offset for when a headline is considered active can be changed. A smaller value means that the headline of the section must be closer to the top of the viewport before it is highlighted in the TOC: </p><div class="fragment"><div class="line">DoxygenAwesomeInteractiveToc.topOffset = 45</div>
 </div><!-- fragment --><p>Hiding the TOC on small screens can be disabled. It is still interactive and can be hidden by the user but will now be open by default: </p><div class="fragment"><div class="line">DoxygenAwesomeInteractiveToc.hideMobileMenu = false</div>
@@ -280,10 +280,10 @@ Tabs</h1>
 <dl class="section warning"><dt>Warning</dt><dd>Experimental feature! Please report bugs <a href="https://github.com/jothepro/doxygen-awesome-css/issues">here</a>.</dd></dl>
 <p>This extension allows to arrange list content in tabs:</p>
 <div class="tabbed"></div><div class="tabbed"><ul>
-<li><span class="tab-title">Tab 1</span> This is the content of tab 1</li>
-<li><span class="tab-title">Tab 2</span> This is the content of tab 2</li>
+<li><b class="tab-title">Tab 1</b> This is the content of tab 1</li>
+<li><b class="tab-title">Tab 2</b> This is the content of tab 2</li>
 </ul>
-</div><div class="tabbed"></div><h2><a class="anchor" id="autotoc_md27"></a>
+</div><div class="tabbed"></div><h2><a class="anchor" id="autotoc_md28"></a>
 Installation</h2>
 <ol type="1">
 <li>Add the required resources in your <code>Doxyfile</code>:<ul>
@@ -301,23 +301,23 @@ Installation</h2>
 <div class="line">    &lt;body&gt;</div>
 </div><!-- fragment --></li>
 </ol>
-<h2><a class="anchor" id="autotoc_md28"></a>
+<h2><a class="anchor" id="autotoc_md29"></a>
 Usage</h2>
 <p>Each list that is supposed to be displayed as tabs has to be wrapped with the <code>tabbed</code> CSS class. Each item in the list must start with an element that has the class <code>tab-title</code>. It will then be used as tab title.</p>
 <div class="fragment"><div class="line">&lt;div class=&quot;tabbed&quot;&gt;</div>
 <div class="line"> </div>
-<div class="line">- &lt;span class=&quot;tab-title&quot;&gt;Tab 1&lt;/span&gt; This is the content of tab 1</div>
-<div class="line">- &lt;span class=&quot;tab-title&quot;&gt;Tab 2&lt;/span&gt; This is the content of tab 2</div>
+<div class="line">- &lt;b class=&quot;tab-title&quot;&gt;Tab 1&lt;/b&gt; This is the content of tab 1</div>
+<div class="line">- &lt;b class=&quot;tab-title&quot;&gt;Tab 2&lt;/b&gt; This is the content of tab 2</div>
 <div class="line"> </div>
 <div class="line">&lt;/div&gt;</div>
 </div><!-- fragment --><h1><a class="anchor" id="extension-page-navigation"></a>
 Page Navigation</h1>
 <dl class="section warning"><dt>Warning</dt><dd>Experimental feature! Please report bugs <a href="https://github.com/jothepro/doxygen-awesome-css/issues">here</a>.</dd></dl>
 <p>To allow the user to easily navigate from one document to another, "Next" and "Previous" buttons can be added at the end of a Markdown document.</p>
-<h2><a class="anchor" id="autotoc_md29"></a>
+<h2><a class="anchor" id="autotoc_md30"></a>
 Installation</h2>
 <p>The feature is shipped inside the default <code>doxygen-awesome.css</code>. No additional stylesheets or scripts need to be added.</p>
-<h2><a class="anchor" id="autotoc_md30"></a>
+<h2><a class="anchor" id="autotoc_md31"></a>
 Usage</h2>
 <p>The following conditions must be met for the feature to work properly:</p><ul>
 <li>The navigation must be inside a Markdown table with 1-2 columns.</li>
