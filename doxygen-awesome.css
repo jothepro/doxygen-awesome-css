@@ -1800,6 +1800,13 @@ table.memberdecls .mdescLeft, table.memberdecls .mdescRight {
     padding: var(--spacing-small) 0;
 }
 
+table.memberdecls .mdescLeft{
+    border-radius: 0 0 0 var(--border-radius-small);
+}
+table.memberdecls .mdescRight {
+    border-radius: 0 0 var(--border-radius-small) 0;
+}
+
 table.memberdecls .memItemLeft,
 table.memberdecls .memTemplItemLeft {
     padding-right: var(--spacing-medium);
