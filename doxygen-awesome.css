@@ -313,7 +313,7 @@ body {
 body, table, div, p, dl, #nav-tree .label, .title,
 .sm-dox a, .sm-dox a:hover, .sm-dox a:focus, #projectname,
 .SelectItem, #MSearchField, .navpath li.navelem a,
-.navpath li.navelem a:hover, p.reference, p.definition {
+.navpath li.navelem a:hover, p.reference, p.definition, div.toc li, div.toc h3 {
     font-family: var(--font-family);
 }
 
