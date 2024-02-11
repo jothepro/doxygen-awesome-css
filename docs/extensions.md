@@ -196,8 +196,12 @@ This extension allows to arrange list content in tabs:
 
 <div class="tabbed">
 
-- <b class="tab-title">Tab 1</b> This is the content of tab 1
-- <b class="tab-title">Tab 2</b> This is the content of tab 2
+- <b class="tab-title">Tab 1</b>
+    This is the content of tab 1
+- <b class="tab-title">Tab 2</b>
+    This is the content of tab 2
+    1. it has a list
+    2. with multiple items
 
 </div>
 
