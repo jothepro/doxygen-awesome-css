@@ -619,6 +619,7 @@ a.anchor {
     height: calc(var(--searchbar-height) - 2px);
     background: transparent;
     width: calc(var(--searchbar-width) - 64px);
+    margin: 0 0.5em;
 }
 
 .MSearchBoxActive #MSearchField {
