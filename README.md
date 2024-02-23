@@ -39,6 +39,7 @@ Some websites using this theme:
 - [Spatial Audio Framework (SAF)](https://leomccormack.github.io/Spatial_Audio_Framework/index.html)
 - [libCloudSync](https://jothepro.github.io/libCloudSync/)
 - [libsl3](https://a4z.github.io/libsl3/)
+- [Randolf Richardson's C++ classes](https://www.randolf.ca/c++/docs/)
 
 ## Installation
 
@@ -145,6 +146,7 @@ Tested with
 - Chrome 119, Chrome 119 for Android, Chrome 119 for iOS
 - Safari 17, Safari for iOS 16
 - Firefox 118, Firefox 120 for Android, Firefox 119 for iOS
+- Opera 107 for Linux, Opera 95 for Windows 7, Opera Mini for Android
 - Edge 119
 
 
