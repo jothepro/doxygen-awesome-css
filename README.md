@@ -37,6 +37,7 @@ Some websites using this theme:
 - [Zephyr](https://docs.zephyrproject.org/latest/doxygen/html/index.html)
 - [FELTOR](https://mwiesenberger.github.io/feltor/dg/html/modules.html)
 - [Spatial Audio Framework (SAF)](https://leomccormack.github.io/Spatial_Audio_Framework/index.html)
+- [Randolf Richardson's C++ classes](https://www.randolf.ca/c++/docs/)
 - [libCloudSync](https://jothepro.github.io/libCloudSync/)
 - [libsl3](https://a4z.github.io/libsl3/)
 
