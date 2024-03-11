@@ -11,5 +11,5 @@ var searchData=
   ['customization_8',['Customization',['../md_docs_2customization.html',1,'']]],
   ['customization_2emd_9',['customization.md',['../customization_8md.html',1,'']]],
   ['customizations_10',['Share your customizations',['../md_docs_2customization.html#autotoc_md37',1,'']]],
-  ['customizing_11',['customizing',['../md_docs_2extensions.html#autotoc_md21',1,'Customizing'],['../md_docs_2extensions.html#autotoc_md23',1,'Customizing'],['../md_docs_2extensions.html#autotoc_md25',1,'Customizing'],['../md_docs_2extensions.html#autotoc_md27',1,'Customizing']]]
+  ['customizing_11',['Customizing',['../md_docs_2extensions.html#autotoc_md21',1,'Customizing'],['../md_docs_2extensions.html#autotoc_md23',1,'Customizing'],['../md_docs_2extensions.html#autotoc_md25',1,'Customizing'],['../md_docs_2extensions.html#autotoc_md27',1,'Customizing']]]
 ];
