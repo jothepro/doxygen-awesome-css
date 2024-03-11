@@ -25,7 +25,7 @@ This theme is an attempt to update the visuals of Doxygen without changing its o
 - 🧩 No changes to the HTML structure of Doxygen are required
 - 📱 Improved mobile usability
 - 🌘 Dark mode support!
-- 🥇 Works best with **doxygen 1.9.1** - **1.9.4** and **1.9.6** - **1.9.8**
+- 🥇 Works best with **doxygen 1.9.1** - **1.9.4** and **1.9.6** - **1.10.0**
 
 ## Examples
 
