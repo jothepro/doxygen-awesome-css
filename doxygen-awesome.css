@@ -150,6 +150,7 @@ html {
     --fragment-linenumber-background: #f4f4f5;
     --fragment-linenumber-border: #e3e5e7;
     --fragment-lineheight: 20px;
+    --fragment-desc-background: #f4f4f4;
 
     /* sidebar navigation (treeview) colors */
     --side-nav-background: #fbfbfb;
@@ -188,7 +189,7 @@ html {
         color-scheme: dark;
 
         --primary-color: #1982d2;
-        --primary-dark-color: #86a9c4;
+        --primary-dark-color: #ddb582;
         --primary-light-color: #4779ac;
 
         --box-shadow: 0 2px 8px 0 rgba(0,0,0,.35);
@@ -241,6 +242,7 @@ html {
         --fragment-linenumber-color: #cccccc;
         --fragment-linenumber-background: #35393c;
         --fragment-linenumber-border: #1f1f1f;
+        --fragment-desc-background: #2e343e;
     }
 }
 
@@ -249,7 +251,7 @@ html.dark-mode {
     color-scheme: dark;
 
     --primary-color: #1982d2;
-    --primary-dark-color: #86a9c4;
+    --primary-dark-color: #ddb582;
     --primary-light-color: #4779ac;
 
     --box-shadow: 0 2px 8px 0 rgba(0,0,0,.30);
@@ -302,6 +304,7 @@ html.dark-mode {
     --fragment-linenumber-color: #cccccc;
     --fragment-linenumber-background: #35393c;
     --fragment-linenumber-border: #1f1f1f;
+    --fragment-desc-background: #2e343e;
 }
 
 body {
@@ -1046,7 +1049,7 @@ blockquote::after {
 blockquote p {
     margin: var(--spacing-small) 0 var(--spacing-medium) 0;
 }
-.paramname {
+.paramname, div.memdoc em {
     font-weight: 600;
     color: var(--primary-dark-color);
 }
@@ -1450,7 +1453,8 @@ div.memdoc, div.memproto, h2.memtitle {
 
 div.memdoc {
     padding: 0 var(--spacing-medium);
-    background: var(--page-background-color);
+    overflow: auto;
+    background: var(--fragment-desc-background);
 }
 
 h2.memtitle, div.memitem {
@@ -1839,9 +1843,16 @@ table.memberdecls .memItemRight  {
 }
 
 table.memberdecls .mdescLeft, table.memberdecls .mdescRight {
-    background: none;
+    background: var(--fragment-desc-background);
     color: var(--page-foreground-color);
     padding: var(--spacing-small) 0;
+}
+
+table.memberdecls .mdescLeft{
+    border-radius: 0 0 0 var(--border-radius-small);
+}
+table.memberdecls .mdescRight {
+    border-radius: 0 0 var(--border-radius-small) 0;
 }
 
 table.memberdecls .memItemLeft,
