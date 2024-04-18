@@ -11,6 +11,8 @@ Just to give you an idea of how flexible the styling is, click this button:
 
 <div class="alter-theme-button" onclick="toggle_alternative_theme()" onkeypress="if (event.keyCode == 13) toggle_alternative_theme()" tabindex=0>Alter theme</div>
 
+<br><hr>
+
 ### Setup
 
 It is recommended to add your own `custom.css` and overwrite the variables there:
