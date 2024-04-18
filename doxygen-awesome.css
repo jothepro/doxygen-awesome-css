@@ -1046,7 +1046,7 @@ blockquote::after {
 blockquote p {
     margin: var(--spacing-small) 0 var(--spacing-medium) 0;
 }
-.paramname {
+.paramname, .paramname em {
     font-weight: 600;
     color: var(--primary-dark-color);
 }
