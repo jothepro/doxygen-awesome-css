@@ -77,6 +77,7 @@ Shows a copy button when the user hovers over a code fragment:
 
 1. Add the required resources in your `Doxyfile`:
    - **HTML_EXTRA_FILES:** `doxygen-awesome-fragment-copy-button.js`
+   - **HTML_COPY_CLIPBOARD:** `NO` required with Doxygen >= 1.10.0
 2. In the `header.html` template, include `doxygen-awesome-fragment-copy-button.js` at the end of the `<head>` and then initialize it:
     ```html
    <html>
