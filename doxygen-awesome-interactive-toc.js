@@ -77,7 +77,7 @@ class DoxygenAwesomeInteractiveToc {
         active?.classList.remove("aboveActive")
     }
 
-        static throttle(func, delay) {
+    static throttle(func, delay) {
         let lastCall = 0;
         return function (...args) {
             const now = new Date().getTime();
