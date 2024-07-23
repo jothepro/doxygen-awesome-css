@@ -32,38 +32,36 @@ class DoxygenAwesomeTabs {
     static init() {
     window.addEventListener("load", () => {
         document.querySelectorAll(".tabbed:not(:empty)").forEach((tabbed, tabbedIndex) => {
-            let tabLinkList = []
-            let ul = document.createElement("ul")
-            tabbed.appendChild(ul)
+            let tabLinkList = [];
+            let tabList = [];
 
-            tabbed.querySelectorAll(":scope > .tab-title").forEach((tabTitle, tabIndex) => {
-                let li = document.createElement("li")
-                li.id = "tab_" + tabbedIndex + "_" + tabIndex
-                ul.appendChild(li)
+            // Select tabs using either 'li' or 'h2.tab-title' elements
+            tabbed.querySelectorAll(":scope > ul > li, :scope > h2.tab-title").forEach((tab, tabIndex) => {
+                let header = tab;
+                let tabLink = document.createElement("button");
+                tabLink.classList.add("tab-button");
+                tabLink.appendChild(header.cloneNode(true));
+                header.title = header.textContent;
 
-                let header = tabTitle
-                let tabLink = document.createElement("button")
-                tabLink.classList.add("tab-button")
-                tabLink.appendChild(header)
-                header.title = header.textContent
                 tabLink.addEventListener("click", () => {
-                    tabbed.querySelectorAll(":scope > ul > li").forEach((tab) => {
-                        tab.classList.remove("selected")
-                    })
+                    tabList.forEach((tab) => {
+                        tab.classList.remove("selected");
+                    });
                     tabLinkList.forEach((tabLink) => {
-                        tabLink.classList.remove("active")
-                    })
-                    li.classList.add("selected")
-                    tabLink.classList.add("active")
-                })
-                tabLinkList.push(tabLink)
-                li.appendChild(tabLink)
+                        tabLink.classList.remove("active");
+                    });
+                    tab.classList.add("selected");
+                    tabLink.classList.add("active");
+                });
 
-                if(tabIndex == 0) {
-                    li.classList.add("selected")
-                    tabLink.classList.add("active")
+                tabLinkList.push(tabLink);
+                tabList.push(tab);
+
+                if (tabIndex === 0) {
+                    tab.classList.add("selected");
+                    tabLink.classList.add("active");
                 }
-            })
+                })
                 let tabsOverview = document.createElement("div")
                 tabsOverview.classList.add("tabs-overview")
                 let tabsOverviewContainer = document.createElement("div")
