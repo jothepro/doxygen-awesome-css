@@ -53,7 +53,7 @@ class DoxygenAwesomeReadtheDocsSearch {
       // readthedocs metadata
       // TODO: how to handle defaults? ... only matters when this is outside of readthedocs
       let projectSlug = DoxygenAwesomeReadtheDocsSearch.getMetaValue("readthedocs-project-slug") || "doxygen-awesome-css";
-      let projectVersion = DoxygenAwesomeReadtheDocsSearch.getMetaValue("readthedocs-version") || "latest";
+      let projectVersion = DoxygenAwesomeReadtheDocsSearch.getMetaValue("readthedocs-version-slug") || "latest";
 
       // pull requests are not indexed, so use the default version
       if (/^\d+$/.test(projectVersion)) {
