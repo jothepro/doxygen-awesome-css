@@ -238,6 +238,39 @@ Each item in the list must start with an element that has the class `tab-title`.
 </div>
 ```
 
+## Read the Docs search {#readthedocs-search}
+
+Use search index from Read the Docs instead of the built-in doxygen search. This allows using search metrics from
+Read the Docs and in general gives a better search experience.
+
+### Installation
+
+1. Add the required resources in your `Doxyfile`:
+   - **HTML_EXTRA_FILES:** `doxygen-awesome-readthedocs-search.js`
+   - **HTML_EXTRA_STYLESHEET:** `doxygen-awesome-readthedocs-search.css`
+   - **SEARCHENGINE:** `YES`
+   - **SERVER_BASED_SEARCH:** `YES`
+   - **EXTERNAL_SEARCH:** `YES`
+   - **SEARCHENGINE_URL:** `https://<your-project>.readthedocs.io/` OR
+   - **SEARCHENGINE_URL:** `https://<your-custom-readthedocs-domain>/`
+
+   `SEARCHENGINE_URL` is only used when testing locally, otherwise the domain name is detected automatically.
+   When testing locally, search may not work without disabling CORS. This can be a security risk, so it is advised to
+   only test inside of Read the Docs.
+
+2. In the `header.html` template, include `doxygen-awesome-readthedocs-search.js` at the end of the `<head>` and then initialize it:
+    ```html
+   <html> 
+       <head>
+           <!-- ... other metadata & script includes ... -->
+           <script type="text/javascript" src="$relpath^doxygen-awesome-readthedocs-search.js"></script>
+           <script type="text/javascript">
+               DoxygenAwesomeReadtheDocsSearch.init()
+           </script>
+       </head>
+       <body>
+    ```
+
 ## Page Navigation {#extension-page-navigation}
 
 @warning Experimental feature! Please report bugs [here](https://github.com/jothepro/doxygen-awesome-css/issues).

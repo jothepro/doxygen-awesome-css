@@ -1,0 +1,20 @@
+/* Highlight text in search results */
+span.highlighted {
+    background-color:var(--warning-color);
+    color: var(--page-foreground-color);
+    padding: 2px;
+    border-radius: 3px;
+}
+
+/* Remove list bullets for search results */
+ul.search {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Add horizontal divider for search results */
+ul.search li.search-result {
+    border-bottom: 1px solid var(--separator-color);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
