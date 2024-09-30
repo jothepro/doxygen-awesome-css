@@ -3,7 +3,7 @@
 
 namespace MyLibrary {
 
-enum Color { red, green, blue };
+enum Color { red  = 1, green = 2, blue = 3 };
 
 /**
  * @brief Example class to demonstrate the features of the custom CSS.
