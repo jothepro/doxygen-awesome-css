@@ -1,6 +1,6 @@
 {
   "name": "@jothepro/doxygen-awesome-css",
-  "version": "2.3.3",
+  "version": "2.3.4",
   "description": "Custom CSS theme for doxygen html-documentation with lots of customization parameters.",
   "main": "",
   "scripts": {
