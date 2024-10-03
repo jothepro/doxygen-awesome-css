@@ -49,6 +49,7 @@ This can be done in several ways:
 
 - manually copying the files
 - adding the project as a Git submodule
+- downloading the project with CMake FetchContent
 - adding the project as a npm/xpm dependency
 - installing the theme system-wide
 
@@ -62,6 +63,38 @@ git submodule add https://github.com/jothepro/doxygen-awesome-css.git
 cd doxygen-awesome-css
 git checkout v2.3.4
 ```
+
+### CMake with FetchContent
+
+For project that build with CMake, the `FetchContent` module can be used to download the repository at configure-time.
+
+Add the following snippet to your `CMakeLists.txt`
+
+```cmake
+include(FetchContent)
+FetchContent_Declare(
+    doxygen-awesome-css
+    URL https://github.com/jothepro/doxygen-awesome-css/archive/refs/heads/main.zip
+)
+FetchContent_MakeAvailable(doxygen-awesome-css)
+
+# Save the location the files were cloned into
+# This allows us to get the path to doxygen-awesome.css
+FetchContent_GetProperties(doxygen-awesome-css SOURCE_DIR AWESOME_CSS_DIR)
+
+# Generate the Doxyfile
+set(DOXYFILE_IN ${CMAKE_CURRENT_SOURCE_DIR}/doc/Doxyfile.in)
+set(DOXYFILE_OUT ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile)
+configure_file(${DOXYFILE_IN} ${DOXYFILE_OUT} @ONLY)
+```
+
+This downloads the latest main (but any other revision could be used) and unpacks in the build folder. The `Doxyfile.in` can reference this location in the `HTML_EXTRA_STYLESHEET` field
+
+```text
+HTML_EXTRA_STYLESHEET  = @AWESOME_CSS_DIR@/doxygen-awesome.css
+```
+
+When the configure stage of CMake is run, the `Doxyfile.in` is rendered to Doxyfile and Doxygen can be run as usual.
 
 ### npm/xpm dependency
 
@@ -81,8 +114,8 @@ managed project.
 
 ### System-wide
 
-You can even install the theme system-wide by running `make install`. 
-The files will be installed to `/usr/local/share/` by default, 
+You can even install the theme system-wide by running `make install`.
+The files will be installed to `/usr/local/share/` by default,
 but you can customize the install location with `make PREFIX=/my/custom/path install`.
 
 ### Choosing a layout
@@ -94,7 +127,7 @@ There are two layout options. Choose one of them and configure Doxygen according
 - <b class="tab-title">Base Theme</b><div class="darkmode_inverted_image">
     ![](img/theme-variants-base.drawio.svg)
     </div>
-    Comes with the typical Doxygen titlebar. Optionally the treeview in the sidebar can be enabled. 
+    Comes with the typical Doxygen titlebar. Optionally the treeview in the sidebar can be enabled.
 
     Required files: `doxygen-awesome.css`
 
