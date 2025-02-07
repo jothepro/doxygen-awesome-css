@@ -28,33 +28,62 @@ SOFTWARE.
 */
 
 class DoxygenAwesomeTabs {
-
+    
     static init() {
         window.addEventListener("load", () => {
             document.querySelectorAll(".tabbed:not(:empty)").forEach((tabbed, tabbedIndex) => {
-                let tabLinkList = []           
+                let tabLinkList = []
+                let tabTitles = []
                 tabbed.querySelectorAll(":scope > ul > li").forEach((tab, tabIndex) => {
                     tab.id = "tab_" + tabbedIndex + "_" + tabIndex
                     let header = tab.querySelector(".tab-title")
                     let tabLink = document.createElement("button")
                     tabLink.classList.add("tab-button")
                     tabLink.appendChild(header)
-                    header.title = header.textContent
+                    tab.title = header.textContent
+                    header.title = tab.title
+                    tabTitles.push(tab.title)
                     tabLink.addEventListener("click", () => {
-                        tabbed.querySelectorAll(":scope > ul > li").forEach((tab) => {
-                            tab.classList.remove("selected")
-                        })
-                        tabLinkList.forEach((tabLink) => {
-                            tabLink.classList.remove("active")
-                        })
-                        tab.classList.add("selected")
-                        tabLink.classList.add("active")
+                        if (tabbed.classList.contains("linked")) {
+                            let selectedTabs = JSON.parse(localStorage.selectedTabs)
+                            document.querySelectorAll(".tabbed:not(:empty)").forEach((tabbed) => {
+                                tabbed.querySelectorAll(":scope > ul").forEach((list) => {
+                                    if (list.querySelector(`:scope > li[title="${tab.title}"]`) == null) {
+                                        return
+                                    }
+                                    list.querySelectorAll(":scope > li").forEach((tab) => {
+                                        tab.classList.remove("selected")
+                                        if (tab.title == header.textContent) {
+                                            tab.classList.add("selected")
+                                            selectedTabs[tabTitles.join(';')] = tab.title
+                                        }
+                                    })
+                                })
+                            })
+                            document.querySelectorAll(".tabs-overview").forEach((tabsOverview) => {
+                                if (tabsOverview.querySelector(`:scope > .tab-button > b[title="${tab.title}"]`) == null) {
+                                    return
+                                }
+                                tabsOverview.querySelectorAll(`.tab-button`).forEach(tabButton => {
+                                    tabButton.classList.remove("active")
+                                    if (tabButton.querySelector(`:scope > b[title="${tab.title}"]`) != null) {
+                                        tabButton.classList.add("active")
+                                    }
+                                })
+                            })
+                            localStorage.selectedTabs = JSON.stringify(selectedTabs)
+                        } else {
+                            tabbed.querySelectorAll(":scope > ul > li").forEach((tab) => {
+                                tab.classList.remove("selected")
+                            })
+                            tabLinkList.forEach((tabLink) => {
+                                tabLink.classList.remove("active")
+                            })
+                            tab.classList.add("selected")
+                            tabLink.classList.add("active")
+                        }
                     })
                     tabLinkList.push(tabLink)
-                    if(tabIndex == 0) {
-                        tab.classList.add("selected")
-                        tabLink.classList.add("active")
-                    }
                 })
                 let tabsOverview = document.createElement("div")
                 tabsOverview.classList.add("tabs-overview")
@@ -63,28 +92,25 @@ class DoxygenAwesomeTabs {
                 tabLinkList.forEach((tabLink) => {
                     tabsOverview.appendChild(tabLink)
                 })
-                tabsOverviewContainer.appendChild(tabsOverview)
-                tabbed.before(tabsOverviewContainer)
 
-                function resize() {
-                    let maxTabHeight = 0
-                    tabbed.querySelectorAll(":scope > ul > li").forEach((tab, tabIndex) => {
-                        let visibility = tab.style.display
-                        tab.style.display = "block"
-                        maxTabHeight = Math.max(tab.offsetHeight, maxTabHeight)
-                        tab.style.display = visibility
-                    })
-                    tabbed.style.height = `${maxTabHeight + 10}px`
+                // Initialize selected tabs
+                if (tabbed.classList.contains("linked")) {
+                    let selectedTabs = 'selectedTabs' in localStorage 
+                        ? JSON.parse(localStorage.selectedTabs) : {}
+                    if (!(tabTitles.join(';') in selectedTabs)) {
+                        selectedTabs[tabTitles.join(';')] = tabTitles[0]
+                    }
+                    tabbed.querySelectorAll(":scope > ul > li")[tabTitles.indexOf(selectedTabs[tabTitles.join(';')])].classList.add("selected")
+                    tabLinkList[tabTitles.indexOf(selectedTabs[tabTitles.join(';')])].classList.add('active')
+                    localStorage.selectedTabs = JSON.stringify(selectedTabs)
+                } else {
+                    tabbed.querySelector(":scope > ul > li").classList.add("selected")
+                    tabLinkList[0].classList.add('active')
                 }
 
-                resize()
-                new ResizeObserver(resize).observe(tabbed)
+                tabsOverviewContainer.appendChild(tabsOverview)
+                tabbed.before(tabsOverviewContainer)
             })
         })
-        
-    }
-
-    static resize(tabbed) {
-        
     }
 }
