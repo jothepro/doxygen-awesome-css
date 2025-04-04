@@ -40,6 +40,7 @@ Some websites using this theme:
 - [Randolf Richardson's C++ classes](https://www.randolf.ca/c++/docs/)
 - [libCloudSync](https://jothepro.github.io/libCloudSync/)
 - [libsl3](https://a4z.github.io/libsl3/)
+- [DuMu<sup>x</sup>](https://dumux.org/docs/doxygen/master/)
 
 ## Installation
 
