@@ -41,6 +41,7 @@ Some websites using this theme:
 - [libCloudSync](https://jothepro.github.io/libCloudSync/)
 - [libsl3](https://a4z.github.io/libsl3/)
 - [DuMu<sup>x</sup>](https://dumux.org/docs/doxygen/master/)
+- [OpenRemise](https://openremise.at/)
 
 ## Installation
 
