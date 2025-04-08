@@ -32,6 +32,7 @@ This theme is an attempt to update the visuals of Doxygen without changing its o
 Some websites using this theme:
 
 - [Documentation of this repository](https://jothepro.github.io/doxygen-awesome-css/)
+- [FastLED](https://fastled.io/docs/)
 - [wxWidgets](https://docs.wxwidgets.org/3.2/)
 - [OpenCV 5.x](https://docs.opencv.org/5.x/)
 - [Zephyr](https://docs.zephyrproject.org/latest/doxygen/html/index.html)
