@@ -160,6 +160,8 @@ On small screens, the extension hides the TOC by default. The user can open it m
 ![](img/interactive_toc_mobile.png){width=380}
 </div>
 
+@note Starting from Doxygen Version 1.14.0, you have to specify `PAGE_OUTLINE_PANEL=NO` in your Doxyfile.
+
 ### Installation
 
 1. Add the required resources in your `Doxyfile`:
