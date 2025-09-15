@@ -1195,13 +1195,13 @@ div.toc li a.aboveActive {
  Code & Fragments
  */
 
-code, div.fragment, pre.fragment {
+code, div.fragment, pre.fragment, span.tt {
     border-radius: var(--border-radius-small);
     border: 1px solid var(--separator-color);
     overflow: hidden;
 }
 
-code {
+code, span.tt {
     display: inline;
     background: var(--code-background);
     color: var(--code-foreground);
