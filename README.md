@@ -1,4 +1,4 @@
-#  Doxygen Awesome
+# Doxygen Awesome
 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/jothepro/doxygen-awesome-css)](https://github.com/jothepro/doxygen-awesome-css/releases/latest)
 [![GitHub](https://img.shields.io/github/license/jothepro/doxygen-awesome-css)](https://github.com/jothepro/doxygen-awesome-css/blob/main/LICENSE)
@@ -25,7 +25,7 @@ This theme is an attempt to update the visuals of Doxygen without changing its o
 - 🧩 No changes to the HTML structure of Doxygen are required
 - 📱 Improved mobile usability
 - 🌘 Dark mode support!
-- 🥇 Works best with **doxygen 1.9.1** - **1.9.4** and **1.9.6** - **1.12.0**
+- 🥇 Works best with **doxygen 1.9.1** - **1.9.4** and **1.9.6** - **1.14.0**
 
 ## Examples
 
@@ -35,10 +35,8 @@ Some websites using this theme:
 - [wxWidgets](https://docs.wxwidgets.org/3.2/)
 - [OpenCV 5.x](https://docs.opencv.org/5.x/)
 - [Zephyr](https://docs.zephyrproject.org/latest/doxygen/html/index.html)
-- [FELTOR](https://mwiesenberger.github.io/feltor/dg/html/modules.html)
 - [Spatial Audio Framework (SAF)](https://leomccormack.github.io/Spatial_Audio_Framework/index.html)
 - [Randolf Richardson's C++ classes](https://www.randolf.ca/c++/docs/)
-- [libCloudSync](https://jothepro.github.io/libCloudSync/)
 - [libsl3](https://a4z.github.io/libsl3/)
 - [DuMu<sup>x</sup>](https://dumux.org/docs/doxygen/master/)
 - [OpenRemise](https://openremise.at/)
@@ -58,12 +56,13 @@ This can be done in several ways:
 All theme files are located in the root of this repository and start with the prefix `doxygen-awesome-`. You may not need all of them. Follow the install instructions to figure out what files are required for your setup.
 
 ### Git submodule
+
 For projects that use git, add the repository as a submodule and check out the desired release:
 
 ```sh
 git submodule add https://github.com/jothepro/doxygen-awesome-css.git
 cd doxygen-awesome-css
-git checkout v2.3.4
+git checkout v2.4.0
 ```
 
 ### CMake with FetchContent
@@ -105,7 +104,7 @@ to your project:
 
 ```sh
 cd your-project
-npm install https://github.com/jothepro/doxygen-awesome-css#v2.3.4 --save-dev
+npm install https://github.com/jothepro/doxygen-awesome-css#v2.4.0 --save-dev
 
 ls -l node_module/@jothepro/doxygen-awesome-css
 ```
