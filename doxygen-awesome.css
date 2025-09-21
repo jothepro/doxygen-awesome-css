@@ -323,6 +323,10 @@ a:link, a:visited, a:hover, a:focus, a:active {
     background: none;
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
 a.anchor {
     scroll-margin-top: var(--spacing-large);
     display: block;
