@@ -466,7 +466,7 @@ a.anchor {
 
 .sm-dox ul a {
     color: var(--page-foreground-color) !important;
-    background: var(--page-background-color);
+    background: none;
     font-size: var(--navigation-font-size);
 }
 
@@ -538,6 +538,13 @@ a.anchor {
     box-shadow: none;
     display: block;
     margin-top: 0;
+    margin-right: 0;
+}
+
+@media (min-width: 768px) {
+    .sm-dox li {
+        padding: 0;
+    }
 }
 
 /* until Doxygen 1.9.4 */
@@ -1018,7 +1025,7 @@ span.mlabel {
     color: var(--on-primary-color);
     border: none;
     padding: 4px 9px;
-    border-radius: 12px;
+    border-radius: var(--border-radius-large);
     margin-right: var(--spacing-medium);
 }
 
@@ -1071,7 +1078,7 @@ html.dark-mode div.contents .dotgraph iframe
     filter: brightness(89%) hue-rotate(180deg) invert();
 }
 
-h2.groupheader {
+td h2.groupheader, h2.groupheader {
     border-bottom: 0px;
     color: var(--page-foreground-color);
     box-shadow: 
@@ -1385,7 +1392,6 @@ div.toc li a.aboveActive {
  */
 
 code, div.fragment, pre.fragment, span.tt {
-    border-radius: var(--border-radius-small);
     border: 1px solid var(--separator-color);
     overflow: hidden;
 }
@@ -1395,9 +1401,11 @@ code, span.tt {
     background: var(--code-background);
     color: var(--code-foreground);
     padding: 2px 6px;
+    border-radius: var(--border-radius-small);
 }
 
 div.fragment, pre.fragment {
+    border-radius: var(--border-radius-medium);
     margin: var(--spacing-medium) 0;
     padding: calc(var(--spacing-large) - (var(--spacing-large) / 6)) var(--spacing-large);
     background: var(--fragment-background);
@@ -2612,7 +2620,7 @@ doxygen-awesome-dark-mode-toggle {
     height: var(--searchbar-height);
     background: none;
     border: none;
-    border-radius: var(--searchbar-height);
+    border-radius: var(--searchbar-border-radius);
     vertical-align: middle;
     text-align: center;
     line-height: var(--searchbar-height);
