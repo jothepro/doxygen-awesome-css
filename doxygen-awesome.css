@@ -1340,6 +1340,10 @@ div.line.glow {
  dl warning, attention, note, deprecated, bug, ...
  */
 
+dl {
+    line-height: calc(1.65 * var(--page-font-size));
+}
+
 dl.bug dt a, dl.deprecated dt a, dl.todo dt a {
     font-weight: bold !important;
 }
