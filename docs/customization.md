@@ -5,9 +5,9 @@
 
 ## CSS-Variables
 
-This theme is highly customizable because a lot of things are parameterized with CSS variables.
+This theme is highly customizable because many aspects are parameterized with CSS variables.
 
-Just to give you an idea of how flexible the styling is, click this button:
+To give you an idea of how flexible the styling is, click this button:
 
 <div class="primary-button" onclick="toggleThemeVariant()" onkeypress="if (event.keyCode == 13) toggleThemeVariant()" tabindex=0>Alter theme</div>
 
@@ -15,12 +15,12 @@ Just to give you an idea of how flexible the styling is, click this button:
 
 ### Setup
 
-It is recommended to add your own `custom.css` and overwrite the variables there:
+It is recommended to add your own `custom.css` and override the variables there:
 ```
 HTML_EXTRA_STYLESHEET  = doxygen-awesome.css custom.css
 ```
 
-Make sure to override the variables in the correct spot. All variables should be customized where they have been defined, in the `html` tag selector:
+Make sure to override the variables in the correct place. All variables should be customized where they have been defined, in the `html` tag selector:
 
 ```css
 html {
@@ -52,7 +52,7 @@ For dark-mode overrides, you have to choose where to put them, depending on whet
 
 ### Available variables
 
-The following list gives an overview of the variables defined in [`doxygen-awesome.css`](https://github.com/jothepro/doxygen-awesome-css/blob/main/doxygen-awesome.css).
+The following list provides an overview of the variables defined in [`doxygen-awesome.css`](https://github.com/jothepro/doxygen-awesome-css/blob/main/doxygen-awesome.css).
 
 The list is not complete. To explore all available variables, have a look at the CSS starting from [here](https://github.com/jothepro/doxygen-awesome-css/blob/main/doxygen-awesome.css#L30).
 All variables are defined at the beginning of the stylesheet.

@@ -10,22 +10,22 @@
 
 </div>
 
-**Doxygen Awesome** is a custom CSS theme for Doxygen HTML documentation with lots of customization parameters.
+**Doxygen Awesome** is a custom CSS theme for Doxygen HTML documentation with many customization options.
 
 ## Motivation
 
-I really like how the Doxygen HTML documentation is structured! But IMHO it looks a bit outdated.
+I really like how the Doxygen HTML documentation is structured, but IMHO it looks a bit outdated.
 
-This theme is an attempt to update the visuals of Doxygen without changing its overall layout too much.
+This theme is an attempt to modernize the visuals of Doxygen without changing its overall layout too much.
 
 ## Features
 
 - 🌈 Clean, modern design
-- 🚀 Heavily customizable by adjusting CSS variables
+- 🚀 Highly customizable by adjusting CSS variables
 - 🧩 No changes to the HTML structure of Doxygen are required
 - 📱 Improved mobile usability
 - 🌘 Dark mode support!
-- 🥇 Works best with **doxygen 1.9.1** - **1.9.4** and **1.9.6** - **1.14.0**
+- 🥇 Works best with **Doxygen 1.9.1** - **1.9.4** and **1.9.6** - **1.14.0**
 
 ## Examples
 
@@ -50,14 +50,14 @@ This can be done in several ways:
 - manually copying the files
 - adding the project as a Git submodule
 - downloading the project with CMake FetchContent
-- adding the project as a npm/xpm dependency
+- adding the project as an npm/xpm dependency
 - installing the theme system-wide
 
-All theme files are located in the root of this repository and start with the prefix `doxygen-awesome-`. You may not need all of them. Follow the install instructions to figure out what files are required for your setup.
+All theme files are located in the root of this repository and start with the prefix `doxygen-awesome-`. You may not need all of them. Follow the installation instructions to determine which files are required for your setup.
 
 ### Git submodule
 
-For projects that use git, add the repository as a submodule and check out the desired release:
+For projects that use Git, add the repository as a submodule and check out the desired release:
 
 ```sh
 git submodule add https://github.com/jothepro/doxygen-awesome-css.git
@@ -67,9 +67,9 @@ git checkout v2.4.0
 
 ### CMake with FetchContent
 
-For project that build with CMake, the `FetchContent` module can be used to download the repository at configure-time.
+For projects that build with CMake, the `FetchContent` module can be used to download the repository at configuration time.
 
-Add the following snippet to your `CMakeLists.txt`
+Add the following snippet to your `CMakeLists.txt`:
 
 ```cmake
 include(FetchContent)
@@ -106,7 +106,7 @@ to your project:
 cd your-project
 npm install https://github.com/jothepro/doxygen-awesome-css#v2.4.0 --save-dev
 
-ls -l node_module/@jothepro/doxygen-awesome-css
+ls -l node_modules/@jothepro/doxygen-awesome-css
 ```
 
 Similarly, in the [xPack](https://xpack.github.io) ecosystem, this project can be added
