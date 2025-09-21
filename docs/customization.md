@@ -71,6 +71,7 @@ All variables are defined at the beginning of the stylesheet.
 | `--spacing-small`                   | `5px`                                                       |                                                             |
 | `--spacing-medium`                  | `10px`                                                      |                                                             |
 | `--spacing-large`                   | `16px`                                                      |                                                             |
+| `--spacing-xlarge`                  | `20px`                                                      |                                                             |
 | **Border Radius**:<br>border radius for all rounded ui components. Will affect many components, like dropdowns, memitems, codeblocks, ...                     |||
 | `--border-radius-small`             | `5px`                                                       |                                                             |
 | `--border-radius-medium`            | `8px`                                                       |                                                             |

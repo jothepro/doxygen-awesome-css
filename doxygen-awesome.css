@@ -32,6 +32,7 @@ html {
     --spacing-small: 5px;
     --spacing-medium: 10px;
     --spacing-large: 16px;
+    --spacing-xlarge: 20px;
 
     /* default box shadow used for raising an element above the normal content. Used in dropdowns, search result, ... */
     --box-shadow: 0 2px 8px 0 rgba(0,0,0,.075);
@@ -953,7 +954,7 @@ div.headertitle {
 div.header .title {
     font-weight: 600;
     font-size: 225%;
-    padding: var(--spacing-medium) var(--spacing-large);
+    padding: var(--spacing-medium) var(--spacing-xlarge);
     word-break: break-word;
 }
 
@@ -982,7 +983,7 @@ span.mlabel:last-of-type {
 }
 
 div.contents {
-    padding: 0 var(--spacing-large);
+    padding: 0 var(--spacing-xlarge);
 }
 
 div.contents p, div.contents li {
@@ -991,6 +992,16 @@ div.contents p, div.contents li {
 
 div.contents div.dyncontent {
     margin: var(--spacing-medium) 0;
+}
+
+@media screen and (max-width: 767px) {
+    div.contents {
+        padding: 0 var(--spacing-large);
+    }
+
+    div.header .title {
+        padding: var(--spacing-medium) var(--spacing-large);
+    }
 }
 
 @media (prefers-color-scheme: dark) {
