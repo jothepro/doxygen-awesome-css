@@ -2518,6 +2518,7 @@ h2:hover a.anchorlink, h1:hover a.anchorlink, h3:hover a.anchorlink, h4:hover a.
     float: left;
     white-space: nowrap;
     font-weight: normal;
+font-family: var(--font-family);
     padding: calc(var(--spacing-large) / 2) var(--spacing-large);
     border-radius: var(--border-radius-medium);
     transition: background-color var(--animation-duration) ease-in-out, font-weight var(--animation-duration) ease-in-out;
