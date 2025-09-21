@@ -24,9 +24,9 @@ html {
     --separator-color: #dedede;
 
     /* border radius for all rounded components. Will affect many components, like dropdowns, memitems, codeblocks, ... */
-    --border-radius-large: 8px;
-    --border-radius-small: 4px;
-    --border-radius-medium: 6px;
+    --border-radius-large: 10px;
+    --border-radius-small: 5px;
+    --border-radius-medium: 8px;
 
     /* default spacings. Most components reference these values for spacing, to provide uniform spacing on the page. */
     --spacing-small: 5px;

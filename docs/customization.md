@@ -72,9 +72,9 @@ All variables are defined at the beginning of the stylesheet.
 | `--spacing-medium`                  | `10px`                                                      |                                                             |
 | `--spacing-large`                   | `16px`                                                      |                                                             |
 | **Border Radius**:<br>border radius for all rounded ui components. Will affect many components, like dropdowns, memitems, codeblocks, ...                     |||
-| `--border-radius-small`             | `4px`                                                       |                                                             |
-| `--border-radius-medium`            | `6px`                                                       |                                                             |
-| `--border-radius-large`             | `8px`                                                       |                                                             |
+| `--border-radius-small`             | `5px`                                                       |                                                             |
+| `--border-radius-medium`            | `8px`                                                       |                                                             |
+| `--border-radius-large`             | `10px`                                                       |                                                             |
 | **Content Width**:<br>The content is centered and constrained in its width. To make the content fill the whole page, set the following variable to `auto`.    |||
 | `--content-maxwidth`                | `1000px`                                                    |                                                             |
 | **Code Fragment Colors**:<br>Color-Scheme of multiline codeblocks                                                                                             |||
