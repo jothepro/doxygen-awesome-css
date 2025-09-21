@@ -118,6 +118,43 @@ To make tables span the full width of the page, no matter how wide the content i
 
 </div>
 
+### Buttons
+
+The theme comes with a custom class to add simple buttons:
+
+<div class="tabbed">
+
+- <span class="tab-title">Code</span>
+    ```md
+    <div class="primary-button">Click me!</div>
+    ```
+- <span class="tab-title">Result</span>
+    <div class="primary-button">Click me!</div>
+
+</div>
+
+### Bordered Images
+
+The `bordered_image` class can be used to add a neat rounded border around images in the documentation. With `darkmode_inverted_image` the image is filtered to adapt to darkmode:
+
+<div class="tabbed">
+
+- <span class="tab-title">Code</span>
+    ```md
+    <div class="darkmode_inverted_image bordered_image">
+
+    ![](img/testimage.png){width=250px}
+
+    </div>
+    ```
+- <span class="tab-title">Result</span>
+    <div class="darkmode_inverted_image bordered_image">
+    ![](img/testimage.png){width=250px}
+    </div>
+
+</div>
+
+
 <div class="section_buttons">
 
 | Previous                          |                                   Next |
