@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['installation_0',['Installation',['../index.html#autotoc_md11',1,'Installation'],['../md_docs_2extensions.html#autotoc_md20',1,'Installation'],['../md_docs_2extensions.html#autotoc_md22',1,'Installation'],['../md_docs_2extensions.html#autotoc_md24',1,'Installation'],['../md_docs_2extensions.html#autotoc_md26',1,'Installation'],['../md_docs_2extensions.html#autotoc_md28',1,'Installation'],['../md_docs_2extensions.html#autotoc_md30',1,'Installation']]],
-  ['installation_20instructions_1',['Further installation instructions',['../index.html#autotoc_md16',1,'']]],
-  ['instructions_2',['Further installation instructions',['../index.html#autotoc_md16',1,'']]],
-  ['interactive_20toc_3',['Interactive TOC',['../md_docs_2extensions.html#extension-toc',1,'']]]
+  ['images_0',['Bordered Images',['../md_docs_2tricks.html#autotoc_md43',1,'']]],
+  ['installation_1',['Installation',['../index.html#autotoc_md11',1,'Installation'],['../md_docs_2extensions.html#autotoc_md21',1,'Installation'],['../md_docs_2extensions.html#autotoc_md23',1,'Installation'],['../md_docs_2extensions.html#autotoc_md25',1,'Installation'],['../md_docs_2extensions.html#autotoc_md27',1,'Installation'],['../md_docs_2extensions.html#autotoc_md29',1,'Installation'],['../md_docs_2extensions.html#autotoc_md31',1,'Installation']]],
+  ['installation_20instructions_2',['Further installation instructions',['../index.html#autotoc_md17',1,'']]],
+  ['instructions_3',['Further installation instructions',['../index.html#autotoc_md17',1,'']]],
+  ['interactive_20toc_4',['Interactive TOC',['../md_docs_2extensions.html#extension-toc',1,'']]]
 ];
