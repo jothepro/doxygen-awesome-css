@@ -2687,3 +2687,21 @@ html.dark-mode .bordered_image img, /* < doxygen 1.9.3 */
 html.dark-mode .bordered_image object[type="image/svg+xml"] /* doxygen 1.9.3 */ {
     border-radius: var(--border-radius-small);
 }
+
+/*
+ Button
+*/
+
+.primary-button {
+    display: inline-block;
+    cursor: pointer;
+    background: var(--primary-color);
+    color: var(--page-background-color) !important;
+    border-radius: var(--border-radius-medium);
+    padding: var(--spacing-small) var(--spacing-medium);
+    text-decoration: none;
+}
+
+.primary-button:hover {
+    background: var(--primary-dark-color);
+}
