@@ -807,10 +807,43 @@ html.dark-mode iframe#MSearchResults {
 }
 
 #nav-sync {
-    bottom: 12px;
-    right: 12px;
+    bottom: var(--spacing-medium);
+    right: var(--spacing-medium) !important;
     top: auto !important;
     user-select: none;
+}
+
+div.nav-sync-icon {
+    border: 1px solid var(--separator-color);
+    border-radius: var(--border-radius-medium);
+    background: var(--page-background-color);
+    width: 30px;
+    height: 20px;
+}
+
+div.nav-sync-icon:hover {
+    background: var(--page-background-color);
+}
+
+span.sync-icon-left, div.nav-sync-icon:hover span.sync-icon-left {
+    border-left: 2px solid var(--primary-color);
+    border-top: 2px solid var(--primary-color);
+    top: 5px;
+    left: 6px;
+}
+span.sync-icon-right, div.nav-sync-icon:hover span.sync-icon-right {
+    border-right: 2px solid var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    top: 5px;
+    left: initial;
+    right: 6px;
+}
+
+div.nav-sync-icon.active::after, div.nav-sync-icon.active:hover::after {
+    border-top: 2px solid var(--primary-color);
+    top: 9px;
+    left: 6px;
+    width: 19px;
 }
 
 #nav-tree .selected {
