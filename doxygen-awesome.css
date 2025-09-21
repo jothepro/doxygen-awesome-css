@@ -435,7 +435,7 @@ a.anchor {
     }
 
     .sm-dox a span.sub-arrow {
-top: 15px;
+        top: 15px;
         right: 10px;
         box-sizing: content-box;
         padding: 0;
@@ -464,7 +464,7 @@ top: 15px;
 
     .sm-dox ul a:hover span.sub-arrow {
         border-color: var(--menu-focus-foreground);
-background: none;
+        background: none;
     }
 }
 
@@ -805,7 +805,7 @@ html.dark-mode iframe#MSearchResults {
  */
 
 #side-nav {
-        min-width: 8px;
+    min-width: 8px;
     max-width: 50vw;
 }
 
@@ -831,12 +831,12 @@ html.dark-mode iframe#MSearchResults {
 #nav-tree {
     background: var(--side-nav-background);
     margin-right: -1px;
-padding: 0;
+    padding: 0;
 }
 
 #nav-tree .label {
     font-size: var(--navigation-font-size);
-line-height: var(--tree-item-height);
+    line-height: var(--tree-item-height);
 }
 
 #nav-tree span.label a:hover {
@@ -848,7 +848,7 @@ line-height: var(--tree-item-height);
     line-height: var(--tree-item-height);
     overflow: hidden;
     text-overflow: ellipsis;
-margin: 0;
+    margin: 0;
     padding: 0;
 }
 
@@ -2084,7 +2084,7 @@ table.memberdecls .mdescLeft, table.memberdecls .mdescRight {
     background: none;
     color: var(--page-foreground-color);
     padding: var(--spacing-small) 0;
-border: 0;
+    border: 0;
 }
 
 table.memberdecls [class^="memdesc"] {
@@ -2200,7 +2200,7 @@ div.dynheader img[src="closed.png"] {
         border-top: 0 !important;
         padding-top: 0 !important;
         padding-right: var(--spacing-large);
-padding-bottom: var(--spacing-medium);
+        padding-bottom: var(--spacing-medium);
         overflow-x: auto;
     }
 
@@ -2439,8 +2439,8 @@ div.qindex {
     background: var(--page-background-color);
     border: none;
     border-top: 1px solid var(--separator-color);
-        border-bottom: 0;
-        font-size: var(--navigation-font-size);
+    border-bottom: 0;
+    font-size: var(--navigation-font-size);
 }
 
 img.footer {
@@ -2830,7 +2830,7 @@ h2:hover a.anchorlink, h1:hover a.anchorlink, h3:hover a.anchorlink, h4:hover a.
     float: left;
     white-space: nowrap;
     font-weight: normal;
-font-family: var(--font-family);
+    font-family: var(--font-family);
     padding: calc(var(--spacing-large) / 2) var(--spacing-large);
     border-radius: var(--border-radius-medium);
     transition: background-color var(--animation-duration) ease-in-out, font-weight var(--animation-duration) ease-in-out;
