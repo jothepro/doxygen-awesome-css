@@ -556,6 +556,17 @@ a.anchor {
     padding-left: 0
 }
 
+/* Doxygen 1.14.0 */
+.search-icon::before {
+    background: none;
+    top: 5px;
+}
+
+.search-icon::after {
+    background: none;
+    top: 12px;
+}
+
 .SelectionMark {
     user-select: none;
 }
