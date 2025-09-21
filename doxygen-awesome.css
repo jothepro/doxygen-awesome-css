@@ -1266,7 +1266,7 @@ div.fragment, pre.fragment {
     }
 }
 
-code, code a, pre.fragment, div.fragment, div.fragment .line, div.fragment span, div.fragment .line a, div.fragment .line span {
+code, code a, pre.fragment, div.fragment, div.fragment .line, div.fragment span, div.fragment .line a, div.fragment .line span, span.tt {
     font-family: var(--font-family-monospace);
     font-size: var(--code-font-size) !important;
 }
