@@ -1656,6 +1656,7 @@ div.memitem {
     border-top-right-radius: var(--border-radius-medium);
     border-bottom-right-radius: var(--border-radius-medium);
     border-bottom-left-radius: var(--border-radius-medium);
+    border-top-left-radius: 0;
     overflow: hidden;
     display: block !important;
 }
@@ -1922,8 +1923,10 @@ table.memberdecls tr[class^='memitem'] .memTemplParams {
     white-space: normal;
 }
 
-table.memberdecls .memItemLeft,
-table.memberdecls .memItemRight,
+table.memberdecls tr.heading + tr[class^='memitem'] td.memItemLeft,
+table.memberdecls tr.heading + tr[class^='memitem'] td.memItemRight,
+table.memberdecls td.memItemLeft,
+table.memberdecls td.memItemRight,
 table.memberdecls .memTemplItemLeft,
 table.memberdecls .memTemplItemRight,
 table.memberdecls .memTemplParams {
@@ -1935,8 +1938,34 @@ table.memberdecls .memTemplParams {
     background-color: var(--fragment-background);
 }
 
+@media screen and (min-width: 768px) {
+
+    tr.heading + tr[class^='memitem'] td.memItemRight, tr.groupHeader + tr[class^='memitem'] td.memItemRight, tr.inherit_header + tr[class^='memitem'] td.memItemRight {
+        border-top-right-radius: var(--border-radius-small);
+    }
+
+    table.memberdecls tr:last-child td.memItemRight, table.memberdecls tr:last-child td.mdescRight, table.memberdecls tr[class^='memitem']:has(+ tr.groupHeader) td.memItemRight, table.memberdecls tr[class^='memitem']:has(+ tr.inherit_header) td.memItemRight, table.memberdecls tr[class^='memdesc']:has(+ tr.groupHeader) td.mdescRight, table.memberdecls tr[class^='memdesc']:has(+ tr.inherit_header) td.mdescRight {
+        border-bottom-right-radius: var(--border-radius-small);
+    }
+
+    table.memberdecls tr:last-child td.memItemLeft, table.memberdecls tr:last-child td.mdescLeft, table.memberdecls tr[class^='memitem']:has(+ tr.groupHeader) td.memItemLeft, table.memberdecls tr[class^='memitem']:has(+ tr.inherit_header) td.memItemLeft, table.memberdecls tr[class^='memdesc']:has(+ tr.groupHeader) td.mdescLeft, table.memberdecls tr[class^='memdesc']:has(+ tr.inherit_header) td.mdescLeft {
+        border-bottom-left-radius: var(--border-radius-small);
+    }
+
+    tr.heading + tr[class^='memitem'] td.memItemLeft, tr.groupHeader + tr[class^='memitem'] td.memItemLeft, tr.inherit_header + tr[class^='memitem'] td.memItemLeft {
+        border-top-left-radius: var(--border-radius-small);
+    }
+
+}
+
+table.memname td.memname {
+    font-size: var(--memname-font-size);
+}
+
 table.memberdecls .memTemplItemLeft,
-table.memberdecls .memTemplItemRight {
+table.memberdecls .template .memItemLeft,
+table.memberdecls .memTemplItemRight,
+table.memberdecls .template .memItemRight {
     padding-top: 2px;
 }
 
@@ -1948,13 +1977,13 @@ table.memberdecls .memTemplParams {
     padding-bottom: var(--spacing-small);
 }
 
-table.memberdecls .memTemplItemLeft {
+table.memberdecls .memTemplItemLeft, table.memberdecls .template .memItemLeft {
     border-radius: 0 0 0 var(--border-radius-small);
     border-left: 1px solid var(--separator-color);
     border-top: 0;
 }
 
-table.memberdecls .memTemplItemRight {
+table.memberdecls .memTemplItemRight, table.memberdecls .template .memItemRight {
     border-radius: 0 0 var(--border-radius-small) 0;
     border-right: 1px solid var(--separator-color);
     padding-left: 0;
@@ -1980,7 +2009,13 @@ table.memberdecls .mdescLeft, table.memberdecls .mdescRight {
     background: none;
     color: var(--page-foreground-color);
     padding: var(--spacing-small) 0;
+border: 0;
 }
+
+table.memberdecls [class^="memdesc"] {
+    box-shadow: none;
+}
+
 
 table.memberdecls .memItemLeft,
 table.memberdecls .memTemplItemLeft {
@@ -2004,6 +2039,10 @@ table.memberdecls .inherit_header td {
     color: var(--page-secondary-foreground-color);
 }
 
+table.memberdecls span.dynarrow {
+    left: 10px;
+}
+
 table.memberdecls img[src="closed.png"],
 table.memberdecls img[src="open.png"],
 div.dynheader img[src="open.png"],
@@ -2018,6 +2057,10 @@ div.dynheader img[src="closed.png"] {
     float: left;
     margin-left: -10px;
     transition: transform var(--animation-duration) ease-out;
+}
+
+tr.heading + tr[class^='memitem'] td.memItemLeft, tr.groupHeader + tr[class^='memitem'] td.memItemLeft, tr.inherit_header + tr[class^='memitem'] td.memItemLeft, tr.heading + tr[class^='memitem'] td.memItemRight, tr.groupHeader + tr[class^='memitem'] td.memItemRight, tr.inherit_header + tr[class^='memitem'] td.memItemRight {
+    border-top: 1px solid var(--separator-color);
 }
 
 table.memberdecls img {
@@ -2044,7 +2087,10 @@ div.dynheader img[src="closed.png"] {
     table.memberdecls .mdescRight,
     table.memberdecls .memTemplItemLeft,
     table.memberdecls .memTemplItemRight,
-    table.memberdecls .memTemplParams {
+    table.memberdecls .memTemplParams,
+    table.memberdecls .template .memItemLeft,
+    table.memberdecls .template .memItemRight,
+    table.memberdecls .template .memParams {
         display: block;
         text-align: left;
         padding-left: var(--spacing-large);
@@ -2057,12 +2103,14 @@ div.dynheader img[src="closed.png"] {
 
     table.memberdecls .memItemLeft,
     table.memberdecls .mdescLeft,
-    table.memberdecls .memTemplItemLeft {
-        border-bottom: 0;
-        padding-bottom: 0;
+    table.memberdecls .memTemplItemLeft,
+    table.memberdecls .template .memItemLeft {
+        border-bottom: 0 !important;
+        padding-bottom: 0 !important;
     }
 
-    table.memberdecls .memTemplItemLeft {
+    table.memberdecls .memTemplItemLeft,
+    table.memberdecls .template .memItemLeft {
         padding-top: 0;
     }
 
@@ -2072,10 +2120,12 @@ div.dynheader img[src="closed.png"] {
 
     table.memberdecls .memItemRight, 
     table.memberdecls .mdescRight,
-    table.memberdecls .memTemplItemRight {
-        border-top: 0;
-        padding-top: 0;
+    table.memberdecls .memTemplItemRight,
+    table.memberdecls .template .memItemRight {
+        border-top: 0 !important;
+        padding-top: 0 !important;
         padding-right: var(--spacing-large);
+padding-bottom: var(--spacing-medium);
         overflow-x: auto;
     }
 
@@ -2109,6 +2159,22 @@ div.dynheader img[src="closed.png"] {
             opacity: 1;
             max-height: 200px;
         }
+    }
+
+    tr.heading + tr[class^='memitem'] td.memItemRight, tr.groupHeader + tr[class^='memitem'] td.memItemRight, tr.inherit_header + tr[class^='memitem'] td.memItemRight {
+        border-top-right-radius: 0;
+    }
+
+    table.memberdecls tr:last-child td.memItemRight, table.memberdecls tr:last-child td.mdescRight, table.memberdecls tr[class^='memitem']:has(+ tr.groupHeader) td.memItemRight, table.memberdecls tr[class^='memitem']:has(+ tr.inherit_header) td.memItemRight, table.memberdecls tr[class^='memdesc']:has(+ tr.groupHeader) td.mdescRight, table.memberdecls tr[class^='memdesc']:has(+ tr.inherit_header) td.mdescRight {
+        border-bottom-right-radius: 0;
+    }
+
+    table.memberdecls tr:last-child td.memItemLeft, table.memberdecls tr:last-child td.mdescLeft, table.memberdecls tr[class^='memitem']:has(+ tr.groupHeader) td.memItemLeft, table.memberdecls tr[class^='memitem']:has(+ tr.inherit_header) td.memItemLeft, table.memberdecls tr[class^='memdesc']:has(+ tr.groupHeader) td.mdescLeft, table.memberdecls tr[class^='memdesc']:has(+ tr.inherit_header) td.mdescLeft {
+        border-bottom-left-radius: 0;
+    }
+
+    tr.heading + tr[class^='memitem'] td.memItemLeft, tr.groupHeader + tr[class^='memitem'] td.memItemLeft, tr.inherit_header + tr[class^='memitem'] td.memItemLeft {
+        border-top-left-radius: 0;
     }
 }
 
