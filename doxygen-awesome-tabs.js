@@ -4,7 +4,7 @@
 Doxygen Awesome
 https://github.com/jothepro/doxygen-awesome-css
 
-Copyright (c) 2023 jothepro
+Copyright (c) 2023 - 2025 jothepro
 
 */
 
