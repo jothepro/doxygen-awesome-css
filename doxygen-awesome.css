@@ -1236,6 +1236,96 @@ div.toc li a.aboveActive {
 }
 
 /*
+ Page Outline (Doxygen >= 1.14.0)
+*/
+
+#page-nav {
+    background: var(--page-background-color);
+    border-left: 1px solid var(--separator-color);
+}
+
+#page-nav #page-nav-resize-handle {
+    background: var(--separator-color);
+}
+
+#page-nav #page-nav-resize-handle::after {
+    border-left: 1px solid var(--primary-color);
+    border-right: 1px solid var(--primary-color);
+}
+
+#page-nav #page-nav-tree #page-nav-contents {
+    top: var(--spacing-large);
+}
+
+#page-nav ul.page-outline {
+    margin: 0;
+    padding: 0;
+}
+
+#page-nav ul.page-outline li a {
+    font-size: var(--toc-font-size) !important;
+    color: var(--page-secondary-foreground-color) !important;
+    display: inline-block;
+    line-height: calc(2 * var(--toc-font-size));
+}
+
+#page-nav ul.page-outline li a a.anchorlink {
+    display: none;
+}
+
+#page-nav ul.page-outline li.vis ~ * a {
+    color: var(--page-foreground-color) !important;
+}
+
+#page-nav ul.page-outline li.vis:not(.vis ~ .vis) a, #page-nav ul.page-outline li a:hover {
+    color: var(--primary-color) !important;
+}
+
+#page-nav ul.page-outline .vis {
+    background: var(--page-background-color);
+    position: relative;
+}
+
+#page-nav ul.page-outline .vis::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 4px;
+    background: var(--page-secondary-foreground-color);
+}
+
+#page-nav ul.page-outline .vis:not(.vis ~ .vis)::after {
+    top: 1px;
+    border-top-right-radius: var(--border-radius-small);
+}
+
+#page-nav ul.page-outline .vis:not(:has(~ .vis))::after {
+    bottom: 1px;
+    border-bottom-right-radius: var(--border-radius-small);
+}
+
+
+#page-nav ul.page-outline .arrow {
+    display: inline-block;
+}
+
+#page-nav ul.page-outline .arrow span {
+    display: none;
+}
+
+@media screen and (max-width: 767px) {
+    #container {
+        grid-template-columns: initial !important;
+    }
+
+    #page-nav {
+        display: none;
+    }
+}
+
+/*
  Code & Fragments
  */
 
