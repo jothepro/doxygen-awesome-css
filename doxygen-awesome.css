@@ -773,10 +773,13 @@ html.dark-mode iframe#MSearchResults {
  */
 
 #side-nav {
-    padding: 0 !important;
-    background: var(--side-nav-background);
-    min-width: 8px;
+        min-width: 8px;
     max-width: 50vw;
+}
+
+
+#nav-tree, #top {
+    border-right: 1px solid var(--separator-color);
 }
 
 @media screen and (max-width: 767px) {
@@ -787,15 +790,25 @@ html.dark-mode iframe#MSearchResults {
     #doc-content {
         margin-left: 0 !important;
     }
+
+    #top {
+        border-right: none;
+    }
 }
 
 #nav-tree {
-    background: transparent;
-    margin-right: 1px;
+    background: var(--side-nav-background);
+    margin-right: -1px;
+padding: 0;
 }
 
 #nav-tree .label {
     font-size: var(--navigation-font-size);
+line-height: var(--tree-item-height);
+}
+
+#nav-tree span.label a:hover {
+    background: none;
 }
 
 #nav-tree .item {
@@ -803,6 +816,16 @@ html.dark-mode iframe#MSearchResults {
     line-height: var(--tree-item-height);
     overflow: hidden;
     text-overflow: ellipsis;
+margin: 0;
+    padding: 0;
+}
+
+#nav-tree-contents {
+    margin: 0;
+}
+
+#main-menu > li:last-child {
+    height: auto;
 }
 
 #nav-tree .item > a:focus {
@@ -884,7 +907,24 @@ div.nav-sync-icon.active::after, div.nav-sync-icon.active:hover::after {
     background: none;
 }
 
-.arrow {
+#nav-tree span.arrowhead {
+    margin: 0 0 1px 2px;
+}
+
+span.arrowhead {
+    border-color: var(--primary-light-color);
+}
+
+.selected span.arrowhead {
+    border-color: var(--primary-color);
+}
+
+#nav-tree ul li:first-child > div > a {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.contents .arrow {
     color: inherit;
     cursor: pointer;
     font-size: 45%;
@@ -892,7 +932,7 @@ div.nav-sync-icon.active::after, div.nav-sync-icon.active:hover::after {
     margin-right: 2px;
     font-family: serif;
     height: auto;
-    text-align: right;
+    padding-bottom: 4px;
 }
 
 #nav-tree div.item:hover .arrow, #nav-tree a:focus .arrow {
@@ -906,9 +946,11 @@ div.nav-sync-icon.active::after, div.nav-sync-icon.active:hover::after {
 }
 
 .ui-resizable-e {
-    width: 4px;
-    background: transparent;
-    box-shadow: inset -1px 0 0 0 var(--separator-color);
+    background: none;
+}
+
+.ui-resizable-e:hover {
+    background: var(--separator-color);
 }
 
 /*
@@ -917,7 +959,7 @@ div.nav-sync-icon.active::after, div.nav-sync-icon.active:hover::after {
 
 div.header {
     border-bottom: 1px solid var(--separator-color);
-    background-color: var(--page-background-color);
+    background: none;
     background-image: none;
 }
 
