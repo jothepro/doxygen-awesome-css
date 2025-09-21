@@ -15,6 +15,8 @@ html {
     --primary-light-color: #70b1e9;
     --on-primary-color: #ffffff;
 
+    --link-color: var(--primary-color);
+
     /* page base colors */
     --page-background-color: #ffffff;
     --page-foreground-color: #2f4153;
@@ -315,7 +317,7 @@ p.reference, p.definition {
 }
 
 a:link, a:visited, a:hover, a:focus, a:active {
-    color: var(--primary-color) !important;
+    color: var(--link-color) !important;
     font-weight: 500;
     background: none;
 }
