@@ -9,7 +9,7 @@ This theme is highly customizable because a lot of things are parameterized with
 
 Just to give you an idea of how flexible the styling is, click this button:
 
-<div class="alter-theme-button" onclick="toggle_alternative_theme()" onkeypress="if (event.keyCode == 13) toggle_alternative_theme()" tabindex=0>Alter theme</div>
+<div class="primary-button" onclick="toggleThemeVariant()" onkeypress="if (event.keyCode == 13) toggleThemeVariant()" tabindex=0>Alter theme</div>
 
 <br><hr>
 

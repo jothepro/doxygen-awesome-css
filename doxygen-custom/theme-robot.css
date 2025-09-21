@@ -1,0 +1,62 @@
+html.theme-robot {
+    /* primary theme color. This will affect the entire websites color scheme: links, arrows, labels, ... */
+    --primary-color: #1c89a4;
+    --primary-dark-color: #1a6f84;
+    --primary-light-color: #5abcd4;
+    --primary-lighter-color: #cae1f1;
+    --primary-lightest-color: #e9f1f8;
+
+    --fragment-background: #ececec;
+    --code-background: #ececec;
+
+    /* page base colors */
+    --page-background-color: white;
+    --page-foreground-color: #2c3e50;
+    --page-secondary-foreground-color: #67727e;
+
+
+    --border-radius-large: 0px;
+    --border-radius-small: 0px;
+    --border-radius-medium: 0px;
+
+    --spacing-small: 3px;
+    --spacing-medium: 6px;
+    --spacing-large: 12px;
+
+    --top-height: 125px;
+
+    --side-nav-background: var(--page-background-color);
+    --side-nav-foreground: var(--page-foreground-color);
+    --header-foreground: var(--side-nav-foreground);
+    --searchbar-border-radius: var(--border-radius-medium);
+    --header-background: var(--side-nav-background);
+    --header-foreground: var(--side-nav-foreground);
+
+    --toc-background: rgb(243, 240, 252);
+    --toc-foreground: var(--page-foreground-color);
+
+    --font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+    --page-font-size: 14px;
+    --box-shadow: none;
+    --separator-color: #cdcdcd;
+}
+
+html.theme-robot.dark-mode {
+    color-scheme: dark;
+
+    --primary-color: #49cad3;
+    --primary-dark-color: #8ed2d7;
+    --primary-light-color: #377479;
+    --primary-lighter-color: #191e21;
+    --primary-lightest-color: #191a1c;
+
+    --fragment-background: #000000;
+    --code-background: #000000;
+
+    --page-background-color: #161616;
+    --page-foreground-color: #d2dbde;
+    --page-secondary-foreground-color: #555555;
+    --separator-color: #545454;
+    --toc-background: #20142C;
+
+}
