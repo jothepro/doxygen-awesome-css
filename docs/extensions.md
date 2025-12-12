@@ -2,10 +2,10 @@
 
 [TOC]
 
-On top of the base theme provided by `doxygen-awesome.css`, this repository comes with Javascript extensions that require additional setup steps to get them running.
+In addition to the base theme provided by `doxygen-awesome.css`, this repository comes with JavaScript extensions that require additional setup steps to get them running.
 
 The extensions require customizations in the header HTML template.
-This is how you can create the default template with Doxygen:
+Here is how you can create the default template with Doxygen:
 
 1. Create default header template:
     ```sh
@@ -21,11 +21,12 @@ This is how you can create the default template with Doxygen:
 
 ## Dark Mode Toggle {#extension-dark-mode-toggle}
 
-Adds a button next to the search bar to enable and disable the dark theme variant manually:
+Adds a button next to the search bar to manually enable and disable the dark theme variant:
 
 <div class="darkmode_inverted_image bordered_image">
 
 ![](img/darkmode_toggle.png){width=250px}
+
 </div>
 
 ### Installation
@@ -54,7 +55,7 @@ Changing the tooltip of the button:
 DoxygenAwesomeDarkModeToggle.title = "Zwischen hellem/dunklem Modus wechseln"
 ```
 
-Changing Icons. Both Emoji or SVG icons are supported:
+Changing icons: Both Emoji and SVG icons are supported:
 ```js
 DoxygenAwesomeDarkModeToggle.lightModeIcon = '🌞'
 // icon from https://fonts.google.com/icons
@@ -63,7 +64,6 @@ DoxygenAwesomeDarkModeToggle.darkModeIcon = `<svg xmlns="http://www.w3.org/2000/
 
 All customizations must be applied before calling `DoxygenAwesomeDarkModeToggle.init()`!
 
-
 ## Fragment Copy Button {#extension-copy-button}
 
 Shows a copy button when the user hovers over a code fragment:
@@ -71,6 +71,7 @@ Shows a copy button when the user hovers over a code fragment:
 <div class="darkmode_inverted_image bordered_image">
 
 ![](img/fragment_copy_button.png){width=490}
+
 </div>
 
 ### Installation
@@ -108,11 +109,12 @@ All customizations must be applied before calling `DoxygenAwesomeDarkModeToggle.
 
 ## Paragraph Linking {#extension-para}
 
-Provides a button on hover behind every headline to allow easy creation of a permanent link to the headline:
+Provides a button that appears on hover behind every headline, allowing easy creation of a permanent link to the headline:
 
 <div class="darkmode_inverted_image bordered_image">
 
 ![](img/paragraph_link.png){width=220}
+
 </div>
 
 Works for all headlines and for many documentation section titles.
@@ -137,11 +139,13 @@ Works for all headlines and for many documentation section titles.
 ### Customizing
 
 The button tooltip can be changed:
+
 ```js
 DoxygenAwesomeParagraphLink.title = "Abschnitt verknüpfen"
 ```
 
-The icon of the button can be changed. Both plain characters or SVG icons are supported:
+The icon of the button can be changed. Both plain characters and SVG icons are supported:
+
 ```js
 DoxygenAwesomeParagraphLink.icon = "¶"
 ```
@@ -150,17 +154,17 @@ All customizations must be applied before calling `DoxygenAwesomeParagraphLink.i
 
 ## Interactive TOC {#extension-toc}
 
-On large screens, the Table of Contents (TOC) is anchored on the top right of the page. This extension visualizes the reading progress by dynamically highlighting the currently active section.
+On large screens, the Table of Contents (TOC) is anchored at the top right of the page. This extension visualizes the reading progress by dynamically highlighting the currently active section.
 
 On small screens, the extension hides the TOC by default. The user can open it manually when needed:
 
-
 <div class="darkmode_inverted_image bordered_image">
-
 ![](img/interactive_toc_mobile.png){width=380}
 </div>
 
 ### Installation
+
+@note Starting from Doxygen Version 1.14.0, you have to specify `PAGE_OUTLINE_PANEL=NO` in your Doxyfile to use this extension.
 
 1. Add the required resources in your `Doxyfile`:
    - **HTML_EXTRA_FILES:** `doxygen-awesome-interactive-toc.js`
@@ -180,18 +184,18 @@ On small screens, the extension hides the TOC by default. The user can open it m
 ### Customizing
 
 The offset for when a headline is considered active can be changed. A smaller value means that the headline of the section must be closer to the top of the viewport before it is highlighted in the TOC:
+
 ```js
 DoxygenAwesomeInteractiveToc.topOffset = 45
 ```
 
 Hiding the TOC on small screens can be disabled. It is still interactive and can be hidden by the user but will now be open by default:
+
 ```js
 DoxygenAwesomeInteractiveToc.hideMobileMenu = false
 ```
 
 ## Tabs {#extension-tabs}
-
-@warning Experimental feature! Please report bugs [here](https://github.com/jothepro/doxygen-awesome-css/issues).
 
 This extension allows to arrange list content in tabs:
 
@@ -205,7 +209,6 @@ This extension allows to arrange list content in tabs:
     2. with multiple items
 
 </div>
-
 
 ### Installation
 
@@ -226,8 +229,8 @@ This extension allows to arrange list content in tabs:
 
 ### Usage
 
-Each list that is supposed to be displayed as tabs has to be wrapped with the `tabbed` CSS class.
-Each item in the list must start with an element that has the class `tab-title`. It will then be used as tab title.
+Each list that is supposed to be displayed as tabs must be wrapped with the `tabbed` CSS class.
+Each item in the list must start with an element that has the class `tab-title`. It will then be used as the tab title.
 
 ```md
 <div class="tabbed">
@@ -240,20 +243,19 @@ Each item in the list must start with an element that has the class `tab-title`.
 
 ## Page Navigation {#extension-page-navigation}
 
-@warning Experimental feature! Please report bugs [here](https://github.com/jothepro/doxygen-awesome-css/issues).
-
-To allow the user to easily navigate from one document to another, "Next" and "Previous" buttons can be added at the end of a Markdown document.
+To allow users to easily navigate from one document to another, "Next" and "Previous" buttons can be added at the end of a Markdown document.
 
 ### Installation
 
-The feature is shipped inside the default `doxygen-awesome.css`. No additional stylesheets or scripts need to be added.
+The feature is included in the default `doxygen-awesome.css`. No additional stylesheets or scripts need to be added.
 
 ### Usage
 
 The following conditions must be met for the feature to work properly:
+
 - The navigation must be inside a Markdown table with 1-2 columns.
 - The alignment of the column defines the alignment of the arrow on the navigation button.
-- the table must be wrapped inside a `<div>` with the class `section_buttons`.
+- The table must be wrapped inside a `<div>` with the class `section_buttons`.
 
 <div class="tabbed">
 

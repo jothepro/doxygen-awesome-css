@@ -4,7 +4,7 @@
 
 ## Diagrams with Graphviz {#tricks-graphviz}
 
-To get the best-looking class diagrams for your documentation, generate them with Graphviz as vector graphics with transparent background:
+To get the best-looking class diagrams for your documentation, generate them with Graphviz as vector graphics and a transparent background:
 
 ```
 # Doxyfile
@@ -13,7 +13,7 @@ DOT_IMAGE_FORMAT = svg
 DOT_TRANSPARENT = YES
 ```
 
-In case `INTERACTIVE_SVG = YES` is set in the Doxyfile, all user-defined dotgraphs must be wrapped with the `interactive_dotgraph` CSS class for them to be rendered correctly:
+If `INTERACTIVE_SVG = YES` is set in the Doxyfile, all user-defined dotgraphs must be wrapped with the `interactive_dotgraph` CSS class for them to be rendered correctly:
 
 ```md
 <div class="interactive_dotgraph">
@@ -23,7 +23,7 @@ In case `INTERACTIVE_SVG = YES` is set in the Doxyfile, all user-defined dotgrap
 </div>
 ```
 
-@note Both the default overflow scrolling behavior in this theme and the interactive editor enabled by `INTERACTIVE_SVG` are unsatisfying workarounds IMHO. Consider designing your graphs to be narrow enough to fit the page to avoid scrolling.
+@note Both the default overflow scrolling behavior in this theme and the interactive editor enabled by `INTERACTIVE_SVG` are, in my opinion, unsatisfying workarounds. Consider designing your graphs to be narrow enough to fit the page to avoid scrolling.
 
 ## Disable Dark Mode {#tricks-darkmode}
 
@@ -41,12 +41,12 @@ The same can be done to always enable dark mode:
 ```
 
 
-@warning This only works if you don't use the dark-mode toggle extension.
+@warning This only works if you do not use the dark-mode toggle extension.
 
 ## Choosing Sidebar Width {#tricks-sidebar}
 
-If you have enabled the sidebar-only theme variant, make sure to carefully choose a proper width for your sidebar.
-It should be wide enough to hold the icon, project title and version number. If the content is too wide, it will be
+If you have enabled the sidebar-only theme variant, make sure to carefully choose an appropriate width for your sidebar.
+It should be wide enough to hold the icon, project title, and version number. If the content is too wide, it will be
 cut off.
 
 ```css
@@ -65,8 +65,8 @@ TREEVIEW_WIDTH = 335
 
 ## Formatting Tables {#tricks-tables}
 
-By default tables in this theme are left-aligned and as wide as required to fit their content.
-Those properties can be changed for individual tables.
+By default, tables in this theme are left-aligned and as wide as required to fit their content.
+These properties can be changed for individual tables.
 
 ### Centering
 
@@ -117,6 +117,43 @@ To make tables span the full width of the page, no matter how wide the content i
     </div>
 
 </div>
+
+### Buttons
+
+The theme comes with a custom class to add simple buttons:
+
+<div class="tabbed">
+
+- <span class="tab-title">Code</span>
+    ```md
+    <div class="primary-button">Click me!</div>
+    ```
+- <span class="tab-title">Result</span>
+    <div class="primary-button">Click me!</div>
+
+</div>
+
+### Bordered Images
+
+The `bordered_image` class can be used to add a neat rounded border around images in the documentation. With `darkmode_inverted_image` the image is filtered to adapt to darkmode:
+
+<div class="tabbed">
+
+- <span class="tab-title">Code</span>
+    ```md
+    <div class="darkmode_inverted_image bordered_image">
+
+    ![](img/testimage.png){width=250px}
+
+    </div>
+    ```
+- <span class="tab-title">Result</span>
+    <div class="darkmode_inverted_image bordered_image">
+    ![](img/testimage.png){width=250px}
+    </div>
+
+</div>
+
 
 <div class="section_buttons">
 

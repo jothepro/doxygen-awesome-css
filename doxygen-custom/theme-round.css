@@ -1,8 +1,8 @@
-html.alternative {
+html.theme-round {
     /* primary theme color. This will affect the entire websites color scheme: links, arrows, labels, ... */
     --primary-color: #AF7FE4;
     --primary-dark-color: #9270E4;
-    --primary-light-color: #7aabd6;
+    --primary-light-color: #d2b7ef;
     --primary-lighter-color: #cae1f1;
     --primary-lightest-color: #e9f1f8;
 
@@ -18,6 +18,7 @@ html.alternative {
     --spacing-small: 8px;
     --spacing-medium: 14px;
     --spacing-large: 19px;
+    --spacing-xlarge: 21px;
 
     --top-height: 125px;
 
@@ -33,12 +34,12 @@ html.alternative {
     --toc-foreground: var(--page-foreground-color);
 }
 
-html.alternative.dark-mode {
+html.theme-round.dark-mode {
     color-scheme: dark;
 
     --primary-color: #AF7FE4;
-    --primary-dark-color: #9270E4;
-    --primary-light-color: #4779ac;
+    --primary-dark-color: #715292;
+    --primary-light-color: #ae97c7;
     --primary-lighter-color: #191e21;
     --primary-lightest-color: #191a1c;
 
