@@ -12,7 +12,10 @@ class DoxygenAwesomeTabs {
     
     static init() {
         window.addEventListener("load", () => {
-            document.querySelectorAll(".tabbed:not(:empty)").forEach((tabbed, tabbedIndex) => {
+            document.querySelectorAll(".tabbed").forEach((tabbed, tabbedIndex) => {
+                if (!tabbed.querySelector(":scope > ul > li")) {
+                    return
+                }
                 let tabLinkList = []
                 let tabTitles = []
                 tabbed.querySelectorAll(":scope > ul > li").forEach((tab, tabIndex) => {
