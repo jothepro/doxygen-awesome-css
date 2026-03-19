@@ -121,6 +121,7 @@ html {
     --code-background: #f5f5f5;
     --code-foreground: var(--page-foreground-color);
     --section-code-background: rgba(0, 0, 0, 0.06);
+    --section-code-border: rgba(0, 0, 0, 0.16);
 
     /* fragment colors */
     --fragment-background: #F8F9FA;
@@ -191,6 +192,7 @@ html {
 
         --code-background: #2a2c2f;
         --section-code-background: rgba(255, 255, 255, 0.08);
+        --section-code-border: rgba(255, 255, 255, 0.18);
 
         --tablehead-background: #2a2c2f;
     
@@ -253,6 +255,7 @@ html.dark-mode {
 
     --code-background: #2a2c2f;
     --section-code-background: rgba(255, 255, 255, 0.08);
+    --section-code-border: rgba(255, 255, 255, 0.18);
 
     --tablehead-background: #2a2c2f;
 
@@ -1665,6 +1668,7 @@ dl.invariant code, dl.invariant span.tt,
 dl.pre code, dl.pre span.tt,
 dl.post code, dl.post span.tt {
     background: var(--section-code-background);
+    border: 1px solid var(--section-code-border);
 }
 
 /*
