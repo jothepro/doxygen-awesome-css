@@ -36,7 +36,7 @@ class DoxygenAwesomeInteractiveToc {
                         headerNode: document.getElementById(id)
                     })
 
-                    document.getElementById("doc-content")?.addEventListener("scroll",this.throttle(DoxygenAwesomeInteractiveToc.update, 100))
+                    window.addEventListener("scroll",this.throttle(DoxygenAwesomeInteractiveToc.update, 100))
                 })
                 DoxygenAwesomeInteractiveToc.update()
             }
