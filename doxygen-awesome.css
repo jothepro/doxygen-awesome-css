@@ -1671,6 +1671,20 @@ dl.post code, dl.post span.tt {
     border: 1px solid var(--section-code-border);
 }
 
+dl.warning div.fragment, dl.warning pre.fragment,
+dl.attention div.fragment, dl.attention pre.fragment,
+dl.note div.fragment, dl.note pre.fragment,
+dl.remark div.fragment, dl.remark pre.fragment,
+dl.todo div.fragment, dl.todo pre.fragment,
+dl.bug div.fragment, dl.bug pre.fragment,
+dl.deprecated div.fragment, dl.deprecated pre.fragment,
+dl.invariant div.fragment, dl.invariant pre.fragment,
+dl.pre div.fragment, dl.pre pre.fragment,
+dl.post div.fragment, dl.post pre.fragment {
+    background: var(--section-code-background);
+    border: 1px solid var(--section-code-border);
+}
+
 /*
  memitem
  */
