@@ -120,6 +120,8 @@ html {
     /* code block colors */
     --code-background: #f5f5f5;
     --code-foreground: var(--page-foreground-color);
+    --section-code-background: rgba(0, 0, 0, 0.06);
+    --section-code-border: rgba(0, 0, 0, 0.16);
 
     /* fragment colors */
     --fragment-background: #F8F9FA;
@@ -189,6 +191,8 @@ html {
         --side-nav-background: #252628;
 
         --code-background: #2a2c2f;
+        --section-code-background: rgba(255, 255, 255, 0.08);
+        --section-code-border: rgba(255, 255, 255, 0.18);
 
         --tablehead-background: #2a2c2f;
     
@@ -250,6 +254,8 @@ html.dark-mode {
     --side-nav-background: #252628;
 
     --code-background: #2a2c2f;
+    --section-code-background: rgba(255, 255, 255, 0.08);
+    --section-code-border: rgba(255, 255, 255, 0.18);
 
     --tablehead-background: #2a2c2f;
 
@@ -1649,6 +1655,20 @@ dl.invariant, dl.pre, dl.post {
 
 dl.invariant dt, dl.pre dt, dl.post dt {
     color: var(--invariant-color-dark);
+}
+
+dl.warning code, dl.warning span.tt,
+dl.attention code, dl.attention span.tt,
+dl.note code, dl.note span.tt,
+dl.remark code, dl.remark span.tt,
+dl.todo code, dl.todo span.tt,
+dl.bug code, dl.bug span.tt,
+dl.deprecated code, dl.deprecated span.tt,
+dl.invariant code, dl.invariant span.tt,
+dl.pre code, dl.pre span.tt,
+dl.post code, dl.post span.tt {
+    background: var(--section-code-background);
+    border: 1px solid var(--section-code-border);
 }
 
 /*
