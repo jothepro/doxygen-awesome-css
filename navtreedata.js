@@ -72,7 +72,7 @@ var NAVTREE =
       [ "Doxygen generator", "md_docs_2customization.html#autotoc_md37", null ],
       [ "Share your customizations", "md_docs_2customization.html#autotoc_md38", null ]
     ] ],
-    [ "Tips & Tricks", "md_docs_2tricks.html", [
+    [ "Tips &amp; Tricks", "md_docs_2tricks.html", [
       [ "Diagrams with Graphviz", "md_docs_2tricks.html#tricks-graphviz", null ],
       [ "Disable Dark Mode", "md_docs_2tricks.html#tricks-darkmode", null ],
       [ "Choosing Sidebar Width", "md_docs_2tricks.html#tricks-sidebar", null ],
@@ -116,3 +116,4 @@ var NAVTREEINDEX =
 
 var SYNCONMSG = 'click to disable panel synchronization';
 var SYNCOFFMSG = 'click to enable panel synchronization';
+var LISTOFALLMEMBERS = 'List of all members';

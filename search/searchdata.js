@@ -7,7 +7,7 @@ var indexSectionsWithContent =
   4: "flstv",
   5: "c",
   6: "bgr",
-  7: "abcdelt"
+  7: "abcdefghilmnpqstuvwxy"
 };
 
 var indexSectionNames =
