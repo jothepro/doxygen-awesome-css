@@ -113,6 +113,24 @@ Similarly, in the [xPack](https://xpack.github.io) ecosystem, this project can b
 as a development dependency to an [`xpm`](https://xpack.github.io/xpm/)
 managed project.
 
+### Python 
+
+For Python projects, you can install the theme as a Python package:
+
+```sh
+# Install the package
+pip install doxygen-awesome-css
+
+# Install files to your project directory
+python -m doxygen_awesome_css --install .
+# Install with verbose output
+python -m doxygen_awesome_css --install ./docs --verbose
+# Quiet mode (minimal output)
+python -m doxygen_awesome_css --install ./docs --quiet
+```
+
+This method provides a clean way to manage the theme as a dependency and easily install the files where needed.
+
 ### System-wide
 
 You can even install the theme system-wide by running `make install`.

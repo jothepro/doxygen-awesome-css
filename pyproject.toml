@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=63", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "doxygen-awesome-css"
+dynamic = ["version"]
+description = "Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+authors = [
+    {name = "jothepro", email = "jothepro@github.com"},
+    {name = "mohammadraziei", email = "mohammadraziei@github.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+keywords = ["doxygen", "css", "theme", "awesome"]
+dependencies = []
+requires-python = ">=3.8"
+
+[project.urls]
+Homepage = "https://jothepro.github.io/doxygen-awesome-css/"
+Repository = "https://github.com/jothepro/doxygen-awesome-css.git"
+
+[project.scripts]
+doxygen-awesome-css = "doxygen_awesome_css.__main__:main"
+
+[tool.setuptools]
+packages = ["doxygen_awesome_css"]
+
+[tool.setuptools.package-data]
+doxygen_awesome_css = [
+    "doxygen-awesome.css",
+    "doxygen-awesome-darkmode-toggle.js",
+    "doxygen-awesome-fragment-copy-button.js",
+    "doxygen-awesome-interactive-toc.js",
+    "doxygen-awesome-paragraph-link.js",
+    "doxygen-awesome-sidebar-only-darkmode-toggle.css",
+    "doxygen-awesome-sidebar-only.css",
+    "doxygen-awesome-tabs.js",
+]
+
+[tool.setuptools.dynamic]
+version = {attr = "doxygen_awesome_css.__about__.__version__"}
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
