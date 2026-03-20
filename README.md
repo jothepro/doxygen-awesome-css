@@ -62,7 +62,7 @@ For projects that use Git, add the repository as a submodule and check out the d
 ```sh
 git submodule add https://github.com/jothepro/doxygen-awesome-css.git
 cd doxygen-awesome-css
-git checkout v2.4.1
+git checkout v2.4.2
 ```
 
 ### CMake with FetchContent
@@ -104,7 +104,7 @@ to your project:
 
 ```sh
 cd your-project
-npm install https://github.com/jothepro/doxygen-awesome-css#v2.4.1 --save-dev
+npm install https://github.com/jothepro/doxygen-awesome-css#v2.4.2 --save-dev
 
 ls -l node_modules/@jothepro/doxygen-awesome-css
 ```
