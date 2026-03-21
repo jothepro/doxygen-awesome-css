@@ -84,17 +84,17 @@ class DoxygenAwesomeReadtheDocsSearch {
     });
 
     globalThis.searchFor = function(query, page, count) {
-      const results = $('#searchresults');
+      const results = document.getElementById('searchresults');
 
       // Get the title
-      let pageTitle = $('div.title')
-      const originalTitle = pageTitle.text().toString();
+      const pageTitle = document.querySelector('div.title');
+      const originalTitle = pageTitle ? pageTitle.textContent : '';
       let pageTitleStates = ["Searching", "Searching .", "Searching ..", "Searching ..."];
       let pageTitleIndex = 0;
 
       // Function to update the page title
       function updatePageTitle() {
-        pageTitle.text(pageTitleStates[pageTitleIndex]);
+        if (pageTitle) pageTitle.textContent = pageTitleStates[pageTitleIndex];
         pageTitleIndex = (pageTitleIndex + 1) % pageTitleStates.length;
       }
 
@@ -104,12 +104,12 @@ class DoxygenAwesomeReadtheDocsSearch {
       // The summary will be displayed at the top of the search results
       let resultSummary = document.createElement('p');
       resultSummary.className = 'search-summary';
-      results.append(resultSummary);
+      results.appendChild(resultSummary);
 
       // Put all results into an unordered list
       let resultList = document.createElement('ul');
       resultList.className = 'search';
-      results.append(resultList);
+      results.appendChild(resultList);
 
       // readthedocs metadata
       let projectSlug = DoxygenAwesomeReadtheDocsSearch.getMetaValue("readthedocs-project-slug") || "doxygen-awesome-css";
@@ -191,16 +191,17 @@ class DoxygenAwesomeReadtheDocsSearch {
 
     versionReady.then(function(resolvedVersion) {
       const url = `${DoxygenAwesomeReadtheDocsSearch.serverUrl}search/?q=project:${projectSlug}/${resolvedVersion}+${query}&page=1&page_size=5`;
-      $.ajax({
-        url: url,
-        dataType: 'json',
-        success: function(data) {
+      fetch(url)
+        .then(function(response) {
+          if (!response.ok) throw new Error(response.statusText);
+          return response.json();
+        })
+        .then(function(data) {
           DoxygenAwesomeReadtheDocsSearch._showLiveResults(query, data.results || []);
-        },
-        error: function() {
+        })
+        .catch(function() {
           DoxygenAwesomeReadtheDocsSearch._hideLiveResults();
-        }
-      });
+        });
     });
   }
 
@@ -289,14 +290,17 @@ class DoxygenAwesomeReadtheDocsSearch {
   }
 
   static fetchResults(url, ctx) {
-    $.ajax({
-      url: url,
-      dataType: 'json',
-      success: function(data) {
+    fetch(url)
+      .then(function(response) {
+        if (!response.ok) throw new Error(response.statusText);
+        return response.json();
+      })
+      .then(function(data) {
         // Add the query to the search field
-        // This seems only be working if applied in the ajax success function...
+        // This seems only be working if applied in the fetch success handler...
         // maybe the field is not available before this point
-        $('#MSearchField').val(ctx.query);
+        const searchField = document.getElementById('MSearchField');
+        if (searchField) searchField.value = ctx.query;
 
         if (ctx.firstUrl) {
           if (data.count === 1) {
@@ -309,7 +313,7 @@ class DoxygenAwesomeReadtheDocsSearch {
           ctx.firstUrl = false;
         }
 
-        $.each(data.results, function(i, item) {
+        data.results.forEach(function(item) {
           DoxygenAwesomeReadtheDocsSearch.appendResultItem(ctx.resultList, item);
         });
 
@@ -318,10 +322,9 @@ class DoxygenAwesomeReadtheDocsSearch {
         } else {
           // Clear the interval when the search is complete
           clearInterval(ctx.titleInterval);
-          ctx.pageTitle.text(ctx.originalTitle);
+          if (ctx.pageTitle) ctx.pageTitle.textContent = ctx.originalTitle;
         }
-      }
-    });
+      });
   }
 
   static appendResultItem(resultList, item) {
@@ -371,20 +374,19 @@ class DoxygenAwesomeReadtheDocsSearch {
   static getReadTheDocsDefaultVersion(project) {
     console.log('Pull request detected, getting default version from ReadTheDocs API');
     const url = `${DoxygenAwesomeReadtheDocsSearch.serverUrl}projects/${project}/`;
-    return new Promise(function(resolve) {
-      $.ajax({
-        url: url,
-        dataType: 'json',
-        success: function(data) {
-          console.log(data);
-          resolve(data.default_version || 'latest');
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-          console.error('Error:', textStatus, errorThrown);
-          console.log(`Cannot determine default version for ${project}, assuming "latest"`);
-          resolve('latest');
-        }
+    return fetch(url)
+      .then(function(response) {
+        if (!response.ok) throw new Error(response.statusText);
+        return response.json();
+      })
+      .then(function(data) {
+        console.log(data);
+        return data.default_version || 'latest';
+      })
+      .catch(function(err) {
+        console.error('Error:', err);
+        console.log(`Cannot determine default version for ${project}, assuming "latest"`);
+        return 'latest';
       });
-    });
   }
 }

@@ -28,8 +28,5 @@
   },
   "license": "MIT",
   "config": {},
-  "devDependencies": {
-    "jquery": "^3.7.1"
-  },
   "xpack": {}
 }
