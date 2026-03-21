@@ -1,0 +1,87 @@
+/* Highlight text in search results */
+span.highlighted {
+    background-color:var(--warning-color);
+    color: var(--page-foreground-color);
+    padding: 2px;
+    border-radius: 3px;
+}
+
+/* Remove list bullets for search results */
+ul.search {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Add horizontal divider for search results */
+ul.search li.search-result {
+    border-bottom: 1px solid var(--separator-color);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+/* Live search dropdown */
+#RTDLiveResults {
+    display: none;
+    position: absolute;
+    z-index: 10000;
+    left: unset;
+    background: var(--page-background-color);
+    border: 1px solid var(--separator-color);
+    border-radius: var(--border-radius-large);
+    box-shadow: var(--box-shadow);
+    max-height: 420px;
+    overflow-y: auto;
+}
+
+#RTDLiveResults .rtd-live-list {
+    list-style: none;
+    margin: 0;
+    padding: var(--spacing-small) 0;
+}
+
+#RTDLiveResults .rtd-live-list li {
+    margin: 0;
+}
+
+#RTDLiveResults .rtd-live-item {
+    display: block;
+    padding: var(--spacing-small) var(--spacing-medium);
+    color: var(--page-foreground-color);
+    text-decoration: none;
+    outline: none;
+}
+
+#RTDLiveResults .rtd-live-item:hover,
+#RTDLiveResults .rtd-live-item:focus {
+    background: var(--menu-focus-background);
+    color: var(--menu-focus-foreground);
+}
+
+#RTDLiveResults .rtd-live-title {
+    display: block;
+    font-weight: bold;
+    font-size: var(--navigation-font-size);
+}
+
+#RTDLiveResults .rtd-live-snippet {
+    display: block;
+    font-size: calc(var(--navigation-font-size) * 0.9);
+    color: var(--page-secondary-foreground-color);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 400px;
+}
+
+#RTDLiveResults .rtd-live-snippet mark {
+    background-color: var(--warning-color);
+    color: var(--page-foreground-color);
+    padding: 0 2px;
+    border-radius: 2px;
+}
+
+#RTDLiveResults .rtd-live-empty {
+    padding: var(--spacing-medium);
+    color: var(--page-secondary-foreground-color);
+    font-size: var(--navigation-font-size);
+}
