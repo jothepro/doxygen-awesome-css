@@ -10,7 +10,7 @@
 
 </div>
 
-**Doxygen Awesome** is a custom CSS theme for Doxygen HTML documentation with many customization options.
+**Doxygen Awesome** is a custom CSS theme for [Doxygen](https://github.com/doxygen/doxygen) HTML documentation with many customization options.
 
 ## Motivation
 
