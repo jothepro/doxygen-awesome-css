@@ -28,5 +28,7 @@
   },
   "license": "MIT",
   "config": {},
+  "dependencies": {},
+  "devDependencies": {},
   "xpack": {}
 }
