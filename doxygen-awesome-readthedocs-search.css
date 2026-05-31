@@ -21,6 +21,7 @@ ul.search li.search-result {
 
 /* Live search dropdown */
 #RTDLiveResults {
+    margin-top: var(--spacing-small);
     display: none;
     position: absolute;
     z-index: 10000;
@@ -31,6 +32,13 @@ ul.search li.search-result {
     box-shadow: var(--box-shadow);
     max-height: 420px;
     overflow-y: auto;
+}
+
+@media screen and (max-width: 767px) {
+    #RTDLiveResults {
+        left: var(--spacing-medium);
+        right: var(--spacing-medium);
+    }
 }
 
 #RTDLiveResults .rtd-live-list {
@@ -46,6 +54,8 @@ ul.search li.search-result {
 #RTDLiveResults .rtd-live-item {
     display: block;
     padding: var(--spacing-small) var(--spacing-medium);
+    margin: var(--spacing-small);
+    border-radius: var(--border-radius-small);
     color: var(--page-foreground-color);
     text-decoration: none;
     outline: none;
@@ -54,7 +64,6 @@ ul.search li.search-result {
 #RTDLiveResults .rtd-live-item:hover,
 #RTDLiveResults .rtd-live-item:focus {
     background: var(--menu-focus-background);
-    color: var(--menu-focus-foreground);
 }
 
 #RTDLiveResults .rtd-live-title {
@@ -71,6 +80,13 @@ ul.search li.search-result {
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 400px;
+}
+
+#RTDLiveResults .rtd-live-item:hover .rtd-live-title,
+#RTDLiveResults .rtd-live-item:hover .rtd-live-snippet,
+#RTDLiveResults .rtd-live-item:focus .rtd-live-title,
+#RTDLiveResults .rtd-live-item:focus .rtd-live-snippet {
+    color: var(--menu-focus-foreground);
 }
 
 #RTDLiveResults .rtd-live-snippet mark {
