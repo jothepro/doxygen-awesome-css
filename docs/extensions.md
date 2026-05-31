@@ -270,6 +270,12 @@ Read the Docs and in general gives a better search experience.
        </head>
        <body>
     ```
+   For the sidebar-only theme variant, initialize with left-aligned live results:
+    ```html
+   <script type="text/javascript">
+       DoxygenAwesomeReadtheDocsSearch.init('leftAlign')
+   </script>
+    ```
 
 ## Page Navigation {#extension-page-navigation}
 

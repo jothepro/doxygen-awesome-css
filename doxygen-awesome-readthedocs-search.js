@@ -4,6 +4,9 @@ class DoxygenAwesomeReadtheDocsSearch {
     "Search finished, found <b>1</b> page matching the search query.",
     "Search finished, found <b>$num</b> pages matching the search query.",
   ];
+  static _liveResultsAlignment = 'right';
+  static _liveResultsPositionFrame = null;
+  static _liveSearchAttached = false;
 
   static get serverUrl() {
     const serverUrlSuffix = '_/api/v3/';
@@ -21,7 +24,9 @@ class DoxygenAwesomeReadtheDocsSearch {
     return `https://${domainName}/${serverUrlSuffix}`;
   }
 
-  static init() {
+  static init(alignment = 'rightAlign') {
+    DoxygenAwesomeReadtheDocsSearch._liveResultsAlignment = alignment === 'leftAlign' ? 'left' : 'right';
+
     const realSearchBox = globalThis.SearchBox;
     globalThis.SearchBox = function(name, resultsPath, extension) {
       if (realSearchBox) {
@@ -133,6 +138,9 @@ class DoxygenAwesomeReadtheDocsSearch {
   }
 
   static _attachLiveSearch() {
+    if (DoxygenAwesomeReadtheDocsSearch._liveSearchAttached) return;
+    DoxygenAwesomeReadtheDocsSearch._liveSearchAttached = true;
+
     let debounceTimer = null;
 
     function onInput() {
@@ -155,23 +163,8 @@ class DoxygenAwesomeReadtheDocsSearch {
       field._rtdLiveSearchAttached = true;
       field.setAttribute('autocomplete', 'off');
       field.addEventListener('input', onInput);
-      field.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-          DoxygenAwesomeReadtheDocsSearch._hideLiveResults();
-        } else if (e.key === 'ArrowDown') {
-          e.preventDefault();
-          DoxygenAwesomeReadtheDocsSearch._moveLiveResultFocus(1);
-        } else if (e.key === 'ArrowUp') {
-          e.preventDefault();
-          DoxygenAwesomeReadtheDocsSearch._moveLiveResultFocus(-1);
-        } else if (e.key === 'Enter') {
-          const focused = document.querySelector('#RTDLiveResults .rtd-live-item:focus');
-          if (focused) {
-            e.preventDefault();
-            focused.click();
-          }
-        }
-      });
+      field.addEventListener('keydown', DoxygenAwesomeReadtheDocsSearch._handleLiveSearchKeydown);
+      DoxygenAwesomeReadtheDocsSearch._scheduleLiveResultsPositionUpdate();
     }
 
     attachToField();
@@ -179,6 +172,8 @@ class DoxygenAwesomeReadtheDocsSearch {
     // Re-attach when the DOM changes (e.g. menu.js recreates the field on mobile)
     const fieldObserver = new MutationObserver(attachToField);
     fieldObserver.observe(document.body, { childList: true, subtree: true });
+
+    window.addEventListener('resize', DoxygenAwesomeReadtheDocsSearch._scheduleLiveResultsPositionUpdate);
   }
 
   static _runLiveSearch(query) {
@@ -210,6 +205,7 @@ class DoxygenAwesomeReadtheDocsSearch {
     if (!dropdown) {
       dropdown = document.createElement('div');
       dropdown.id = 'RTDLiveResults';
+      dropdown.addEventListener('keydown', DoxygenAwesomeReadtheDocsSearch._handleLiveSearchKeydown);
       document.body.appendChild(dropdown);
     }
 
@@ -260,23 +256,75 @@ class DoxygenAwesomeReadtheDocsSearch {
     const anchor = box || field;
     if (!anchor) return;
     const rect = anchor.getBoundingClientRect();
+    const scrollX = window.scrollX;
     const scrollY = window.scrollY;
     const viewportWidth = document.documentElement.clientWidth;
     dropdown.style.top = `${rect.bottom + scrollY}px`;
-    dropdown.style.left = '';
-    dropdown.style.right = `${viewportWidth - rect.right}px`;
+
+    if (window.matchMedia('(max-width: 767px)').matches) {
+      dropdown.style.left = '';
+      dropdown.style.right = '';
+      dropdown.style.minWidth = '';
+      return;
+    }
+
     dropdown.style.minWidth = `${Math.max(rect.width, 260)}px`;
+    if (DoxygenAwesomeReadtheDocsSearch._liveResultsAlignment === 'left') {
+      dropdown.style.left = `${rect.left + scrollX}px`;
+      dropdown.style.right = '';
+    } else {
+      dropdown.style.left = '';
+      dropdown.style.right = `${viewportWidth - rect.right}px`;
+    }
   }
 
-  static _hideLiveResults() {
+  static _hideLiveResults(restoreFocus = false) {
     const dropdown = document.getElementById('RTDLiveResults');
     if (dropdown) {
       dropdown.style.display = 'none';
     }
+    if (restoreFocus) {
+      const field = document.getElementById('MSearchField');
+      if (field) field.focus();
+    }
+  }
+
+  static _scheduleLiveResultsPositionUpdate() {
+    if (DoxygenAwesomeReadtheDocsSearch._liveResultsPositionFrame) return;
+    DoxygenAwesomeReadtheDocsSearch._liveResultsPositionFrame = window.requestAnimationFrame(function() {
+      DoxygenAwesomeReadtheDocsSearch._liveResultsPositionFrame = null;
+      DoxygenAwesomeReadtheDocsSearch._updateLiveResultsPosition();
+    });
+  }
+
+  static _updateLiveResultsPosition() {
+    const dropdown = document.getElementById('RTDLiveResults');
+    if (!dropdown || dropdown.style.display === 'none') return;
+    DoxygenAwesomeReadtheDocsSearch._positionLiveResults(dropdown);
+  }
+
+  static _handleLiveSearchKeydown(e) {
+    if (e.key === 'Escape') {
+      DoxygenAwesomeReadtheDocsSearch._hideLiveResults(true);
+    } else if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      DoxygenAwesomeReadtheDocsSearch._moveLiveResultFocus(1);
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      DoxygenAwesomeReadtheDocsSearch._moveLiveResultFocus(-1);
+    } else if (e.key === 'Enter') {
+      const focused = document.querySelector('#RTDLiveResults .rtd-live-item:focus');
+      if (focused) {
+        e.preventDefault();
+        focused.click();
+      }
+    }
   }
 
   static _moveLiveResultFocus(direction) {
-    const items = Array.from(document.querySelectorAll('#RTDLiveResults .rtd-live-item'));
+    const dropdown = document.getElementById('RTDLiveResults');
+    if (!dropdown || dropdown.style.display === 'none') return;
+    const items = Array.from(dropdown.querySelectorAll('.rtd-live-item'));
     if (items.length === 0) return;
     const current = document.activeElement;
     const idx = items.indexOf(current);
