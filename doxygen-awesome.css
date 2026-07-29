@@ -586,7 +586,7 @@ a.anchor {
 }
 
 /* Doxygen 1.9.5 */
-.left span#MSearchSelect {
+.left span#MSearchSelect, .left span#MSearchSelectExt {
     left: 0;
     user-select: none;
     margin-left: 8px;
@@ -660,7 +660,7 @@ a.anchor {
     color: var(--searchbar-foreground);
 }
 
-#MSearchSelect {
+#MSearchSelect, #MSearchSelectExt {
     top: calc(calc(var(--searchbar-height) / 2) - 11px);
 }
 
