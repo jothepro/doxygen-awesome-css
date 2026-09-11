@@ -70,7 +70,7 @@ public:
      * - <b class="tab-title">Images</b>A table can contain images:<br>
      *   | Column 1                  | Column 2                                        |
      *   |---------------------------|-------------------------------------------------|
-     *   | ![doxygen](testimage.png) | ← the image should not be inverted in dark-mode |
+     *   | ![doxygen](testimage.png){width=250px} | ← the image should not be inverted in dark-mode |
      * 
      *
      * </div>
