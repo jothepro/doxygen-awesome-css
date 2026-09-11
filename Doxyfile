@@ -1456,11 +1456,11 @@ HTML_STYLESHEET        =
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
 HTML_EXTRA_STYLESHEET  = doxygen-awesome.css \
-                         doxygen-custom/custom.css \
                          doxygen-awesome-sidebar-only.css \
                          doxygen-awesome-sidebar-only-darkmode-toggle.css \
                          doxygen-custom/theme-round.css \
-                         doxygen-custom/theme-robot.css
+                         doxygen-custom/theme-robot.css \
+                         doxygen-custom/custom.css
 
 # The HTML_EXTRA_FILES tag can be used to specify one or more extra images or
 # other source files which should be copied to the HTML output directory. Note
