@@ -37,29 +37,31 @@ class DoxygenAwesomeDarkModeToggle extends HTMLElement {
     }()
 
     static init() {
-        $(function() {
-            $(document).ready(function() {
-                const toggleButton = document.createElement('doxygen-awesome-dark-mode-toggle')
-                toggleButton.title = DoxygenAwesomeDarkModeToggle.title
+        const initToggle = () => {
+            const toggleButton = document.createElement('doxygen-awesome-dark-mode-toggle')
+            toggleButton.title = DoxygenAwesomeDarkModeToggle.title
+            toggleButton.updateIcon()
+
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
                 toggleButton.updateIcon()
-
-                window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-                    toggleButton.updateIcon()
-                })
-                document.addEventListener("visibilitychange", visibilityState => {
-                    if (document.visibilityState === 'visible') {
-                        toggleButton.updateIcon()
-                    }
-                });
-
-                $(document).ready(function(){
-                    document.getElementById("MSearchBox").parentNode.appendChild(toggleButton)
-                })
-                $(window).resize(function(){
-                    document.getElementById("MSearchBox").parentNode.appendChild(toggleButton)
-                })
             })
-        })
+            document.addEventListener("visibilitychange", visibilityState => {
+                if (document.visibilityState === 'visible') {
+                    toggleButton.updateIcon()
+                }
+            });
+
+            document.getElementById("MSearchBox").parentNode.appendChild(toggleButton)
+            window.addEventListener("resize", () => {
+                document.getElementById("MSearchBox").parentNode.appendChild(toggleButton)
+            })
+        }
+
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initToggle)
+        } else {
+            initToggle()
+        }
     }
 
     constructor() {
