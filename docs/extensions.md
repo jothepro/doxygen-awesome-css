@@ -246,6 +246,8 @@ Each item in the list must start with an element that has the class `tab-title`.
 Use search index from Read the Docs instead of the built-in doxygen search. This allows using search metrics from
 Read the Docs and in general gives a better search experience.
 
+A live example is available at [doxygen-awesome-css.readthedocs.io](https://doxygen-awesome-css.readthedocs.io/).
+
 ### Installation
 
 1. Add the required resources in your `Doxyfile`:
