@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+conda_env_name="doxygen-awesome-css-docs"
+
 function setup_conda_env {
   echo "Setting up conda environment"
   local environment_file="environment.yml"
@@ -8,9 +10,13 @@ function setup_conda_env {
   echo "cat $environment_file"
   cat $environment_file
 
-  echo "conda env create --quiet --name ${READTHEDOCS_VERSION} --file $environment_file"
-  conda env create --quiet --name "${READTHEDOCS_VERSION}" --file "$environment_file"
-  return 0
+  echo "conda env create --quiet --name ${conda_env_name} --file $environment_file"
+  conda env create --quiet --name "${conda_env_name}" --file "$environment_file"
+
+  # activate the env in this shell so doxygen/dot below resolve to the conda versions
+  # shellcheck disable=SC1091
+  source "$(conda info --base)/etc/profile.d/conda.sh"
+  conda activate "${conda_env_name}"
 }
 
 output_dir="${READTHEDOCS_OUTPUT:-_readthedocs}"
