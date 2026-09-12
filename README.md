@@ -177,11 +177,11 @@ There are two layout options. Choose one of them and configure Doxygen according
 
 Tested with
 
-- Chrome 140, Chrome 140 for Android, Chrome 141 for iOS
+- Chrome 153, Chrome 152 for Android, Chrome 141 for iOS
 - Safari 26, Safari for iOS 26
-- Firefox 143, Firefox 142 for Android, Firefox 143 for iOS
-- Edge 140
-- Opera One 122
+- Firefox 155, Firefox 142 for Android, Firefox 148 for iOS
+- Edge 152
+- Opera One 135
 
 
 The theme does not strive to be backward compatible with (significantly) older browser versions.
