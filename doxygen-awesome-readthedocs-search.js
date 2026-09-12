@@ -7,6 +7,8 @@ class DoxygenAwesomeReadtheDocsSearch {
   static _liveResultsAlignment = 'right';
   static _liveResultsPositionFrame = null;
   static _liveSearchAttached = false;
+  static _projectSlug = 'doxygen-awesome-css';
+  static _versionSlug = 'latest';
 
   static get serverUrl() {
     const serverUrlSuffix = '_/api/v3/';
@@ -24,8 +26,10 @@ class DoxygenAwesomeReadtheDocsSearch {
     return `https://${domainName}/${serverUrlSuffix}`;
   }
 
-  static init(alignment = 'rightAlign') {
+  static init(alignment = 'rightAlign', { projectSlug = 'doxygen-awesome-css', versionSlug = 'latest' } = {}) {
     DoxygenAwesomeReadtheDocsSearch._liveResultsAlignment = alignment === 'leftAlign' ? 'left' : 'right';
+    DoxygenAwesomeReadtheDocsSearch._projectSlug = projectSlug;
+    DoxygenAwesomeReadtheDocsSearch._versionSlug = versionSlug;
 
     const realSearchBox = globalThis.SearchBox;
     globalThis.SearchBox = function(name, resultsPath, extension) {
@@ -117,8 +121,8 @@ class DoxygenAwesomeReadtheDocsSearch {
       results.appendChild(resultList);
 
       // readthedocs metadata
-      let projectSlug = DoxygenAwesomeReadtheDocsSearch.getMetaValue("readthedocs-project-slug") || "doxygen-awesome-css";
-      let projectVersion = DoxygenAwesomeReadtheDocsSearch.getMetaValue("readthedocs-version-slug") || "latest";
+      const projectSlug = DoxygenAwesomeReadtheDocsSearch.projectSlug;
+      const projectVersion = DoxygenAwesomeReadtheDocsSearch.versionSlug;
 
       const ctx = {
         query, resultSummary, resultList, titleInterval, pageTitle, originalTitle, firstUrl: true
@@ -177,8 +181,8 @@ class DoxygenAwesomeReadtheDocsSearch {
   }
 
   static _runLiveSearch(query) {
-    const projectSlug = DoxygenAwesomeReadtheDocsSearch.getMetaValue("readthedocs-project-slug") || "doxyconfig";
-    const projectVersion = DoxygenAwesomeReadtheDocsSearch.getMetaValue("readthedocs-version-slug") || "latest";
+    const projectSlug = DoxygenAwesomeReadtheDocsSearch.projectSlug;
+    const projectVersion = DoxygenAwesomeReadtheDocsSearch.versionSlug;
 
     const versionReady = /^\d+$/.test(projectVersion)
         ? DoxygenAwesomeReadtheDocsSearch.getReadTheDocsDefaultVersion(projectSlug)
@@ -417,6 +421,16 @@ class DoxygenAwesomeReadtheDocsSearch {
     }
 
     return null;
+  }
+
+  static get projectSlug() {
+    return DoxygenAwesomeReadtheDocsSearch.getMetaValue("readthedocs-project-slug") ||
+      DoxygenAwesomeReadtheDocsSearch._projectSlug;
+  }
+
+  static get versionSlug() {
+    return DoxygenAwesomeReadtheDocsSearch.getMetaValue("readthedocs-version-slug") ||
+      DoxygenAwesomeReadtheDocsSearch._versionSlug;
   }
 
   static getReadTheDocsDefaultVersion(project) {

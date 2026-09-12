@@ -280,6 +280,17 @@ Read the Docs and in general gives a better search experience.
    </script>
     ```
 
+   Read the Docs provides the project and version slugs automatically. To select the Read the Docs index used when
+   testing locally, provide fallback values during initialization:
+    ```html
+   <script type="text/javascript">
+       DoxygenAwesomeReadtheDocsSearch.init('leftAlign', {
+           projectSlug: 'your-readthedocs-project',
+           versionSlug: 'latest'
+       })
+   </script>
+    ```
+
 ## Page Navigation {#extension-page-navigation}
 
 To allow users to easily navigate from one document to another, "Next" and "Previous" buttons can be added at the end of a Markdown document.
