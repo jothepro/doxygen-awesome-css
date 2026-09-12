@@ -44,7 +44,7 @@ ul.search li.search-result {
 #RTDLiveResults .rtd-live-list {
     list-style: none;
     margin: 0;
-    padding: var(--spacing-small) 0;
+    padding: 0;
 }
 
 #RTDLiveResults .rtd-live-list li {
