@@ -9,9 +9,11 @@ build:
   os: ubuntu-24.04
   tools:
     python: "miniconda-latest"
-  commands:
-    - chmod +x readthedocs_build.sh
-    - ./readthedocs_build.sh
+  jobs:
+    build:
+      html:
+        - chmod +x readthedocs_build.sh
+        - ./readthedocs_build.sh
 
 # using conda, we can get newer doxygen and graphviz than ubuntu provide
 # https://github.com/readthedocs/readthedocs.org/issues/8151#issuecomment-890359661
