@@ -49,6 +49,7 @@ html {
         max-width: var(--side-nav-fixed-width);
         overflow: hidden;
         background: var(--side-nav-background);
+        border-right: 1px solid var(--separator-color);
     }
 
     #main-nav {
