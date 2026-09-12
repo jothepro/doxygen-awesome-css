@@ -2,16 +2,17 @@
 set -euo pipefail
 
 conda_env_name="doxygen-awesome-css-docs"
+environment_file="environment.yml"
+output_dir="${READTHEDOCS_OUTPUT:-_readthedocs}"
+output_dir="${output_dir%/}"
+version="${READTHEDOCS_VERSION:-local}"
+canonical_url="${READTHEDOCS_CANONICAL_URL:-https://doxygen-awesome-css.readthedocs.io/}"
+rtd_doxyfile="${output_dir}/Doxyfile.readthedocs"
+rtd_header="${output_dir}/header.readthedocs.html"
 
 function setup_conda_env {
-  echo "Setting up conda environment"
-  local environment_file="environment.yml"
-
-  echo "cat $environment_file"
-  cat $environment_file
-
-  echo "conda env create --quiet --name ${conda_env_name} --file $environment_file"
-  conda env create --quiet --name "${conda_env_name}" --file "$environment_file"
+  echo "Creating conda environment '${conda_env_name}' from ${environment_file}"
+  conda env create --quiet --name "${conda_env_name}" --file "${environment_file}"
 
   # activate the env in this shell so doxygen/dot below resolve to the conda versions
   # shellcheck disable=SC1091
@@ -19,15 +20,11 @@ function setup_conda_env {
   conda activate "${conda_env_name}"
 }
 
-output_dir="${READTHEDOCS_OUTPUT:-_readthedocs}"
-output_dir="${output_dir%/}"
-version="${READTHEDOCS_VERSION:-local}"
-canonical_url="${READTHEDOCS_CANONICAL_URL:-https://doxygen-awesome-css.readthedocs.io/}"
-
 mkdir -p "${output_dir}"
 
-rtd_doxyfile="${output_dir}/Doxyfile.readthedocs"
-rtd_header="${output_dir}/header.readthedocs.html"
+setup_conda_env
+doxygen --version
+dot -V
 
 awk '
   /<script type="text\/javascript" src="\$relpath\^doxygen-awesome-tabs\.js"><\/script>/ {
@@ -58,7 +55,4 @@ EXTERNAL_SEARCH = YES
 SEARCHENGINE_URL = ${canonical_url}
 EOF
 
-setup_conda_env
-doxygen --version
-dot -V
 doxygen "${rtd_doxyfile}"
