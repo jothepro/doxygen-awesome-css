@@ -353,7 +353,6 @@ a.anchor {
     #top {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
         align-items: center;
     }
 }
@@ -586,7 +585,7 @@ a.anchor {
 }
 
 /* Doxygen 1.9.5 */
-.left span#MSearchSelect {
+.left span#MSearchSelect, .left span#MSearchSelectExt {
     left: 0;
     user-select: none;
     margin-left: 8px;
@@ -660,7 +659,7 @@ a.anchor {
     color: var(--searchbar-foreground);
 }
 
-#MSearchSelect {
+#MSearchSelect, #MSearchSelectExt {
     top: calc(calc(var(--searchbar-height) / 2) - 11px);
 }
 
@@ -816,7 +815,7 @@ html.dark-mode iframe#MSearchResults {
 }
 
 
-#nav-tree, #top {
+#nav-tree {
     border-right: 1px solid var(--separator-color);
 }
 

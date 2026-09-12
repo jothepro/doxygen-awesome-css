@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['variables_0',['CSS-Variables',['../md_docs_2customization.html#autotoc_md34',1,'']]],
-  ['variables_1',['Available variables',['../md_docs_2customization.html#autotoc_md36',1,'']]]
+  ['usage_0',['Usage',['../md_docs_2extensions.html#autotoc_md30',1,'Usage'],['../md_docs_2extensions.html#autotoc_md33',1,'Usage']]]
 ];

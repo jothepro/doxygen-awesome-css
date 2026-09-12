@@ -18,25 +18,28 @@ class DoxygenAwesomeFragmentCopyButton extends HTMLElement {
     static successIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M8.084,16.111c-0.09,0.09 -0.212,0.141 -0.34,0.141c-0.127,-0 -0.249,-0.051 -0.339,-0.141c-0.746,-0.746 -2.538,-2.538 -3.525,-3.525c-0.375,-0.375 -0.983,-0.375 -1.357,0c-0.178,0.178 -0.369,0.369 -0.547,0.547c-0.375,0.375 -0.375,0.982 -0,1.357c1.135,1.135 3.422,3.422 4.75,4.751c0.27,0.27 0.637,0.421 1.018,0.421c0.382,0 0.749,-0.151 1.019,-0.421c2.731,-2.732 10.166,-10.167 12.454,-12.455c0.375,-0.375 0.375,-0.982 -0,-1.357c-0.178,-0.178 -0.369,-0.369 -0.547,-0.547c-0.375,-0.375 -0.982,-0.375 -1.357,0c-2.273,2.273 -9.567,9.567 -11.229,11.229Z"/></svg>`
     static successDuration = 980
     static init() {
-        $(function() {
-            $(document).ready(function() {
-                if(navigator.clipboard) {
-                    const fragments = document.getElementsByClassName("fragment")
-                    for(const fragment of fragments) {
-                        const fragmentWrapper = document.createElement("div")
-                        fragmentWrapper.className = "doxygen-awesome-fragment-wrapper"
-                        const fragmentCopyButton = document.createElement("doxygen-awesome-fragment-copy-button")
-                        fragmentCopyButton.innerHTML = DoxygenAwesomeFragmentCopyButton.copyIcon
-                        fragmentCopyButton.title = DoxygenAwesomeFragmentCopyButton.title
-                
-                        fragment.parentNode.replaceChild(fragmentWrapper, fragment)
-                        fragmentWrapper.appendChild(fragment)
-                        fragmentWrapper.appendChild(fragmentCopyButton)
-            
-                    }
+        const initCopyButtons = () => {
+            if(navigator.clipboard) {
+                const fragments = document.getElementsByClassName("fragment")
+                for(const fragment of fragments) {
+                    const fragmentWrapper = document.createElement("div")
+                    fragmentWrapper.className = "doxygen-awesome-fragment-wrapper"
+                    const fragmentCopyButton = document.createElement("doxygen-awesome-fragment-copy-button")
+                    fragmentCopyButton.innerHTML = DoxygenAwesomeFragmentCopyButton.copyIcon
+                    fragmentCopyButton.title = DoxygenAwesomeFragmentCopyButton.title
+
+                    fragment.parentNode.replaceChild(fragmentWrapper, fragment)
+                    fragmentWrapper.appendChild(fragment)
+                    fragmentWrapper.appendChild(fragmentCopyButton)
                 }
-            })
-        })
+            }
+        }
+
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initCopyButtons)
+        } else {
+            initCopyButtons()
+        }
     }
 
 

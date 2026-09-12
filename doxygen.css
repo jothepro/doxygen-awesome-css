@@ -1,4 +1,4 @@
-/* The standard CSS for doxygen 1.16.1*/
+/* The standard CSS for doxygen 1.17.0*/
 
 body {
 	background-color: white;
@@ -150,6 +150,19 @@ td.navtabHL {
 	padding-left: 6px;
 	border-radius: 0 6px 6px 0;
 	background-color: #B9DDFF;
+}
+
+div.alphasepar:before{
+  content: " | " ;
+  width: 14px;
+  display: inline-block;
+  text-align: center;
+  line-height: 140%;
+  font-size: 130%;
+}
+
+div.alphasepar{
+  display: inline-block;
 }
 
 div.qindex{
@@ -2118,14 +2131,17 @@ details > summary::-webkit-details-marker {
 }
 
 details>summary::before {
-	content: "\25ba";
-	padding-right:4px;
-	font-size: 80%;
+        content: "\25bc";
+        padding-right:4px;
+        font-size: 80%;
+        display: inline-block;
+        transform: rotate(-90deg);
 }
 
 details[open]>summary::before {
-	content: "\25bc";
-	padding-right:4px;
-	font-size: 80%;
+        content: "\25bc";
+        padding-right:4px;
+        font-size: 80%;
+        display: inline-block;
+        transform: rotate(0deg);
 }
-

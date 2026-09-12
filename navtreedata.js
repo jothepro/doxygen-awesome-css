@@ -59,28 +59,31 @@ var NAVTREE =
         [ "Installation", "md_docs_2extensions.html#autotoc_md29", null ],
         [ "Usage", "md_docs_2extensions.html#autotoc_md30", null ]
       ] ],
+      [ "Read the Docs search", "md_docs_2extensions.html#readthedocs-search", [
+        [ "Installation", "md_docs_2extensions.html#autotoc_md31", null ]
+      ] ],
       [ "Page Navigation", "md_docs_2extensions.html#extension-page-navigation", [
-        [ "Installation", "md_docs_2extensions.html#autotoc_md31", null ],
-        [ "Usage", "md_docs_2extensions.html#autotoc_md32", null ]
+        [ "Installation", "md_docs_2extensions.html#autotoc_md32", null ],
+        [ "Usage", "md_docs_2extensions.html#autotoc_md33", null ]
       ] ]
     ] ],
     [ "Customization", "md_docs_2customization.html", [
-      [ "CSS-Variables", "md_docs_2customization.html#autotoc_md34", [
-        [ "Setup", "md_docs_2customization.html#autotoc_md35", null ],
-        [ "Available variables", "md_docs_2customization.html#autotoc_md36", null ]
+      [ "CSS-Variables", "md_docs_2customization.html#autotoc_md35", [
+        [ "Setup", "md_docs_2customization.html#autotoc_md36", null ],
+        [ "Available variables", "md_docs_2customization.html#autotoc_md37", null ]
       ] ],
-      [ "Doxygen generator", "md_docs_2customization.html#autotoc_md37", null ],
-      [ "Share your customizations", "md_docs_2customization.html#autotoc_md38", null ]
+      [ "Doxygen generator", "md_docs_2customization.html#autotoc_md38", null ],
+      [ "Share your customizations", "md_docs_2customization.html#autotoc_md39", null ]
     ] ],
     [ "Tips &amp; Tricks", "md_docs_2tricks.html", [
       [ "Diagrams with Graphviz", "md_docs_2tricks.html#tricks-graphviz", null ],
       [ "Disable Dark Mode", "md_docs_2tricks.html#tricks-darkmode", null ],
       [ "Choosing Sidebar Width", "md_docs_2tricks.html#tricks-sidebar", null ],
       [ "Formatting Tables", "md_docs_2tricks.html#tricks-tables", [
-        [ "Centering", "md_docs_2tricks.html#autotoc_md40", null ],
-        [ "Full Width", "md_docs_2tricks.html#autotoc_md41", null ],
-        [ "Buttons", "md_docs_2tricks.html#autotoc_md42", null ],
-        [ "Bordered Images", "md_docs_2tricks.html#autotoc_md43", null ]
+        [ "Centering", "md_docs_2tricks.html#autotoc_md41", null ],
+        [ "Full Width", "md_docs_2tricks.html#autotoc_md42", null ],
+        [ "Buttons", "md_docs_2tricks.html#autotoc_md43", null ],
+        [ "Bordered Images", "md_docs_2tricks.html#autotoc_md44", null ]
       ] ]
     ] ],
     [ "Bug List", "bug.html", null ],
@@ -114,6 +117,6 @@ var NAVTREEINDEX =
 "annotated.html"
 ];
 
-var SYNCONMSG = 'click to disable panel synchronization';
-var SYNCOFFMSG = 'click to enable panel synchronization';
-var LISTOFALLMEMBERS = 'List of all members';
+const SYNCONMSG = 'click to disable panel synchronization';
+const SYNCOFFMSG = 'click to enable panel synchronization';
+const LISTOFALLMEMBERS = 'List of all members';
