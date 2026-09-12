@@ -37,31 +37,48 @@ class DoxygenAwesomeDarkModeToggle extends HTMLElement {
     }()
 
     static init() {
-        const initToggle = () => {
-            const toggleButton = document.createElement('doxygen-awesome-dark-mode-toggle')
+        const toggleSelector = 'doxygen-awesome-dark-mode-toggle'
+        const existingToggle = document.querySelector(toggleSelector)
+        const toggleButton = existingToggle || document.createElement(toggleSelector)
+        if (!existingToggle) {
             toggleButton.title = DoxygenAwesomeDarkModeToggle.title
             toggleButton.updateIcon()
 
-            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
                 toggleButton.updateIcon()
             })
-            document.addEventListener("visibilitychange", visibilityState => {
+            document.addEventListener("visibilitychange", () => {
                 if (document.visibilityState === 'visible') {
                     toggleButton.updateIcon()
                 }
             });
-
-            document.getElementById("MSearchBox").parentNode.appendChild(toggleButton)
-            window.addEventListener("resize", () => {
-                document.getElementById("MSearchBox").parentNode.appendChild(toggleButton)
-            })
         }
 
-        if (document.readyState === "loading") {
-            document.addEventListener("DOMContentLoaded", initToggle)
-        } else {
-            initToggle()
+        const moveToggle = () => {
+            const searchBox = document.getElementById("MSearchBox")
+            const toggle = document.querySelector(toggleSelector) || toggleButton
+            if (searchBox && searchBox.parentNode !== toggle.parentNode) {
+                searchBox.parentNode.appendChild(toggle)
+            }
         }
+
+        const containsSearchBox = node => {
+            return node.nodeType === Node.ELEMENT_NODE &&
+                (node.id === "MSearchBox" || node.querySelector("#MSearchBox") !== null)
+        }
+
+        const observer = new MutationObserver(mutations => {
+            const searchBoxChanged = mutations.some(mutation =>
+                [...mutation.addedNodes, ...mutation.removedNodes]
+                    .some(containsSearchBox)
+            )
+
+            if (searchBoxChanged) {
+                moveToggle()
+            }
+        })
+        observer.observe(document.documentElement, { childList: true, subtree: true })
+        moveToggle()
     }
 
     constructor() {
