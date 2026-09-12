@@ -27,15 +27,13 @@ doxygen --version
 dot -V
 
 awk '
-  /<script type="text\/javascript" src="\$relpath\^doxygen-awesome-tabs\.js"><\/script>/ {
+  /^\$search$/ {
     print
     print "<script type=\"text/javascript\" src=\"$relpath^doxygen-awesome-readthedocs-search.js\"></script>"
-    next
-  }
-  /DoxygenAwesomeTabs\.init\(\)/ {
-    print
+    print "<script type=\"text/javascript\">"
     print "    // The RTD build uses the sidebar-only theme, so align live search results to the sidebar."
     print "    DoxygenAwesomeReadtheDocsSearch.init('\''leftAlign'\'')"
+    print "</script>"
     next
   }
   { print }
