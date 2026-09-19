@@ -163,9 +163,9 @@ There are two layout options. Choose one of them and configure Doxygen according
 
 <br>
 
-@warning
-- This theme is not compatible with the `FULL_SIDEBAR = YES` option provided by Doxygen!
-- `HTML_COLORSTYLE` must be set to `LIGHT` since Doxygen 1.9.5!
+> [!WARNING]
+> - This theme is not compatible with the `FULL_SIDEBAR = YES` option provided by Doxygen!
+> - `HTML_COLORSTYLE` must be set to `LIGHT` since Doxygen 1.9.5!
 
 ### Further installation instructions
 
