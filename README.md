@@ -135,8 +135,8 @@ There are two layout options. Choose one of them and configure Doxygen according
     Required `Doxyfile` configuration:
     ```
     GENERATE_TREEVIEW      = YES # optional. Also works without treeview
-    DISABLE_INDEX = NO
-    FULL_SIDEBAR = NO
+    DISABLE_INDEX          = NO
+    FULL_SIDEBAR           = NO
     HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css
     HTML_COLORSTYLE        = LIGHT # required with Doxygen >= 1.9.5
     ```
@@ -155,7 +155,7 @@ There are two layout options. Choose one of them and configure Doxygen according
     DISABLE_INDEX          = NO
     FULL_SIDEBAR           = NO
     HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css \
-                            doxygen-awesome-css/doxygen-awesome-sidebar-only.css
+                             doxygen-awesome-css/doxygen-awesome-sidebar-only.css
     HTML_COLORSTYLE        = LIGHT # required with Doxygen >= 1.9.5
     ```
 
